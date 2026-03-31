@@ -28,8 +28,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Manrope:wght@400;500;700;800&amp;display=swap"
     rel="stylesheet">
-    <script src="/assets/consent-init.js?v=20260331"></script>
-<script src="assets/local-preview.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="/assets/consent-init.js?v=20260331"></script>
+  <script src="assets/local-preview.js"></script>
+  <script>
+    (function () {
+      var search = window.location.search || '';
+      var hash = window.location.hash || '';
+      var tokenPattern = /(confirmation_token|invite_token|recovery_token|email_change_token)=/;
+
+      if (tokenPattern.test(search) || tokenPattern.test(hash)) {
+        var target = '/admin/';
+        if (search) target += search;
+        if (hash) target += hash;
+        window.location.replace(target);
+      }
+    })();
+  </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

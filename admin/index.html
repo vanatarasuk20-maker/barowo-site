@@ -88,12 +88,29 @@
   <script src="https://unpkg.com/decap-cms@^3.7.1/dist/decap-cms.js"></script>
   <script>
     if (window.netlifyIdentity) {
+      var hasIdentityToken = /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.hash || '') ||
+        /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.search || '');
+
       window.netlifyIdentity.on('init', function (user) {
+        if (hasIdentityToken) {
+          setTimeout(function () {
+            window.netlifyIdentity.open();
+          }, 120);
+        }
+
         if (!user) {
           window.netlifyIdentity.on('login', function () {
             document.location.href = '/admin/';
           });
         }
+      });
+
+      window.netlifyIdentity.on('recovery', function () {
+        window.netlifyIdentity.open();
+      });
+
+      window.netlifyIdentity.on('error', function (err) {
+        console.error('Netlify Identity error:', err);
       });
     }
   </script>
