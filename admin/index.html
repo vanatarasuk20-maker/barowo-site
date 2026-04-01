@@ -88,6 +88,11 @@
   <script>
     (function () {
       var cmsLoaded = false;
+      if (!window.location.hash || window.location.hash === '#') {
+        window.location.replace('/admin/#/');
+        return;
+      }
+
       var hasIdentityToken = /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.hash || '') ||
         /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.search || '');
 
@@ -106,11 +111,11 @@
       }
 
       window.netlifyIdentity.on('login', function () {
-        document.location.href = '/admin/';
+        document.location.href = '/admin/#/';
       });
 
       window.netlifyIdentity.on('signup', function () {
-        document.location.href = '/admin/';
+        document.location.href = '/admin/#/';
       });
 
       window.netlifyIdentity.on('init', function (user) {
