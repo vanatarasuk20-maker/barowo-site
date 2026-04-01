@@ -85,24 +85,48 @@
       tego samego szablonu, więc wszystkie publikacje zachowają obecny wygląd i strukturę.</p>
   </div>
 
-  <script src="https://unpkg.com/decap-cms@^3.7.1/dist/decap-cms.js"></script>
   <script>
-    if (window.netlifyIdentity) {
+    (function () {
+      var cmsLoaded = false;
       var hasIdentityToken = /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.hash || '') ||
         /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.search || '');
 
+      function loadCMS() {
+        if (cmsLoaded) return;
+        cmsLoaded = true;
+
+        var script = document.createElement('script');
+        script.src = 'https://unpkg.com/decap-cms@^3.7.1/dist/decap-cms.js';
+        document.body.appendChild(script);
+      }
+
+      if (!window.netlifyIdentity) {
+        loadCMS();
+        return;
+      }
+
+      window.netlifyIdentity.on('login', function () {
+        document.location.href = '/admin/';
+      });
+
+      window.netlifyIdentity.on('signup', function () {
+        document.location.href = '/admin/';
+      });
+
       window.netlifyIdentity.on('init', function (user) {
+        if (user) {
+          loadCMS();
+          return;
+        }
+
         if (hasIdentityToken) {
           setTimeout(function () {
             window.netlifyIdentity.open();
           }, 120);
+          return;
         }
 
-        if (!user) {
-          window.netlifyIdentity.on('login', function () {
-            document.location.href = '/admin/';
-          });
-        }
+        loadCMS();
       });
 
       window.netlifyIdentity.on('recovery', function () {
@@ -112,7 +136,7 @@
       window.netlifyIdentity.on('error', function (err) {
         console.error('Netlify Identity error:', err);
       });
-    }
+    })();
   </script>
 </body>
 
