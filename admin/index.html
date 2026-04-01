@@ -88,13 +88,13 @@
   <script>
     (function () {
       var cmsLoaded = false;
-      if (!window.location.hash || window.location.hash === '#') {
+      var hasIdentityToken = /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.hash || '') ||
+        /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.search || '');
+
+      if ((!window.location.hash || window.location.hash === '#') && !hasIdentityToken) {
         window.location.replace('/admin/#/');
         return;
       }
-
-      var hasIdentityToken = /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.hash || '') ||
-        /(confirmation_token|invite_token|recovery_token|email_change_token)=/.test(window.location.search || '');
 
       function loadCMS() {
         if (cmsLoaded) return;
