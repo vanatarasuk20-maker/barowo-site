@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://barowo.com/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
     <loc>https://barowo.com/aktualnosci/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/aktualnosci/najlepsze-drinki-na-wesele/</loc>
+    <lastmod>2026-04-01</lastmod>
   </url>
   <url>
     <loc>https://barowo.com/aktualnosci/mobilny-bar-czy-alkohol-samemu/</loc>
@@ -34,6 +38,6 @@
   </url>
   <url>
     <loc>https://barowo.com/polityka-prywatnosci/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-01</lastmod>
   </url>
 </urlset>
