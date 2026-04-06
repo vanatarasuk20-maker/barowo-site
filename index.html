@@ -2906,7 +2906,7 @@
         zapytanie teraz, zanim ktoś zajmie Twój termin. Wrócimy z konkretem i wyceną bez zobowiązań.</div>
     </div>
     <div class="contact-wrap">
-      <form action="https://formspree.io/f/xvzwylle" method="POST" class="form">
+      <form action="https://script.google.com/macros/s/AKfycbwGS-1m9aWnt2rBAOfdvXx-XifDAAqW_xSGWQlnZYzAi3J105z2QDzbonCWDG9J--24pA/exec" method="POST" class="form">
         <div class="form-row">
           <div class="fg">
             <label>Imię i nazwisko *</label>
@@ -2964,6 +2964,10 @@
           <label>Wiadomość</label>
           <textarea name="message" placeholder="Opowiedz nam o swoim wydarzeniu — lokalizacja, oczekiwania, pytania..."></textarea>
         </div>
+        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+          <label for="crmCompanyField">Company</label>
+          <input type="text" id="crmCompanyField" name="company" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form-legal">
           <label class="form-consent" for="privacyConsent">
             <input type="checkbox" id="privacyConsent" name="privacy_consent" required>
@@ -2972,7 +2976,15 @@
           <div class="form-consent-error" aria-live="polite"></div>
           <p class="cookie-note">Administratorem danych jest SumEffect Serhii Vasyliev. Dane przetwarzamy wyłącznie w celu odpowiedzi na zapytanie. Szczegóły oraz informacje o cookies znajdziesz w <a href="/polityka-prywatnosci/">Polityce prywatności</a>.</p>
         </div>
-        <input type="hidden" name="_subject" value="Nowe zapytanie — barowo.com">
+        <input type="hidden" name="source" value="website">
+        <input type="hidden" name="return_url" value="https://barowo.com/#contact">
+        <input type="hidden" name="page_url" value="">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="utm_term" value="">
         <button style="font-family: 'Montserrat', sans-serif;" type="submit" class="form-btn">Sprawdź dostępność terminu →</button>
         <p style="font-size:0.72rem;color:var(--dim);margin-top:8px;text-align:center;font-family:Arial,sans-serif;">Odpowiadamy zwykle w kilka godzin. Zapytanie jest bezpłatne i do niczego nie zobowiązuje.</p>
       </form>
@@ -3071,6 +3083,9 @@
       const consentField = contactForm.querySelector('#privacyConsent');
       const consentError = contactForm.querySelector('.form-consent-error');
       const consentMessage = 'Aby wysłać formularz, zaznacz zgodę na przetwarzanie danych.';
+      const pageUrlField = contactForm.querySelector('input[name="page_url"]');
+      const referrerField = contactForm.querySelector('input[name="referrer"]');
+      const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
       const syncConsentState = () => {
         if (!consentField) return true;
@@ -3091,7 +3106,18 @@
         });
       }
 
+      if (pageUrlField) pageUrlField.value = window.location.href;
+      if (referrerField) referrerField.value = document.referrer || '';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      utmFields.forEach((fieldName) => {
+        const field = contactForm.querySelector(`input[name="${fieldName}"]`);
+        if (field) field.value = urlParams.get(fieldName) || '';
+      });
+
       contactForm.addEventListener('submit', () => {
+        if (pageUrlField) pageUrlField.value = window.location.href;
+        if (referrerField) referrerField.value = document.referrer || '';
         syncConsentState();
       });
     }
