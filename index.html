@@ -1385,6 +1385,13 @@
       box-shadow: 0 10px 36px rgba(232, 0, 13, 0.45);
     }
 
+    .form-btn[disabled] {
+      opacity: 0.72;
+      cursor: wait;
+      transform: none;
+      box-shadow: none;
+    }
+
 
     .form-legal {
       margin-top: 18px;
@@ -1468,6 +1475,35 @@
       font-size: 0.74rem;
       line-height: 1.5;
       font-family: 'Montserrat', sans-serif;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-size: 0.84rem;
+      line-height: 1.7;
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .form-status.is-visible {
+      display: block;
+    }
+
+    .form-status.is-success {
+      border-color: rgba(126, 255, 181, 0.24);
+      background: rgba(28, 97, 56, 0.24);
+      color: #d9ffe8;
+    }
+
+    .form-status.is-error {
+      border-color: rgba(255, 157, 163, 0.24);
+      background: rgba(122, 24, 36, 0.24);
+      color: #ffd9dc;
     }
 
     .footer-links {
@@ -2986,6 +3022,7 @@
         <input type="hidden" name="utm_content" value="">
         <input type="hidden" name="utm_term" value="">
         <button style="font-family: 'Montserrat', sans-serif;" type="submit" class="form-btn">Sprawdź dostępność terminu →</button>
+        <div class="form-status" aria-live="polite"></div>
         <p style="font-size:0.72rem;color:var(--dim);margin-top:8px;text-align:center;font-family:Arial,sans-serif;">Odpowiadamy zwykle w kilka godzin. Zapytanie jest bezpłatne i do niczego nie zobowiązuje.</p>
       </form>
 
@@ -3082,10 +3119,31 @@
     if (contactForm) {
       const consentField = contactForm.querySelector('#privacyConsent');
       const consentError = contactForm.querySelector('.form-consent-error');
+      const statusBox = contactForm.querySelector('.form-status');
+      const submitButton = contactForm.querySelector('.form-btn');
+      const submitLabel = submitButton ? submitButton.textContent : '';
       const consentMessage = 'Aby wysłać formularz, zaznacz zgodę na przetwarzanie danych.';
       const pageUrlField = contactForm.querySelector('input[name="page_url"]');
       const referrerField = contactForm.querySelector('input[name="referrer"]');
       const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+      const setFormStatus = (type, message) => {
+        if (!statusBox) return;
+        statusBox.className = 'form-status';
+        if (!message) {
+          statusBox.textContent = '';
+          return;
+        }
+        statusBox.classList.add('is-visible');
+        if (type) statusBox.classList.add(`is-${type}`);
+        statusBox.textContent = message;
+      };
+
+      const setSubmittingState = (isSubmitting) => {
+        if (!submitButton) return;
+        submitButton.disabled = isSubmitting;
+        submitButton.textContent = isSubmitting ? 'Wysyłamy zapytanie…' : submitLabel;
+      };
 
       const syncConsentState = () => {
         if (!consentField) return true;
@@ -3119,6 +3177,51 @@
         if (pageUrlField) pageUrlField.value = window.location.href;
         if (referrerField) referrerField.value = document.referrer || '';
         syncConsentState();
+      });
+
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (!syncConsentState()) {
+          if (typeof contactForm.reportValidity === 'function') {
+            contactForm.reportValidity();
+          }
+          return;
+        }
+
+        if (typeof contactForm.reportValidity === 'function' && !contactForm.reportValidity()) {
+          return;
+        }
+
+        if (pageUrlField) pageUrlField.value = window.location.href;
+        if (referrerField) referrerField.value = document.referrer || '';
+        setFormStatus('', '');
+        setSubmittingState(true);
+
+        try {
+          const formData = new FormData(contactForm);
+          const body = new URLSearchParams();
+
+          formData.forEach((value, key) => {
+            body.append(key, value);
+          });
+
+          await fetch(contactForm.action, {
+            method: 'POST',
+            mode: 'no-cors',
+            body
+          });
+
+          contactForm.reset();
+          if (consentError) consentError.textContent = '';
+          setFormStatus('success', 'Dziękujemy. Zapytanie zostało wysłane. Zespół BAROWO wróci do Ciebie możliwie szybko z odpowiedzią i dostępnością terminu.');
+        } catch (error) {
+          setFormStatus('error', 'Nie udało się wysłać formularza z tej strony. Zadzwoń do nas lub napisz na barowo.pl@gmail.com, a zajmiemy się tym od razu.');
+        } finally {
+          if (pageUrlField) pageUrlField.value = window.location.href;
+          if (referrerField) referrerField.value = document.referrer || '';
+          setSubmittingState(false);
+        }
       });
     }
 
