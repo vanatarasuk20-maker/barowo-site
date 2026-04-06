@@ -3206,7 +3206,7 @@
             body.append(key, value);
           });
 
-          await fetch(contactForm.action, {
+          fetch(contactForm.action, {
             method: 'POST',
             mode: 'no-cors',
             body
