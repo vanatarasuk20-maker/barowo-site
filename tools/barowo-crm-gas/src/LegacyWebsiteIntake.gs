@@ -1,0 +1,220 @@
+function normalizeLegacyWebsitePhone_(value) {
+  const phone = (value || "").toString().trim();
+  return phone ? "'" + phone : "";
+}
+
+function buildLegacyWebsiteLeadNote_(params) {
+  const parts = [];
+  const message = (params.message || "").trim();
+  const source = (params.source || "website").trim();
+  const utmSummary = [
+    params.utm_source ? "utm_source=" + params.utm_source : "",
+    params.utm_medium ? "utm_medium=" + params.utm_medium : "",
+    params.utm_campaign ? "utm_campaign=" + params.utm_campaign : "",
+    params.utm_content ? "utm_content=" + params.utm_content : "",
+    params.utm_term ? "utm_term=" + params.utm_term : ""
+  ].filter(Boolean).join(", ");
+
+  if (message) {
+    parts.push("WWW: " + message);
+  }
+  if (source) {
+    parts.push("Źródło: " + source);
+  }
+  if (utmSummary) {
+    parts.push("UTM: " + utmSummary);
+  }
+  if (params.page_url) {
+    parts.push("Page: " + params.page_url);
+  }
+  if (params.referrer) {
+    parts.push("Referrer: " + params.referrer);
+  }
+
+  return parts.join("\n");
+}
+
+function buildLegacyWebsiteLeadRow_(params, uid) {
+  const row = new Array(COL.CLIENT_ADDRESS).fill("");
+  const nowIso = new Date().toISOString();
+  const guests = (params.guests || "").trim();
+  const note = buildLegacyWebsiteLeadNote_(params);
+
+  row[COL.UID - 1] = uid;
+  row[COL.CREATED_AT - 1] = nowIso;
+  row[11] = "website";
+  row[COL.EVENT - 1] = (params.event_type || "").trim();
+  row[13] = guests;
+  row[COL.DATE - 1] = (params.event_date || "").trim();
+  row[COL.CITY - 1] = (params.city || "").trim();
+  row[COL.NAME - 1] = (params.name || "").trim();
+  row[COL.EMAIL - 1] = (params.email || "").trim();
+  row[COL.PHONE - 1] = normalizeLegacyWebsitePhone_(params.phone);
+  row[COL.LEAD_SOURCE - 1] = (params.source || "website").trim();
+  row[COL.LEAD_STATUS - 1] = LEGACY_LEAD_STAGE.NEW;
+  row[COL.SENT - 1] = "SENT_" + new Date().getTime();
+  row[COL.GUESTS - 1] = guests;
+  row[COL.PACKAGE - 1] = (params.package || "").trim();
+  row[COL.NOTE - 1] = note;
+  row[COL.CLIENT_FULL_NAME - 1] = (params.name || "").trim();
+
+  return row;
+}
+
+function validateLegacyWebsiteLead_(params) {
+  const errors = [];
+
+  if (!(params.name || "").trim()) {
+    errors.push("name is required");
+  }
+
+  if (!(params.email || "").trim() && !(params.phone || "").trim()) {
+    errors.push("email or phone is required");
+  }
+
+  if (!params.privacy_consent) {
+    errors.push("privacy consent is required");
+  }
+
+  return errors;
+}
+
+function notifyLegacyTeamAboutLead_(row, uid, isDuplicate) {
+  const prefix = isDuplicate ? "♻️ <b>Zaktualizowano istniejący lead</b>\n\n" : "";
+  const cardText = prefix + buildLeadText(row) + statusLineFromRow(row);
+  send(CONFIG.GROUP_CHAT_ID, cardText, keyboard(uid, false));
+}
+
+function mergeLegacyWebsiteLeadIntoExisting_(sh, rowNumber, params) {
+  const row = sh.getRange(rowNumber, 1, 1, sh.getLastColumn()).getValues()[0];
+  const mergedNote = buildLegacyWebsiteLeadNote_(params);
+
+  if (!row[COL.EVENT - 1] && params.event_type) row[COL.EVENT - 1] = params.event_type.trim();
+  if (!row[COL.DATE - 1] && params.event_date) row[COL.DATE - 1] = params.event_date.trim();
+  if (!row[COL.CITY - 1] && params.city) row[COL.CITY - 1] = params.city.trim();
+  if (!row[COL.EMAIL - 1] && params.email) row[COL.EMAIL - 1] = params.email.trim();
+  if (!row[COL.PHONE - 1] && params.phone) row[COL.PHONE - 1] = normalizeLegacyWebsitePhone_(params.phone);
+  if (!row[COL.GUESTS - 1] && params.guests) row[COL.GUESTS - 1] = params.guests.trim();
+  if (!row[COL.PACKAGE - 1] && params.package) row[COL.PACKAGE - 1] = params.package.trim();
+  if (!row[COL.CLIENT_FULL_NAME - 1] && params.name) row[COL.CLIENT_FULL_NAME - 1] = params.name.trim();
+  row[COL.LEAD_SOURCE - 1] = (params.source || row[COL.LEAD_SOURCE - 1] || "website").toString().trim();
+
+  if (mergedNote) {
+    const currentNote = (row[COL.NOTE - 1] || "").toString().trim();
+    row[COL.NOTE - 1] = currentNote
+      ? currentNote + "\n\n---\n" + mergedNote
+      : mergedNote;
+  }
+
+  sh.getRange(rowNumber, 1, 1, row.length).setValues([row]);
+  return row;
+}
+
+function createLegacyWebsiteLead_(params) {
+  const config = getBarowoConfig_();
+  const honeypotValue = (params[config.honeypotField] || "").trim();
+
+  if (honeypotValue) {
+    appendLog_("warn", "legacy_site_lead", "honeypot triggered", {
+      field: config.honeypotField
+    });
+    return { ok: true, status: "spam" };
+  }
+
+  const errors = validateLegacyWebsiteLead_(params);
+  if (errors.length > 0) {
+    appendLog_("warn", "legacy_site_lead", "validation failed", errors);
+    return { ok: false, errors: errors };
+  }
+
+  bootstrapLegacyCrmSheets_();
+
+  const sh = sheetLidy();
+  if (!sh) {
+    throw new Error("Sheet '" + CONFIG.SHEET_LIDY + "' not found in CRM spreadsheet.");
+  }
+
+  const duplicateRow = findDuplicateLegacyLeadRow_(sh, params.name, params.phone, params.email);
+  if (duplicateRow > 0) {
+    const mergedRow = mergeLegacyWebsiteLeadIntoExisting_(sh, duplicateRow, params);
+    const duplicateUid = getLeadUID(mergedRow);
+
+    addToKontakty(mergedRow);
+    syncLegacyLeadToModernCrm_(mergedRow, { websitePayload: params });
+
+    try {
+      notifyLegacyTeamAboutLead_(mergedRow, duplicateUid, true);
+    } catch (error) {
+      appendLog_("error", "legacy_site_lead", "failed to notify telegram about duplicate", {
+        uid: duplicateUid,
+        message: error.message
+      });
+    }
+
+    appendLog_("info", "legacy_site_lead", "duplicate merged into legacy CRM", {
+      uid: duplicateUid,
+      name: mergedRow[COL.NAME - 1] || "",
+      source: params.source || "website"
+    });
+
+    return {
+      ok: true,
+      status: "merged",
+      uid: duplicateUid
+    };
+  }
+
+  const uid = generateUID();
+  const row = buildLegacyWebsiteLeadRow_(params, uid);
+  sh.getRange(sh.getLastRow() + 1, 1, 1, row.length).setValues([row]);
+
+  const savedRow = row.slice();
+
+  try {
+    addToKontakty(savedRow);
+  } catch (error) {
+    appendLog_("error", "legacy_site_lead", "failed to sync contacts", {
+      uid: uid,
+      message: error.message
+    });
+  }
+
+  try {
+    syncLegacyLeadToModernCrm_(savedRow, { websitePayload: params });
+  } catch (error) {
+    appendLog_("error", "legacy_site_lead", "failed to sync modern CRM", {
+      uid: uid,
+      message: error.message
+    });
+  }
+
+  try {
+    notifyLegacyTeamAboutLead_(savedRow, uid, false);
+  } catch (error) {
+    appendLog_("error", "legacy_site_lead", "failed to notify telegram", {
+      uid: uid,
+      message: error.message
+    });
+  }
+
+  appendLog_("info", "legacy_site_lead", "lead created in legacy CRM", {
+    uid: uid,
+    name: savedRow[COL.NAME - 1] || "",
+    source: params.source || "website"
+  });
+
+  try {
+    logAction("Website", "new_lead_site", savedRow[COL.NAME - 1], params.source || "website");
+  } catch (error) {
+    appendLog_("error", "legacy_site_lead", "failed to write legacy log", {
+      uid: uid,
+      message: error.message
+    });
+  }
+
+  return {
+    ok: true,
+    status: "created",
+    uid: uid
+  };
+}

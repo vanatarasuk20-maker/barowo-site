@@ -1,4 +1,5 @@
 const EVENTHUB_PREFIX = "/eventhub";
+const LEAD_PREFIX = "/lead";
 
 function buildCorsHeaders(request) {
   const origin = request.headers.get("origin") || "*";
@@ -85,6 +86,20 @@ async function callAppsScriptJson(url, init = {}) {
   return {
     status: response.status,
     json
+  };
+}
+
+async function callAppsScriptText(url, init = {}) {
+  const response = await fetch(url, {
+    method: init.method || "GET",
+    headers: init.headers || {},
+    body: init.body,
+    redirect: "follow"
+  });
+
+  return {
+    status: response.status,
+    text: await response.text()
   };
 }
 
@@ -268,6 +283,107 @@ async function handleEventHubRequest(request, env) {
   return jsonResponse({ ok: false, error: "Method Not Allowed" }, { status: 405 }, request);
 }
 
+function buildLeadRelayHtml(message, backUrl) {
+  return "<!doctype html>" +
+    "<html lang=\"pl\"><head>" +
+    "<meta charset=\"utf-8\">" +
+    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
+    "<title>BAROWO</title>" +
+    "<style>body{font-family:Arial,sans-serif;padding:24px;background:#06061a;color:#fff}a{color:#fff}</style>" +
+    "</head><body>" +
+    "<h1>BAROWO</h1>" +
+    "<p>" + message + "</p>" +
+    "<p><a href=\"" + backUrl + "\">Wróć do formularza</a></p>" +
+    "</body></html>";
+}
+
+async function handleLeadRequest(request, env, url) {
+  if (request.method === "OPTIONS") {
+    return withCors(new Response(null, { status: 204 }), request);
+  }
+
+  if (request.method === "GET") {
+    return jsonResponse({
+      ok: true,
+      service: "barowo-lead-relay",
+      upstream: !!env.APPS_SCRIPT_WEBHOOK_URL
+    }, {}, request);
+  }
+
+  if (request.method !== "POST") {
+    return jsonResponse({ ok: false, error: "Method Not Allowed" }, { status: 405 }, request);
+  }
+
+  const formData = await request.formData();
+  const params = new URLSearchParams();
+  let returnUrl = "https://barowo.com/#contact";
+
+  formData.forEach((value, key) => {
+    if (typeof value === "string") {
+      params.set(key, value);
+      if (key === "return_url" && value) {
+        returnUrl = value;
+      }
+    }
+  });
+
+  params.set("response", "json");
+
+  const upstream = await callAppsScriptText(getAppsScriptBaseUrl(env), {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
+    },
+    body: params.toString()
+  });
+
+  let payload = null;
+  try {
+    payload = JSON.parse(upstream.text);
+  } catch (error) {
+    payload = null;
+  }
+
+  const wantsJson = url.searchParams.get("format") === "json" ||
+    (request.headers.get("accept") || "").includes("application/json");
+
+  if (!payload || payload.ok !== true) {
+    const statusCode = payload && payload.error === "validation_failed" ? 400 : 502;
+    const errorBody = {
+      ok: false,
+      error: payload && payload.error ? payload.error : "lead_relay_failed",
+      details: payload && payload.details ? payload.details : [],
+      upstream_status: upstream.status
+    };
+
+    if (wantsJson) {
+      return jsonResponse(errorBody, { status: statusCode }, request);
+    }
+
+    return withCors(new Response(buildLeadRelayHtml(
+      "Nie udało się wysłać formularza. Zadzwoń do nas lub napisz na barowo.pl@gmail.com, a zajmiemy się tym od razu.",
+      returnUrl
+    ), {
+      status: statusCode,
+      headers: {
+        "content-type": "text/html; charset=utf-8"
+      }
+    }), request);
+  }
+
+  const responseBody = {
+    ok: true,
+    status: payload.status || "created",
+    redirect_url: payload.redirect_url || returnUrl
+  };
+
+  if (wantsJson) {
+    return jsonResponse(responseBody, {}, request);
+  }
+
+  return withCors(Response.redirect(responseBody.redirect_url, 302), request);
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -281,6 +397,18 @@ export default {
           path: url.pathname
         });
         return jsonResponse({ ok: false, error: "EventHub upstream unavailable" }, { status: 502 }, request);
+      }
+    }
+
+    if (url.pathname === LEAD_PREFIX) {
+      try {
+        return await handleLeadRequest(request, env, url);
+      } catch (error) {
+        console.error("lead_request_failed", {
+          message: error.message,
+          path: url.pathname
+        });
+        return jsonResponse({ ok: false, error: "Lead relay unavailable" }, { status: 502 }, request);
       }
     }
 

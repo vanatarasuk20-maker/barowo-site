@@ -7,8 +7,6 @@
   <title>BAROWO — Mobilny Bar Trójmiasto | Wesela, Urodziny, Eventy</title>
   <meta name="description"
     content="BAROWO to profesjonalny mobilny bar z Trójmiasta. Obsługujemy wesela, urodziny i eventy firmowe w Gdyni, Gdańsku i Sopocie. Gotowy bar, koktajle i barmani — Ty się po prostu bawisz.">
-  <meta name="keywords"
-    content="mobilny bar Trójmiasto, mobilny bar Gdynia, mobilny bar Gdańsk, obsługa barmańska wesela, barman na wesele, mobilny bar urodziny, wynajem baru Sopot">
   <meta name="robots" content="index, follow">
   <meta name="author" content="BAROWO">
   <meta property="og:title" content="BAROWO — Mobilny Bar Trójmiasto">
@@ -16,6 +14,13 @@
     content="Profesjonalna obsługa barmańska na każdą imprezę. Przyjeżdżamy gotowi — Ty się po prostu bawisz.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://barowo.com/">
+  <meta property="og:image" content="https://barowo.com/assets/photo1-opt.jpg">
+  <meta property="og:image:alt" content="Mobilny bar BAROWO na evencie w Trójmieście">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BAROWO — Mobilny Bar Trójmiasto">
+  <meta name="twitter:description" content="Mobilny bar na wesela, urodziny i eventy firmowe w Gdyni, Gdańsku i Sopocie.">
+  <meta name="twitter:image" content="https://barowo.com/assets/photo1-opt.jpg">
   <meta name="geo.region" content="PL-PM">
   <meta name="geo.placename" content="Trójmiasto">
   <meta name="theme-color" content="#06061a">
@@ -28,9 +33,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Manrope:wght@400;500;700;800&amp;display=swap"
     rel="stylesheet">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="/assets/consent-init.js?v=20260331"></script>
-  <script src="assets/local-preview.js"></script>
+  <script>
+    if (window.location.protocol === 'file:') {
+      document.write('<script src="/assets/local-preview.js"><' + '/script>');
+    }
+  </script>
   <script>
     (function () {
       var search = window.location.search || '';
@@ -51,17 +59,73 @@
   "@type": "LocalBusiness",
   "name": "BAROWO",
   "description": "Mobilny bar — profesjonalna obsługa barmańska wesel, urodzin i eventów firmowych w Trójmieście",
+  "@id": "https://barowo.com/#business",
   "url": "https://barowo.com/",
+  "image": "https://barowo.com/assets/photo1-opt.jpg",
+  "logo": "https://barowo.com/assets/logo-main.png",
   "telephone": "+48889168003",
   "email": "barowo.pl@gmail.com",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Stryjska 13",
     "addressLocality": "Gdynia",
     "addressRegion": "Pomorskie",
     "addressCountry": "PL"
   },
+  "hasMap": "https://maps.google.com/?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia",
+  "sameAs": [
+    "https://www.instagram.com/barowo_official",
+    "https://www.tiktok.com/@barowo.official"
+  ],
+  "priceRange": "$$",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+48889168003",
+    "contactType": "customer service",
+    "areaServed": "PL"
+  }],
   "areaServed": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto"],
   "serviceType": ["Obsługa barmańska wesel", "Mobilny bar urodziny", "Eventy firmowe"]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kim jesteście?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BAROWO to mobilny bar z Trójmiasta. Specjalizujemy się w obsłudze barmańskiej wesel, urodzin i eventów firmowych. Przywozimy cały sprzęt i ogarniamy wszystko od A do Z."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co znaczy wszystko w cenie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bar, sprzęt, szkło, składniki koktajlowe, barmani i dojazd są wliczone w jedną cenę. Nie ma ukrytych kosztów po evencie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak długo pracujecie na imprezie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Każdy pakiet obejmuje 12 godzin obsługi. Jeśli potrzebujesz więcej lub mniej czasu, BAROWO może dopasować pakiet indywidualnie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak daleko dojeżdżacie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BAROWO obsługuje głównie województwo pomorskie, do około 150 km od centrum Gdyni. Dalsze realizacje ustalane są indywidualnie."
+      }
+    }
+  ]
 }
 </script>
   <style>
@@ -2942,7 +3006,7 @@
         zapytanie teraz, zanim ktoś zajmie Twój termin. Wrócimy z konkretem i wyceną bez zobowiązań.</div>
     </div>
     <div class="contact-wrap">
-      <form action="https://script.google.com/macros/s/AKfycbwzngX2jAQAlMEDTXD0W_LMrCPGdlkjWwkFYWBxn1uPAIY9ECPbxcPH1O64gPCYN-MgpQ/exec" method="POST" class="form">
+      <form action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST" class="form">
         <div class="form-row">
           <div class="fg">
             <label>Imię i nazwisko *</label>
@@ -3201,16 +3265,25 @@
         try {
           const formData = new FormData(contactForm);
           const body = new URLSearchParams();
+          const submitUrl = new URL(contactForm.action);
+          submitUrl.searchParams.set('format', 'json');
 
           formData.forEach((value, key) => {
             body.append(key, value);
           });
 
-          fetch(contactForm.action, {
+          const response = await fetch(submitUrl.toString(), {
             method: 'POST',
-            mode: 'no-cors',
+            headers: {
+              'Accept': 'application/json'
+            },
             body
           });
+
+          const payload = await response.json().catch(() => null);
+          if (!response.ok || !payload || payload.ok !== true) {
+            throw new Error((payload && payload.error) || 'submit_failed');
+          }
 
           contactForm.reset();
           if (consentError) consentError.textContent = '';
