@@ -1,13 +1,44 @@
+const BAROWO_RUNTIME_CACHE = {
+  spreadsheet: null,
+  sheets: {}
+};
+
 function getBarowoSpreadsheet_() {
-  return SpreadsheetApp.openById(getBarowoConfig_().spreadsheetId);
+  if (!BAROWO_RUNTIME_CACHE.spreadsheet) {
+    BAROWO_RUNTIME_CACHE.spreadsheet = SpreadsheetApp.openById(getBarowoConfig_().spreadsheetId);
+  }
+
+  return BAROWO_RUNTIME_CACHE.spreadsheet;
+}
+
+function getCachedSheetByName_(name) {
+  if (!name) {
+    return null;
+  }
+
+  if (!Object.prototype.hasOwnProperty.call(BAROWO_RUNTIME_CACHE.sheets, name) || !BAROWO_RUNTIME_CACHE.sheets[name]) {
+    BAROWO_RUNTIME_CACHE.sheets[name] = getBarowoSpreadsheet_().getSheetByName(name);
+  }
+
+  return BAROWO_RUNTIME_CACHE.sheets[name];
+}
+
+function setCachedSheetByName_(name, sheet) {
+  if (!name) {
+    return sheet;
+  }
+
+  BAROWO_RUNTIME_CACHE.sheets[name] = sheet || null;
+  return sheet;
 }
 
 function getOrCreateSheet_(schema) {
   const spreadsheet = getBarowoSpreadsheet_();
-  let sheet = spreadsheet.getSheetByName(schema.name);
+  let sheet = getCachedSheetByName_(schema.name);
 
   if (!sheet) {
     sheet = spreadsheet.insertSheet(schema.name);
+    setCachedSheetByName_(schema.name, sheet);
   }
 
   ensureSheetHeaders_(sheet, schema.headers);

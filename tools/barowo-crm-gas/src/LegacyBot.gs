@@ -203,14 +203,41 @@ function generateUID() {
   return Utilities.getUuid().replace(/-/g, "").substring(0, 8);
 }
 
+function getLeadRowCacheKey_(sheetName, uid) {
+  return "legacy_lead_row_" + sheetName + "_" + uid;
+}
+
+function cacheLeadRowNumber_(sh, uid, rowNumber) {
+  if (!sh || !uid || !rowNumber || rowNumber < 2) {
+    return;
+  }
+
+  CacheService.getScriptCache().put(getLeadRowCacheKey_(sh.getName(), uid), String(rowNumber), 21600);
+}
+
 function findRowByUID(sh, uid) {
   if (!uid) return -1;
   const lastRow = sh.getLastRow();
   if (lastRow <= 1) return -1;
 
+  const cacheKey = getLeadRowCacheKey_(sh.getName(), uid);
+  const cachedValue = CacheService.getScriptCache().get(cacheKey);
+  const cachedRow = parseInt(cachedValue || "", 10);
+
+  if (!isNaN(cachedRow) && cachedRow >= 2 && cachedRow <= lastRow) {
+    const cachedUid = (sh.getRange(cachedRow, COL.UID).getValue() || "").toString();
+    if (cachedUid === uid) {
+      return cachedRow;
+    }
+  }
+
   const uidColumn = sh.getRange(2, COL.UID, lastRow - 1, 1).getValues();
   for (let i = 0; i < uidColumn.length; i++) {
-    if ((uidColumn[i][0] || "").toString() === uid) return i + 2;
+    if ((uidColumn[i][0] || "").toString() === uid) {
+      const rowNumber = i + 2;
+      cacheLeadRowNumber_(sh, uid, rowNumber);
+      return rowNumber;
+    }
   }
   return -1;
 }
@@ -291,15 +318,16 @@ function getLegacyCrmSpreadsheet_() {
   return getBarowoSpreadsheet_();
 }
 
-function sheetLidy() { return getLegacyCrmSpreadsheet_().getSheetByName(CONFIG.SHEET_LIDY); }
-function sheetSpam() { return getLegacyCrmSpreadsheet_().getSheetByName(CONFIG.SHEET_SPAM); }
-function sheetKontakty() { return getLegacyCrmSpreadsheet_().getSheetByName(CONFIG.SHEET_CONTACTS); }
+function sheetLidy() { return getCachedSheetByName_(CONFIG.SHEET_LIDY); }
+function sheetSpam() { return getCachedSheetByName_(CONFIG.SHEET_SPAM); }
+function sheetKontakty() { return getCachedSheetByName_(CONFIG.SHEET_CONTACTS); }
 
 function sheetFinanse() {
   const spreadsheet = getLegacyCrmSpreadsheet_();
-  let sh = spreadsheet.getSheetByName(CONFIG.SHEET_FINANCE);
+  let sh = getCachedSheetByName_(CONFIG.SHEET_FINANCE);
   if (!sh) {
     sh = spreadsheet.insertSheet(CONFIG.SHEET_FINANCE);
+    setCachedSheetByName_(CONFIG.SHEET_FINANCE, sh);
     sh.appendRow(["Data", "Imię", "Wydarzenie", "Pakiet", "Przychód",
       "Alkohol", "Transport", "Barman", "Inne", "Napiwki", "Zysk netto", "Kto"]);
   }
@@ -308,9 +336,10 @@ function sheetFinanse() {
 
 function sheetLog() {
   const spreadsheet = getLegacyCrmSpreadsheet_();
-  let sh = spreadsheet.getSheetByName(CONFIG.SHEET_LOG);
+  let sh = getCachedSheetByName_(CONFIG.SHEET_LOG);
   if (!sh) {
     sh = spreadsheet.insertSheet(CONFIG.SHEET_LOG);
+    setCachedSheetByName_(CONFIG.SHEET_LOG, sh);
     sh.appendRow(["Data", "Kto", "Akcja", "Lead", "Szczegóły"]);
   }
   return sh;

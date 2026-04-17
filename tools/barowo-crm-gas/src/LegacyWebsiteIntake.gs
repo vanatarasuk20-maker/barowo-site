@@ -141,6 +141,7 @@ function createLegacyWebsiteLead_(params) {
   if (duplicateRow > 0) {
     const mergedRow = mergeLegacyWebsiteLeadIntoExisting_(leadsSheet, duplicateRow, params);
     const duplicateUid = getLeadUID(mergedRow);
+    cacheLeadRowNumber_(leadsSheet, duplicateUid, duplicateRow);
 
     try {
       notifyLegacyTeamAboutLead_(mergedRow, duplicateUid, true);
@@ -172,6 +173,7 @@ function createLegacyWebsiteLead_(params) {
   const row = buildLegacyWebsiteLeadRow_(params, uid);
   const insertedRowNumber = leadsSheet.getLastRow() + 1;
   leadsSheet.getRange(insertedRowNumber, 1, 1, row.length).setValues([row]);
+  cacheLeadRowNumber_(leadsSheet, uid, insertedRowNumber);
 
   const savedRow = row.slice();
 
