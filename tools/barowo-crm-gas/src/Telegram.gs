@@ -69,6 +69,17 @@ function handleTelegramWebhook_(payload) {
       handleCallback(payload.callback_query);
     }
   } catch (error) {
+    if (isCrmBusyError_(error)) {
+      notifyBusyTelegramClient_(payload);
+      appendLog_("warn", "telegram", "crm busy", {
+        update_id: payload && payload.update_id ? payload.update_id : null
+      });
+      return renderJson_(false, {
+        error: "crm_busy",
+        update_id: payload && payload.update_id ? payload.update_id : null
+      });
+    }
+
     appendLog_("error", "telegram", "webhook handler failed", {
       update_id: payload && payload.update_id ? payload.update_id : null,
       message: error.message || String(error),
@@ -84,6 +95,28 @@ function handleTelegramWebhook_(payload) {
   markTelegramActionProcessed_(payload);
 
   return renderJson_(true, {});
+}
+
+function isCrmBusyError_(error) {
+  return !!(error && (error.code === "CRM_BUSY" || error.message === "crm_busy"));
+}
+
+function notifyBusyTelegramClient_(payload) {
+  const callback = payload && payload.callback_query;
+  const message = payload && payload.message;
+
+  if (callback && callback.id) {
+    sendTelegramApiRequest_("answerCallbackQuery", {
+      callback_query_id: callback.id,
+      text: "CRM jest teraz zajęta. Spróbuj ponownie za kilka sekund."
+    });
+    return;
+  }
+
+  const chatId = message && message.chat ? message.chat.id : null;
+  if (chatId) {
+    sendTemp(chatId, "⏳ CRM jest teraz zajęta. Spróbuj ponownie za kilka sekund.");
+  }
 }
 
 function getTelegramUpdateCacheKey_(payload) {

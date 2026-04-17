@@ -50,7 +50,6 @@ function inspectLeadFlowHealth_() {
   const siteUrl = getBarowoSiteUrl_();
   const config = getBarowoConfig_();
   const expectedAction = (config.leadPublicUrl || "").trim();
-  const upstreamAction = (config.webAppUrl || "").trim();
 
   if (!expectedAction) {
     return {
@@ -78,7 +77,6 @@ function inspectLeadFlowHealth_() {
       siteUrl: siteUrl,
       homepageCode: homepageCode,
       expectedAction: expectedAction,
-      upstreamAction: upstreamAction,
       actualAction: formAction
     };
   }
@@ -89,8 +87,7 @@ function inspectLeadFlowHealth_() {
       reason: "form_action_not_found",
       siteUrl: siteUrl,
       homepageCode: homepageCode,
-      expectedAction: expectedAction,
-      upstreamAction: upstreamAction
+      expectedAction: expectedAction
     };
   }
 
@@ -101,7 +98,6 @@ function inspectLeadFlowHealth_() {
       siteUrl: siteUrl,
       homepageCode: homepageCode,
       expectedAction: expectedAction,
-      upstreamAction: upstreamAction,
       actualAction: formAction
     };
   }
@@ -113,9 +109,12 @@ function inspectLeadFlowHealth_() {
   });
   const publicEndpointCode = publicEndpointResponse.getResponseCode();
   const publicEndpointBody = publicEndpointResponse.getContentText() || "";
+  const publicEndpointPayload = tryParseJson_(publicEndpointBody);
   const publicEndpointHealthy = publicEndpointCode >= 200 &&
     publicEndpointCode < 400 &&
-    publicEndpointBody.indexOf("barowo") !== -1;
+    publicEndpointPayload &&
+    publicEndpointPayload.ok === true &&
+    publicEndpointPayload.service === "barowo-lead-relay";
 
   if (!publicEndpointHealthy) {
     return {
@@ -124,35 +123,13 @@ function inspectLeadFlowHealth_() {
       siteUrl: siteUrl,
       homepageCode: homepageCode,
       expectedAction: expectedAction,
-      upstreamAction: upstreamAction,
       actualAction: formAction,
       publicEndpointCode: publicEndpointCode
     };
   }
 
-  if (!upstreamAction) {
-    return {
-      ok: false,
-      reason: "missing_upstream_web_app_url",
-      siteUrl: siteUrl,
-      homepageCode: homepageCode,
-      expectedAction: expectedAction,
-      upstreamAction: upstreamAction,
-      actualAction: formAction,
-      publicEndpointCode: publicEndpointCode
-    };
-  }
-
-  const upstreamResponse = UrlFetchApp.fetch(upstreamAction, {
-    method: "get",
-    muteHttpExceptions: true,
-    followRedirects: true
-  });
-  const endpointCode = upstreamResponse.getResponseCode();
-  const endpointBody = upstreamResponse.getContentText() || "";
-  const endpointHealthy = endpointCode >= 200 &&
-    endpointCode < 400 &&
-    endpointBody.indexOf("barowo-crm-gas") !== -1;
+  const endpointCode = Number(publicEndpointPayload.upstreamStatus || 0);
+  const endpointHealthy = publicEndpointPayload.upstreamHealthy === true;
 
   if (!endpointHealthy) {
     return {
@@ -161,7 +138,6 @@ function inspectLeadFlowHealth_() {
       siteUrl: siteUrl,
       homepageCode: homepageCode,
       expectedAction: expectedAction,
-      upstreamAction: upstreamAction,
       actualAction: formAction,
       publicEndpointCode: publicEndpointCode,
       endpointCode: endpointCode
@@ -174,7 +150,6 @@ function inspectLeadFlowHealth_() {
     siteUrl: siteUrl,
     homepageCode: homepageCode,
     expectedAction: expectedAction,
-    upstreamAction: upstreamAction,
     actualAction: formAction,
     publicEndpointCode: publicEndpointCode,
     endpointCode: endpointCode
@@ -193,12 +168,19 @@ function normalizeUrlForCompare_(value) {
     .replace(/\/+$/, "");
 }
 
+function tryParseJson_(value) {
+  try {
+    return JSON.parse(value);
+  } catch (error) {
+    return null;
+  }
+}
+
 function buildLeadHealthHash_(result) {
   return [
     result.reason || "",
     result.siteUrl || "",
     result.expectedAction || "",
-    result.upstreamAction || "",
     result.actualAction || "",
     result.homepageCode || "",
     result.publicEndpointCode || "",
@@ -217,7 +199,6 @@ function sendTelegramLeadHealthAlert_(result) {
     result.publicEndpointCode ? "Public lead URL HTTP: <b>" + result.publicEndpointCode + "</b>" : "",
     result.endpointCode ? "Endpoint HTTP: <b>" + result.endpointCode + "</b>" : "",
     result.expectedAction ? "Expected action:\n<code>" + escapeHtml_(result.expectedAction) + "</code>" : "",
-    result.upstreamAction ? "Upstream Apps Script:\n<code>" + escapeHtml_(result.upstreamAction) + "</code>" : "",
     result.actualAction ? "Actual action:\n<code>" + escapeHtml_(result.actualAction) + "</code>" : ""
   ].filter(Boolean);
 

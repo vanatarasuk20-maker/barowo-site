@@ -215,6 +215,24 @@ function findRowByUID(sh, uid) {
   return -1;
 }
 
+function getLeadRowDataByUid_(sh, uid) {
+  const rowNumber = findRowByUID(sh, uid);
+  if (rowNumber < 0) {
+    return null;
+  }
+
+  return {
+    rowNumber: rowNumber,
+    rowData: sh.getRange(rowNumber, 1, 1, sh.getLastColumn()).getValues()[0]
+  };
+}
+
+function buildBusyError_() {
+  const error = new Error("crm_busy");
+  error.code = "CRM_BUSY";
+  return error;
+}
+
 // ─── Async delete queue ──────────────────────────────────────────────────────
 
 function scheduleDelete(chat, msgId, ttlMs) {
@@ -779,12 +797,12 @@ function handleMessage(msg) {
         if (row < 0) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
         const newNote = text.trim() == "-" ? "" : text.trim();
         sh.getRange(row, COL.NOTE).setValue(newNote);
-        const updatedRows = sh.getDataRange().getValues();
+        const updatedLead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
         edit(st.cardChat || chat, st.cardMsgId,
-          baseLeadText(st.leadText) + statusLineFromRow(updatedRows[row - 1]),
-          keyboard(st.uid, isInCalendar(updatedRows[row - 1])));
+          baseLeadText(st.leadText) + statusLineFromRow(updatedLead),
+          keyboard(st.uid, isInCalendar(updatedLead) && calendarEventExists(updatedLead[COL.CAL_ID - 1])));
         sendTemp(chat, newNote ? "🗒 Notatka zapisana" : "🗒 Notatka usunięta");
-        logAction(whoIsUser(chat), "note", updatedRows[row - 1][COL.NAME - 1], newNote);
+        logAction(whoIsUser(chat), "note", updatedLead[COL.NAME - 1], newNote);
       });
       return;
     }
@@ -803,10 +821,10 @@ function handleMessage(msg) {
         if (isNaN(d.getTime())) { sendTemp(chat, "❌ Format: DD.MM.YYYY lub DD.MM.YYYY HH:MM"); return; }
         const fullValue = timePart ? datePart + " " + timePart : datePart;
         sh.getRange(row, COL.NEXTCALL).setValue(fullValue);
-        const updatedRows = sh.getDataRange().getValues();
+        const updatedLead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
         edit(st.cardChat || chat, st.cardMsgId,
-          baseLeadText(st.leadText) + statusLineFromRow(updatedRows[row - 1]),
-          keyboard(st.uid, isInCalendar(updatedRows[row - 1])));
+          baseLeadText(st.leadText) + statusLineFromRow(updatedLead),
+          keyboard(st.uid, isInCalendar(updatedLead) && calendarEventExists(updatedLead[COL.CAL_ID - 1])));
         sendTemp(chat, "🔔 Następny kontakt: <b>" + fullValue + "</b>");
       });
       return;
@@ -1135,10 +1153,9 @@ function handleCallback(q) {
 
   if (action == "draft") {
     const sh = sheetLidy();
-    const row = findRowByUID(sh, uid);
-    if (row < 0) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
-    const rows = sh.getDataRange().getValues();
-    edit(chat, msgId, baseLeadText(text) + statusLineFromRow(rows[row - 1]), packageKeyboard(uid));
+    const leadRef = getLeadRowDataByUid_(sh, uid);
+    if (!leadRef) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
+    edit(chat, msgId, baseLeadText(text) + statusLineFromRow(leadRef.rowData), packageKeyboard(uid));
     return;
   }
 
@@ -1153,10 +1170,9 @@ function handleCallback(q) {
 
   if (action == "genumowa") {
     const sh = sheetLidy();
-    const row = findRowByUID(sh, uid);
-    if (row < 0) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
-    const rows = sh.getDataRange().getValues();
-    edit(chat, msgId, baseLeadText(text) + statusLineFromRow(rows[row - 1]), genPkgKb(uid));
+    const leadRef = getLeadRowDataByUid_(sh, uid);
+    if (!leadRef) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
+    edit(chat, msgId, baseLeadText(text) + statusLineFromRow(leadRef.rowData), genPkgKb(uid));
     return;
   }
 
@@ -1263,21 +1279,14 @@ function handleCallback(q) {
 
 function withLock(fn) {
   const lock = LockService.getScriptLock();
-  let acquired = false;
+  if (!lock.tryLock(1500)) {
+    throw buildBusyError_();
+  }
+
   try {
-    lock.waitLock(1500);
-    acquired = true;
-    fn();
-  } catch (e) {
-    if (e.message && e.message.includes("lock")) {
-      Logger.log("Lock timeout");
-    } else {
-      throw e;
-    }
+    return fn();
   } finally {
-    if (acquired) {
-      lock.releaseLock();
-    }
+    lock.releaseLock();
   }
 }
 
@@ -2043,10 +2052,10 @@ function importLeads(chat, text) {
 function createEmailDraft(chat, uid, pkg, msgId, originalText) {
   withLock(function () {
     const sh = sheetLidy();
-    const row = findRowByUID(sh, uid);
-    if (row < 0) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
-    const rows = sh.getDataRange().getValues();
-    const lead = rows[row - 1];
+    const leadRef = getLeadRowDataByUid_(sh, uid);
+    if (!leadRef) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
+    const row = leadRef.rowNumber;
+    const lead = leadRef.rowData;
     const name = lead[COL.NAME - 1] || ""; const email = lead[COL.EMAIL - 1] || "";
     const date = formatDate(lead[COL.DATE - 1]); const event = lead[COL.EVENT - 1] || "";
     if (!email) {
@@ -2079,10 +2088,10 @@ function createEmailDraft(chat, uid, pkg, msgId, originalText) {
     try {
       GmailApp.createDraft(email, subject, body, { attachments: [pdfBlob] });
       sh.getRange(row, COL.LEAD_STATUS).setValue(LEGACY_LEAD_STAGE.OFFER_DRAFT);
-      const ur = sh.getDataRange().getValues();
-      syncLegacyLeadToModernCrm_(ur[row - 1]);
-      edit(chat, msgId, baseLeadText(originalText) + statusLineFromRow(ur[row - 1]),
-        keyboard(uid, isInCalendar(ur[row - 1]) && calendarEventExists(ur[row - 1][COL.CAL_ID - 1])));
+      const updatedLead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
+      syncLegacyLeadToModernCrm_(updatedLead);
+      edit(chat, msgId, baseLeadText(originalText) + statusLineFromRow(updatedLead),
+        keyboard(uid, isInCalendar(updatedLead) && calendarEventExists(updatedLead[COL.CAL_ID - 1])));
       const id = send(chat, "✉️ <b>Szkic gotowy!</b>\nDo: <b>" + email + "</b> · <b>" + pkgName + "</b>");
       scheduleDelete(chat, id, CONFIG.TTL_CONFIRM);
       logAction(who, "email_draft", name, pkgName);
