@@ -52,7 +52,7 @@ function buildLegacyWebsiteLeadRow_(params, uid) {
   row[COL.PHONE - 1] = normalizeLegacyWebsitePhone_(params.phone);
   row[COL.LEAD_SOURCE - 1] = (params.source || "website").trim();
   row[COL.LEAD_STATUS - 1] = LEGACY_LEAD_STAGE.NEW;
-  row[COL.SENT - 1] = "SENT_" + new Date().getTime();
+  row[COL.SENT - 1] = "";
   row[COL.GUESTS - 1] = guests;
   row[COL.PACKAGE - 1] = (params.package || "").trim();
   row[COL.NOTE - 1] = note;
@@ -127,29 +127,33 @@ function createLegacyWebsiteLead_(params) {
     return { ok: false, errors: errors };
   }
 
-  bootstrapLegacyCrmSheets_();
-
   const sh = sheetLidy();
   if (!sh) {
+    bootstrapLegacyCrmSheets_();
+  }
+
+  const leadsSheet = sheetLidy();
+  if (!leadsSheet) {
     throw new Error("Sheet '" + CONFIG.SHEET_LIDY + "' not found in CRM spreadsheet.");
   }
 
-  const duplicateRow = findDuplicateLegacyLeadRow_(sh, params.name, params.phone, params.email);
+  const duplicateRow = findDuplicateLegacyLeadRow_(leadsSheet, params.name, params.phone, params.email);
   if (duplicateRow > 0) {
-    const mergedRow = mergeLegacyWebsiteLeadIntoExisting_(sh, duplicateRow, params);
+    const mergedRow = mergeLegacyWebsiteLeadIntoExisting_(leadsSheet, duplicateRow, params);
     const duplicateUid = getLeadUID(mergedRow);
-
-    addToKontakty(mergedRow);
-    syncLegacyLeadToModernCrm_(mergedRow, { websitePayload: params });
 
     try {
       notifyLegacyTeamAboutLead_(mergedRow, duplicateUid, true);
+      leadsSheet.getRange(duplicateRow, COL.SENT).setValue("SENT_" + new Date().getTime());
     } catch (error) {
       appendLog_("error", "legacy_site_lead", "failed to notify telegram about duplicate", {
         uid: duplicateUid,
         message: error.message
       });
     }
+
+    addToKontakty(mergedRow);
+    syncLegacyLeadToModernCrm_(mergedRow, { websitePayload: params });
 
     appendLog_("info", "legacy_site_lead", "duplicate merged into legacy CRM", {
       uid: duplicateUid,
@@ -166,9 +170,20 @@ function createLegacyWebsiteLead_(params) {
 
   const uid = generateUID();
   const row = buildLegacyWebsiteLeadRow_(params, uid);
-  sh.getRange(sh.getLastRow() + 1, 1, 1, row.length).setValues([row]);
+  const insertedRowNumber = leadsSheet.getLastRow() + 1;
+  leadsSheet.getRange(insertedRowNumber, 1, 1, row.length).setValues([row]);
 
   const savedRow = row.slice();
+
+  try {
+    notifyLegacyTeamAboutLead_(savedRow, uid, false);
+    leadsSheet.getRange(insertedRowNumber, COL.SENT).setValue("SENT_" + new Date().getTime());
+  } catch (error) {
+    appendLog_("error", "legacy_site_lead", "failed to notify telegram", {
+      uid: uid,
+      message: error.message
+    });
+  }
 
   try {
     addToKontakty(savedRow);
@@ -183,15 +198,6 @@ function createLegacyWebsiteLead_(params) {
     syncLegacyLeadToModernCrm_(savedRow, { websitePayload: params });
   } catch (error) {
     appendLog_("error", "legacy_site_lead", "failed to sync modern CRM", {
-      uid: uid,
-      message: error.message
-    });
-  }
-
-  try {
-    notifyLegacyTeamAboutLead_(savedRow, uid, false);
-  } catch (error) {
-    appendLog_("error", "legacy_site_lead", "failed to notify telegram", {
       uid: uid,
       message: error.message
     });

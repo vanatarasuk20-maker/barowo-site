@@ -527,6 +527,10 @@ function keyboard(uid, calAdded) {
   };
 }
 
+function leadKeyboard_(uid, row) {
+  return keyboard(uid, isInCalendar(row));
+}
+
 function confirmKeyboard(action, uid) {
   return {
     inline_keyboard: [[
@@ -800,7 +804,7 @@ function handleMessage(msg) {
         const updatedLead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
         edit(st.cardChat || chat, st.cardMsgId,
           baseLeadText(st.leadText) + statusLineFromRow(updatedLead),
-          keyboard(st.uid, isInCalendar(updatedLead) && calendarEventExists(updatedLead[COL.CAL_ID - 1])));
+          leadKeyboard_(st.uid, updatedLead));
         sendTemp(chat, newNote ? "🗒 Notatka zapisana" : "🗒 Notatka usunięta");
         logAction(whoIsUser(chat), "note", updatedLead[COL.NAME - 1], newNote);
       });
@@ -824,7 +828,7 @@ function handleMessage(msg) {
         const updatedLead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
         edit(st.cardChat || chat, st.cardMsgId,
           baseLeadText(st.leadText) + statusLineFromRow(updatedLead),
-          keyboard(st.uid, isInCalendar(updatedLead) && calendarEventExists(updatedLead[COL.CAL_ID - 1])));
+          leadKeyboard_(st.uid, updatedLead));
         sendTemp(chat, "🔔 Następny kontakt: <b>" + fullValue + "</b>");
       });
       return;
@@ -1114,12 +1118,7 @@ function handleCallback(q) {
       const row = findRowByUID(sh, uid);
       if (row < 0) { edit(chat, msgId, "❌ Lead nie znaleziony.", { inline_keyboard: [] }); return; }
       const lead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
-      const calExists = calendarEventExists(lead[COL.CAL_ID - 1]);
-      if (!calExists && lead[COL.CAL_ID - 1]) {
-        sh.getRange(row, COL.CAL_ID).setValue("");
-        lead[COL.CAL_ID - 1] = "";
-      }
-      edit(chat, msgId, baseLeadText(text) + statusLineFromRow(lead), keyboard(uid, isInCalendar(lead) && calExists));
+      edit(chat, msgId, baseLeadText(text) + statusLineFromRow(lead), leadKeyboard_(uid, lead));
     });
     return;
   }
@@ -1132,8 +1131,7 @@ function handleCallback(q) {
     if (row < 0) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
     const lead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
     deleteMsg(chat, msgId);
-    send(chat, buildLeadText(lead) + statusLineFromRow(lead),
-      keyboard(uid, isInCalendar(lead) && calendarEventExists(lead[COL.CAL_ID - 1])));
+    send(chat, buildLeadText(lead) + statusLineFromRow(lead), leadKeyboard_(uid, lead));
     return;
   }
 
@@ -1182,7 +1180,7 @@ function handleCallback(q) {
       const row = findRowByUID(sh, uid);
       if (row < 0) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
       const lead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
-      if (isInCalendar(lead) && calendarEventExists(lead[COL.CAL_ID - 1])) {
+      if (isInCalendar(lead)) {
         sendTemp(chat, "📅 Już jest w kalendarzu.");
         return;
       }
@@ -1307,8 +1305,7 @@ function handleGenUmowaPkg(chat, msgId, text, data) {
 
     sh.getRange(row, COL.PACKAGE).setValue(CONFIG.PACKAGES[pkg].name);
     const refreshedLead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
-    edit(chat, msgId, baseLeadText(text) + statusLineFromRow(refreshedLead),
-      keyboard(uid, isInCalendar(refreshedLead) && calendarEventExists(refreshedLead[COL.CAL_ID - 1])));
+    edit(chat, msgId, baseLeadText(text) + statusLineFromRow(refreshedLead), leadKeyboard_(uid, refreshedLead));
 
     if (!lead[COL.GUESTS - 1]) {
       setState(chat, { action: "gen_guests", uid: uid, pkg: pkg });
@@ -1375,8 +1372,7 @@ function applyAction(chat, msgId, text, action, uid, userId) {
     const cur = rowData[cell - 1];
 
     if (cur == val) {
-      edit(chat, msgId, baseLeadText(text) + statusLineFromRow(rowData),
-        keyboard(uid, isInCalendar(rowData) && calendarEventExists(rowData[COL.CAL_ID - 1])));
+      edit(chat, msgId, baseLeadText(text) + statusLineFromRow(rowData), leadKeyboard_(uid, rowData));
       return;
     } else {
       sh.getRange(row, cell).setValue(val);
@@ -1406,8 +1402,7 @@ function applyAction(chat, msgId, text, action, uid, userId) {
       const syncedLead = sh.getRange(row, 1, 1, lastColumn).getValues()[0];
       syncLegacyLeadToModernCrm_(syncedLead);
       logAction(whoIsUser(userId), "set_" + action, syncedLead[COL.NAME - 1], val);
-      edit(chat, msgId, baseLeadText(text) + statusLineFromRow(syncedLead),
-        keyboard(uid, isInCalendar(syncedLead) && calendarEventExists(syncedLead[COL.CAL_ID - 1])));
+      edit(chat, msgId, baseLeadText(text) + statusLineFromRow(syncedLead), leadKeyboard_(uid, syncedLead));
       return;
     }
   });
@@ -1829,11 +1824,14 @@ function addToKontakty(lead) {
   const phone = normalizeComparablePhone_(lead[COL.PHONE - 1]);
   const email = normalizeComparableEmail_(lead[COL.EMAIL - 1]);
   if (!name && !phone && !email) return;
-  const rows = sh.getDataRange().getValues();
-  for (let i = 1; i < rows.length; i++) {
-    const kPhone = normalizeComparablePhone_(rows[i][KCOL.PHONE - 1]);
-    const kEmail = normalizeComparableEmail_(rows[i][KCOL.EMAIL - 1]);
-    if ((phone && kPhone && phone == kPhone) || (email && kEmail && email == kEmail)) return;
+  const lastRow = sh.getLastRow();
+  if (lastRow > 1) {
+    const rows = sh.getRange(2, KCOL.PHONE, lastRow - 1, 2).getValues();
+    for (let i = 0; i < rows.length; i++) {
+      const kPhone = normalizeComparablePhone_(rows[i][0]);
+      const kEmail = normalizeComparableEmail_(rows[i][1]);
+      if ((phone && kPhone && phone == kPhone) || (email && kEmail && email == kEmail)) return;
+    }
   }
   sh.appendRow([name, "'" + phone, lead[COL.EMAIL - 1] || "", lead[COL.CITY - 1] || "",
     formatDate(lead[COL.DATE - 1]), lead[COL.EVENT - 1] || "", formatDate(new Date()), "cold"]);
@@ -1844,12 +1842,16 @@ function updateKontaktyStatus(lead, status) {
   const name = lead[COL.NAME - 1] || "";
   const phone = normalizeComparablePhone_(lead[COL.PHONE - 1]);
   const email = normalizeComparableEmail_(lead[COL.EMAIL - 1]);
-  const rows = sh.getDataRange().getValues();
-  for (let i = 1; i < rows.length; i++) {
-    const kPhone = normalizeComparablePhone_(rows[i][KCOL.PHONE - 1]);
-    const kEmail = normalizeComparableEmail_(rows[i][KCOL.EMAIL - 1]);
-    if ((phone && kPhone && phone == kPhone) || (email && kEmail && email == kEmail) || rows[i][KCOL.NAME - 1] == name) {
-      sh.getRange(i + 1, KCOL.STATUS).setValue(status); return;
+  const lastRow = sh.getLastRow();
+  if (lastRow > 1) {
+    const rows = sh.getRange(2, KCOL.NAME, lastRow - 1, KCOL.STATUS).getValues();
+    for (let i = 0; i < rows.length; i++) {
+      const kName = rows[i][KCOL.NAME - 1];
+      const kPhone = normalizeComparablePhone_(rows[i][KCOL.PHONE - 1]);
+      const kEmail = normalizeComparableEmail_(rows[i][KCOL.EMAIL - 1]);
+      if ((phone && kPhone && phone == kPhone) || (email && kEmail && email == kEmail) || kName == name) {
+        sh.getRange(i + 2, KCOL.STATUS).setValue(status); return;
+      }
     }
   }
   addToKontakty(lead); updateKontaktyStatus(lead, status);
@@ -2060,14 +2062,14 @@ function createEmailDraft(chat, uid, pkg, msgId, originalText) {
     const date = formatDate(lead[COL.DATE - 1]); const event = lead[COL.EVENT - 1] || "";
     if (!email) {
       edit(chat, msgId, baseLeadText(originalText) + statusLineFromRow(lead) + "\n\n❌ Brak emaila!",
-        keyboard(uid, isInCalendar(lead) && calendarEventExists(lead[COL.CAL_ID - 1]))); return;
+        leadKeyboard_(uid, lead)); return;
     }
     let pdfBlob;
     try { pdfBlob = DriveApp.getFileById(CONFIG.PDF_FILE_ID).getBlob().setName("Oferta_" + CONFIG.BRAND + ".pdf"); }
     catch (e) {
       notifyError("createEmailDraft PDF", e);
       edit(chat, msgId, baseLeadText(originalText) + statusLineFromRow(lead),
-        keyboard(uid, isInCalendar(lead) && calendarEventExists(lead[COL.CAL_ID - 1])));
+        leadKeyboard_(uid, lead));
       sendTemp(chat, "❌ Nie można znaleźć PDF."); return;
     }
 
@@ -2090,15 +2092,14 @@ function createEmailDraft(chat, uid, pkg, msgId, originalText) {
       sh.getRange(row, COL.LEAD_STATUS).setValue(LEGACY_LEAD_STAGE.OFFER_DRAFT);
       const updatedLead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
       syncLegacyLeadToModernCrm_(updatedLead);
-      edit(chat, msgId, baseLeadText(originalText) + statusLineFromRow(updatedLead),
-        keyboard(uid, isInCalendar(updatedLead) && calendarEventExists(updatedLead[COL.CAL_ID - 1])));
+      edit(chat, msgId, baseLeadText(originalText) + statusLineFromRow(updatedLead), leadKeyboard_(uid, updatedLead));
       const id = send(chat, "✉️ <b>Szkic gotowy!</b>\nDo: <b>" + email + "</b> · <b>" + pkgName + "</b>");
       scheduleDelete(chat, id, CONFIG.TTL_CONFIRM);
       logAction(who, "email_draft", name, pkgName);
     } catch (e) {
       notifyError("createEmailDraft", e);
       edit(chat, msgId, baseLeadText(originalText) + statusLineFromRow(lead),
-        keyboard(uid, isInCalendar(lead) && calendarEventExists(lead[COL.CAL_ID - 1])));
+        leadKeyboard_(uid, lead));
       sendTemp(chat, "❌ Błąd: " + e);
     }
   });
@@ -2113,15 +2114,6 @@ function appendCallHistory(sh, row, who) {
 // ─── Auto triggers ───────────────────────────────────────────────────────────
 
 function checkNewLeads() {
-  try {
-    monitorLeadFlowHealth();
-  } catch (error) {
-    appendLog_("error", "lead_health", "monitor failed during checkNewLeads", {
-      message: error.message || String(error),
-      stack: error.stack || ""
-    });
-  }
-
   const sh = sheetLidy(); const rows = sh.getDataRange().getValues(); const now = new Date().getTime();
   for (let i = 1; i < rows.length; i++) {
     const phone = rows[i][COL.PHONE - 1]; if (!phone) continue;
