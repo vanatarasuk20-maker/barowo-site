@@ -162,6 +162,16 @@ function upsertStructuredLeadFromLegacyRow_(legacyRow, options) {
     city: legacyRow[COL.CITY - 1] || "",
     guests: legacyRow[COL.GUESTS - 1] || "",
     package_name: legacyRow[COL.PACKAGE - 1] || "",
+    service_type: websitePayload ? (websitePayload.serviceType || "") : "",
+    chocolate_fountain_interest: websitePayload && websitePayload.chocolateFountainInterest !== undefined
+      ? String(websitePayload.chocolateFountainInterest)
+      : "",
+    chocolate_fountain_mode: websitePayload ? (websitePayload.chocolateFountainMode || "") : "",
+    recommended_package: websitePayload ? (websitePayload.recommendedPackage || "") : "",
+    recommended_bartenders: websitePayload ? (websitePayload.recommendedBartenders || "") : "",
+    recommended_menu_style: websitePayload ? (websitePayload.recommendedMenuStyle || "") : "",
+    lead_note: websitePayload ? (websitePayload.leadNote || "") : "",
+    planner_email_summary: websitePayload ? (websitePayload.plannerEmailSummary || "") : "",
     message: legacyRow[COL.NOTE - 1] || "",
     manager_name: legacyRow[COL.ASSIGNED - 1] || "",
     utm_source: websitePayload ? (websitePayload.utm_source || "") : "",

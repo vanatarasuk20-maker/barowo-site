@@ -7,6 +7,24 @@ function buildLegacyWebsiteLeadNote_(params) {
   const parts = [];
   const message = (params.message || "").trim();
   const source = (params.source || "website").trim();
+  const serviceType = (params.serviceType || "").trim();
+  const venueName = (params.venueName || "").trim();
+  const chocolateInterest = params.chocolateFountainInterest !== undefined
+    ? String(params.chocolateFountainInterest).trim()
+    : "";
+  const chocolateMode = (params.chocolateFountainMode || "").trim();
+  const recommendedPackage = (params.recommendedPackage || "").trim();
+  const recommendedBartenders = (params.recommendedBartenders || "").trim();
+  const recommendedMenuStyle = (params.recommendedMenuStyle || "").trim();
+  const leadNote = (params.leadNote || "").trim();
+  const plannerEmailSummary = (params.plannerEmailSummary || "").trim();
+  const plannerSummary = [
+    params.barFormat ? "format baru=" + params.barFormat : "",
+    params.weddingStyle ? "styl wesela=" + params.weddingStyle : "",
+    params.drinkPreferences ? "drinki=" + params.drinkPreferences : "",
+    params.alcoholPreference ? "alkohol=" + params.alcoholPreference : "",
+    params.expectationLevel ? "oczekiwania=" + params.expectationLevel : ""
+  ].filter(Boolean).join(", ");
   const utmSummary = [
     params.utm_source ? "utm_source=" + params.utm_source : "",
     params.utm_medium ? "utm_medium=" + params.utm_medium : "",
@@ -20,6 +38,34 @@ function buildLegacyWebsiteLeadNote_(params) {
   }
   if (source) {
     parts.push("Źródło: " + source);
+  }
+  if (serviceType) {
+    parts.push("Usługa: " + serviceType);
+  }
+  if (venueName) {
+    parts.push("Sala / miejscowość: " + venueName);
+  }
+  if (chocolateInterest) {
+    parts.push("Fontanna czekoladowa: " + chocolateInterest);
+  }
+  if (chocolateMode) {
+    parts.push("Tryb fontanny: " + chocolateMode);
+  }
+  if (recommendedPackage || recommendedBartenders || recommendedMenuStyle) {
+    parts.push(
+      "Rekomendacja: pakiet=" + (recommendedPackage || "-") +
+      ", barmani=" + (recommendedBartenders || "-") +
+      ", menu=" + (recommendedMenuStyle || "-")
+    );
+  }
+  if (plannerSummary) {
+    parts.push("Planner: " + plannerSummary);
+  }
+  if (leadNote) {
+    parts.push("Planner note: " + leadNote);
+  }
+  if (plannerEmailSummary) {
+    parts.push("Planner email: " + plannerEmailSummary);
   }
   if (utmSummary) {
     parts.push("UTM: " + utmSummary);
@@ -54,7 +100,7 @@ function buildLegacyWebsiteLeadRow_(params, uid) {
   row[COL.LEAD_STATUS - 1] = LEGACY_LEAD_STAGE.NEW;
   row[COL.SENT - 1] = "";
   row[COL.GUESTS - 1] = guests;
-  row[COL.PACKAGE - 1] = (params.package || "").trim();
+  row[COL.PACKAGE - 1] = (params.package || params.recommendedPackage || "").trim();
   row[COL.NOTE - 1] = note;
   row[COL.CLIENT_FULL_NAME - 1] = (params.name || "").trim();
 

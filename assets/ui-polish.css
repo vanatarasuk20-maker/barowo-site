@@ -1,0 +1,419 @@
+:root {
+  --ui-radius-card: 8px;
+  --ui-radius-field: 14px;
+  --ui-radius-pill: 999px;
+  --ui-border-soft: rgba(255, 255, 255, 0.1);
+  --ui-border-strong: rgba(232, 0, 13, 0.32);
+  --ui-surface: rgba(255, 255, 255, 0.04);
+  --ui-surface-strong: rgba(255, 255, 255, 0.055);
+  --ui-shadow-soft: 0 18px 44px rgba(0, 0, 0, 0.24);
+  --ui-shadow-red: 0 16px 40px rgba(232, 0, 13, 0.26);
+  --ui-copy: rgba(255, 255, 255, 0.78);
+  --ui-copy-soft: rgba(255, 255, 255, 0.66);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Manrope', sans-serif;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.92);
+  outline-offset: 3px;
+}
+
+nav {
+  min-height: 82px !important;
+  height: auto !important;
+  padding: 14px min(48px, 5vw) !important;
+}
+
+.nav-links {
+  gap: 28px !important;
+}
+
+.nav-links a {
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+}
+
+.nav-logo img {
+  height: 46px !important;
+  width: auto !important;
+}
+
+.hamburger {
+  border: 0 !important;
+  background: transparent !important;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0 !important;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.nav-cta,
+.btn-red,
+.btn-ghost,
+.form-btn,
+.pkg-cta,
+.callback-submit {
+  min-height: 52px !important;
+  padding: 0 24px !important;
+  border-radius: var(--ui-radius-pill) !important;
+  clip-path: none !important;
+  font-size: 0.78rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1 !important;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease !important;
+}
+
+.btn-red,
+.nav-cta,
+.form-btn,
+.callback-submit {
+  box-shadow: none;
+}
+
+.btn-red:hover,
+.nav-cta:hover,
+.form-btn:hover,
+.callback-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ui-shadow-red);
+}
+
+.btn-ghost,
+.pkg-cta {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-ghost:hover,
+.pkg-cta:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.highlights li,
+.pkg,
+.pricing-info,
+.planner-promo,
+.addon-spotlight,
+.media-strip,
+.trust-strip,
+.service-info-card,
+.service-inline-cta,
+.service-bottom-cta,
+.planner-app,
+.planner-sidebar,
+.planner-result-card,
+.planner-hero-note,
+.planner-service-tip,
+.service-card,
+.post-card,
+.article-summary li,
+.article-cta,
+.callback-dialog {
+  box-shadow: var(--ui-shadow-soft);
+}
+
+.service-info-card,
+.service-card,
+.planner-option,
+.pkg,
+.post-card {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.service-info-card:hover,
+.service-card:hover,
+.post-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.planner-option {
+  min-height: 120px;
+  border-radius: var(--ui-radius-card);
+}
+
+.planner-option:hover,
+.planner-option.is-selected {
+  box-shadow: var(--ui-shadow-soft);
+}
+
+.planner-option.is-selected {
+  border-color: var(--ui-border-strong) !important;
+  background: linear-gradient(180deg, rgba(232, 0, 13, 0.12) 0%, rgba(255, 255, 255, 0.045) 100%) !important;
+}
+
+.planner-option-title,
+.service-info-card h3,
+.service-card-copy h2 {
+  text-wrap: balance;
+}
+
+.planner-progress-bar {
+  height: 10px;
+}
+
+.planner-progress-fill {
+  box-shadow: 0 0 24px rgba(232, 0, 13, 0.26);
+}
+
+.planner-result-card,
+.planner-service-tip,
+.planner-hero-note,
+.planner-sidebar {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.planner-result-main {
+  line-height: 0.95;
+}
+
+.planner-status,
+.callback-status,
+.form-status,
+.form-consent-error {
+  font-size: 0.84rem !important;
+  line-height: 1.55 !important;
+}
+
+.fg label,
+.planner-field label,
+.planner-choice-label,
+.callback-form label {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+.fg input,
+.fg select,
+.fg textarea,
+.planner-field input,
+.planner-field textarea,
+.callback-form input[type="tel"] {
+  min-height: 54px;
+  border-radius: var(--ui-radius-field) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  background: var(--ui-surface) !important;
+}
+
+.fg textarea,
+.planner-field textarea {
+  min-height: 128px;
+}
+
+.fg input::placeholder,
+.fg textarea::placeholder,
+.planner-field input::placeholder,
+.planner-field textarea::placeholder,
+.callback-form input[type="tel"]::placeholder {
+  color: rgba(255, 255, 255, 0.34);
+}
+
+.fg input:focus,
+.fg select:focus,
+.fg textarea:focus,
+.planner-field input:focus,
+.planner-field textarea:focus,
+.callback-form input[type="tel"]:focus {
+  border-color: rgba(232, 0, 13, 0.46) !important;
+  background: rgba(232, 0, 13, 0.06) !important;
+  box-shadow: 0 0 0 1px rgba(232, 0, 13, 0.12);
+}
+
+.form,
+.callback-form {
+  gap: 14px !important;
+}
+
+.form-row,
+.planner-contact-grid,
+.planner-fields,
+.planner-options-grid,
+.service-card-grid,
+.highlights {
+  gap: 16px !important;
+}
+
+.form-consent,
+.callback-consent {
+  border-radius: var(--ui-radius-field) !important;
+}
+
+.hero-links a,
+.related-links a,
+.planner-inline-links a,
+.footer-links a,
+.contact-map-link {
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-links a,
+.related-links a {
+  border-radius: var(--ui-radius-pill);
+}
+
+.hero-links a:hover,
+.related-links a:hover,
+.planner-inline-links a:hover,
+.footer-links a:hover,
+.contact-map-link:hover {
+  transform: translateY(-1px);
+}
+
+.related-links {
+  gap: 12px !important;
+}
+
+.service-info-card,
+.service-card-copy,
+.planner-result-card,
+.planner-service-tip,
+.planner-sidebar,
+.planner-hero-note {
+  padding: 24px !important;
+}
+
+footer {
+  gap: 14px !important;
+}
+
+.footer-links {
+  gap: 12px !important;
+}
+
+.footer-links a {
+  font-size: 0.74rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+@media (max-width: 980px) {
+  .nav-links {
+    gap: 12px !important;
+  }
+
+  .nav-links a {
+    min-height: 50px;
+  }
+
+  .planner-sidebar,
+  .side-panel {
+    position: static !important;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 18px !important;
+  }
+
+  .planner-promo,
+  .addon-spotlight,
+  .pricing-info,
+  .media-strip,
+  .trust-strip,
+  .service-inline-cta,
+  .service-bottom-cta {
+    padding: 24px !important;
+  }
+
+  .hero-links {
+    gap: 8px !important;
+  }
+
+  .hero-links a {
+    min-height: 38px;
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    gap: 26px !important;
+    padding-top: 54px !important;
+  }
+
+  .lead {
+    font-size: 1rem !important;
+    line-height: 1.68 !important;
+  }
+
+  .answer {
+    margin-top: 24px !important;
+    padding: 18px !important;
+  }
+
+  .highlights {
+    margin: 16px 0 40px !important;
+  }
+
+  .btn-red,
+  .btn-ghost,
+  .form-btn,
+  .callback-submit,
+  .pkg-cta {
+    width: 100%;
+  }
+
+  .planner-actions {
+    gap: 10px !important;
+  }
+
+  .planner-actions .btn-red,
+  .planner-actions .btn-ghost {
+    min-width: 0 !important;
+  }
+
+  footer {
+    padding: 22px 18px !important;
+  }
+
+  .service-info-card,
+  .service-card-copy,
+  .planner-result-card,
+  .planner-service-tip,
+  .planner-sidebar,
+  .planner-hero-note,
+  .planner-app {
+    padding: 22px !important;
+  }
+}

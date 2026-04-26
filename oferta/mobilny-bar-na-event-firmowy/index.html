@@ -68,7 +68,9 @@
         "Mobilny bar",
         "Drink bar na wesele",
         "Bar na event firmowy",
-        "Obsługa barmańska"
+        "Obsługa barmańska",
+        "Fontanna czekoladowa",
+        "Słodka strefa na event"
       ]
     },
     {
@@ -291,6 +293,12 @@
     .service-block p, .service-faq p { color: rgba(255,255,255,.78); line-height: 1.8; font-size: 1.02rem; }
     .service-block ul { margin-top: 18px; padding-left: 22px; color: rgba(255,255,255,.78); line-height: 1.8; }
     .service-block li { margin-bottom: 8px; }
+    .service-block h3 {
+      font-size: 1.16rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
     .service-block a,
     .service-faq a,
     .service-inline-cta p a,
@@ -300,6 +308,48 @@
       text-decoration: underline;
       text-decoration-color: rgba(232,0,13,.75);
       text-underline-offset: 3px;
+    }
+    .service-cards-block .service-card-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .service-cards-block .service-card-grid.columns-1 {
+      grid-template-columns: 1fr;
+    }
+    .service-cards-block .service-card-grid.columns-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .service-cards-block .service-card-grid.columns-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .service-info-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.04);
+    }
+    .service-info-card p {
+      font-size: .98rem;
+      line-height: 1.72;
+    }
+    .service-info-card .btn-ghost {
+      margin-top: auto;
+    }
+    .service-info-card-meta {
+      color: var(--red);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .service-section-footnote {
+      margin-top: 18px;
     }
     .service-inline-cta, .service-bottom-cta {
       display: grid;
@@ -360,6 +410,10 @@
       .highlights { grid-template-columns: 1fr 1fr; }
       .side-panel { position: static; }
       .service-inline-cta, .service-bottom-cta { grid-template-columns: 1fr; }
+      .service-cards-block .service-card-grid.columns-2,
+      .service-cards-block .service-card-grid.columns-3 {
+        grid-template-columns: 1fr;
+      }
     }
     @media (max-width: 560px) {
       .shell { width: 100%; max-width: none; padding: 0 30px; }
@@ -375,6 +429,7 @@
       .service-inline-cta, .service-bottom-cta { padding: 22px; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260426a">
 </head>
 
 <body>
@@ -387,8 +442,8 @@
       <li><a href="/#packages">Pakiety</a></li>
       <li><a href="/oferta/" class="is-active">Usługi</a></li>
       <li><a href="/cennik/">Cennik</a></li>
+      <li><a href="/planer-baru-weselnego/">Planer weselny</a></li>
       <li><a href="/realizacje/">Realizacje</a></li>
-      <li><a href="/#faq">FAQ</a></li>
       <li><a href="/#contact" class="nav-cta">Zarezerwuj</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false">
@@ -458,6 +513,17 @@
             <h2>Dlaczego pełny bar działa lepiej niż sama atrakcja?</h2>
             <p>Krótki pokaz barmański może zrobić efekt na kilka minut, ale nie rozwiązuje potrzeby realnej obsługi gości przez cały event. Pełny mobilny bar porządkuje ruch, daje wygodny punkt spotkań i wspiera odbiór marki w praktyce, a nie tylko na zdjęciach.</p>
           </section>
+        <section class="service-block service-cards-block">
+            <div class="label">Upsell BAROWO</div>
+            <h2>Słodka strefa na event firmowy</h2>
+            <div class="service-card-grid columns-1">
+                        <article class="service-info-card">
+                <h3>Fontanna czekoladowa jako dodatek albo osobna atrakcja</h3>
+                <p>Fontanna czekoladowa może być dodatkiem do mobilnego baru albo osobną atrakcją na event firmowy, otwarcie lokalu, integrację lub spotkanie z klientami.</p>
+                <a class="btn-ghost" href="/oferta/fontanna-czekoladowa/">Zobacz fontannę czekoladową</a>
+              </article>
+            </div>
+          </section>
         <section class="service-faq">
           <div class="label">FAQ</div>
           <h2>Najczęstsze pytania</h2>
@@ -499,6 +565,7 @@
         <div class="label" style="margin-top:28px;">Powiązane strony</div>
         <div class="related-links"><a href="/cennik/">Cennik mobilnego baru</a>
 <a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a>
+<a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a>
 <a href="/#contact">Formularz kontaktowy</a>
 <a href="/aktualnosci/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy — co realnie daje?</a>
 <a href="/aktualnosci/ile-kosztuje-mobilny-bar-trojmiasto/">Ile kosztuje mobilny bar w Trójmieście i od czego zależy cena?</a></div>
@@ -510,7 +577,7 @@
   <footer>
     <img src="/assets/logo-main.png?v=20260331" alt="BAROWO" width="46" height="46">
     <div>© 2026 BAROWO — Mobilny Bar Trójmiasto.</div>
-    <div class="footer-links"><a href="/oferta/">Oferta</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
+    <div class="footer-links"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a><a href="/cennik/">Cennik</a><a href="/#contact">Kontakt</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
   </footer>
 </body>
 

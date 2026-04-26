@@ -54,6 +54,19 @@
     {
       "title": "Dlaczego pełny bar działa lepiej niż sama atrakcja?",
       "body": "Krótki pokaz barmański może zrobić efekt na kilka minut, ale nie rozwiązuje potrzeby realnej obsługi gości przez cały event. Pełny mobilny bar porządkuje ruch, daje wygodny punkt spotkań i wspiera odbiór marki w praktyce, a nie tylko na zdjęciach."
+    },
+    {
+      "type": "cards",
+      "label": "Upsell BAROWO",
+      "title": "Słodka strefa na event firmowy",
+      "cards": [
+        {
+          "title": "Fontanna czekoladowa jako dodatek albo osobna atrakcja",
+          "text": "Fontanna czekoladowa może być dodatkiem do mobilnego baru albo osobną atrakcją na event firmowy, otwarcie lokalu, integrację lub spotkanie z klientami.",
+          "button_text": "Zobacz fontannę czekoladową",
+          "button_href": "/oferta/fontanna-czekoladowa/"
+        }
+      ]
     }
   ],
   "faq": [
@@ -81,6 +94,7 @@
   "related_links": [
     {"href": "/cennik/", "label": "Cennik mobilnego baru"},
     {"href": "/oferta/mobilny-bar-trojmiasto/", "label": "Mobilny bar Trójmiasto"},
+    {"href": "/oferta/fontanna-czekoladowa/", "label": "Fontanna czekoladowa"},
     {"href": "/#contact", "label": "Formularz kontaktowy"}
   ],
   "related_articles": ["mobilny-bar-na-event-firmowy", "ile-kosztuje-mobilny-bar-trojmiasto"],

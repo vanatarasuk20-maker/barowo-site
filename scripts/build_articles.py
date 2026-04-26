@@ -20,6 +20,7 @@ BLOG_URL = "https://barowo.com/aktualnosci/"
 OFFER_URL = "https://barowo.com/oferta/"
 CENNIK_URL = "https://barowo.com/cennik/"
 REALIZACJE_URL = "https://barowo.com/realizacje/"
+PLANNER_URL = "https://barowo.com/planer-baru-weselnego/"
 YEAR = "2026"
 BUSINESS_SAME_AS = [
     "https://www.instagram.com/barowo_official",
@@ -31,10 +32,13 @@ BUSINESS_SERVICE_TYPES = [
     "Drink bar na wesele",
     "Bar na event firmowy",
     "Obsługa barmańska",
+    "Fontanna czekoladowa",
+    "Słodka strefa na event",
 ]
 STATIC_PAGES = [
     (CENNIK_URL, ROOT / "cennik" / "index.html"),
     (REALIZACJE_URL, ROOT / "realizacje" / "index.html"),
+    (PLANNER_URL, ROOT / "planer-baru-weselnego" / "index.html"),
 ]
 
 
@@ -304,10 +308,63 @@ def render_list(items: list[str]) -> str:
     return "\n".join(f"<li>{format_inline(item)}</li>" for item in items)
 
 
+def render_service_cards_section(section: dict[str, Any]) -> str:
+    cards = section.get("cards") or []
+    if not cards:
+        return ""
+
+    card_items: list[str] = []
+    for card in cards:
+        eyebrow = (card.get("eyebrow") or "").strip()
+        title_html = card.get("title_html") or format_inline(card.get("title", ""))
+        text = (card.get("text") or "").strip()
+        button_text = (card.get("button_text") or "").strip()
+        button_href = (card.get("button_href") or "").strip()
+
+        card_parts = ['<article class="service-info-card">']
+        if eyebrow:
+            card_parts.append(f'  <div class="service-info-card-meta">{escape(eyebrow)}</div>')
+        if title_html:
+            card_parts.append(f"  <h3>{title_html}</h3>")
+        if text:
+            card_parts.append(f"  <p>{format_inline(text)}</p>")
+        if button_text and button_href:
+            card_parts.append(f'  <a class="btn-ghost" href="{escape(button_href)}">{escape(button_text)}</a>')
+        card_parts.append("</article>")
+        card_items.append("\n              ".join(card_parts))
+
+    title_markup = section.get("title_html") or format_inline(section.get("title", ""))
+    label = (section.get("label") or "").strip()
+    intro = (section.get("intro") or "").strip()
+    footnote = (section.get("footnote") or "").strip()
+    columns = min(max(len(cards), 1), 3)
+
+    parts = ['<section class="service-block service-cards-block">']
+    if label:
+        parts.append(f'  <div class="label">{escape(label)}</div>')
+    if title_markup:
+        parts.append(f"  <h2>{title_markup}</h2>")
+    if intro:
+        parts.append(f"  <p>{format_inline(intro)}</p>")
+    parts.append(f'  <div class="service-card-grid columns-{columns}">')
+    parts.append("              " + "\n              ".join(card_items))
+    parts.append("  </div>")
+    if footnote:
+        parts.append(f'  <p class="service-section-footnote">{format_inline(footnote)}</p>')
+    parts.append("</section>")
+    return "\n          ".join(parts)
+
+
 def render_service_sections(service: dict[str, Any]) -> str:
     sections = service.get("sections") or []
     out: list[str] = []
     for section in sections:
+        if section.get("type") == "cards":
+            rendered = render_service_cards_section(section)
+            if rendered:
+                out.append(rendered)
+            continue
+
         title = section.get("title", "")
         body = section.get("body", "")
         bullets = section.get("bullets") or []
@@ -582,6 +639,7 @@ def write_sitemap(articles: list[dict[str, Any]], services: list[dict[str, Any]]
         (CENNIK_URL, datetime.now().strftime("%Y-%m-%d")),
         (REALIZACJE_URL, datetime.now().strftime("%Y-%m-%d")),
         (BLOG_URL, datetime.now().strftime("%Y-%m-%d")),
+        (PLANNER_URL, datetime.now().strftime("%Y-%m-%d")),
     ]
     urls.extend(
         (service_url(service["slug"]), service.get("updated_at", datetime.now().strftime("%Y-%m-%d")))

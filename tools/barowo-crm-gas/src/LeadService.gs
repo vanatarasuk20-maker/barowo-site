@@ -34,6 +34,14 @@ function normalizeWebsiteLeadPayload_(params) {
     city: (params.city || "").trim(),
     guests: (params.guests || "").trim(),
     package_name: (params.package || "").trim(),
+    service_type: (params.serviceType || "").trim(),
+    chocolate_fountain_interest: params.chocolateFountainInterest !== undefined ? String(params.chocolateFountainInterest).trim() : "",
+    chocolate_fountain_mode: (params.chocolateFountainMode || "").trim(),
+    recommended_package: (params.recommendedPackage || "").trim(),
+    recommended_bartenders: (params.recommendedBartenders || "").trim(),
+    recommended_menu_style: (params.recommendedMenuStyle || "").trim(),
+    lead_note: (params.leadNote || "").trim(),
+    planner_email_summary: (params.plannerEmailSummary || "").trim(),
     message: (params.message || "").trim(),
     manager_name: "",
     utm_source: (params.utm_source || "").trim(),
@@ -49,8 +57,9 @@ function normalizeWebsiteLeadPayload_(params) {
 }
 
 function buildTelegramLeadMessage_(lead) {
+  const isPlannerLead = (lead.source || "").toString().trim() === "Wedding Bar Planner";
   const lines = [
-    "🔥 <b>Nowy lead ze strony</b>",
+    isPlannerLead ? "💍 <b>Nowy lead z Planera Baru Weselnego</b>" : "🔥 <b>Nowy lead ze strony</b>",
     "",
     "👤 <b>" + (lead.client_name || "Bez imienia") + "</b>"
   ];
@@ -81,6 +90,18 @@ function buildTelegramLeadMessage_(lead) {
 
   if (lead.package_name) {
     lines.push("📦 " + lead.package_name);
+  }
+
+  if (lead.service_type) {
+    lines.push("🧩 " + lead.service_type);
+  }
+
+  if (lead.recommended_bartenders) {
+    lines.push("🍸 " + lead.recommended_bartenders + " barmanów");
+  }
+
+  if (lead.chocolate_fountain_interest) {
+    lines.push("🍫 Fontanna: " + lead.chocolate_fountain_interest);
   }
 
   if (lead.message) {

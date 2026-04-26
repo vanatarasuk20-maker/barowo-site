@@ -213,7 +213,7 @@
     body {
       background: var(--navy);
       color: var(--white);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
@@ -355,12 +355,12 @@
       text-transform: uppercase;
       letter-spacing: 4px !important;
       margin-bottom: 28px;
-      font-family: 'Anton', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
     }
 
     h1 .red,
     h1 .outline {
-      font-family: 'Anton', sans-serif !important;
+      font-family: 'Bebas Neue', sans-serif !important;
     }
 
     h1 .red {
@@ -376,7 +376,7 @@
       font-size: 1.05rem;
       color: var(--dim);
       line-height: 1.7;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 400;
       margin-bottom: 40px;
       max-width: 460px;
@@ -616,7 +616,7 @@
       font-size: 0.9rem;
       color: var(--dim);
       line-height: 1.65;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 400;
     }
 
@@ -747,7 +747,7 @@
       font-size: 0.85rem;
       color: var(--dim);
       line-height: 1.55;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 400;
       padding-left: 16px;
       position: relative;
@@ -774,14 +774,14 @@
     .pkg-hours {
       font-size: 0.78rem;
       color: var(--dim);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       margin-bottom: 20px;
       line-height: 1.5;
     }
 
     .pkg-hours strong {
       color: var(--white);
-      font-family: 'Anton', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
     }
 
     .pkg-cta {
@@ -817,6 +817,62 @@
       gap: 32px;
     }
 
+    .planner-promo,
+    .addon-spotlight {
+      margin-top: 44px;
+      padding: 30px 32px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      display: grid;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .planner-promo {
+      grid-template-columns: minmax(0, 1fr) auto;
+      border-left: 4px solid var(--red);
+      background: linear-gradient(180deg, rgba(232, 0, 13, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    }
+
+    .addon-spotlight {
+      margin-top: 18px;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+    }
+
+    .planner-promo p,
+    .addon-spotlight p,
+    .addon-spotlight li {
+      color: var(--dim);
+      line-height: 1.72;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .planner-promo h3,
+    .addon-spotlight h3 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      font-family: 'Manrope', sans-serif;
+      margin-bottom: 12px;
+    }
+
+    .planner-promo-actions,
+    .addon-spotlight-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .addon-spotlight ul {
+      margin-top: 18px;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
     .pi-item-title {
       font-size: 0.72rem;
       font-weight: 900;
@@ -830,7 +886,7 @@
       font-size: 0.88rem;
       color: var(--dim);
       line-height: 1.6;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 400;
     }
 
@@ -1058,7 +1114,7 @@
       font-size: 0.9rem;
       color: var(--dim);
       line-height: 1.7;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 400;
     }
 
@@ -1185,7 +1241,7 @@
       font-size: 0.88rem;
       color: var(--dim);
       line-height: 1.65;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 400;
     }
 
@@ -1233,7 +1289,7 @@
       align-items: center;
       gap: 12px;
       transition: background 0.2s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
     }
 
     .faq-q.open {
@@ -1258,7 +1314,7 @@
       color: var(--dim);
       font-size: 0.88rem;
       line-height: 1.7;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-weight: 400;
     }
 
@@ -1492,7 +1548,7 @@
       font-size: 0.9rem;
       outline: none;
       transition: border-color 0.2s;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       width: 100%;
     }
 
@@ -1528,7 +1584,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.2s;
-      font-family: 'Anton', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       margin-top: 4px;
     }
 
@@ -1558,7 +1614,7 @@
       color: rgba(255, 255, 255, 0.66);
       font-size: 0.78rem;
       line-height: 1.72;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
     }
 
     .cookie-note p + p {
@@ -1611,7 +1667,7 @@
       color: rgba(255, 255, 255, 0.82);
       font-size: 0.8rem;
       line-height: 1.7;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
     }
 
     .form-consent input {
@@ -1627,7 +1683,7 @@
       color: #ff9da3;
       font-size: 0.74rem;
       line-height: 1.5;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
     }
 
     .form-status {
@@ -1637,7 +1693,7 @@
       border-radius: 18px;
       font-size: 0.84rem;
       line-height: 1.7;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
       border: 1px solid rgba(255, 255, 255, 0.1);
       background: rgba(255, 255, 255, 0.04);
       color: rgba(255, 255, 255, 0.84);
@@ -1888,7 +1944,7 @@
       font-size: 0.72rem;
       color: var(--dim);
       letter-spacing: 1px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Manrope', sans-serif;
     }
     /* ── MOBILE ── */
     @media (max-width: 900px) {
@@ -2026,6 +2082,16 @@
       .pricing-info {
         grid-template-columns: 1fr;
         gap: 20px;
+      }
+
+      .planner-promo,
+      .addon-spotlight {
+        grid-template-columns: 1fr;
+      }
+
+      .planner-promo-actions,
+      .addon-spotlight-actions {
+        justify-content: flex-start;
       }
 
       .proof-grid,
@@ -2394,6 +2460,12 @@
       border: 1px solid var(--line);
     }
 
+    .planner-promo,
+    .addon-spotlight {
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
     .step,
     .proof-card,
     .team-card,
@@ -2413,6 +2485,8 @@
     .media-strip:hover,
     .trust-strip:hover,
     .pricing-info:hover,
+    .planner-promo:hover,
+    .addon-spotlight:hover,
     .final-push:hover,
     .form:hover {
       transform: translateY(-4px);
@@ -2811,6 +2885,8 @@
       .form,
       .media-strip,
       .pricing-info,
+      .planner-promo,
+      .addon-spotlight,
       .trust-strip,
       .final-push {
         padding: 22px 18px;
@@ -3133,6 +3209,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260426a">
 </head>
 
 <body>
@@ -3147,13 +3224,13 @@
       <li><a href="#packages">Pakiety</a></li>
       <li><a href="/oferta/">Usługi</a></li>
       <li><a href="/cennik/">Cennik</a></li>
+      <li><a href="/planer-baru-weselnego/">Planer weselny</a></li>
       <li><a href="/realizacje/">Realizacje</a></li>
-      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Zarezerwuj</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false" onclick="toggleNav()">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -3328,7 +3405,7 @@
 
         <div class="pkg-section">
           <div class="pkg-section-label">Softy i dodatki</div>
-          <div class="pkg-items">Dodatki i prezentacja, które podnoszą klasę całego eventu.</div>
+          <div class="pkg-items">Dodatki, prezentacja i możliwość rozbudowy o słodką strefę z fontanną czekoladową.</div>
         </div>
 
         <div class="pkg-section">
@@ -3380,6 +3457,36 @@
         <div class="pi-item-text">Lokalna obsługa baru w Gdyni, Gdańsku, Sopocie i województwie pomorskim.</div>
       </div>
     </div>
+
+    <div class="planner-promo">
+      <div>
+        <div class="label">Planer BAROWO</div>
+        <h3>Nie wiesz, jaki bar pasuje do Twojego wesela?</h3>
+        <p>Sprawdź to w 2 minuty. Odpowiedz na kilka pytań, a nasz planner podpowie, jaki format baru, ilu barmanów i jakie menu najlepiej sprawdzi się na Twoim weselu.</p>
+      </div>
+      <div class="planner-promo-actions">
+        <a href="/planer-baru-weselnego/" class="btn-red">Uruchom Planer Baru Weselnego</a>
+      </div>
+    </div>
+
+    <div class="addon-spotlight">
+      <div>
+        <div class="label">Dodatki do baru</div>
+        <h3>Fontanna czekoladowa jako słodka strefa dla gości</h3>
+        <p>Chcesz zrobić jeszcze większy efekt na evencie? Do mobilnego baru możesz dodać fontannę czekoladową - elegancką słodką strefę dla gości, która sprawdza się na weselach, urodzinach, poprawinach i eventach firmowych.</p>
+      </div>
+      <div>
+        <ul>
+          <li>jako dodatek do mobilnego baru</li>
+          <li>albo osobna usługa bez baru</li>
+          <li>z eleganckim stołem, dodatkami i przygotowaniem strefy</li>
+        </ul>
+        <div class="addon-spotlight-actions" style="margin-top:18px;">
+          <a href="/oferta/fontanna-czekoladowa/" class="btn-red">Zobacz fontannę czekoladową</a>
+          <a href="/?service=mobilny-bar-plus-fontanna-czekoladowa&chocolateFountainInterest=true&chocolateFountainMode=addon_to_bar#contact" class="btn-ghost">Dodaj do pakietu</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="section" aria-label="Realizacje i opinie">
@@ -3428,8 +3535,8 @@
           </article>
           <article class="media-slide">
             <div class="media-badge">Foto</div>
-            <img src="/assets/photo4-opt.jpg" alt="Realizacja BAROWO na żywo" loading="lazy">
-            <div class="media-caption">Bar jako centralny punkt imprezy, nie tylko dodatek do sali.</div>
+            <img src="/assets/bar-evening-opt.jpg" alt="Wieczorna realizacja BAROWO z pełnym barem i obsługą gości" loading="lazy">
+            <div class="media-caption">Wieczorna realizacja, w której bar naprawdę pracuje jako mocny punkt całego eventu.</div>
           </article>
           <article class="media-slide" data-duration="5600">
             <div class="media-badge">Video</div>
@@ -3555,7 +3662,7 @@
   <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="label">Rezerwacja</div>
-    <h2 style="font-family: 'Anton', sans-serif; font-size: clamp(2.6rem, 7vw, 5rem);">ZAREZERWUJ SWÓJ<br><span class="red">TERMIN</span></h2>
+    <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.6rem, 7vw, 5rem);">ZAREZERWUJ SWÓJ<br><span class="red">TERMIN</span></h2>
 
     <div class="trust-strip">
       <div>
@@ -3615,6 +3722,22 @@
         </div>
         <div class="form-row">
           <div class="fg">
+            <label for="leadServiceType">Zakres usługi</label>
+            <select id="leadServiceType" name="serviceType">
+              <option value="">Wybierz usługę...</option>
+              <option value="Mobilny bar">Mobilny bar</option>
+              <option value="Fontanna czekoladowa">Fontanna czekoladowa</option>
+              <option value="Mobilny bar + fontanna czekoladowa">Mobilny bar + fontanna czekoladowa</option>
+              <option value="Nie wiem jeszcze">Nie wiem jeszcze</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="leadCity">Miasto / lokalizacja</label>
+            <input type="text" id="leadCity" name="city" placeholder="Np. Gdańsk, Gdynia, sala albo miejscowość">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
             <label for="leadPackage">Pakiet</label>
             <select id="leadPackage" name="package">
               <option value="">Wybierz pakiet...</option>
@@ -3660,7 +3783,9 @@
         <input type="hidden" name="utm_campaign" value="">
         <input type="hidden" name="utm_content" value="">
         <input type="hidden" name="utm_term" value="">
-        <button style="font-family: 'Montserrat', sans-serif;" type="submit" class="form-btn">Sprawdź dostępność terminu →</button>
+        <input type="hidden" name="chocolateFountainInterest" value="">
+        <input type="hidden" name="chocolateFountainMode" value="">
+        <button style="font-family: 'Manrope', sans-serif;" type="submit" class="form-btn">Sprawdź dostępność terminu →</button>
         <div class="form-status" aria-live="polite"></div>
         <p style="font-size:0.72rem;color:var(--dim);margin-top:8px;text-align:center;font-family:Arial,sans-serif;">Odpowiadamy zwykle w kilka godzin. Zapytanie jest bezpłatne i do niczego nie zobowiązuje.</p>
       </form>
@@ -3713,8 +3838,8 @@
   <!-- FOOTER -->
   <footer>
     <img src="/assets/logo-main.png?v=20260331" alt="BAROWO" width="46" height="46">
-    <div class="footer-copy">© 2026 BAROWO — Mobilny Bar Trójmiasto. All rights reserved.</div>
-    <div class="footer-links"><a href="/oferta/">Oferta</a><a href="/cennik/">Cennik</a><a href="/realizacje/">Realizacje</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
+    <div class="footer-copy">© 2026 BAROWO — Mobilny Bar Trójmiasto. Wszystkie prawa zastrzeżone.</div>
+    <div class="footer-links"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a><a href="/cennik/">Cennik</a><a href="#contact">Kontakt</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
     <div class="footer-region">Gdynia · Gdańsk · Sopot</div>
   </footer>
 
@@ -3735,7 +3860,7 @@
         </label>
         <input type="hidden" name="name" value="Prośba o telefon ze strony">
         <input type="hidden" name="source" value="website_callback_popup">
-        <input type="hidden" name="message" value="Użytkownik był na stronie ponad 5 minut i poprosił o szybki telefon zwrotny.">
+        <input type="hidden" name="message" value="Użytkownik był na stronie ponad minutę i poprosił o szybki telefon zwrotny.">
         <input type="hidden" name="return_url" value="https://barowo.com/#contact">
         <input type="hidden" name="page_url" value="">
         <input type="hidden" name="referrer" value="">
@@ -3755,7 +3880,10 @@
       const nav = document.getElementById('navLinks');
       const burger = document.getElementById('hamburger');
       if (nav) nav.classList.toggle('open');
-      if (burger) burger.classList.toggle('open');
+      if (burger) {
+        burger.classList.toggle('open');
+        burger.setAttribute('aria-expanded', nav && nav.classList.contains('open') ? 'true' : 'false');
+      }
       document.body.classList.toggle('menu-open', nav && nav.classList.contains('open'));
     }
 
@@ -3763,7 +3891,10 @@
       const nav = document.getElementById('navLinks');
       const burger = document.getElementById('hamburger');
       if (nav) nav.classList.remove('open');
-      if (burger) burger.classList.remove('open');
+      if (burger) {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
       document.body.classList.remove('menu-open');
     }
 
@@ -3795,7 +3926,31 @@
       const consentMessage = 'Aby wysłać formularz, zaznacz zgodę na przetwarzanie danych.';
       const pageUrlField = contactForm.querySelector('input[name="page_url"]');
       const referrerField = contactForm.querySelector('input[name="referrer"]');
+      const serviceField = contactForm.querySelector('#leadServiceType');
+      const eventTypeField = contactForm.querySelector('#leadEventType');
+      const packageField = contactForm.querySelector('#leadPackage');
+      const cityField = contactForm.querySelector('#leadCity');
+      const chocolateInterestField = contactForm.querySelector('input[name="chocolateFountainInterest"]');
+      const chocolateModeField = contactForm.querySelector('input[name="chocolateFountainMode"]');
       const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+      const syncServiceMeta = () => {
+        if (!serviceField) return;
+        const value = serviceField.value;
+        if (value === 'Fontanna czekoladowa') {
+          if (chocolateInterestField) chocolateInterestField.value = 'true';
+          if (chocolateModeField) chocolateModeField.value = 'solo_service';
+        } else if (value === 'Mobilny bar + fontanna czekoladowa') {
+          if (chocolateInterestField) chocolateInterestField.value = 'true';
+          if (chocolateModeField) chocolateModeField.value = 'addon_to_bar';
+        } else if (value === 'Nie wiem jeszcze') {
+          if (chocolateInterestField) chocolateInterestField.value = 'not_sure';
+          if (chocolateModeField) chocolateModeField.value = 'not_sure';
+        } else {
+          if (chocolateInterestField) chocolateInterestField.value = '';
+          if (chocolateModeField) chocolateModeField.value = '';
+        }
+      };
 
       const setFormStatus = (type, message) => {
         if (!statusBox) return;
@@ -3842,6 +3997,42 @@
         const field = contactForm.querySelector(`input[name="${fieldName}"]`);
         if (field) field.value = urlParams.get(fieldName) || '';
       });
+
+      const serviceParam = urlParams.get('service') || '';
+      const serviceMap = {
+        'mobilny-bar': 'Mobilny bar',
+        'fontanna-czekoladowa': 'Fontanna czekoladowa',
+        'mobilny-bar-plus-fontanna-czekoladowa': 'Mobilny bar + fontanna czekoladowa'
+      };
+
+      if (serviceField) {
+        const mappedService = serviceMap[serviceParam] || urlParams.get('serviceType') || '';
+        if (mappedService) serviceField.value = mappedService;
+        serviceField.addEventListener('change', syncServiceMeta);
+      }
+
+      if (eventTypeField && urlParams.get('event_type')) {
+        eventTypeField.value = urlParams.get('event_type');
+      }
+
+      if (packageField) {
+        const packageParam = urlParams.get('package') || urlParams.get('recommendedPackage') || '';
+        if (packageParam) packageField.value = packageParam;
+      }
+
+      if (cityField && urlParams.get('city')) {
+        cityField.value = urlParams.get('city');
+      }
+
+      if (chocolateInterestField && urlParams.get('chocolateFountainInterest')) {
+        chocolateInterestField.value = urlParams.get('chocolateFountainInterest');
+      }
+
+      if (chocolateModeField && urlParams.get('chocolateFountainMode')) {
+        chocolateModeField.value = urlParams.get('chocolateFountainMode');
+      }
+
+      syncServiceMeta();
 
       contactForm.addEventListener('submit', () => {
         if (pageUrlField) pageUrlField.value = window.location.href;
@@ -3913,7 +4104,7 @@
       const callbackSubmit = callbackForm.querySelector('.callback-submit');
       const callbackSubmitLabel = callbackSubmit ? callbackSubmit.textContent : '';
       const callbackStorageKey = 'barowo_callback_popup_state';
-      const callbackDelayMs = new URLSearchParams(window.location.search).has('callback_test') ? 900 : 300000;
+      const callbackDelayMs = new URLSearchParams(window.location.search).has('callback_test') ? 900 : 60000;
       const callbackDismissTtl = 24 * 60 * 60 * 1000;
       const callbackSubmitTtl = 30 * 24 * 60 * 60 * 1000;
 
