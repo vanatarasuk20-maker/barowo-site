@@ -7,6 +7,7 @@ function buildLegacyWebsiteLeadNote_(params) {
   const parts = [];
   const message = (params.message || "").trim();
   const source = (params.source || "website").trim();
+  const isPlannerLead = source === "Wedding Bar Planner";
   const serviceType = (params.serviceType || "").trim();
   const venueName = (params.venueName || "").trim();
   const chocolateInterest = params.chocolateFountainInterest !== undefined
@@ -32,6 +33,35 @@ function buildLegacyWebsiteLeadNote_(params) {
     params.utm_content ? "utm_content=" + params.utm_content : "",
     params.utm_term ? "utm_term=" + params.utm_term : ""
   ].filter(Boolean).join(", ");
+
+  if (isPlannerLead) {
+    if (recommendedPackage || recommendedBartenders || recommendedMenuStyle) {
+      parts.push(
+        "Rekomendacja: pakiet=" + (recommendedPackage || "-") +
+        ", barmani=" + (recommendedBartenders || "-") +
+        ", menu=" + (recommendedMenuStyle || "-")
+      );
+    }
+    if (plannerSummary) {
+      parts.push("Preferencje: " + plannerSummary);
+    }
+    if (venueName) {
+      parts.push("Sala / miejscowość: " + venueName);
+    }
+    if (chocolateInterest) {
+      parts.push("Fontanna czekoladowa: " + chocolateInterest);
+    }
+    if (chocolateMode) {
+      parts.push("Tryb fontanny: " + chocolateMode);
+    }
+    if (message) {
+      parts.push("Wiadomość klienta: " + message);
+    }
+    if (leadNote) {
+      parts.push("Planner: " + leadNote);
+    }
+    return parts.join("\n");
+  }
 
   if (message) {
     parts.push("WWW: " + message);

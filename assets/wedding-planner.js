@@ -138,8 +138,8 @@
     {
       key: "contact",
       label: "Krok 10 z 10",
-      title: "Twój rekomendowany bar weselny",
-      copy: "Poniżej widzisz wynik planera. Jeśli chcesz dostać konkretną propozycję pod datę i salę, zostaw kontakt.",
+      title: "Twój wynik planera",
+      copy: "Zobacz rekomendację i zostaw kontakt, jeśli chcesz dostać konkretną propozycję pod datę i salę.",
       type: "contact"
     }
   ];
@@ -353,20 +353,21 @@
   function buildLeadNote(recommendation) {
     var prefs = asArray(state.drinkPreferences).join(", ");
     return [
-      "Klient przeszedł Planer Baru Weselnego.",
-      "Wesele: " + (state.city || "brak miasta") + ", " + (state.guestCountRange || "brak liczby gości") + ".",
-      "Preferencje: " + (prefs || "brak preferencji drinków") + ".",
-      "Rekomendowany pakiet: " + recommendation.recommendedPackage + ".",
-      "Barmani: " + recommendation.recommendedBartenders + ".",
-      "Zainteresowanie fontanną czekoladową: " + (
+      "Planner weselny",
+      (state.city || "brak miasta"),
+      (state.guestCountRange || "brak liczby gości"),
+      "pakiet " + recommendation.recommendedPackage,
+      recommendation.recommendedBartenders + " barmanów",
+      recommendation.recommendedMenuStyle,
+      "fontanna: " + (
         recommendation.chocolateInterest === true
           ? "tak"
           : recommendation.chocolateInterest === "not_sure"
             ? "nie wiem"
             : "nie"
-      ) + ".",
-      "Warto szybko zadzwonić i zaproponować konkretną wycenę."
-    ].join(" ");
+      ),
+      prefs ? "preferencje: " + prefs : ""
+    ].filter(Boolean).join(" · ");
   }
 
   function buildCustomerSummaryEmailData(recommendation) {
@@ -544,9 +545,10 @@
 
     return (
       '<div class="planner-result-block">' +
-        '<article class="planner-result-card">' +
+        '<article class="planner-result-card planner-result-summary">' +
           '<div class="planner-result-kicker">Najlepiej pasuje</div>' +
           '<div class="planner-result-main">' + escapeHtml(recommendation.recommendedPackage) + "</div>" +
+          '<p class="planner-result-intro">To jest kierunek, który najlepiej pasuje do Twojej liczby gości, oczekiwanego efektu i wybranego stylu obsługi.</p>' +
           '<ul class="planner-result-list">' + reasonItems + "</ul>" +
         "</article>" +
         '<div class="planner-result-grid">' +
@@ -561,14 +563,13 @@
             '<ul class="planner-drink-list">' + drinkItems + "</ul>" +
           "</article>" +
         "</div>" +
-        '<article class="planner-result-card">' +
+        '<article class="planner-result-card planner-outlook-card">' +
           "<h3>Typ obsługi</h3>" +
           "<p>" + escapeHtml(recommendation.typeText) + "</p>" +
           '<div class="planner-service-tip">' +
             '<div class="label">Orientacyjnie</div>' +
             "<h3>Pełna obsługa mobilnego baru BAROWO zwykle zaczyna się od około 3300 zl.</h3>" +
-            "<p>To nie jest cena za sam pokaz barmański, ale za kompletną obsługę baru: stanowisko, barmanów, szkło, sprzęt, przygotowanie menu i obsługę gości.</p>" +
-            "<p>W internecie można znaleźć niższe ceny, ale często dotyczą one krótkiego pokazu barmańskiego albo ograniczonej usługi. BAROWO wycenia pełną obsługę mobilnego baru.</p>" +
+            "<p>To nie jest cena za sam pokaz barmański. Chodzi o kompletną obsługę baru: stanowisko, barmanów, szkło, sprzęt, menu i serwis gości przez wiele godzin.</p>" +
             '<div class="planner-inline-links"><a href="/cennik/">Zobacz cennik BAROWO</a></div>' +
           "</div>" +
         "</article>" +
@@ -587,8 +588,12 @@
     wrapper.appendChild(result);
 
     var contact = document.createElement("div");
-    contact.className = "planner-contact-grid";
+    contact.className = "planner-result-card planner-contact-card";
     contact.innerHTML =
+      '<div class="planner-result-kicker">Kontakt po wycenę</div>' +
+      "<h3>Zostaw kontakt do konkretnej propozycji</h3>" +
+      '<p class="planner-contact-note">Jeśli chcesz dostać szybką odpowiedź pod datę, miejsce i liczbę gości, zostaw telefon albo email. To wystarczy, żebyśmy wrócili z sensowną propozycją.</p>' +
+      '<div class="planner-contact-grid">' +
       '<div class="planner-field">' +
         '<label for="plannerName">Imię</label>' +
         '<input type="text" id="plannerName" name="name" value="' + escapeHtml(state.name) + '" placeholder="Jak mamy się do Ciebie odezwać?">' +
@@ -610,6 +615,7 @@
           '<input type="checkbox" id="plannerPrivacyConsent"' + (state.privacyConsent ? " checked" : "") + ">" +
           '<span>Wyrażam zgodę na kontakt i przetwarzanie danych zgodnie z <a href="/polityka-prywatnosci/">Polityką prywatności</a>.</span>' +
         "</label>" +
+      "</div>" +
       "</div>";
     wrapper.appendChild(contact);
 
@@ -732,14 +738,6 @@
         ? "Mobilny bar + możliwa fontanna czekoladowa"
         : "Mobilny bar";
     var chocolateMode = deriveChocolateMode(state.interestedInChocolateFountain);
-    var messageParts = [leadNote];
-
-    if (state.message.trim()) {
-      messageParts.push("Dodatkowa wiadomość klienta: " + state.message.trim());
-    }
-
-    messageParts.push("Summary email data: " + JSON.stringify(emailData));
-
     var payload = Object.assign(collectMetaFields(), {
       source: "Wedding Bar Planner",
       event_type: "Wesele",
@@ -767,7 +765,7 @@
       name: state.name.trim(),
       phone: state.phone.trim(),
       email: state.email.trim(),
-      message: messageParts.join("\n\n"),
+      message: state.message.trim(),
       serviceType: serviceType,
       privacy_consent: state.privacyConsent ? "yes" : "",
       return_url: window.location.origin + "/planer-baru-weselnego/"

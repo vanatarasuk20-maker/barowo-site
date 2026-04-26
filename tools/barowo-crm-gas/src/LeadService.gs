@@ -104,9 +104,13 @@ function buildTelegramLeadMessage_(lead) {
     lines.push("🍫 Fontanna: " + lead.chocolate_fountain_interest);
   }
 
+  if (isPlannerLead && lead.lead_note) {
+    lines.push("📋 " + lead.lead_note);
+  }
+
   if (lead.message) {
     lines.push("");
-    lines.push("🗒 " + lead.message);
+    lines.push((isPlannerLead ? "🗒 Wiadomość klienta: " : "🗒 ") + lead.message);
   }
 
   lines.push("");

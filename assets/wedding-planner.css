@@ -90,6 +90,7 @@ body.planner-page {
 
 .planner-app {
   padding: 28px;
+  scroll-margin-top: 108px;
 }
 
 .planner-progress-head {
@@ -134,6 +135,7 @@ body.planner-page {
 .planner-app h2 {
   font-size: clamp(2.1rem, 4vw, 3.4rem);
   margin-bottom: 14px;
+  max-width: 12ch;
 }
 
 .planner-step-copy {
@@ -335,11 +337,13 @@ body.planner-page {
 
 .planner-result-card {
   padding: 20px;
+  display: grid;
+  gap: 12px;
 }
 
 .planner-result-card h3 {
-  font-size: 1.9rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  margin-bottom: 0;
 }
 
 .planner-result-kicker {
@@ -353,7 +357,12 @@ body.planner-page {
 
 .planner-result-main {
   font-size: clamp(2.4rem, 4vw, 3.4rem);
-  margin-bottom: 12px;
+  margin-bottom: 0;
+}
+
+.planner-result-intro {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
 }
 
 .planner-result-list,
@@ -384,9 +393,13 @@ body.planner-page {
   padding: 20px;
 }
 
+.planner-contact-card {
+  margin-top: 6px;
+}
+
 .planner-service-tip h3 {
   font-size: 1.3rem;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   font-weight: 800;
 }
 
@@ -426,6 +439,11 @@ body.planner-page {
   .planner-hero-copy h1 {
     font-size: clamp(2.65rem, 12.4vw, 3.35rem);
     line-height: 0.96;
+  }
+
+  .planner-app h2 {
+    font-size: clamp(1.95rem, 9.4vw, 2.7rem);
+    max-width: 10ch;
   }
 
   .planner-hero-copy p,

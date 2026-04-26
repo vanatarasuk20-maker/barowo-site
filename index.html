@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Manrope:wght@400;500;700;800&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Manrope:wght@400;500;700;800;900&amp;display=swap"
     rel="stylesheet">
   <script src="/assets/consent-init.js?v=20260331"></script>
   <script>
@@ -3209,7 +3209,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260426a">
+  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260426d">
 </head>
 
 <body>
@@ -3461,7 +3461,7 @@
     <div class="planner-promo">
       <div>
         <div class="label">Planer BAROWO</div>
-        <h3>Nie wiesz, jaki bar pasuje do Twojego wesela?</h3>
+        <h3>DOBIERZ BAR<br><span class="red">DO SWOJEGO WESELA</span></h3>
         <p>Sprawdź to w 2 minuty. Odpowiedz na kilka pytań, a nasz planner podpowie, jaki format baru, ilu barmanów i jakie menu najlepiej sprawdzi się na Twoim weselu.</p>
       </div>
       <div class="planner-promo-actions">
@@ -3472,7 +3472,7 @@
     <div class="addon-spotlight">
       <div>
         <div class="label">Dodatki do baru</div>
-        <h3>Fontanna czekoladowa jako słodka strefa dla gości</h3>
+        <h3>DODAJ DO BARU<br><span class="red">FONTANNĘ CZEKOLADOWĄ</span></h3>
         <p>Chcesz zrobić jeszcze większy efekt na evencie? Do mobilnego baru możesz dodać fontannę czekoladową - elegancką słodką strefę dla gości, która sprawdza się na weselach, urodzinach, poprawinach i eventach firmowych.</p>
       </div>
       <div>
@@ -4103,34 +4103,49 @@
       const callbackStatus = callbackForm.querySelector('.callback-status');
       const callbackSubmit = callbackForm.querySelector('.callback-submit');
       const callbackSubmitLabel = callbackSubmit ? callbackSubmit.textContent : '';
-      const callbackStorageKey = 'barowo_callback_popup_state';
       const callbackDelayMs = new URLSearchParams(window.location.search).has('callback_test') ? 900 : 60000;
-      const callbackDismissTtl = 24 * 60 * 60 * 1000;
+      const callbackDismissKey = 'barowo_callback_popup_dismissed_session';
+      const callbackSubmitStorageKey = 'barowo_callback_popup_submitted_at';
       const callbackSubmitTtl = 30 * 24 * 60 * 60 * 1000;
+      const callbackTestMode = new URLSearchParams(window.location.search).has('callback_test');
 
-      const readCallbackState = () => {
+      const readCallbackSubmittedAt = () => {
         try {
-          return JSON.parse(localStorage.getItem(callbackStorageKey) || '{}');
+          return Number(localStorage.getItem(callbackSubmitStorageKey) || 0);
         } catch (error) {
-          return {};
+          return 0;
         }
       };
 
-      const writeCallbackState = (state) => {
+      const markCallbackDismissedForSession = () => {
         try {
-          localStorage.setItem(callbackStorageKey, JSON.stringify({ ...state, at: Date.now() }));
+          sessionStorage.setItem(callbackDismissKey, '1');
+        } catch (error) {
+          // Ignore storage errors; the popup should still work for the current visit.
+        }
+      };
+
+      const markCallbackSubmitted = () => {
+        try {
+          localStorage.setItem(callbackSubmitStorageKey, String(Date.now()));
+          sessionStorage.removeItem(callbackDismissKey);
         } catch (error) {
           // Ignore storage errors; the popup should still work for the current visit.
         }
       };
 
       const shouldShowCallback = () => {
-        const state = readCallbackState();
-        if (!state || !state.type || !state.at) return true;
-        const age = Date.now() - Number(state.at);
-        if (state.type === 'submitted') return age > callbackSubmitTtl;
-        if (state.type === 'dismissed') return age > callbackDismissTtl;
-        return true;
+        if (callbackTestMode) return true;
+
+        try {
+          if (sessionStorage.getItem(callbackDismissKey) === '1') return false;
+        } catch (error) {
+          // Ignore storage errors; the popup should still work for the current visit.
+        }
+
+        const submittedAt = readCallbackSubmittedAt();
+        if (!submittedAt) return true;
+        return Date.now() - submittedAt > callbackSubmitTtl;
       };
 
       const fillCallbackMeta = () => {
@@ -4165,7 +4180,7 @@
         callbackModal.classList.remove('is-visible');
         callbackModal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('callback-open');
-        if (reason === 'dismissed') writeCallbackState({ type: 'dismissed' });
+        if (reason === 'dismissed') markCallbackDismissedForSession();
       };
 
       window.setTimeout(openCallbackModal, callbackDelayMs);
@@ -4212,7 +4227,7 @@
           }
 
           callbackForm.reset();
-          writeCallbackState({ type: 'submitted' });
+          markCallbackSubmitted();
           setCallbackStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
           window.setTimeout(() => closeCallbackModal('submitted'), 1800);
         } catch (error) {

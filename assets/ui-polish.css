@@ -189,6 +189,61 @@ nav {
   text-wrap: balance;
 }
 
+.planner-promo h3,
+.addon-spotlight h3,
+.planner-result-card h3,
+.planner-service-tip h3,
+.service-info-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.96;
+}
+
+.planner-promo,
+.addon-spotlight {
+  gap: 24px !important;
+  align-items: center !important;
+}
+
+.planner-promo h3,
+.addon-spotlight h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  max-width: 12ch;
+}
+
+.planner-promo p,
+.addon-spotlight p {
+  max-width: 60ch;
+}
+
+.planner-promo-actions,
+.addon-spotlight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.addon-spotlight ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+}
+
+.highlights li {
+  font-size: 0.96rem;
+  line-height: 1.58;
+  font-weight: 700;
+}
+
+.planner-option-title {
+  font-size: 1.02rem;
+}
+
+.planner-option-note {
+  font-size: 0.9rem;
+}
+
 .planner-progress-bar {
   height: 10px;
 }
@@ -204,8 +259,42 @@ nav {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.planner-result-block {
+  gap: 20px;
+}
+
+.planner-result-card {
+  gap: 14px;
+}
+
 .planner-result-main {
   line-height: 0.95;
+}
+
+.planner-result-intro {
+  max-width: 48ch;
+}
+
+.planner-result-summary {
+  border-color: rgba(232, 0, 13, 0.18);
+  background: linear-gradient(180deg, rgba(232, 0, 13, 0.07) 0%, rgba(255, 255, 255, 0.04) 100%);
+}
+
+.planner-result-list li::marker,
+.planner-drink-list li::marker {
+  color: rgba(232, 0, 13, 0.92);
+}
+
+.planner-contact-card .planner-contact-grid {
+  margin-top: 6px;
+}
+
+.planner-contact-note {
+  max-width: 56ch;
+}
+
+.planner-outlook-card .planner-service-tip {
+  margin-top: 8px;
 }
 
 .planner-status,
@@ -401,6 +490,24 @@ footer {
   .planner-actions .btn-red,
   .planner-actions .btn-ghost {
     min-width: 0 !important;
+  }
+
+  .planner-promo h3,
+  .addon-spotlight h3 {
+    max-width: none;
+    font-size: clamp(1.9rem, 9vw, 2.8rem);
+  }
+
+  .planner-promo-actions,
+  .addon-spotlight-actions {
+    width: 100%;
+  }
+
+  .planner-promo-actions .btn-red,
+  .planner-promo-actions .btn-ghost,
+  .addon-spotlight-actions .btn-red,
+  .addon-spotlight-actions .btn-ghost {
+    width: 100%;
   }
 
   footer {

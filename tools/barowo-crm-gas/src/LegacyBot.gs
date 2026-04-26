@@ -631,14 +631,18 @@ function statusLineFromRow(row) {
   const guests = row[COL.GUESTS - 1] || "";
   const hours = row[COL.HOURS - 1] || "";
   const stage = inferLegacyLeadStage_(row);
+  const hasMetaState = !!(assigned || oferta == "YES" || umowa == "YES");
+  const guestLine = /\bos\.\b|osób|gości/i.test(String(guests)) ? guests : guests + " os.";
 
   let line = "\n───────────────\n";
   line += "📍 " + getLegacyLeadStageLabel_(stage) + "\n";
-  line += assigned ? "👤 " + assigned + "  " : "👤 —  ";
-  line += oferta == "YES" ? "📧 ✅  " : "📧 —  ";
-  line += umowa == "YES" ? "📝 ✅" : "📝 —";
+  if (hasMetaState) {
+    line += assigned ? "👤 " + assigned + "  " : "👤 —  ";
+    line += oferta == "YES" ? "📧 ✅  " : "📧 —  ";
+    line += umowa == "YES" ? "📝 ✅" : "📝 —";
+  }
   if (pkg) line += "\n📦 " + pkg;
-  if (guests) line += "  👥 " + guests + " os.";
+  if (guests) line += "  👥 " + guestLine;
   if (hours) line += "\n🕐 " + hours;
   if (note) line += "\n🗒 " + note;
   if (callhist) line += "\n📋 " + callhist;
@@ -648,12 +652,13 @@ function statusLineFromRow(row) {
 
 function buildLeadText(row) {
   const name = row[COL.NAME - 1] || "";
-  const phone = row[COL.PHONE - 1] || "";
+  const phone = (row[COL.PHONE - 1] || "").toString().replace(/^'/, "");
   const email = row[COL.EMAIL - 1] || "";
   const event = row[COL.EVENT - 1] || "";
   const date = formatDate(row[COL.DATE - 1]);
   const city = row[COL.CITY - 1] || "";
   const guests = row[COL.GUESTS - 1] || "";
+  const guestLine = /\bos\.\b|osób|gości/i.test(String(guests)) ? guests : guests + " os.";
 
   let text = "🔥 <b>NOWY LEAD</b>\n\n";
   text += "👤 <b>" + name + "</b>\n";
@@ -662,7 +667,7 @@ function buildLeadText(row) {
   if (event) text += "🎉 " + event + "\n";
   if (date) text += "📅 " + date + "\n";
   if (city) text += "📍 " + city + "\n";
-  if (guests) text += "👥 " + guests + " os.";
+  if (guests) text += "👥 " + guestLine;
   return text.trim();
 }
 

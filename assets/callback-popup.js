@@ -42,35 +42,49 @@
   var status = form.querySelector('.callback-status');
   var submit = form.querySelector('.callback-submit');
   var submitLabel = submit ? submit.textContent : '';
-  var storageKey = 'barowo_callback_popup_state';
   var urlParams = new URLSearchParams(window.location.search);
   var delayMs = urlParams.has('callback_test') ? 900 : 60000;
-  var dismissTtl = 24 * 60 * 60 * 1000;
+  var dismissKey = 'barowo_callback_popup_dismissed_session';
+  var submitStorageKey = 'barowo_callback_popup_submitted_at';
   var submitTtl = 30 * 24 * 60 * 60 * 1000;
 
-  function readState() {
+  function readSubmittedAt() {
     try {
-      return JSON.parse(localStorage.getItem(storageKey) || '{}');
+      return Number(localStorage.getItem(submitStorageKey) || 0);
     } catch (error) {
-      return {};
+      return 0;
     }
   }
 
-  function writeState(state) {
+  function markDismissedForSession() {
     try {
-      localStorage.setItem(storageKey, JSON.stringify(Object.assign({}, state, { at: Date.now() })));
+      sessionStorage.setItem(dismissKey, '1');
+    } catch (error) {
+      // Storage may be unavailable in private contexts.
+    }
+  }
+
+  function markSubmitted() {
+    try {
+      localStorage.setItem(submitStorageKey, String(Date.now()));
+      sessionStorage.removeItem(dismissKey);
     } catch (error) {
       // Storage may be unavailable in private contexts.
     }
   }
 
   function shouldShow() {
-    var state = readState();
-    if (!state || !state.type || !state.at) return true;
-    var age = Date.now() - Number(state.at);
-    if (state.type === 'submitted') return age > submitTtl;
-    if (state.type === 'dismissed') return age > dismissTtl;
-    return true;
+    if (urlParams.has('callback_test')) return true;
+
+    try {
+      if (sessionStorage.getItem(dismissKey) === '1') return false;
+    } catch (error) {
+      // Ignore storage errors and keep the popup available.
+    }
+
+    var submittedAt = readSubmittedAt();
+    if (!submittedAt) return true;
+    return Date.now() - submittedAt > submitTtl;
   }
 
   function fillMeta() {
@@ -104,7 +118,7 @@
     modal.classList.remove('is-visible');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('callback-open');
-    if (reason !== 'submitted') writeState({ type: 'dismissed' });
+    if (reason !== 'submitted') markDismissedForSession();
   }
 
   window.setTimeout(openModal, delayMs);
@@ -148,7 +162,7 @@
       }
 
       form.reset();
-      writeState({ type: 'submitted' });
+      markSubmitted();
       setStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
       window.setTimeout(function () { closeModal('submitted'); }, 1800);
     } catch (error) {
