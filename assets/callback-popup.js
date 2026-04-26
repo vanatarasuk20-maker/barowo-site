@@ -20,7 +20,7 @@
     '<label class="callback-consent" for="callbackConsent"><input type="checkbox" id="callbackConsent" name="privacy_consent" required><span>Wyrażam zgodę na kontakt telefoniczny i przetwarzanie danych zgodnie z <a href="/polityka-prywatnosci/">Polityką prywatności</a>.</span></label>',
     '<input type="hidden" name="name" value="Prośba o telefon ze strony">',
     '<input type="hidden" name="source" value="website_callback_popup">',
-    '<input type="hidden" name="message" value="Użytkownik był na stronie ponad 5 minut i poprosił o szybki telefon zwrotny.">',
+    '<input type="hidden" name="message" value="Użytkownik był na stronie ponad minutę i poprosił o szybki telefon zwrotny.">',
     '<input type="hidden" name="return_url" value="https://barowo.com/#contact">',
     '<input type="hidden" name="page_url" value="">',
     '<input type="hidden" name="referrer" value="">',
@@ -44,7 +44,7 @@
   var submitLabel = submit ? submit.textContent : '';
   var storageKey = 'barowo_callback_popup_state';
   var urlParams = new URLSearchParams(window.location.search);
-  var delayMs = urlParams.has('callback_test') ? 900 : 300000;
+  var delayMs = urlParams.has('callback_test') ? 900 : 60000;
   var dismissTtl = 24 * 60 * 60 * 1000;
   var submitTtl = 30 * 24 * 60 * 60 * 1000;
 

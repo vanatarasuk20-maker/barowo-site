@@ -8,15 +8,15 @@
   <meta name="description" content="Mobilny bar w Gdańsku na urodziny, wesele, garden party i event firmowy. Koktajle, barmani i pełny setup BAROWO.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="BAROWO">
-  <meta property="og:title" content="Mobilny bar Gdańsk">
+  <meta property="og:title" content="Mobilny bar Gdańsk | BAROWO">
   <meta property="og:description" content="Mobilny bar w Gdańsku na urodziny, wesele, garden party i event firmowy. Koktajle, barmani i pełny setup BAROWO.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://barowo.com/oferta/mobilny-bar-gdansk/">
   <meta property="og:image" content="https://barowo.com/assets/photo3-opt.jpg">
-  <meta property="og:image:alt" content="Mobilny bar Gdańsk">
+  <meta property="og:image:alt" content="Mobilny bar Gdańsk | BAROWO">
   <meta property="og:locale" content="pl_PL">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mobilny bar Gdańsk">
+  <meta name="twitter:title" content="Mobilny bar Gdańsk | BAROWO">
   <meta name="twitter:description" content="Mobilny bar w Gdańsku na urodziny, wesele, garden party i event firmowy. Koktajle, barmani i pełny setup BAROWO.">
   <meta name="twitter:image" content="https://barowo.com/assets/photo3-opt.jpg">
   <meta name="theme-color" content="#06061a">
@@ -25,8 +25,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=20260331">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260331">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/subpage-nav.css?v=20260426c">
   <link rel="stylesheet" href="/assets/callback-popup.css?v=20260426">
   <script src="/assets/consent-init.js?v=20260331"></script>
+  <script src="/assets/subpage-nav.js?v=20260426c" defer></script>
   <script src="/assets/callback-popup.js?v=20260426" defer></script>
   <script>
     if (window.location.protocol === 'file:') {
@@ -37,6 +39,38 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://barowo.com/#business",
+      "name": "BAROWO",
+      "url": "https://barowo.com/",
+      "description": "Mobilny bar na wesele, urodziny i event firmowy w Trójmieście.",
+      "logo": "https://barowo.com/assets/logo-main.png",
+      "image": [
+        "https://barowo.com/assets/photo1-opt.jpg",
+        "https://barowo.com/assets/photo2-opt.jpg",
+        "https://barowo.com/assets/photo3-opt.jpg"
+      ],
+      "telephone": "+48889168003",
+      "email": "barowo.pl@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/barowo_official",
+        "https://www.tiktok.com/@barowo.official"
+      ],
+      "areaServed": [
+        "Gdańsk",
+        "Gdynia",
+        "Sopot",
+        "Trójmiasto",
+        "Pomorskie"
+      ],
+      "serviceType": [
+        "Mobilny bar",
+        "Drink bar na wesele",
+        "Bar na event firmowy",
+        "Obsługa barmańska"
+      ]
+    },
     {
       "@type": "Service",
       "@id": "https://barowo.com/oferta/mobilny-bar-gdansk/#service",
@@ -237,8 +271,33 @@
       padding-bottom: 72px;
     }
     .service-block { padding: 34px 0; border-top: 1px solid var(--line); }
+    .service-block:first-of-type { padding-top: 0; border-top: 0; }
     .service-block p, .service-faq p { color: rgba(255,255,255,.78); line-height: 1.8; font-size: 1.02rem; }
     .service-block ul { margin-top: 18px; padding-left: 22px; color: rgba(255,255,255,.78); line-height: 1.8; }
+    .service-block li { margin-bottom: 8px; }
+    .service-block a,
+    .service-faq a,
+    .service-inline-cta p a,
+    .service-bottom-cta p a,
+    .side-panel p a {
+      color: var(--white);
+      text-decoration: underline;
+      text-decoration-color: rgba(232,0,13,.75);
+      text-underline-offset: 3px;
+    }
+    .service-inline-cta, .service-bottom-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      margin: 36px 0 6px;
+      padding: 28px;
+      border: 1px solid rgba(232,0,13,.22);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(232,0,13,.1) 0%, rgba(255,255,255,.03) 100%);
+    }
+    .service-inline-cta p, .service-bottom-cta p { color: rgba(255,255,255,.82); line-height: 1.72; }
+    .service-inline-cta .btn-red, .service-bottom-cta .btn-red { margin-top: 0; }
     .side-panel {
       position: sticky;
       top: 92px;
@@ -249,8 +308,25 @@
     }
     .side-panel h2 { font-size: 2.2rem; }
     .side-panel p { color: var(--dim); line-height: 1.7; margin-bottom: 16px; }
+    .side-panel .label { margin-bottom: 14px; }
     .related-links { display: grid; gap: 10px; margin-top: 18px; }
-    .related-links a { color: rgba(255,255,255,.82); border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+    .related-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      border-bottom: 1px solid rgba(232, 0, 13, 0.22);
+      padding-bottom: 10px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .related-links a::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      flex: 0 0 18px;
+      background: var(--red);
+    }
     .service-faq { padding: 44px 0 22px; border-top: 1px solid var(--line); }
     details { border-bottom: 1px solid var(--line); padding: 18px 0; }
     summary { cursor: pointer; font-weight: 900; font-size: 1.04rem; }
@@ -264,10 +340,10 @@
     footer img { width: 46px; height: 46px; object-fit: contain; margin: 0 auto 14px; }
     .footer-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 14px; }
     @media (max-width: 980px) {
-      .nav-links { display: none; }
       .hero, .content-grid { grid-template-columns: 1fr; }
       .highlights { grid-template-columns: 1fr 1fr; }
       .side-panel { position: static; }
+      .service-inline-cta, .service-bottom-cta { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
       .shell { width: 100%; max-width: none; padding: 0 30px; }
@@ -280,6 +356,7 @@
       .hero-media { margin-top: 28px; }
       .highlights { grid-template-columns: 1fr; }
       .btn-red, .btn-ghost { width: 100%; }
+      .service-inline-cta, .service-bottom-cta { padding: 22px; }
     }
   </style>
 </head>
@@ -289,7 +366,7 @@
     <a href="/" class="nav-logo" aria-label="BAROWO - Strona główna">
       <img src="/assets/logo-main.png?v=20260331" alt="BAROWO" width="46" height="46">
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="/#how">Jak to działa</a></li>
       <li><a href="/#packages">Pakiety</a></li>
       <li><a href="/oferta/" class="is-active">Usługi</a></li>
@@ -298,6 +375,9 @@
       <li><a href="/#faq">FAQ</a></li>
       <li><a href="/#contact" class="nav-cta">Zarezerwuj</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <main class="shell">
@@ -309,7 +389,7 @@
         <div class="answer">Mobilny bar w Gdańsku warto zaplanować wtedy, gdy chcesz mieć jeden zespół odpowiedzialny za bar, koktajle, tempo obsługi i estetykę miejsca zamiast samodzielnej organizacji alkoholu i dodatków.</div>
         <div class="actions">
           <a class="btn-red" href="/#contact">Sprawdź termin</a>
-          <a class="btn-ghost" href="/oferta/">Cała oferta</a>
+          <a class="btn-ghost" href="/cennik/">Zobacz cennik</a>
         </div>
       </div>
       <div class="hero-media">
@@ -326,24 +406,30 @@
 
     <div class="content-grid">
       <div>
-        <section class="service-block">
-          <h2>Jakie wydarzenia obsługujemy w Gdańsku?</h2>
-          <p>Najczęściej są to urodziny, 18-stki, wesela, eventy firmowe, imprezy plenerowe i garden party. Każdy format wymaga innej organizacji, dlatego zaczynamy od krótkiego rozpoznania potrzeb.</p>
-          
+        <section class="service-inline-cta">
+          <div>
+            <div class="label">Szybka wycena</div>
+            <h2>SPRAWDŹ,<br><span class="red">DOSTĘPNOŚĆ TERMINU</span></h2>
+            <p>Podaj datę, miasto i liczbę gości. To wystarczy, żeby wrócić z konkretną odpowiedzią.</p>
+          </div>
+          <a class="btn-red" href="/#contact">Zapytaj o wycenę</a>
         </section>
         <section class="service-block">
-          <h2>Co wpływa na cenę?</h2>
-          <p>Cena zależy od liczby gości, czasu pracy, menu, miejsca, logistyki i zakresu pakietu. Wycena powinna uwzględniać cały efekt, nie tylko samą obecność barmana.</p>
-          <ul><li>liczba gości</li>
+            <h2>Jakie wydarzenia obsługujemy w Gdańsku?</h2>
+            <p>Najczęściej są to urodziny, 18-stki, wesela, eventy firmowe, imprezy plenerowe i garden party. Każdy format wymaga innej organizacji, dlatego zaczynamy od krótkiego rozpoznania potrzeb.</p>
+          </section>
+        <section class="service-block">
+            <h2>Co wpływa na cenę?</h2>
+            <p>Cena zależy od liczby gości, czasu pracy, menu, miejsca, logistyki i zakresu pakietu. Wycena powinna uwzględniać cały efekt, nie tylko samą obecność barmana.</p>
+            <ul><li>liczba gości</li>
 <li>czas obsługi</li>
 <li>zakres menu</li>
 <li>warunki miejsca</li></ul>
-        </section>
+          </section>
         <section class="service-block">
-          <h2>Jak szybko można ustalić szczegóły?</h2>
-          <p>Najczęściej wystarczy krótka wiadomość z datą, lokalizacją i liczbą gości. Potem doprecyzowujemy pakiet i dostępność terminu.</p>
-          
-        </section>
+            <h2>Jak szybko można ustalić szczegóły?</h2>
+            <p>Najczęściej wystarczy krótka wiadomość z datą, lokalizacją i liczbą gości. Potem doprecyzowujemy pakiet i dostępność terminu.</p>
+          </section>
         <section class="service-faq">
           <div class="label">FAQ</div>
           <h2>Najczęstsze pytania</h2>
@@ -360,11 +446,21 @@
             <p>Tak. Po otrzymaniu podstawowych informacji doradzamy, czy wystarczy mniejszy pakiet, czy lepiej wybrać szerszą obsługę.</p>
           </details>
         </section>
+        <section class="service-bottom-cta">
+          <div>
+            <div class="label">Rezerwacja</div>
+            <h2>ZAREZERWUJ<br><span class="red">MOBILNY BAR</span></h2>
+            <p>Napisz kilka konkretów o wydarzeniu, a wrócimy z terminem i najbardziej sensownym pakietem.</p>
+          </div>
+          <a class="btn-red" href="/#contact">Sprawdź dostępność terminu</a>
+        </section>
       </div>
       <aside class="side-panel">
-        <h2>Zapytaj o termin</h2>
+        <div class="label">Kontakt</div>
+        <h2>ZAPYTAJ O<br><span class="red">TERMIN</span></h2>
         <p>Podaj datę, miejsce i orientacyjną liczbę gości. Wrócimy z konkretną odpowiedzią i propozycją pakietu.</p>
         <a class="btn-red" href="/#contact">Wyślij zapytanie</a>
+        <div class="label" style="margin-top:28px;">Powiązane strony</div>
         <div class="related-links"><a href="/aktualnosci/drink-bar-na-urodziny-gdansk/">Drink bar na urodziny w Gdańsku — kiedy naprawdę robi efekt?</a>
 <a href="/aktualnosci/garden-party-z-barem-mobilnym/">Garden party z mobilnym barem — jak zrobić klimat bez chaosu?</a></div>
         <p style="margin-top:18px;font-size:.82rem;">Aktualizacja: 2026-04-25</p>

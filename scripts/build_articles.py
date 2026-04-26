@@ -21,6 +21,17 @@ OFFER_URL = "https://barowo.com/oferta/"
 CENNIK_URL = "https://barowo.com/cennik/"
 REALIZACJE_URL = "https://barowo.com/realizacje/"
 YEAR = "2026"
+BUSINESS_SAME_AS = [
+    "https://www.instagram.com/barowo_official",
+    "https://www.tiktok.com/@barowo.official",
+]
+BUSINESS_AREAS = ["Gdańsk", "Gdynia", "Sopot", "Trójmiasto", "Pomorskie"]
+BUSINESS_SERVICE_TYPES = [
+    "Mobilny bar",
+    "Drink bar na wesele",
+    "Bar na event firmowy",
+    "Obsługa barmańska",
+]
 STATIC_PAGES = [
     (CENNIK_URL, ROOT / "cennik" / "index.html"),
     (REALIZACJE_URL, ROOT / "realizacje" / "index.html"),
@@ -50,6 +61,27 @@ def read_json(path: Path) -> dict[str, Any]:
 def write_file(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
+
+
+def business_graph() -> dict[str, Any]:
+    return {
+        "@type": "LocalBusiness",
+        "@id": HOME_URL + "#business",
+        "name": "BAROWO",
+        "url": HOME_URL,
+        "description": "Mobilny bar na wesele, urodziny i event firmowy w Trójmieście.",
+        "logo": absolute_url("/assets/logo-main.png"),
+        "image": [
+            absolute_url("/assets/photo1-opt.jpg"),
+            absolute_url("/assets/photo2-opt.jpg"),
+            absolute_url("/assets/photo3-opt.jpg"),
+        ],
+        "telephone": "+48889168003",
+        "email": "barowo.pl@gmail.com",
+        "sameAs": BUSINESS_SAME_AS,
+        "areaServed": BUSINESS_AREAS,
+        "serviceType": BUSINESS_SERVICE_TYPES,
+    }
 
 
 def load_articles() -> list[dict[str, Any]]:
@@ -279,13 +311,15 @@ def render_service_sections(service: dict[str, Any]) -> str:
         title = section.get("title", "")
         body = section.get("body", "")
         bullets = section.get("bullets") or []
-        out.append(
-            f"""<section class="service-block">
-          <h2>{format_inline(title)}</h2>
-          <p>{format_inline(body)}</p>
-          {('<ul>' + render_list(bullets) + '</ul>') if bullets else ''}
-        </section>"""
-        )
+        parts = [
+            '<section class="service-block">',
+            f'  <h2>{format_inline(title)}</h2>',
+            f'  <p>{format_inline(body)}</p>',
+        ]
+        if bullets:
+            parts.append(f'  <ul>{render_list(bullets)}</ul>')
+        parts.append("</section>")
+        out.append("\n          ".join(parts))
     return "\n        ".join(out)
 
 
@@ -311,6 +345,7 @@ def render_service_jsonld(service: dict[str, Any]) -> str:
     page_url = service_url(service["slug"])
     faqs = service.get("faq") or []
     graph: list[dict[str, Any]] = [
+        business_graph(),
         {
             "@type": "Service",
             "@id": page_url + "#service",
@@ -358,11 +393,15 @@ def render_service_jsonld(service: dict[str, Any]) -> str:
 
 
 def render_related_articles(service: dict[str, Any], articles: list[dict[str, Any]]) -> str:
+    links: list[str] = []
+    for item in service.get("related_links") or []:
+        href = item.get("href", "").strip()
+        label = item.get("label", "").strip()
+        if href and label:
+            links.append(f'<a href="{escape(href)}">{escape(label)}</a>')
+
     slugs = service.get("related_articles") or []
-    if not slugs:
-        return ""
     by_slug = {article["slug"]: article for article in articles}
-    links = []
     for slug in slugs:
         article = by_slug.get(slug)
         if article:
@@ -373,11 +412,13 @@ def render_related_articles(service: dict[str, Any], articles: list[dict[str, An
 
 
 def render_service_page(template: str, service: dict[str, Any], articles: list[dict[str, Any]]) -> str:
+    meta_title = service.get("meta_title", f"{service['title_plain']} | BAROWO")
+    meta_description = service.get("meta_description", service.get("description", ""))
     replacements = {
-        "{{PAGE_TITLE}}": escape(f"{service['title_plain']} | BAROWO"),
-        "{{META_DESCRIPTION}}": escape(service.get("description", "")),
-        "{{OG_TITLE}}": escape(service.get("title_plain", "")),
-        "{{OG_DESCRIPTION}}": escape(service.get("description", "")),
+        "{{PAGE_TITLE}}": escape(meta_title),
+        "{{META_DESCRIPTION}}": escape(meta_description),
+        "{{OG_TITLE}}": escape(service.get("og_title", meta_title)),
+        "{{OG_DESCRIPTION}}": escape(service.get("og_description", meta_description)),
         "{{OG_URL}}": service_url(service["slug"]),
         "{{OG_IMAGE}}": escape(absolute_url(service.get("image", "/assets/photo1-opt.jpg"))),
         "{{CANONICAL_URL}}": service_url(service["slug"]),
@@ -393,6 +434,49 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
         "{{FAQ}}": render_service_faq(service),
         "{{RELATED_ARTICLES}}": render_related_articles(service, articles),
         "{{UPDATED_AT}}": escape(service.get("updated_at", "")),
+        "{{PRIMARY_CTA_TEXT}}": escape(service.get("primary_cta_text", "Sprawdź termin")),
+        "{{PRIMARY_CTA_HREF}}": escape(service.get("primary_cta_href", "/#contact")),
+        "{{SECONDARY_CTA_TEXT}}": escape(service.get("secondary_cta_text", "Zobacz cennik")),
+        "{{SECONDARY_CTA_HREF}}": escape(service.get("secondary_cta_href", "/cennik/")),
+        "{{MID_CTA_LABEL}}": escape(service.get("mid_cta_label", "Szybka wycena")),
+        "{{MID_CTA_TITLE_HTML}}": service.get(
+            "mid_cta_title_html",
+            'SPRAWDŹ,<br><span class="red">DOSTĘPNOŚĆ TERMINU</span>',
+        ),
+        "{{MID_CTA_TEXT}}": escape(
+            service.get(
+                "mid_cta_text",
+                "Podaj datę, miasto i liczbę gości. To wystarczy, żeby wrócić z konkretną odpowiedzią.",
+            )
+        ),
+        "{{MID_CTA_BUTTON_TEXT}}": escape(service.get("mid_cta_button_text", "Zapytaj o wycenę")),
+        "{{MID_CTA_BUTTON_HREF}}": escape(service.get("mid_cta_button_href", "/#contact")),
+        "{{BOTTOM_CTA_LABEL}}": escape(service.get("bottom_cta_label", "Rezerwacja")),
+        "{{BOTTOM_CTA_TITLE_HTML}}": service.get(
+            "bottom_cta_title_html",
+            'ZAREZERWUJ<br><span class="red">MOBILNY BAR</span>',
+        ),
+        "{{BOTTOM_CTA_TEXT}}": escape(
+            service.get(
+                "bottom_cta_text",
+                "Napisz kilka konkretów o wydarzeniu, a wrócimy z terminem i najbardziej sensownym pakietem.",
+            )
+        ),
+        "{{BOTTOM_CTA_BUTTON_TEXT}}": escape(service.get("bottom_cta_button_text", "Sprawdź dostępność terminu")),
+        "{{BOTTOM_CTA_BUTTON_HREF}}": escape(service.get("bottom_cta_button_href", "/#contact")),
+        "{{SIDEBAR_TITLE_HTML}}": service.get(
+            "sidebar_title_html",
+            'ZAPYTAJ O<br><span class="red">TERMIN</span>',
+        ),
+        "{{SIDEBAR_TEXT}}": escape(
+            service.get(
+                "sidebar_text",
+                "Podaj datę, miejsce i orientacyjną liczbę gości. Wrócimy z konkretną odpowiedzią i propozycją pakietu.",
+            )
+        ),
+        "{{SIDEBAR_BUTTON_TEXT}}": escape(service.get("sidebar_button_text", "Wyślij zapytanie")),
+        "{{SIDEBAR_BUTTON_HREF}}": escape(service.get("sidebar_button_href", "/#contact")),
+        "{{RELATED_RESOURCES_LABEL}}": escape(service.get("related_resources_label", "Powiązane strony")),
     }
     output = template
     for key, value in replacements.items():
@@ -516,6 +600,8 @@ def write_sitemap(articles: list[dict[str, Any]], services: list[dict[str, Any]]
 
 def write_redirects(articles: list[dict[str, Any]], services: list[dict[str, Any]]) -> None:
     lines = [
+        "https://www.barowo.com/* https://barowo.com/:splat 301!",
+        "http://www.barowo.com/* https://barowo.com/:splat 301!",
         "/index.html / 301!",
         "/oferta.html /oferta/ 301!",
         "/oferta/index.html /oferta/ 301!",

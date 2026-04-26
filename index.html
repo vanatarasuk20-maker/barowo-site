@@ -388,6 +388,35 @@
       flex-wrap: wrap;
     }
 
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      max-width: 720px;
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, transform 0.2s, color 0.2s;
+    }
+
+    .hero-links a:hover {
+      color: var(--white);
+      border-color: rgba(232, 0, 13, 0.45);
+      transform: translateY(-2px);
+    }
+
     .btn-red {
       display: inline-flex;
       align-items: center;
@@ -1941,6 +1970,15 @@
         padding: 16px 24px;
       }
 
+      .hero-links {
+        flex-direction: column;
+      }
+
+      .hero-links a {
+        width: 100%;
+        justify-content: center;
+      }
+
       h1 {
         font-size: clamp(2.6rem, 11vw, 4.5rem);
         letter-spacing: 2px !important;
@@ -3139,6 +3177,12 @@
       <div class="hero-actions">
         <a href="#contact" class="btn-red">Sprawdź termin →</a>
         <a href="#packages" class="btn-ghost">Zobacz pakiety</a>
+      </div>
+      <div class="hero-links" aria-label="Popularne strony BAROWO">
+        <a href="/cennik/">Ile kosztuje mobilny bar</a>
+        <a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a>
+        <a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a>
+        <a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a>
       </div>
     </div>
   </section>
