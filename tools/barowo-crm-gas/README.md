@@ -1,6 +1,6 @@
 # BAROWO CRM Apps Script
 
-Source-controlled BAROWO CRM for Google Sheets + Telegram + future EventHub.
+Source-controlled BAROWO CRM for Google Sheets + Telegram.
 
 ## What this project includes
 
@@ -8,7 +8,7 @@ Source-controlled BAROWO CRM for Google Sheets + Telegram + future EventHub.
 - website lead intake from `barowo.com`
 - Google Sheets operational datastore
 - Cloudflare Worker relay support for stable Telegram webhook delivery
-- structured sync layer for future EventHub data (`Leads`, `Contacts`, `PortalEvents`, `PortalFiles`)
+- structured sync layer for cleaner lead, contact and reporting data (`Leads`, `Contacts`, `Logs`)
 - Google Calendar, Gmail draft, contract generation, tasks, reminders, reporting
 
 ## Folder structure
@@ -24,9 +24,9 @@ Source-controlled BAROWO CRM for Google Sheets + Telegram + future EventHub.
 ## Current architecture
 
 - `Lidy / Spam / Kontakty / Finanse / Log` remain the day-to-day ops sheets for the Telegram CRM
-- `Leads / Contacts / PortalEvents / PortalFiles / Logs` are the structured layer for future EventHub and cleaner reporting
+- `Leads / Contacts / Logs` are the structured layer for cleaner reporting
 - website leads enter the legacy CRM immediately and are synced into the structured layer
-- portal metadata and tokens are generated from CRM data so EventHub can reuse them later
+- client-facing private pages are intentionally out of scope
 
 ## Setup
 
@@ -65,7 +65,6 @@ npm run push
 - `TELEGRAM_GROUP_CHAT_ID`
 - `BAROWO_FORM_SUCCESS_URL`
 - `BAROWO_WEB_APP_URL`
-- optionally `BAROWO_PORTAL_BASE_URL`
 - optionally `BAROWO_MANAGER_EMAIL`
 - optionally `BAROWO_MANAGER_PHONE`
 - optionally `BAROWO_BRAND_NAME`

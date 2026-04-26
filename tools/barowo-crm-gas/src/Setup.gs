@@ -176,28 +176,6 @@ function setTelegramRelaySharedSecret(secret) {
   return { ok: true };
 }
 
-function ensureEventHubAdminKey_() {
-  const props = PropertiesService.getScriptProperties();
-  const existing = props.getProperty("BAROWO_EVENTHUB_ADMIN_KEY");
-  if (existing) {
-    return existing;
-  }
-
-  const generated = "barowo-" + Utilities.getUuid().replace(/-/g, "").substring(0, 18);
-  props.setProperty("BAROWO_EVENTHUB_ADMIN_KEY", generated);
-  return generated;
-}
-
-function getEventHubAdminSetupInfo() {
-  const key = ensureEventHubAdminKey_();
-  return {
-    ok: true,
-    adminKey: key,
-    driveFolderName: getBarowoConfig_().eventHubDriveFolderName,
-    apiBaseUrl: getBarowoConfig_().eventHubApiBaseUrl
-  };
-}
-
 function debugTelegramRuntime() {
   const privateChatId = 1306697008;
   const results = {
@@ -246,19 +224,16 @@ function finalizeBarowoCrmSetup() {
   bootstrapLegacyCrmSheets_();
   assertLegacyCrmSheets_();
   const relaySecret = ensureTelegramRelaySecret_();
-  const eventHubAdminKey = ensureEventHubAdminKey_();
   setupTriggers();
 
   appendLog_("info", "setup", "BAROWO CRM setup finalized", {
     spreadsheetId: getBarowoConfig_().spreadsheetId,
-    relaySecretConfigured: !!relaySecret,
-    eventHubAdminKeyConfigured: !!eventHubAdminKey
+    relaySecretConfigured: !!relaySecret
   });
 
   return {
     ok: true,
     mode: "telegram_external_relay",
-    relaySecretConfigured: !!relaySecret,
-    eventHubAdminKeyConfigured: !!eventHubAdminKey
+    relaySecretConfigured: !!relaySecret
   };
 }

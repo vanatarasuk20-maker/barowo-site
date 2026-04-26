@@ -26,19 +26,20 @@
 // ██  CONFIG — ЕДИНСТВЕННОЕ МЕСТО ДЛЯ НАСТРОЙКИ ПОД КЛИЕНТА
 // ═══════════════════════════════════════════════════════════════════════════════
 
+const BAROWO_TELEGRAM_GROUP_CHAT_ID = getBarowoConfig_().telegramGroupChatId || "-1003789163562";
+
 const CONFIG = {
   // ─── Бренд ───
   BRAND: getBarowoConfig_().brandName,
 
   // ─── Telegram ───
-  GROUP_CHAT_ID: "-1003789163562",
-  ALLOWED_USERS: ["-1003789163562", "1306697008", "5420432566" , "7819531159"],
+  GROUP_CHAT_ID: BAROWO_TELEGRAM_GROUP_CHAT_ID,
+  ALLOWED_USERS: [BAROWO_TELEGRAM_GROUP_CHAT_ID, "1306697008", "5420432566"],
 
   // ─── Команда (id → имя, роль) ───
   TEAM: {
     "1306697008": { name: "Ivan",  role: "admin" },
-    "5420432566": { name: "Artem", role: "member" },
-    "7819531159": { name: "Nikon", role: "member" }
+    "5420432566": { name: "Artem", role: "member" }
   },
 
   // ─── Google ───
@@ -549,8 +550,7 @@ function keyboard(uid, calAdded) {
        { text: "🗒 Notatka", callback_data: "note_" + uid }],
       [{ text: "📄 Gen. umowę", callback_data: "genumowa_" + uid },
        calBtn],
-      [{ text: "🔗 Portal", callback_data: "portal_" + uid },
-       { text: "🗑 Spam", callback_data: "spam_" + uid }],
+      [{ text: "🗑 Spam", callback_data: "spam_" + uid }],
       [{ text: "❌ Usuń lead", callback_data: "delete_" + uid }]
     ]
   };
@@ -1227,21 +1227,6 @@ function handleCallback(q) {
 
   if (action == "calcheck") { sendCalendarEvents(chat); return; }
 
-  if (action == "portal") {
-    const sh = sheetLidy();
-    const row = findRowByUID(sh, uid);
-    if (row < 0) { sendTemp(chat, "❌ Lead nie znaleziony."); return; }
-    const lead = sh.getRange(row, 1, 1, sh.getLastColumn()).getValues()[0];
-    const portalUrl = getPortalUrlForLegacyLead_(lead);
-    if (!portalUrl) {
-      sendTemp(chat, "⚠️ Portal sync jest teraz wyłączony dla szybszej CRM.");
-      return;
-    }
-    sendTemp(chat, "🔗 <b>Portal klienta</b>\n" + portalUrl, null, CONFIG.TTL_LIST);
-    logAction(whoIsUser(userId), "portal_link", lead[COL.NAME - 1], portalUrl);
-    return;
-  }
-
   if (action == "spam") {
     edit(chat, msgId, "Potwierdzić przeniesienie do spamu?\n\n" + baseLeadText(text), confirmKeyboard("spam", uid));
     return;
@@ -1745,51 +1730,10 @@ function updateDashboard() {
   if (newId) { props.setProperty("dashboard_msg_id", newId.toString()); pinMsg(CONFIG.GROUP_CHAT_ID, newId); }
 }
 
-// ─── Morning briefing (+ завтрашние события) ────────────────────────────────
+// ─── Disabled daily noise ────────────────────────────────────────────────────
 
 function morningBriefing() {
-  const rows = sheetLidy().getDataRange().getValues();
-  const today = new Date(); today.setHours(0, 0, 0, 0);
-  const tomorrow = new Date(today.getTime() + 86400000);
-
-  for (const [uid, member] of Object.entries(CONFIG.TEAM)) {
-    const who = member.name;
-    let txt = "☀️ <b>Dzień dobry, " + who + "!</b>\n\n"; let has = false;
-
-    for (let i = 1; i < rows.length; i++) {
-      if (rows[i][COL.ASSIGNED - 1] != who || rows[i][COL.UMOWA - 1] != "YES") continue;
-      const d = parseDate(rows[i][COL.DATE - 1]); if (isNaN(d.getTime())) continue;
-      d.setHours(0, 0, 0, 0);
-      if (d.getTime() == today.getTime()) {
-        txt += "🎉 <b>Dziś wydarzenie!</b> " + rows[i][COL.NAME - 1] + " · " + rows[i][COL.CITY - 1] +
-          (rows[i][COL.HOURS - 1] ? " · " + rows[i][COL.HOURS - 1] : "") + "\n"; has = true;
-      }
-      if (d.getTime() == tomorrow.getTime()) {
-        txt += "📅 <b>Jutro!</b> " + rows[i][COL.NAME - 1] + " · " + rows[i][COL.CITY - 1] +
-          (rows[i][COL.HOURS - 1] ? " · " + rows[i][COL.HOURS - 1] : "") + "\n"; has = true;
-      }
-    }
-    for (let i = 1; i < rows.length; i++) {
-      if (rows[i][COL.ASSIGNED - 1] != who) continue;
-      const nc = rows[i][COL.NEXTCALL - 1]; if (!nc) continue;
-      const ncStr = nc.toString().trim();
-      const datePart = ncStr.split(" ")[0];
-      const timePart = ncStr.split(" ")[1] || "";
-      const nd = parseDate(datePart); nd.setHours(0, 0, 0, 0);
-      if (nd.getTime() == today.getTime()) {
-        txt += "🔔 Zadzwoń: " + rows[i][COL.NAME - 1] + " · 📞 " + rows[i][COL.PHONE - 1];
-        if (timePart) txt += " · 🕐 " + timePart;
-        txt += "\n"; has = true;
-      }
-    }
-    let noOf = 0;
-    for (let i = 1; i < rows.length; i++) {
-      if (rows[i][COL.ASSIGNED - 1] == who && rows[i][COL.OFERTA - 1] != "YES") noOf++;
-    }
-    if (noOf > 0) { txt += "📧 Bez oferty: <b>" + noOf + "</b>\n"; has = true; }
-    if (!has) txt += "✅ Brak pilnych zadań. Miłego dnia!";
-    send(uid, txt);
-  }
+  return;
 }
 
 // ─── Google Calendar ─────────────────────────────────────────────────────────
@@ -2219,20 +2163,7 @@ function reminders() {
 }
 
 function dailySummary() {
-  const rows = sheetLidy().getDataRange().getValues();
-  const today = new Date(); today.setHours(0, 0, 0, 0);
-  let newT = 0, assignT = 0, ofertas = 0, umowy = 0;
-  for (let i = 1; i < rows.length; i++) {
-    if (!rows[i][COL.NAME - 1]) continue;
-    const sv = rows[i][COL.SENT - 1] + "";
-    if (sv.startsWith("SENT_")) { const d = new Date(parseInt(sv.replace("SENT_", ""))); d.setHours(0, 0, 0, 0); if (d.getTime() == today.getTime()) newT++; }
-    if ((rows[i][COL.CALLHIST - 1] || "").toString().includes(formatDate(today))) assignT++;
-    if (rows[i][COL.OFERTA - 1] == "YES") ofertas++;
-    if (rows[i][COL.UMOWA - 1] == "YES") umowy++;
-  }
-  send(CONFIG.GROUP_CHAT_ID, "🌙 <b>Podsumowanie dnia</b>\n\n🔥 Nowych: <b>" + newT + "</b>\n👤 Przypisano: <b>" + assignT +
-    "</b>\n📧 Ofert: <b>" + ofertas + "</b>\n📝 Umów: <b>" + umowy + "</b>");
-  updateDashboard();
+  return;
 }
 
 function monthlyContactsExport() {
@@ -2333,6 +2264,4 @@ function setupTriggers() {
   ScriptApp.newTrigger("cleanupMessages").timeBased().everyMinutes(5).create();
   ScriptApp.newTrigger("monitorLeadFlowHealth").timeBased().everyMinutes(15).create();
   ScriptApp.newTrigger("reminders").timeBased().everyHours(1).create();
-  ScriptApp.newTrigger("morningBriefing").timeBased().atHour(8).everyDays(1).create();
-  ScriptApp.newTrigger("dailySummary").timeBased().atHour(20).everyDays(1).create();
 }

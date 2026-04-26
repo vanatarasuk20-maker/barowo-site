@@ -1,0 +1,54 @@
+{
+  "slug": "mobilny-bar-trojmiasto",
+  "published": true,
+  "priority": 5,
+  "updated_at": "2026-04-25",
+  "title_plain": "Mobilny bar Trójmiasto",
+  "title_html": "MOBILNY BAR<br><span class=\"red\">TRÓJMIASTO</span>",
+  "description": "Mobilny bar w Trójmieście: obsługa wesel, urodzin, garden party i eventów firmowych w Gdyni, Gdańsku, Sopocie oraz okolicach.",
+  "eyebrow": "Gdynia · Gdańsk · Sopot",
+  "intro": "BAROWO działa lokalnie w Trójmieście, więc dobrze znamy logistykę sal, dojazdów, plenerów i eventów nad morzem. To skraca ustalenia i ułatwia sprawną realizację.",
+  "direct_answer": "Jeśli szukasz mobilnego baru w Trójmieście, najważniejsze są trzy rzeczy: dostępność terminu, dopasowanie pakietu do liczby gości i logistyka miejsca. BAROWO łączy bar, barmanów, szkło, koktajle i dojazd w jednym procesie.",
+  "service_type": "Mobilny bar Trójmiasto",
+  "areas": ["Trójmiasto", "Gdynia", "Gdańsk", "Sopot", "Pomorskie"],
+  "image": "/assets/photo1-opt.jpg",
+  "image_alt": "Mobilny bar BAROWO w Trójmieście",
+  "highlights": [
+    "Lokalna obsługa Trójmiasta",
+    "Wesela, urodziny, eventy firmowe i plenerowe",
+    "Gotowy bar, szkło, dodatki i barmani",
+    "Szybka wycena po krótkim zapytaniu"
+  ],
+  "sections": [
+    {
+      "title": "Dlaczego lokalny bar ma znaczenie?",
+      "body": "Przy mobilnym barze logistyka jest ważna: dojazd, wniesienie sprzętu, dostęp do miejsca, godziny montażu i warunki sali. Lokalny zespół szybciej rozumie realia Trójmiasta i może lepiej zaplanować realizację."
+    },
+    {
+      "title": "Jakie wydarzenia obsługujemy?",
+      "body": "Najczęściej obsługujemy wesela, 18-stki, urodziny, eventy firmowe, garden party i poprawiny. Każdy typ wydarzenia wymaga trochę innego tempa, menu i ustawienia baru.",
+      "bullets": ["sale weselne i restauracje", "eventy firmowe i integracje", "imprezy prywatne", "realizacje plenerowe"]
+    },
+    {
+      "title": "Jak dostać konkretną wycenę?",
+      "body": "Wyślij datę, miasto, liczbę gości i typ wydarzenia. To wystarczy, żeby wrócić z sensowną propozycją bez przeciągania rozmowy."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy BAROWO działa w całym Trójmieście?",
+      "answer": "Tak, obsługujemy Gdynię, Gdańsk, Sopot i okolice. Dalsze lokalizacje wyceniamy indywidualnie."
+    },
+    {
+      "question": "Czy dojazd jest w cenie?",
+      "answer": "Zakres dojazdu zależy od pakietu i lokalizacji. Wycena zawsze jasno pokazuje, co jest wliczone."
+    },
+    {
+      "question": "Czy można zamówić bar na plener?",
+      "answer": "Tak, jeśli miejsce pozwala na bezpieczne ustawienie baru i obsługę gości. Warunki plenerowe ustalamy przed rezerwacją."
+    }
+  ],
+  "related_articles": ["ile-kosztuje-mobilny-bar-trojmiasto", "garden-party-z-barem-mobilnym"],
+  "card_title_html": "Mobilny bar <span class=\"red\">Trójmiasto</span>",
+  "card_excerpt": "Lokalna obsługa baru w Gdyni, Gdańsku, Sopocie i okolicach."
+}

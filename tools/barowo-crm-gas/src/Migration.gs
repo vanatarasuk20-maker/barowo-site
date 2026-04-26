@@ -72,8 +72,6 @@ function migrateLeadsFromOldSheet() {
       package_name:  "",
       message:       note,
       manager_name:  managerName,
-      portal_token:  "",
-      portal_status: "",
       utm_source:    "",
       utm_medium:    "",
       utm_campaign:  campaignName,

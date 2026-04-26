@@ -1,17 +1,4 @@
 function doGet(e) {
-  try {
-    if (isEventHubGetRequest_(e)) {
-      return handleEventHubGetRequest_(e);
-    }
-  } catch (error) {
-    appendLog_("error", "doGet", error.message, {
-      stack: error.stack || ""
-    });
-    return renderJson_(false, {
-      error: error.message || "eventhub_get_failed"
-    });
-  }
-
   return ContentService
     .createTextOutput(JSON.stringify({
       ok: true,
@@ -25,8 +12,6 @@ function doPost(e) {
   const telegramRequest = isTelegramWebhookRequest_(e);
   const wantsJsonLeadResponse = isJsonLeadResponseRequested_(e);
   try {
-    const jsonPayload = parseJsonPostBody_(e);
-
     if (telegramRequest) {
       const payload = getTelegramWebhookPayload_(e);
 
@@ -42,10 +27,6 @@ function doPost(e) {
       }
 
       return handleTelegramWebhook_(payload);
-    }
-
-    if (isEventHubPostRequest_(jsonPayload)) {
-      return handleEventHubPostRequest_(jsonPayload);
     }
 
     return handleSiteLeadRequest_(e);
@@ -134,9 +115,10 @@ function isAuthorizedTelegramRelayPayload_(e, payload) {
   }
 
   if (relayToken && relayToken !== expectedSecret) {
-    PropertiesService.getScriptProperties().setProperty("TELEGRAM_RELAY_SHARED_SECRET", relayToken);
-    appendLog_("warn", "telegram", "rotated relay secret to match active relay", null);
-    return true;
+    appendLog_("warn", "telegram", "relay secret mismatch", {
+      update_id: payload && payload.update_id ? payload.update_id : null
+    });
+    return false;
   }
 
   return relayToken === expectedSecret;

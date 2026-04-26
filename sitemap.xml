@@ -2,11 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://barowo.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/</loc>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/cennik/</loc>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/realizacje/</loc>
+    <lastmod>2026-04-26</lastmod>
   </url>
   <url>
     <loc>https://barowo.com/aktualnosci/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/mobilny-bar-na-wesele/</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/drink-bar-na-wesele/</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/mobilny-bar-na-event-firmowy/</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/drink-bar-na-urodziny-gdansk/</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/mobilny-bar-trojmiasto/</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/mobilny-bar-gdynia/</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/mobilny-bar-gdansk/</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://barowo.com/oferta/mobilny-bar-sopot/</loc>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://barowo.com/aktualnosci/najlepsze-drinki-na-wesele/</loc>
@@ -38,6 +82,6 @@
   </url>
   <url>
     <loc>https://barowo.com/polityka-prywatnosci/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-26</lastmod>
   </url>
 </urlset>

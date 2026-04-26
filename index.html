@@ -30,6 +30,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=20260331">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260331">
   <link rel="manifest" href="/site.webmanifest?v=20260331">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Manrope:wght@400;500;700;800&amp;display=swap"
     rel="stylesheet">
@@ -56,36 +58,78 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "BAROWO",
-  "description": "Mobilny bar — profesjonalna obsługa barmańska wesel, urodzin i eventów firmowych w Trójmieście",
-  "@id": "https://barowo.com/#business",
-  "url": "https://barowo.com/",
-  "image": "https://barowo.com/assets/photo1-opt.jpg",
-  "logo": "https://barowo.com/assets/logo-main.png",
-  "telephone": "+48889168003",
-  "email": "barowo.pl@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Stryjska 13",
-    "addressLocality": "Gdynia",
-    "addressRegion": "Pomorskie",
-    "addressCountry": "PL"
-  },
-  "hasMap": "https://maps.google.com/?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia",
-  "sameAs": [
-    "https://www.instagram.com/barowo_official",
-    "https://www.tiktok.com/@barowo.official"
-  ],
-  "priceRange": "$$",
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "telephone": "+48889168003",
-    "contactType": "customer service",
-    "areaServed": "PL"
-  }],
-  "areaServed": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto"],
-  "serviceType": ["Obsługa barmańska wesel", "Mobilny bar urodziny", "Eventy firmowe"]
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "BAROWO",
+      "description": "Mobilny bar i profesjonalna obsługa barmańska wesel, urodzin i eventów firmowych w Trójmieście.",
+      "@id": "https://barowo.com/#business",
+      "url": "https://barowo.com/",
+      "image": [
+        "https://barowo.com/assets/photo1-opt.jpg",
+        "https://barowo.com/assets/photo2-opt.jpg",
+        "https://barowo.com/assets/photo3-opt.jpg"
+      ],
+      "logo": "https://barowo.com/assets/logo-main.png",
+      "telephone": "+48889168003",
+      "email": "barowo.pl@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Stryjska 13",
+        "addressLocality": "Gdynia",
+        "addressRegion": "Pomorskie",
+        "addressCountry": "PL"
+      },
+      "hasMap": "https://maps.google.com/?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia",
+      "sameAs": [
+        "https://www.instagram.com/barowo_official",
+        "https://www.tiktok.com/@barowo.official"
+      ],
+      "priceRange": "$$",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+48889168003",
+          "contactType": "customer service",
+          "areaServed": "PL",
+          "availableLanguage": ["pl", "en"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+48880564984",
+          "contactType": "customer service",
+          "areaServed": "PL",
+          "availableLanguage": ["pl", "en"]
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Gdynia"},
+        {"@type": "City", "name": "Gdańsk"},
+        {"@type": "City", "name": "Sopot"},
+        {"@type": "AdministrativeArea", "name": "Trójmiasto"},
+        {"@type": "AdministrativeArea", "name": "Pomorskie"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Oferta mobilnego baru BAROWO",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobilny bar na wesele", "url": "https://barowo.com/oferta/mobilny-bar-na-wesele/"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drink bar na wesele", "url": "https://barowo.com/oferta/drink-bar-na-wesele/"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobilny bar na event firmowy", "url": "https://barowo.com/oferta/mobilny-bar-na-event-firmowy/"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drink bar na urodziny", "url": "https://barowo.com/oferta/drink-bar-na-urodziny-gdansk/"}}
+        ]
+      },
+      "serviceType": ["Obsługa barmańska wesel", "Mobilny bar urodziny", "Eventy firmowe", "Drink bar"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://barowo.com/#website",
+      "url": "https://barowo.com/",
+      "name": "BAROWO",
+      "publisher": {"@id": "https://barowo.com/#business"},
+      "inLanguage": "pl-PL"
+    }
+  ]
 }
 </script>
   <script type="application/ld+json">
@@ -119,10 +163,26 @@
     },
     {
       "@type": "Question",
+      "name": "Na czym polega degustacja?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Opcjonalnie możesz przyjechać do BAROWO na degustację koktajli przed eventem. Razem wybieramy menu dopasowane do imprezy, smaków, kolorów i tematyki."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Jak daleko dojeżdżacie?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "BAROWO obsługuje głównie województwo pomorskie, do około 150 km od centrum Gdyni. Dalsze realizacje ustalane są indywidualnie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy można zmienić skład pakietu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Każdy pakiet można modyfikować: zmienić alkohole, dodać opcje bezalkoholowe i dopasować menu do tematu imprezy."
       }
     }
   ]
@@ -1570,6 +1630,188 @@
       color: #ffd9dc;
     }
 
+    body.callback-open {
+      overflow: hidden;
+    }
+
+    .callback-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 220;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+    }
+
+    .callback-modal.is-visible {
+      display: flex;
+    }
+
+    .callback-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(2, 2, 12, 0.76);
+      backdrop-filter: blur(10px);
+    }
+
+    .callback-dialog {
+      position: relative;
+      width: min(460px, 100%);
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 82% 0%, rgba(232, 0, 13, 0.2), transparent 34%),
+        rgba(10, 10, 40, 0.96);
+      box-shadow: 0 28px 100px rgba(0, 0, 0, 0.58);
+      transform: translateY(12px);
+      opacity: 0;
+      transition: transform 0.24s ease, opacity 0.24s ease;
+    }
+
+    .callback-modal.is-visible .callback-dialog {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .callback-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .callback-title {
+      max-width: 340px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.6rem, 10vw, 4rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .callback-text {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.96rem;
+      line-height: 1.72;
+      margin-bottom: 20px;
+    }
+
+    .callback-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .callback-form label {
+      display: grid;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .callback-form input[type="tel"] {
+      width: 100%;
+      min-height: 52px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.055);
+      color: var(--white);
+      padding: 0 16px;
+      font: inherit;
+      outline: none;
+    }
+
+    .callback-form input[type="tel"]:focus {
+      border-color: var(--red);
+      background: rgba(232, 0, 13, 0.05);
+    }
+
+    .callback-consent {
+      display: flex !important;
+      grid-template-columns: none;
+      align-items: flex-start;
+      gap: 11px !important;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      color: rgba(255, 255, 255, 0.76) !important;
+      font-size: 0.76rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0 !important;
+      line-height: 1.55;
+      text-transform: none !important;
+    }
+
+    .callback-consent input {
+      flex: 0 0 auto;
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      accent-color: var(--red);
+    }
+
+    .callback-consent a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .callback-submit {
+      min-height: 52px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--red);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .callback-submit:hover {
+      background: #ff0f1c;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(232, 0, 13, 0.38);
+    }
+
+    .callback-submit[disabled] {
+      opacity: 0.7;
+      cursor: wait;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .callback-status {
+      min-height: 1.2em;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .callback-status.is-success {
+      color: #d9ffe8;
+    }
+
+    .callback-status.is-error {
+      color: #ffb7bd;
+    }
+
     .footer-links {
       display: flex;
       align-items: center;
@@ -2571,6 +2813,150 @@
       will-change: contents;
     }
 
+    html {
+      scroll-padding-top: 96px;
+      background: #06061a;
+    }
+
+    #packages {
+      scroll-margin-top: 96px;
+      max-width: 1260px;
+      margin-top: -96px;
+      padding-top: 180px;
+    }
+
+    #packages .packages-note {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 34px;
+    }
+
+    #packages .note-badge {
+      min-height: 58px;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    #packages .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    #packages .pkg {
+      min-width: 0;
+      height: 100%;
+      padding: 30px 28px;
+      transform: none;
+    }
+
+    #packages .pkg:hover {
+      transform: none;
+    }
+
+    #packages .pkg-badge {
+      width: 100%;
+      margin-bottom: 22px;
+      border-radius: 0;
+      text-align: center;
+    }
+
+    #packages .pkg-name {
+      line-height: 0.95;
+      margin-bottom: 10px;
+    }
+
+    #packages .pkg-fit {
+      min-height: 3.2em;
+      margin-bottom: 22px;
+      line-height: 1.45;
+    }
+
+    #packages .pkg-section {
+      margin-bottom: 18px;
+    }
+
+    #packages .pkg-items {
+      overflow-wrap: anywhere;
+    }
+
+    #packages .pkg-cta {
+      border-radius: 999px;
+    }
+
+    @media (max-width: 980px) {
+      #packages .packages-note,
+      #packages .packages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #packages .pkg-fit {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      html {
+        scroll-padding-top: 78px;
+      }
+
+      #packages {
+        scroll-margin-top: 78px;
+        margin-top: -78px;
+        padding-top: 136px;
+      }
+
+      #packages .note-badge {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      #packages .pkg {
+        padding: 26px 22px;
+      }
+    }
+
+    #hero {
+      align-items: center;
+      min-height: min(760px, calc(100svh - 76px));
+      padding: 70px 0 58px;
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at 84% 24%, rgba(232, 0, 13, 0.22), transparent 28%),
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.07), transparent 22%),
+        linear-gradient(140deg, #07081f 0%, #0b0d2b 52%, #050617 100%);
+    }
+
+    .hero-content {
+      max-width: 720px !important;
+    }
+
+    .hero-content .hero-actions {
+      margin-top: 26px;
+    }
+
+    @media (max-width: 760px) {
+      #hero {
+        min-height: auto;
+        padding: 48px 0 36px;
+      }
+
+      .hero-bg {
+        background:
+          radial-gradient(circle at 80% 14%, rgba(232, 0, 13, 0.18), transparent 30%),
+          linear-gradient(150deg, #07081f 0%, #0b0d2b 56%, #050617 100%);
+      }
+
+      .hero-content {
+        padding-top: 54px !important;
+      }
+    }
+
     @keyframes navDrop {
       from {
         opacity: 0;
@@ -2582,6 +2968,132 @@
         transform: translateY(0);
       }
     }
+
+    /* Final UI polish layer */
+    #packages {
+      margin-top: 0 !important;
+      padding-top: 104px !important;
+      scroll-margin-top: 92px !important;
+    }
+
+    #packages .pkg {
+      border-radius: 18px;
+      background: rgba(18, 18, 45, 0.78);
+    }
+
+    #packages .pkg.featured {
+      background: linear-gradient(180deg, rgba(232, 0, 13, 0.12), rgba(18, 18, 45, 0.86));
+    }
+
+    #packages .pkg-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+    }
+
+    @media (max-width: 760px) {
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      nav {
+        left: 0;
+        right: 0;
+        width: 100%;
+      }
+
+      #hero {
+        min-height: auto !important;
+        margin-top: 70px;
+        padding: 34px 0 34px !important;
+      }
+
+      .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 48px 20px 12px !important;
+        overflow: hidden;
+      }
+
+      .hero-tag {
+        max-width: 100%;
+        gap: 8px;
+        font-size: 0.66rem;
+        letter-spacing: 0.1em;
+        line-height: 1.35;
+      }
+
+      .hero-tag::before {
+        width: 28px;
+        flex: 0 0 28px;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: clamp(2.75rem, 13.8vw, 3.45rem) !important;
+        line-height: 0.96 !important;
+        letter-spacing: 0.01em !important;
+      }
+
+      .hero-sub {
+        max-width: 100%;
+        padding-top: 10px !important;
+        margin-bottom: 18px;
+        font-size: 0.92rem;
+      }
+
+      .hero-proof {
+        max-width: 100%;
+        font-size: 0.64rem;
+        line-height: 1.5;
+        letter-spacing: 0.1em;
+        overflow-wrap: anywhere;
+      }
+
+      .hero-actions {
+        width: 100%;
+        margin-top: 22px !important;
+      }
+
+      .btn-red,
+      .btn-ghost,
+      .pkg-cta,
+      .form-btn {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: center;
+      }
+
+      .stats-bar {
+        width: calc(100% - 32px);
+        padding: 0 0 18px;
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        width: 100%;
+      }
+
+      #packages {
+        padding-top: 72px !important;
+        scroll-margin-top: 76px !important;
+      }
+
+      #packages .packages-note {
+        gap: 10px;
+      }
+
+      #packages .pkg {
+        padding: 24px 18px;
+      }
+    }
   </style>
 </head>
 
@@ -2590,13 +3102,14 @@
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo" aria-label="BAROWO - Mobilny Bar">
-      <img src="/assets/logo-main.png?v=20260331" alt="BAROWO">
+      <img src="/assets/logo-main.png?v=20260331" alt="BAROWO" width="52" height="52">
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#how">Jak to działa</a></li>
-      <li><a href="#packages">Oferta</a></li>
-      <li><a href="/aktualnosci/">Aktualności</a></li>
-      <li><a href="#team">Zespół</a></li>
+      <li><a href="#packages">Pakiety</a></li>
+      <li><a href="/oferta/">Usługi</a></li>
+      <li><a href="/cennik/">Cennik</a></li>
+      <li><a href="/realizacje/">Realizacje</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Zarezerwuj</a></li>
     </ul>
@@ -2623,14 +3136,11 @@
       <p class="hero-proof">
         50+ realizacji · 3 lata doświadczenia · odpowiedź maks. w 12h
       </p>
-
-    </div>
-    <div class="hero-content hero-actions-wrap" style="position: absolute; bottom: 0; right: 30px; padding: 30px 0;">
-          <div class="hero-actions">
+      <div class="hero-actions">
         <a href="#contact" class="btn-red">Sprawdź termin →</a>
         <a href="#packages" class="btn-ghost">Zobacz pakiety</a>
       </div>
-      </div>
+    </div>
   </section>
 
   <!-- STATS -->
@@ -2806,6 +3316,26 @@
           imprezy.</div>
       </div>
     </div>
+
+    <div class="hero-actions" style="margin-top:18px;">
+      <a href="/cennik/" class="btn-ghost">Jak działa wycena?</a>
+      <a href="/realizacje/" class="btn-ghost">Zobacz realizacje</a>
+    </div>
+
+    <div class="pricing-info" aria-label="Najczęściej wybierane usługi BAROWO">
+      <div>
+        <div class="pi-item-title"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a></div>
+        <div class="pi-item-text">Bar, koktajle i barmani na wesela w Gdyni, Gdańsku, Sopocie i okolicach.</div>
+      </div>
+      <div>
+        <div class="pi-item-title"><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a></div>
+        <div class="pi-item-text">Profesjonalny setup i szybka obsługa gości na integracje, gale i spotkania firmowe.</div>
+      </div>
+      <div>
+        <div class="pi-item-title"><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a></div>
+        <div class="pi-item-text">Lokalna obsługa baru w Gdyni, Gdańsku, Sopocie i województwie pomorskim.</div>
+      </div>
+    </div>
   </section>
 
   <section class="section" aria-label="Realizacje i opinie">
@@ -2875,8 +3405,9 @@
     </div>
 
     <div class="hero-actions" style="margin-top:16px;">
+      <a href="/realizacje/" class="btn-red">Zobacz realizacje</a>
       <a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener" class="btn-ghost">Instagram →</a>
-      <a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener" class="btn-red">TikTok →</a>
+      <a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener" class="btn-ghost">TikTok →</a>
     </div>
 
     <div class="proof-grid">
@@ -3009,22 +3540,22 @@
       <form action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST" class="form">
         <div class="form-row">
           <div class="fg">
-            <label>Imię i nazwisko *</label>
-            <input type="text" name="name" placeholder="Jan Kowalski" required>
+            <label for="leadName">Imię i nazwisko *</label>
+            <input type="text" id="leadName" name="name" placeholder="Jan Kowalski" autocomplete="name" required>
           </div>
           <div class="fg">
-            <label>Telefon</label>
-            <input type="tel" name="phone" placeholder="+48 000 000 000">
+            <label for="leadPhone">Telefon</label>
+            <input type="tel" id="leadPhone" name="phone" placeholder="+48 000 000 000" autocomplete="tel">
           </div>
         </div>
         <div class="fg">
-          <label>E-mail *</label>
-          <input type="email" name="email" placeholder="twoj@email.pl" required>
+          <label for="leadEmail">E-mail *</label>
+          <input type="email" id="leadEmail" name="email" placeholder="twoj@email.pl" autocomplete="email" required>
         </div>
         <div class="form-row">
           <div class="fg">
-            <label>Rodzaj eventu</label>
-            <select name="event_type">
+            <label for="leadEventType">Rodzaj eventu</label>
+            <select id="leadEventType" name="event_type">
               <option value="">Wybierz...</option>
               <option>Wesele</option>
               <option>Urodziny / 18-tka</option>
@@ -3034,14 +3565,14 @@
             </select>
           </div>
           <div class="fg">
-            <label>Planowana data</label>
-            <input type="date" name="event_date">
+            <label for="leadEventDate">Planowana data</label>
+            <input type="date" id="leadEventDate" name="event_date">
           </div>
         </div>
         <div class="form-row">
           <div class="fg">
-            <label>Pakiet</label>
-            <select name="package">
+            <label for="leadPackage">Pakiet</label>
+            <select id="leadPackage" name="package">
               <option value="">Wybierz pakiet...</option>
               <option>Simple</option>
               <option>Standard</option>
@@ -3050,8 +3581,8 @@
             </select>
           </div>
           <div class="fg">
-            <label>Liczba gości</label>
-            <select name="guests">
+            <label for="leadGuests">Liczba gości</label>
+            <select id="leadGuests" name="guests">
               <option value="">Wybierz...</option>
               <option>do 30 osób</option>
               <option>30–50 osób</option>
@@ -3061,8 +3592,8 @@
           </div>
         </div>
         <div class="fg">
-          <label>Wiadomość</label>
-          <textarea name="message" placeholder="Opowiedz nam o swoim wydarzeniu — lokalizacja, oczekiwania, pytania..."></textarea>
+          <label for="leadMessage">Wiadomość</label>
+          <textarea id="leadMessage" name="message" placeholder="Opowiedz nam o swoim wydarzeniu — lokalizacja, oczekiwania, pytania..."></textarea>
         </div>
         <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
           <label for="crmCompanyField">Company</label>
@@ -3137,13 +3668,44 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="/assets/logo-main.png?v=20260331" alt="BAROWO">
+    <img src="/assets/logo-main.png?v=20260331" alt="BAROWO" width="46" height="46">
     <div class="footer-copy">© 2026 BAROWO — Mobilny Bar Trójmiasto. All rights reserved.</div>
-    <div class="footer-links"><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
+    <div class="footer-links"><a href="/oferta/">Oferta</a><a href="/cennik/">Cennik</a><a href="/realizacje/">Realizacje</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
     <div class="footer-region">Gdynia · Gdańsk · Sopot</div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <div class="callback-modal" id="callbackModal" role="dialog" aria-modal="true" aria-labelledby="callbackTitle" aria-hidden="true">
+    <div class="callback-backdrop" data-callback-close></div>
+    <div class="callback-dialog">
+      <button class="callback-close" type="button" data-callback-close aria-label="Zamknij formularz">×</button>
+      <div class="label">Szybki kontakt</div>
+      <div class="callback-title" id="callbackTitle">ZOSTAW NUMER.<br><span class="red">ODDZWONIMY.</span></div>
+      <p class="callback-text">Jeśli planujesz wesele, urodziny albo event, zostaw telefon. Oddzwonimy możliwie szybko i powiemy, czy mamy wolny termin.</p>
+      <form class="callback-form" id="callbackForm" action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST">
+        <label for="callbackPhone">Telefon *
+          <input type="tel" id="callbackPhone" name="phone" placeholder="+48 000 000 000" autocomplete="tel" required>
+        </label>
+        <label class="callback-consent" for="callbackConsent">
+          <input type="checkbox" id="callbackConsent" name="privacy_consent" required>
+          <span>Wyrażam zgodę na kontakt telefoniczny i przetwarzanie danych zgodnie z <a href="/polityka-prywatnosci/">Polityką prywatności</a>.</span>
+        </label>
+        <input type="hidden" name="name" value="Prośba o telefon ze strony">
+        <input type="hidden" name="source" value="website_callback_popup">
+        <input type="hidden" name="message" value="Użytkownik był na stronie ponad 5 minut i poprosił o szybki telefon zwrotny.">
+        <input type="hidden" name="return_url" value="https://barowo.com/#contact">
+        <input type="hidden" name="page_url" value="">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="utm_term" value="">
+        <button class="callback-submit" type="submit">Oddzwońcie do mnie</button>
+        <div class="callback-status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
   <script>
     function toggleNav() {
       const nav = document.getElementById('navLinks');
@@ -3298,6 +3860,138 @@
       });
     }
 
+    const callbackModal = document.getElementById('callbackModal');
+    const callbackForm = document.getElementById('callbackForm');
+    if (callbackModal && callbackForm) {
+      const callbackPhone = callbackForm.querySelector('#callbackPhone');
+      const callbackConsent = callbackForm.querySelector('#callbackConsent');
+      const callbackStatus = callbackForm.querySelector('.callback-status');
+      const callbackSubmit = callbackForm.querySelector('.callback-submit');
+      const callbackSubmitLabel = callbackSubmit ? callbackSubmit.textContent : '';
+      const callbackStorageKey = 'barowo_callback_popup_state';
+      const callbackDelayMs = new URLSearchParams(window.location.search).has('callback_test') ? 900 : 300000;
+      const callbackDismissTtl = 24 * 60 * 60 * 1000;
+      const callbackSubmitTtl = 30 * 24 * 60 * 60 * 1000;
+
+      const readCallbackState = () => {
+        try {
+          return JSON.parse(localStorage.getItem(callbackStorageKey) || '{}');
+        } catch (error) {
+          return {};
+        }
+      };
+
+      const writeCallbackState = (state) => {
+        try {
+          localStorage.setItem(callbackStorageKey, JSON.stringify({ ...state, at: Date.now() }));
+        } catch (error) {
+          // Ignore storage errors; the popup should still work for the current visit.
+        }
+      };
+
+      const shouldShowCallback = () => {
+        const state = readCallbackState();
+        if (!state || !state.type || !state.at) return true;
+        const age = Date.now() - Number(state.at);
+        if (state.type === 'submitted') return age > callbackSubmitTtl;
+        if (state.type === 'dismissed') return age > callbackDismissTtl;
+        return true;
+      };
+
+      const fillCallbackMeta = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageUrlField = callbackForm.querySelector('input[name="page_url"]');
+        const referrerField = callbackForm.querySelector('input[name="referrer"]');
+        if (pageUrlField) pageUrlField.value = window.location.href;
+        if (referrerField) referrerField.value = document.referrer || '';
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((fieldName) => {
+          const field = callbackForm.querySelector(`input[name="${fieldName}"]`);
+          if (field) field.value = urlParams.get(fieldName) || '';
+        });
+      };
+
+      const setCallbackStatus = (type, message) => {
+        if (!callbackStatus) return;
+        callbackStatus.className = 'callback-status';
+        if (type) callbackStatus.classList.add(`is-${type}`);
+        callbackStatus.textContent = message || '';
+      };
+
+      const openCallbackModal = () => {
+        if (!shouldShowCallback()) return;
+        fillCallbackMeta();
+        callbackModal.classList.add('is-visible');
+        callbackModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('callback-open');
+        if (callbackPhone) callbackPhone.focus({ preventScroll: true });
+      };
+
+      const closeCallbackModal = (reason = 'dismissed') => {
+        callbackModal.classList.remove('is-visible');
+        callbackModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('callback-open');
+        if (reason === 'dismissed') writeCallbackState({ type: 'dismissed' });
+      };
+
+      window.setTimeout(openCallbackModal, callbackDelayMs);
+
+      callbackModal.querySelectorAll('[data-callback-close]').forEach((button) => {
+        button.addEventListener('click', () => closeCallbackModal('dismissed'));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && callbackModal.classList.contains('is-visible')) {
+          closeCallbackModal('dismissed');
+        }
+      });
+
+      callbackForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (typeof callbackForm.reportValidity === 'function' && !callbackForm.reportValidity()) {
+          return;
+        }
+
+        fillCallbackMeta();
+        setCallbackStatus('', '');
+        if (callbackSubmit) {
+          callbackSubmit.disabled = true;
+          callbackSubmit.textContent = 'Wysyłamy…';
+        }
+
+        try {
+          const formData = new FormData(callbackForm);
+          const body = new URLSearchParams();
+          const submitUrl = new URL(callbackForm.action);
+          submitUrl.searchParams.set('format', 'json');
+          formData.forEach((value, key) => body.append(key, value));
+
+          const response = await fetch(submitUrl.toString(), {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body
+          });
+          const payload = await response.json().catch(() => null);
+          if (!response.ok || !payload || payload.ok !== true) {
+            throw new Error((payload && payload.error) || 'callback_submit_failed');
+          }
+
+          callbackForm.reset();
+          writeCallbackState({ type: 'submitted' });
+          setCallbackStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
+          window.setTimeout(() => closeCallbackModal('submitted'), 1800);
+        } catch (error) {
+          setCallbackStatus('error', 'Nie udało się wysłać numeru. Zadzwoń do nas: +48 889 168 003.');
+        } finally {
+          if (callbackSubmit) {
+            callbackSubmit.disabled = false;
+            callbackSubmit.textContent = callbackSubmitLabel;
+          }
+          if (callbackConsent) callbackConsent.setCustomValidity('');
+        }
+      });
+    }
+
     document.addEventListener('click', (event) => {
       const nav = document.getElementById('navLinks');
       const burger = document.getElementById('hamburger');
@@ -3307,34 +4001,10 @@
       }
     });
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const element = entry.target;
-        const target = Number(element.dataset.target || 0);
-        const suffix = element.dataset.suffix || '';
-        const duration = 900;
-        const start = performance.now();
-
-        const tick = (now) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const value = Math.floor(progress * target);
-          element.textContent = `${value}${suffix}`;
-          if (progress < 1) {
-            requestAnimationFrame(tick);
-          } else {
-            element.textContent = `${target}${suffix}`;
-          }
-        };
-
-        requestAnimationFrame(tick);
-        observer.unobserve(element);
-      });
-    }, { threshold: 0.45 });
-
     document.querySelectorAll('.stat-n[data-target]').forEach((element) => {
-      counterObserver.observe(element);
+      const target = Number(element.dataset.target || 0);
+      const suffix = element.dataset.suffix || '';
+      element.textContent = `${target}${suffix}`;
     });
 
     const revealTargets = document.querySelectorAll(

@@ -2,6 +2,8 @@
 
 Lightweight Cloudflare Worker that gives Telegram an instant `200 OK` webhook endpoint and forwards updates to the BAROWO Apps Script CRM.
 
+The same Worker also exposes `/lead` for public website lead forms. Lead form POST requests return a fast accepted response and forward to Apps Script in the background, so visitors do not wait on CRM processing.
+
 ## Why this exists
 
 Telegram retries aggressively when the direct Apps Script webhook responds with `302 Moved Temporarily`. A Worker fixes that by:

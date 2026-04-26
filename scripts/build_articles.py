@@ -10,16 +10,37 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content" / "articles"
+SERVICES_DIR = ROOT / "content" / "services"
 TEMPLATES_DIR = ROOT / "templates"
 BLOG_DIR = ROOT / "aktualnosci"
+OFFER_DIR = ROOT / "oferta"
 PRIVACY_URL = "https://barowo.com/polityka-prywatnosci/"
 HOME_URL = "https://barowo.com/"
 BLOG_URL = "https://barowo.com/aktualnosci/"
+OFFER_URL = "https://barowo.com/oferta/"
+CENNIK_URL = "https://barowo.com/cennik/"
+REALIZACJE_URL = "https://barowo.com/realizacje/"
 YEAR = "2026"
+STATIC_PAGES = [
+    (CENNIK_URL, ROOT / "cennik" / "index.html"),
+    (REALIZACJE_URL, ROOT / "realizacje" / "index.html"),
+]
 
 
 def slug_url(slug: str) -> str:
     return f"https://barowo.com/aktualnosci/{slug}/"
+
+
+def service_url(slug: str) -> str:
+    return f"https://barowo.com/oferta/{slug}/"
+
+
+def absolute_url(path: str) -> str:
+    if not path:
+        return ""
+    if path.startswith(("http://", "https://")):
+        return path
+    return "https://barowo.com" + (path if path.startswith("/") else f"/{path}")
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -46,6 +67,26 @@ def load_articles() -> list[dict[str, Any]]:
         item["_path"] = path
         items.append(item)
     items.sort(key=lambda x: x.get("published_at", ""), reverse=True)
+    return items
+
+
+def load_services() -> list[dict[str, Any]]:
+    items: list[dict[str, Any]] = []
+    if not SERVICES_DIR.exists():
+        return items
+    for path in sorted(SERVICES_DIR.glob("*.json")):
+        if path.stem.startswith("_"):
+            continue
+        item = read_json(path)
+        if not item.get("published", True):
+            continue
+        item.setdefault("slug", path.stem)
+        item.setdefault("updated_at", datetime.now().strftime("%Y-%m-%d"))
+        item.setdefault("title_plain", path.stem.replace("-", " ").capitalize())
+        item.setdefault("description", item.get("intro", ""))
+        item["_path"] = path
+        items.append(item)
+    items.sort(key=lambda x: (x.get("priority", 99), x.get("title_plain", "")))
     return items
 
 
@@ -137,21 +178,50 @@ def render_article_body(article: dict[str, Any]) -> str:
 
 
 def render_jsonld(article: dict[str, Any]) -> str:
+    published_at = article.get("published_at", datetime.now().strftime("%Y-%m-%d"))
+    modified_at = article.get("modified_at", article.get("updated_at", published_at))
+    article_url = slug_url(article["slug"])
+    image_url = absolute_url(article.get("cover_image", ""))
     payload = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": article.get("title_plain", ""),
-        "description": article.get("description", ""),
-        "author": {"@type": "Organization", "name": "BAROWO"},
-        "publisher": {
-            "@type": "Organization",
-            "name": "BAROWO",
-            "logo": {"@type": "ImageObject", "url": "https://barowo.com/assets/favicon.png"},
-        },
-        "mainEntityOfPage": slug_url(article["slug"]),
-        "image": f"https://barowo.com{article.get('cover_image', '')}",
-        "articleSection": article.get("category", "Aktualności"),
-        "inLanguage": "pl-PL",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": article_url + "#article",
+                "headline": article.get("title_plain", ""),
+                "description": article.get("description", ""),
+                "datePublished": published_at,
+                "dateModified": modified_at,
+                "author": {
+                    "@type": "Organization",
+                    "name": "BAROWO",
+                    "url": HOME_URL,
+                    "sameAs": [
+                        "https://www.instagram.com/barowo_official",
+                        "https://www.tiktok.com/@barowo.official",
+                    ],
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "BAROWO",
+                    "logo": {"@type": "ImageObject", "url": "https://barowo.com/assets/logo-main.png"},
+                },
+                "mainEntityOfPage": article_url,
+                "image": [image_url] if image_url else [],
+                "articleSection": article.get("category", "Aktualności"),
+                "keywords": [v for v in [article.get("category", ""), article.get("tag", ""), article.get("target_keyword", "")] if v],
+                "inLanguage": "pl-PL",
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": article_url + "#breadcrumbs",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": HOME_URL},
+                    {"@type": "ListItem", "position": 2, "name": "Aktualności", "item": BLOG_URL},
+                    {"@type": "ListItem", "position": 3, "name": article.get("title_plain", ""), "item": article_url},
+                ],
+            },
+        ],
     }
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
@@ -163,16 +233,22 @@ def article_footer_copy(article: dict[str, Any]) -> str:
 
 
 def render_article_page(template: str, article: dict[str, Any]) -> str:
+    published_at = article.get("published_at", "")
+    modified_at = article.get("modified_at", article.get("updated_at", published_at))
+    og_image = absolute_url(article.get("cover_image", article.get("card_image", "")))
     replacements = {
         "{{PAGE_TITLE}}": escape(f"{article['title_plain']} | BAROWO"),
         "{{META_DESCRIPTION}}": escape(article.get("description", "")),
         "{{OG_TITLE}}": escape(article.get("title_plain", "")),
         "{{OG_DESCRIPTION}}": escape(article.get("description", "")),
         "{{OG_URL}}": slug_url(article["slug"]),
+        "{{OG_IMAGE}}": escape(og_image),
         "{{CANONICAL_URL}}": slug_url(article["slug"]),
         "{{JSONLD}}": render_jsonld(article),
         "{{H1_HTML}}": article.get("title_html", escape(article.get("title_plain", ""))),
         "{{INTRO}}": escape(article.get("intro", "")),
+        "{{PUBLISHED_AT}}": escape(published_at),
+        "{{MODIFIED_AT}}": escape(modified_at),
         "{{ARTICLE_META}}": render_meta_spans(article),
         "{{ARTICLE_COVER}}": render_cover(article),
         "{{ARTICLE_BODY}}": render_article_body(article),
@@ -188,6 +264,170 @@ def render_article_page(template: str, article: dict[str, Any]) -> str:
     for key, value in replacements.items():
         output = output.replace(key, value)
     return output
+
+
+def render_list(items: list[str]) -> str:
+    if not items:
+        return ""
+    return "\n".join(f"<li>{format_inline(item)}</li>" for item in items)
+
+
+def render_service_sections(service: dict[str, Any]) -> str:
+    sections = service.get("sections") or []
+    out: list[str] = []
+    for section in sections:
+        title = section.get("title", "")
+        body = section.get("body", "")
+        bullets = section.get("bullets") or []
+        out.append(
+            f"""<section class="service-block">
+          <h2>{format_inline(title)}</h2>
+          <p>{format_inline(body)}</p>
+          {('<ul>' + render_list(bullets) + '</ul>') if bullets else ''}
+        </section>"""
+        )
+    return "\n        ".join(out)
+
+
+def render_service_faq(service: dict[str, Any]) -> str:
+    faqs = service.get("faq") or []
+    if not faqs:
+        return ""
+    items = "\n".join(
+        f"""          <details>
+            <summary>{escape(item.get('question', ''))}</summary>
+            <p>{format_inline(item.get('answer', ''))}</p>
+          </details>"""
+        for item in faqs
+    )
+    return f"""<section class="service-faq">
+          <div class="label">FAQ</div>
+          <h2>Najczęstsze pytania</h2>
+{items}
+        </section>"""
+
+
+def render_service_jsonld(service: dict[str, Any]) -> str:
+    page_url = service_url(service["slug"])
+    faqs = service.get("faq") or []
+    graph: list[dict[str, Any]] = [
+        {
+            "@type": "Service",
+            "@id": page_url + "#service",
+            "name": service.get("title_plain", ""),
+            "description": service.get("description", ""),
+            "provider": {"@id": HOME_URL + "#business"},
+            "serviceType": service.get("service_type", "Mobilny bar"),
+            "areaServed": service.get("areas", ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto"]),
+            "url": page_url,
+            "image": absolute_url(service.get("image", "/assets/photo1-opt.jpg")),
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "url": page_url,
+                "priceCurrency": "PLN",
+                "description": service.get("offer_note", "Wycena indywidualna zależna od daty, lokalizacji, liczby gości i zakresu obsługi."),
+            },
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": page_url + "#breadcrumbs",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": HOME_URL},
+                {"@type": "ListItem", "position": 2, "name": "Oferta", "item": OFFER_URL},
+                {"@type": "ListItem", "position": 3, "name": service.get("title_plain", ""), "item": page_url},
+            ],
+        },
+    ]
+    if faqs:
+        graph.append(
+            {
+                "@type": "FAQPage",
+                "@id": page_url + "#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": item.get("question", ""),
+                        "acceptedAnswer": {"@type": "Answer", "text": item.get("answer", "")},
+                    }
+                    for item in faqs
+                ],
+            }
+        )
+    return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
+
+
+def render_related_articles(service: dict[str, Any], articles: list[dict[str, Any]]) -> str:
+    slugs = service.get("related_articles") or []
+    if not slugs:
+        return ""
+    by_slug = {article["slug"]: article for article in articles}
+    links = []
+    for slug in slugs:
+        article = by_slug.get(slug)
+        if article:
+            links.append(f'<a href="/aktualnosci/{slug}/">{escape(article.get("title_plain", slug))}</a>')
+    if not links:
+        return ""
+    return '<div class="related-links">' + "\n".join(links) + "</div>"
+
+
+def render_service_page(template: str, service: dict[str, Any], articles: list[dict[str, Any]]) -> str:
+    replacements = {
+        "{{PAGE_TITLE}}": escape(f"{service['title_plain']} | BAROWO"),
+        "{{META_DESCRIPTION}}": escape(service.get("description", "")),
+        "{{OG_TITLE}}": escape(service.get("title_plain", "")),
+        "{{OG_DESCRIPTION}}": escape(service.get("description", "")),
+        "{{OG_URL}}": service_url(service["slug"]),
+        "{{OG_IMAGE}}": escape(absolute_url(service.get("image", "/assets/photo1-opt.jpg"))),
+        "{{CANONICAL_URL}}": service_url(service["slug"]),
+        "{{JSONLD}}": render_service_jsonld(service),
+        "{{H1_HTML}}": service.get("title_html", escape(service.get("title_plain", ""))),
+        "{{EYEBROW}}": escape(service.get("eyebrow", "Oferta BAROWO")),
+        "{{INTRO}}": escape(service.get("intro", "")),
+        "{{DIRECT_ANSWER}}": escape(service.get("direct_answer", "")),
+        "{{IMAGE}}": escape(service.get("image", "/assets/photo1-opt.jpg")),
+        "{{IMAGE_ALT}}": escape(service.get("image_alt", "Mobilny bar BAROWO")),
+        "{{HIGHLIGHTS}}": render_list(service.get("highlights") or []),
+        "{{SECTIONS}}": render_service_sections(service),
+        "{{FAQ}}": render_service_faq(service),
+        "{{RELATED_ARTICLES}}": render_related_articles(service, articles),
+        "{{UPDATED_AT}}": escape(service.get("updated_at", "")),
+    }
+    output = template
+    for key, value in replacements.items():
+        output = output.replace(key, value)
+    return output
+
+
+def service_card_html(service: dict[str, Any]) -> str:
+    return f"""        <article class="service-card">
+          <a class="service-card-media" href="/oferta/{service['slug']}/">
+            <img src="{escape(service.get('image', '/assets/photo1-opt.jpg'))}" alt="{escape(service.get('image_alt', 'Mobilny bar BAROWO'))}" width="1200" height="1600" loading="lazy">
+          </a>
+          <div class="service-card-copy">
+            <span>{escape(service.get('eyebrow', 'Oferta'))}</span>
+            <h2>{service.get('card_title_html', service.get('title_html', escape(service.get('title_plain', ''))))}</h2>
+            <p>{escape(service.get('card_excerpt', service.get('intro', '')))}</p>
+            <a class="btn-red" href="/oferta/{service['slug']}/">Zobacz ofertę</a>
+          </div>
+        </article>"""
+
+
+def render_service_index(template: str, services: list[dict[str, Any]]) -> str:
+    cards = "\n\n".join(service_card_html(service) for service in services)
+    payload = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Oferta BAROWO",
+        "description": "Mobilny bar, drink bar i obsługa barmańska BAROWO w Trójmieście.",
+        "url": OFFER_URL,
+        "mainEntity": [
+            {"@type": "Service", "name": service.get("title_plain", ""), "url": service_url(service["slug"])}
+            for service in services
+        ],
+    }
+    return template.replace("{{SERVICE_CARDS}}", cards).replace("{{JSONLD}}", json.dumps(payload, ensure_ascii=False, indent=2))
 
 
 def card_html(article: dict[str, Any]) -> str:
@@ -235,15 +475,34 @@ def write_blog_index(articles: list[dict[str, Any]]) -> None:
     write_file(BLOG_DIR / "index.html", render_blog_index(template, articles))
 
 
-def write_sitemap(articles: list[dict[str, Any]]) -> None:
+def write_service_pages(services: list[dict[str, Any]], articles: list[dict[str, Any]]) -> None:
+    template = (TEMPLATES_DIR / "service-template.html").read_text(encoding="utf-8")
+    for service in services:
+        out_dir = OFFER_DIR / service["slug"]
+        write_file(out_dir / "index.html", render_service_page(template, service, articles))
+
+
+def write_service_index(services: list[dict[str, Any]]) -> None:
+    template = (TEMPLATES_DIR / "service-index-template.html").read_text(encoding="utf-8")
+    write_file(OFFER_DIR / "index.html", render_service_index(template, services))
+
+
+def write_sitemap(articles: list[dict[str, Any]], services: list[dict[str, Any]]) -> None:
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     urls = [
         (HOME_URL, datetime.now().strftime("%Y-%m-%d")),
+        (OFFER_URL, datetime.now().strftime("%Y-%m-%d")),
+        (CENNIK_URL, datetime.now().strftime("%Y-%m-%d")),
+        (REALIZACJE_URL, datetime.now().strftime("%Y-%m-%d")),
         (BLOG_URL, datetime.now().strftime("%Y-%m-%d")),
     ]
+    urls.extend(
+        (service_url(service["slug"]), service.get("updated_at", datetime.now().strftime("%Y-%m-%d")))
+        for service in services
+    )
     urls.extend(
         (slug_url(article["slug"]), article.get("published_at", datetime.now().strftime("%Y-%m-%d")))
         for article in articles
@@ -255,12 +514,16 @@ def write_sitemap(articles: list[dict[str, Any]]) -> None:
     write_file(ROOT / "sitemap.xml", "\n".join(lines) + "\n")
 
 
-def write_redirects(articles: list[dict[str, Any]]) -> None:
+def write_redirects(articles: list[dict[str, Any]], services: list[dict[str, Any]]) -> None:
     lines = [
         "/index.html / 301!",
+        "/oferta.html /oferta/ 301!",
+        "/oferta/index.html /oferta/ 301!",
         "/aktualnosci.html /aktualnosci/ 301!",
         "/aktualnosci/index.html /aktualnosci/ 301!",
     ]
+    for service in services:
+        lines.append(f"/oferta/{service['slug']}/index.html /oferta/{service['slug']}/ 301!")
     for article in articles:
         lines.append(f"/aktualnosci/{article['slug']}/index.html /aktualnosci/{article['slug']}/ 301!")
     lines.extend(
@@ -269,16 +532,27 @@ def write_redirects(articles: list[dict[str, Any]]) -> None:
             "/polityka-prywatnosci/index.html /polityka-prywatnosci/ 301!",
         ]
     )
+    for url, path in STATIC_PAGES:
+        slug = path.parent.name
+        lines.extend(
+            [
+                f"/{slug}.html /{slug}/ 301!",
+                f"/{slug}/index.html /{slug}/ 301!",
+            ]
+        )
     write_file(ROOT / "_redirects", "\n".join(lines) + "\n")
 
 
 def main() -> None:
     articles = load_articles()
+    services = load_services()
     write_article_pages(articles)
     write_blog_index(articles)
-    write_sitemap(articles)
-    write_redirects(articles)
-    print(f"built {len(articles)} articles")
+    write_service_pages(services, articles)
+    write_service_index(services)
+    write_sitemap(articles, services)
+    write_redirects(articles, services)
+    print(f"built {len(articles)} articles and {len(services)} service pages")
 
 
 if __name__ == "__main__":

@@ -70,51 +70,6 @@ function getLegacyLeadStageLabel_(stage) {
   return labels[stage] || "Nowy lead";
 }
 
-function mapLegacyStageToPortalStatus_(stage) {
-  switch (stage) {
-    case LEGACY_LEAD_STAGE.SIGNED:
-      return "BOOKED";
-    case LEGACY_LEAD_STAGE.CONTRACT_GENERATED:
-      return "DOCS_READY";
-    case LEGACY_LEAD_STAGE.OFFER_SENT:
-    case LEGACY_LEAD_STAGE.OFFER_DRAFT:
-      return "OFFER_READY";
-    case LEGACY_LEAD_STAGE.ASSIGNED:
-      return "QUALIFIED";
-    case LEGACY_LEAD_STAGE.SPAM:
-    case LEGACY_LEAD_STAGE.DELETED:
-      return "CLOSED";
-    case LEGACY_LEAD_STAGE.NEW:
-    default:
-      return "NEW_LEAD";
-  }
-}
-
-function getPortalNextActionFromLegacyStage_(stage) {
-  switch (stage) {
-    case LEGACY_LEAD_STAGE.SIGNED:
-      return "Wydarzenie jest potwierdzone. Dalsze dokumenty pojawią się tutaj.";
-    case LEGACY_LEAD_STAGE.CONTRACT_GENERATED:
-      return "Zapoznaj się z przygotowaną umową.";
-    case LEGACY_LEAD_STAGE.OFFER_SENT:
-      return "Zapoznaj się z naszą ofertą i wróć do nas z pytaniami.";
-    case LEGACY_LEAD_STAGE.OFFER_DRAFT:
-      return "Przygotowujemy dla Ciebie ofertę.";
-    case LEGACY_LEAD_STAGE.ASSIGNED:
-      return "Twój opiekun przeprowadza teraz ofertowanie.";
-    case LEGACY_LEAD_STAGE.SPAM:
-    case LEGACY_LEAD_STAGE.DELETED:
-      return "Portal jest nieaktywny.";
-    case LEGACY_LEAD_STAGE.NEW:
-    default:
-      return "Weryfikujemy zgłoszenie i wrócimy do Ciebie możliwie szybko.";
-  }
-}
-
-function generatePortalToken_() {
-  return Utilities.getUuid().replace(/-/g, "").substring(0, 24);
-}
-
 function slugifyTeamName_(name) {
   return (name || "")
     .toString()
@@ -167,23 +122,6 @@ function upsertSchemaRecord_(schema, keyField, keyValue, record) {
   return sheet.getLastRow();
 }
 
-function buildLegacyPortalSummary_(legacyRow) {
-  const parts = [];
-  if (legacyRow[COL.EVENT - 1]) {
-    parts.push(legacyRow[COL.EVENT - 1]);
-  }
-  if (legacyRow[COL.CITY - 1]) {
-    parts.push(legacyRow[COL.CITY - 1]);
-  }
-  if (legacyRow[COL.GUESTS - 1]) {
-    parts.push(legacyRow[COL.GUESTS - 1] + " os.");
-  }
-  if (legacyRow[COL.PACKAGE - 1]) {
-    parts.push("Pakiet: " + legacyRow[COL.PACKAGE - 1]);
-  }
-  return parts.join(" · ");
-}
-
 function getLegacyLeadSource_(legacyRow) {
   return (legacyRow[COL.LEAD_SOURCE - 1] || legacyRow[11] || "legacy").toString().trim() || "legacy";
 }
@@ -201,49 +139,6 @@ function buildStructuredLeadRawPayload_(legacyRow, websitePayload) {
   });
 }
 
-function upsertPortalEventFromLegacyLead_(legacyRow) {
-  const legacyUid = getLeadUID(legacyRow);
-  if (!legacyUid) {
-    return null;
-  }
-
-  const schema = BAROWO_SHEET_SCHEMAS.portalEvents;
-  const existingRow = findSchemaRowByField_(schema, "legacy_uid", legacyUid);
-  const sheet = getOrCreateSheet_(schema);
-  const existingRecord = existingRow > 0
-    ? sheet.getRange(existingRow, 1, 1, schema.headers.length).getValues()[0]
-    : null;
-  const existingToken = existingRecord ? existingRecord[getSchemaFieldIndex_(schema, "token")] : "";
-  const stage = inferLegacyLeadStage_(legacyRow);
-  const config = getBarowoConfig_();
-
-  const record = {
-    event_id: existingRecord ? existingRecord[getSchemaFieldIndex_(schema, "event_id")] : "evt_" + legacyUid,
-    legacy_uid: legacyUid,
-    created_at: legacyRow[1] || new Date().toISOString(),
-    lead_id: legacyUid,
-    client_name: legacyRow[COL.NAME - 1] || "",
-    event_type: legacyRow[COL.EVENT - 1] || "",
-    event_date: formatDate(legacyRow[COL.DATE - 1]),
-    city: legacyRow[COL.CITY - 1] || "",
-    package_name: legacyRow[COL.PACKAGE - 1] || "",
-    guests_count: legacyRow[COL.GUESTS - 1] || "",
-    duration_hours: legacyRow[COL.HOURS - 1] || "",
-    status: mapLegacyStageToPortalStatus_(stage),
-    next_action: getPortalNextActionFromLegacyStage_(stage),
-    summary: buildLegacyPortalSummary_(legacyRow),
-    manager_name: legacyRow[COL.ASSIGNED - 1] || "",
-    manager_email: config.managerEmail,
-    manager_phone: config.managerPhone,
-    token: existingToken || generatePortalToken_(),
-    is_active: stage !== LEGACY_LEAD_STAGE.SPAM && stage !== LEGACY_LEAD_STAGE.DELETED ? "true" : "false",
-    updated_at: new Date().toISOString()
-  };
-
-  upsertSchemaRecord_(schema, "legacy_uid", legacyUid, record);
-  return record;
-}
-
 function upsertStructuredLeadFromLegacyRow_(legacyRow, options) {
   const legacyUid = getLeadUID(legacyRow);
   if (!legacyUid) {
@@ -251,7 +146,6 @@ function upsertStructuredLeadFromLegacyRow_(legacyRow, options) {
   }
 
   const stage = inferLegacyLeadStage_(legacyRow);
-  const portalEvent = upsertPortalEventFromLegacyLead_(legacyRow);
   const websitePayload = options && options.websitePayload ? options.websitePayload : null;
 
   const record = {
@@ -270,8 +164,6 @@ function upsertStructuredLeadFromLegacyRow_(legacyRow, options) {
     package_name: legacyRow[COL.PACKAGE - 1] || "",
     message: legacyRow[COL.NOTE - 1] || "",
     manager_name: legacyRow[COL.ASSIGNED - 1] || "",
-    portal_token: portalEvent ? portalEvent.token : "",
-    portal_status: portalEvent ? portalEvent.status : "",
     utm_source: websitePayload ? (websitePayload.utm_source || "") : "",
     utm_medium: websitePayload ? (websitePayload.utm_medium || "") : "",
     utm_campaign: websitePayload ? (websitePayload.utm_campaign || "") : "",
@@ -314,19 +206,7 @@ function syncLegacyLeadToModernCrm_(legacyRow, options) {
   if (!getBarowoConfig_().enableModernSync) {
     return null;
   }
-  upsertStructuredLeadFromLegacyRow_(legacyRow, options || {});
+  const lead = upsertStructuredLeadFromLegacyRow_(legacyRow, options || {});
   upsertStructuredContactFromLegacyRow_(legacyRow);
-  return upsertPortalEventFromLegacyLead_(legacyRow);
-}
-
-function getPortalUrlForLegacyLead_(legacyRow) {
-  if (!getBarowoConfig_().enableModernSync) {
-    return "";
-  }
-  const portalEvent = upsertPortalEventFromLegacyLead_(legacyRow);
-  if (!portalEvent || !portalEvent.token) {
-    return "";
-  }
-
-  return getBarowoConfig_().portalBaseUrl.replace(/\/$/, "") + "/" + portalEvent.token;
+  return lead;
 }

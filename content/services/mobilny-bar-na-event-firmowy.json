@@ -1,0 +1,54 @@
+{
+  "slug": "mobilny-bar-na-event-firmowy",
+  "published": true,
+  "priority": 3,
+  "updated_at": "2026-04-25",
+  "title_plain": "Mobilny bar na event firmowy",
+  "title_html": "MOBILNY BAR<br><span class=\"red\">NA EVENT FIRMOWY</span>",
+  "description": "Mobilny bar na event firmowy w Trójmieście. Profesjonalna obsługa barmańska, koktajle, estetyczny setup i szybka organizacja dla firm.",
+  "eyebrow": "Firmy · Eventy",
+  "intro": "Na evencie firmowym bar musi wyglądać dobrze, działać sprawnie i nie generować problemów organizatorowi. BAROWO dowozi gotowy setup, barmanów i serwis dopasowany do formatu wydarzenia.",
+  "direct_answer": "Mobilny bar na event firmowy warto wybrać, gdy zależy Ci na estetycznym punkcie obsługi gości, przewidywalnym procesie i wrażeniu premium bez angażowania zespołu klienta w logistykę baru.",
+  "service_type": "Mobilny bar na event firmowy",
+  "areas": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto", "Pomorskie"],
+  "image": "/assets/articles/article2-bar-top.jpg",
+  "image_alt": "Elegancki mobilny bar na wydarzeniu firmowym",
+  "highlights": [
+    "Obsługa eventów firmowych i integracji",
+    "Bar dopasowany do charakteru marki",
+    "Szybki serwis przy większej liczbie gości",
+    "Kontakt i ustalenia bez chaosu"
+  ],
+  "sections": [
+    {
+      "title": "Co daje bar na evencie firmowym?",
+      "body": "Bar porządkuje ruch gości, tworzy naturalny punkt rozmów i podnosi odbiór całego wydarzenia. Dobrze działa na integracjach, jubileuszach, premierach, galach i mniej formalnych spotkaniach firmowych."
+    },
+    {
+      "title": "Jak dbamy o sprawną organizację?",
+      "body": "Przed wydarzeniem ustalamy format, liczbę gości, miejsce setupu, godziny pracy i charakter menu. Dzięki temu na miejscu zespół BAROWO przyjeżdża przygotowany, a organizator nie musi pilnować szczegółów.",
+      "bullets": ["jasny zakres obsługi", "dopasowany skład barmanów", "menu alkoholowe i bezalkoholowe", "estetyka pasująca do eventu"]
+    },
+    {
+      "title": "Czy bar może być bardziej premium?",
+      "body": "Tak. Możemy dobrać menu, prezentację, dodatki i styl serwisu pod bardziej eleganckie wydarzenia. W przypadku firm ważne jest też tempo obsługi i spójny, profesjonalny kontakt z gośćmi."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Czy obsługujecie eventy firmowe w biurach?",
+      "answer": "Tak, jeśli miejsce pozwala na bezpieczne ustawienie baru i logistykę serwisu. Szczegóły ustalamy przed wyceną."
+    },
+    {
+      "question": "Czy można przygotować menu bezalkoholowe?",
+      "answer": "Tak. Dla firm często przygotowujemy także mocktaile i lżejsze opcje dla osób, które nie piją alkoholu."
+    },
+    {
+      "question": "Ile trwa obsługa?",
+      "answer": "Standardowo pakiety BAROWO obejmują 12 godzin obsługi, ale przy eventach firmowych zakres możemy dopasować indywidualnie."
+    }
+  ],
+  "related_articles": ["mobilny-bar-na-event-firmowy", "ile-kosztuje-mobilny-bar-trojmiasto"],
+  "card_title_html": "Mobilny bar <span class=\"red\">na event firmowy</span>",
+  "card_excerpt": "Profesjonalny bar na integrację, galę, premierę lub spotkanie firmowe w Trójmieście."
+}

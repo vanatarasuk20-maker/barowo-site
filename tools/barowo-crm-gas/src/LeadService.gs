@@ -36,8 +36,6 @@ function normalizeWebsiteLeadPayload_(params) {
     package_name: (params.package || "").trim(),
     message: (params.message || "").trim(),
     manager_name: "",
-    portal_token: "",
-    portal_status: "",
     utm_source: (params.utm_source || "").trim(),
     utm_medium: (params.utm_medium || "").trim(),
     utm_campaign: (params.utm_campaign || "").trim(),

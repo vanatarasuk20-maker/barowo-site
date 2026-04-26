@@ -12,6 +12,12 @@
   <meta property="og:description" content="Informacje o przetwarzaniu danych osobowych oraz cookies na stronie BAROWO.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://barowo.com/polityka-prywatnosci/">
+  <meta property="og:image" content="https://barowo.com/assets/photo1-opt.jpg">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Polityka prywatności | BAROWO">
+  <meta name="twitter:description" content="Informacje o przetwarzaniu danych osobowych oraz cookies na stronie BAROWO.">
+  <meta name="twitter:image" content="https://barowo.com/assets/photo1-opt.jpg">
   <meta name="theme-color" content="#06061a">
   <link rel="canonical" href="https://barowo.com/polityka-prywatnosci/">
   <link rel="icon" href="/favicon.ico?v=20260331" sizes="any">
@@ -21,7 +27,11 @@
   <link rel="manifest" href="/site.webmanifest?v=20260331">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="/assets/consent-init.js?v=20260331"></script>
-  <script src="../assets/local-preview.js"></script>
+  <script>
+    if (window.location.protocol === 'file:') {
+      document.write('<script src="/assets/local-preview.js"><' + '/script>');
+    }
+  </script>
   <style>
     :root { --navy:#06061a; --navy2:#0a0a28; --red:#e8000d; --white:#ffffff; --dim:rgba(255,255,255,0.68); --line:rgba(255,255,255,0.08); --card:rgba(255,255,255,0.04); --shadow:0 24px 64px rgba(0,0,0,0.34); --radius:28px; }
     * { box-sizing:border-box; margin:0; padding:0; }

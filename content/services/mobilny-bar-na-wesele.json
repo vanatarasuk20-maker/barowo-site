@@ -1,0 +1,54 @@
+{
+  "slug": "mobilny-bar-na-wesele",
+  "published": true,
+  "priority": 1,
+  "updated_at": "2026-04-25",
+  "title_plain": "Mobilny bar na wesele w Trójmieście",
+  "title_html": "MOBILNY BAR<br><span class=\"red\">NA WESELE</span>",
+  "description": "Mobilny bar na wesele w Gdyni, Gdańsku, Sopocie i okolicach. Bar, szkło, koktajle, barmani i obsługa gości w jednym dopasowanym pakiecie.",
+  "eyebrow": "Wesela · Trójmiasto",
+  "intro": "BAROWO obsługuje wesela, na których bar ma być atrakcją dla gości i spokojem dla pary młodej. Przyjeżdżamy z gotowym setupem, barmanami, szkłem, dodatkami i menu dopasowanym do stylu przyjęcia.",
+  "direct_answer": "Mobilny bar na wesele ma sens, gdy chcesz uniknąć kolejek, zakupów na ślepo i pilnowania alkoholu w trakcie przyjęcia. BAROWO przejmuje serwis baru, a Ty dostajesz jeden zespół odpowiedzialny za tempo, estetykę i doświadczenie gości.",
+  "service_type": "Mobilny bar na wesele",
+  "areas": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto", "Pomorskie"],
+  "image": "/assets/articles/article1-guests.jpg",
+  "image_alt": "Goście weselni przy mobilnym barze BAROWO",
+  "highlights": [
+    "Obsługa wesel w Gdyni, Gdańsku, Sopocie i okolicach",
+    "Bar, szkło, dodatki, barmani i 12 godzin obsługi",
+    "Menu koktajli dopasowane do stylu wesela",
+    "Spokojny kontakt i wycena przed rezerwacją"
+  ],
+  "sections": [
+    {
+      "title": "Co obejmuje mobilny bar na wesele?",
+      "body": "Najważniejsze jest to, że nie zamawiasz samego barmana. Zamawiasz cały system obsługi baru: przygotowanie, setup, menu, szkło, dodatki, pracę barmanów i porządek wokół serwisu.",
+      "bullets": ["mobilny bar i sprzęt barmański", "barmani dopasowani do skali wydarzenia", "koktajle alkoholowe i opcje bezalkoholowe", "pomoc w dobraniu pakietu do liczby gości"]
+    },
+    {
+      "title": "Dla jakich wesel to najlepszy wybór?",
+      "body": "Mobilny bar najlepiej działa na weselach, gdzie para młoda chce podnieść standard przyjęcia bez dokładania sobie kolejnych obowiązków. Sprawdza się zarówno przy kameralnych salach, jak i większych realizacjach z intensywnym ruchem przy barze."
+    },
+    {
+      "title": "Jak wygląda wycena?",
+      "body": "Wycena zależy od daty, miejsca, liczby gości, zakresu menu i logistyki. Dlatego zamiast zgadywać, prosimy o kilka podstawowych informacji i wracamy z konkretną propozycją pakietu."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile wcześniej rezerwować mobilny bar na wesele?",
+      "answer": "Najlepiej odezwać się, gdy znasz datę i miejsce wesela. Popularne soboty w sezonie potrafią znikać z dużym wyprzedzeniem."
+    },
+    {
+      "question": "Czy można dobrać własne menu drinków?",
+      "answer": "Tak. Możemy zaproponować sprawdzone klasyki albo dopasować menu do stylu wesela, kolorystyki i preferencji pary młodej."
+    },
+    {
+      "question": "Czy obsługujecie wesela poza Trójmiastem?",
+      "answer": "Tak, obsługujemy głównie województwo pomorskie i dojazdy z Gdyni. Dalsze lokalizacje wyceniamy indywidualnie."
+    }
+  ],
+  "related_articles": ["najlepsze-drinki-na-wesele", "ile-kosztuje-mobilny-bar-trojmiasto", "mobilny-bar-czy-alkohol-samemu"],
+  "card_title_html": "Mobilny bar <span class=\"red\">na wesele</span>",
+  "card_excerpt": "Kompletna obsługa baru weselnego: barmani, szkło, koktajle, setup i spokojny proces rezerwacji."
+}

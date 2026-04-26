@@ -5,3 +5,8 @@ __pycache__/
 *.pyo
 *.swp
 *.swo
+tools/**/node_modules/
+tools/telegram-relay-worker/.wrangler/
+tools/barowo-crm-gas/.clasp.json
+tools/barowo-crm-gas/.clasprc.json
+remotion-logo/

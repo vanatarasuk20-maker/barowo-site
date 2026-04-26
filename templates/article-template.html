@@ -12,6 +12,13 @@
   <meta property="og:description" content="{{OG_DESCRIPTION}}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{{OG_URL}}">
+  <meta property="og:image" content="{{OG_IMAGE}}">
+  <meta property="og:image:alt" content="{{OG_TITLE}}">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{OG_TITLE}}">
+  <meta name="twitter:description" content="{{OG_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{OG_IMAGE}}">
   <meta name="theme-color" content="#06061a">
   <link rel="canonical" href="{{CANONICAL_URL}}">
   <link rel="icon" href="/favicon.ico?v=20260331" sizes="any">
@@ -22,8 +29,14 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
     rel="stylesheet">
-    <script src="/assets/consent-init.js?v=20260331"></script>
-<script src="../../assets/local-preview.js"></script>
+  <link rel="stylesheet" href="/assets/callback-popup.css?v=20260426">
+  <script src="/assets/consent-init.js?v=20260331"></script>
+  <script src="/assets/callback-popup.js?v=20260426" defer></script>
+  <script>
+    if (window.location.protocol === 'file:') {
+      document.write('<script src="/assets/local-preview.js"><' + '/script>');
+    }
+  </script>
   <script type="application/ld+json">
 {{JSONLD}}
   </script>
@@ -573,7 +586,8 @@
       <div class="label">Aktualności BAROWO</div>
       <h1>{{H1_HTML}}</h1>
       <p class="hero-intro">{{INTRO}}</p>
-      <div class="article-meta">{{ARTICLE_META}}</div>
+      <div class="article-meta"><time datetime="{{PUBLISHED_AT}}">{{PUBLISHED_AT}}</time>
+        {{ARTICLE_META}}</div>
 
       <div class="article-cover">{{ARTICLE_COVER}}</div>
 
