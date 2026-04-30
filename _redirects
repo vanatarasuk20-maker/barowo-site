@@ -5,6 +5,8 @@ http://www.barowo.com/* https://barowo.com/:splat 301!
 /oferta/index.html /oferta/ 301!
 /aktualnosci.html /aktualnosci/ 301!
 /aktualnosci/index.html /aktualnosci/ 301!
+/planer-weselny/ /planer-baru-weselnego/ 301!
+/planer-weselny/index.html /planer-baru-weselnego/ 301!
 /oferta/mobilny-bar-na-wesele/index.html /oferta/mobilny-bar-na-wesele/ 301!
 /oferta/drink-bar-na-wesele/index.html /oferta/drink-bar-na-wesele/ 301!
 /oferta/mobilny-bar-na-event-firmowy/index.html /oferta/mobilny-bar-na-event-firmowy/ 301!

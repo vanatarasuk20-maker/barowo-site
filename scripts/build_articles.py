@@ -342,7 +342,7 @@ def render_service_cards_section(section: dict[str, Any]) -> str:
         if text:
             card_parts.append(f"  <p>{format_inline(text)}</p>")
         if button_text and button_href:
-            card_parts.append(f'  <a class="btn-ghost" href="{escape(button_href)}">{escape(button_text)}</a>')
+            card_parts.append(f'  <a class="btn btn-secondary" href="{escape(button_href)}">{escape(button_text)}</a>')
         card_parts.append("</article>")
         card_items.append("\n              ".join(card_parts))
 
@@ -563,7 +563,7 @@ def service_card_html(service: dict[str, Any]) -> str:
             <span>{escape(service.get('eyebrow', 'Oferta'))}</span>
             <h2>{service.get('card_title_html', service.get('title_html', escape(service.get('title_plain', ''))))}</h2>
             <p>{escape(service.get('card_excerpt', service.get('intro', '')))}</p>
-            <a class="btn-red" href="/oferta/{service['slug']}/">Zobacz ofertę</a>
+            <a class="btn btn-primary" href="/oferta/{service['slug']}/">Zobacz ofertę</a>
           </div>
         </article>"""
 
@@ -605,8 +605,8 @@ def card_html(article: dict[str, Any]) -> str:
             </div>
             <p>{card_excerpt}</p>
             <div class="actions">
-              <a class="btn-red" href="/aktualnosci/{article['slug']}/">Czytaj artykuł</a>
-              <a class="btn-ghost" href="/#contact">Zapytaj o termin</a>
+              <a class="btn btn-primary" href="/aktualnosci/{article['slug']}/">Czytaj artykuł</a>
+              <a class="btn btn-secondary" href="/#contact">Zapytaj o termin</a>
             </div>
           </div>
         </article>"""
@@ -678,6 +678,8 @@ def write_redirects(articles: list[dict[str, Any]], services: list[dict[str, Any
         "/oferta/index.html /oferta/ 301!",
         "/aktualnosci.html /aktualnosci/ 301!",
         "/aktualnosci/index.html /aktualnosci/ 301!",
+        "/planer-weselny/ /planer-baru-weselnego/ 301!",
+        "/planer-weselny/index.html /planer-baru-weselnego/ 301!",
     ]
     for service in services:
         lines.append(f"/oferta/{service['slug']}/index.html /oferta/{service['slug']}/ 301!")

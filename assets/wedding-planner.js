@@ -467,7 +467,7 @@
     field.className = "planner-field";
     field.innerHTML =
       '<label for="plannerWeddingDate">Data wesela</label>' +
-      '<input type="date" id="plannerWeddingDate" name="weddingDate" value="' + escapeHtml(state.weddingDate) + '"' + (state.dateUnknown ? " disabled" : "") + ">";
+      '<input type="text" id="plannerWeddingDate" name="weddingDate" inputmode="numeric" pattern="\\d{2}\\.\\d{2}\\.\\d{4}" placeholder="dd.mm.yyyy" value="' + escapeHtml(state.weddingDate) + '"' + (state.dateUnknown ? " disabled" : "") + ">";
     wrapper.appendChild(field);
 
     var checkbox = document.createElement("label");
@@ -610,7 +610,7 @@
       "</div>" +
       '<div class="planner-field">' +
         '<label for="plannerPhone">Telefon</label>' +
-        '<input type="tel" id="plannerPhone" name="phone" value="' + escapeHtml(state.phone) + '" placeholder="+48 000 000 000">' +
+        '<input type="tel" id="plannerPhone" name="phone" value="' + escapeHtml(state.phone) + '" placeholder="+48 123 456 789">' +
       "</div>" +
       '<div class="planner-field">' +
         '<label for="plannerEmail">Email</label>' +

@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="/assets/callback-popup.css?v=20260426">
   <script src="/assets/consent-init.js?v=20260331"></script>
   <script src="/assets/subpage-nav.js?v=20260426c" defer></script>
-  <script src="/assets/callback-popup.js?v=20260426d" defer></script>
+  <script src="/assets/callback-popup.js?v=20260430a" defer></script>
   <script>
     if (window.location.protocol === 'file:') {
       document.write('<script src="/assets/local-preview.js"><' + '/script>');
@@ -295,7 +295,7 @@
       .service-inline-cta, .service-bottom-cta { padding: 22px; }
     }
   </style>
-  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260430b">
+  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260430c">
 </head>
 
 <body>
@@ -311,7 +311,7 @@
       <li><a href="/planer-baru-weselnego/">Planer weselny</a></li>
       <li><a href="/realizacje/">Realizacje</a></li>
       <li class="nav-news-item"><a href="/aktualnosci/">Aktualności</a></li>
-      <li><a href="/#contact" class="nav-cta">Zarezerwuj</a></li>
+      <li><a href="/#contact" class="btn btn-primary nav-cta">Zarezerwuj</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -326,8 +326,8 @@
         <p class="lead">{{INTRO}}</p>
         <div class="answer">{{DIRECT_ANSWER}}</div>
         <div class="actions">
-          <a class="btn-red" href="{{PRIMARY_CTA_HREF}}">{{PRIMARY_CTA_TEXT}}</a>
-          <a class="btn-ghost" href="{{SECONDARY_CTA_HREF}}">{{SECONDARY_CTA_TEXT}}</a>
+          <a class="btn btn-primary" href="{{PRIMARY_CTA_HREF}}">{{PRIMARY_CTA_TEXT}}</a>
+          <a class="btn btn-secondary" href="{{SECONDARY_CTA_HREF}}">{{SECONDARY_CTA_TEXT}}</a>
         </div>
       </div>
       <div class="hero-media">
@@ -347,7 +347,7 @@
             <h2>{{MID_CTA_TITLE_HTML}}</h2>
             <p>{{MID_CTA_TEXT}}</p>
           </div>
-          <a class="btn-red" href="{{MID_CTA_BUTTON_HREF}}">{{MID_CTA_BUTTON_TEXT}}</a>
+          <a class="btn btn-primary" href="{{MID_CTA_BUTTON_HREF}}">{{MID_CTA_BUTTON_TEXT}}</a>
         </section>
         {{SECTIONS}}
         {{FAQ}}
@@ -357,14 +357,14 @@
             <h2>{{BOTTOM_CTA_TITLE_HTML}}</h2>
             <p>{{BOTTOM_CTA_TEXT}}</p>
           </div>
-          <a class="btn-red" href="{{BOTTOM_CTA_BUTTON_HREF}}">{{BOTTOM_CTA_BUTTON_TEXT}}</a>
+          <a class="btn btn-primary" href="{{BOTTOM_CTA_BUTTON_HREF}}">{{BOTTOM_CTA_BUTTON_TEXT}}</a>
         </section>
       </div>
       <aside class="side-panel">
         <div class="label">Kontakt</div>
         <h2>{{SIDEBAR_TITLE_HTML}}</h2>
         <p>{{SIDEBAR_TEXT}}</p>
-        <a class="btn-red" href="{{SIDEBAR_BUTTON_HREF}}">{{SIDEBAR_BUTTON_TEXT}}</a>
+        <a class="btn btn-primary" href="{{SIDEBAR_BUTTON_HREF}}">{{SIDEBAR_BUTTON_TEXT}}</a>
         <div class="label" style="margin-top:28px;">{{RELATED_RESOURCES_LABEL}}</div>
         {{RELATED_ARTICLES}}
         <p style="margin-top:18px;font-size:.82rem;">Aktualizacja: {{UPDATED_AT}}</p>

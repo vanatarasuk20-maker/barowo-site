@@ -16,7 +16,7 @@
     '<div class="callback-title" id="callbackTitle">ZOSTAW NUMER.<br><span class="red">ODDZWONIMY.</span></div>',
     '<p class="callback-text">Jeśli planujesz wesele, urodziny albo event, zostaw telefon. Oddzwonimy możliwie szybko i powiemy, czy mamy wolny termin.</p>',
     '<form class="callback-form" id="callbackForm" action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST">',
-    '<label for="callbackPhone">Telefon *<input type="tel" id="callbackPhone" name="phone" placeholder="+48 000 000 000" autocomplete="tel" required></label>',
+    '<label for="callbackPhone"><span>Telefon *</span><input type="tel" id="callbackPhone" name="phone" placeholder="+48 123 456 789" autocomplete="tel" required></label>',
     '<label class="callback-consent" for="callbackConsent"><input type="checkbox" id="callbackConsent" name="privacy_consent" required><span>Wyrażam zgodę na kontakt telefoniczny i przetwarzanie danych zgodnie z <a href="/polityka-prywatnosci/">Polityką prywatności</a>.</span></label>',
     '<input type="hidden" name="name" value="Prośba o telefon ze strony">',
     '<input type="hidden" name="source" value="website_callback_popup">',
@@ -29,7 +29,7 @@
     '<input type="hidden" name="utm_campaign" value="">',
     '<input type="hidden" name="utm_content" value="">',
     '<input type="hidden" name="utm_term" value="">',
-    '<button class="callback-submit" type="submit">Oddzwońcie do mnie</button>',
+    '<button class="btn btn-primary callback-submit" type="submit">Oddzwońcie do mnie</button>',
     '<div class="callback-status" aria-live="polite"></div>',
     '</form>',
     '</div>'
