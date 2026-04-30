@@ -103,7 +103,7 @@
           "eyebrow": "Jako osobna usługa",
           "title": "Słodka strefa bez baru",
           "text": "Wycena zależy od liczby gości, miejsca eventu i zakresu przygotowanej słodkiej strefy.",
-          "button_text": "Zapytaj o wycenę fontanny",
+          "button_text": "Sprawdź dostępność terminu",
           "button_href": "/?service=fontanna-czekoladowa&chocolateFountainInterest=true&chocolateFountainMode=solo_service#contact"
         }
       ]
@@ -171,7 +171,7 @@
   "bottom_cta_button_href": "/?service=fontanna-czekoladowa&chocolateFountainInterest=true&chocolateFountainMode=not_sure#contact",
   "sidebar_title_html": "ZAPYTAJ O<br><span class=\"red\">FONTANNĘ</span>",
   "sidebar_text": "Podaj datę, miasto i liczbę gości. Wrócimy z informacją, czy lepiej ustawić fontannę jako dodatek do baru, czy jako osobną strefę.",
-  "sidebar_button_text": "Wyślij zapytanie",
+  "sidebar_button_text": "Sprawdź dostępność terminu",
   "sidebar_button_href": "/?service=fontanna-czekoladowa&chocolateFountainInterest=true&chocolateFountainMode=not_sure#contact",
   "card_title_html": "Fontanna <span class=\"red\">czekoladowa</span>",
   "card_excerpt": "Słodka strefa z eleganckim stołem, dodatkami i przygotowaniem stanowiska na wesele, poprawiny lub event.",

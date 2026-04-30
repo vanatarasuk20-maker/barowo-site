@@ -35,6 +35,7 @@ BUSINESS_SERVICE_TYPES = [
     "Fontanna czekoladowa",
     "Słodka strefa na event",
 ]
+PRIMARY_CTA_LABEL = "Sprawdź dostępność terminu"
 STATIC_PAGES = [
     (CENNIK_URL, ROOT / "cennik" / "index.html"),
     (REALIZACJE_URL, ROOT / "realizacje" / "index.html"),
@@ -56,6 +57,17 @@ def absolute_url(path: str) -> str:
     if path.startswith(("http://", "https://")):
         return path
     return "https://barowo.com" + (path if path.startswith("/") else f"/{path}")
+
+
+def is_lead_href(href: str) -> bool:
+    value = (href or "").strip()
+    return value in {"/#contact", "#contact"} or "#contact" in value
+
+
+def cta_label(text: str, href: str) -> str:
+    if is_lead_href(href):
+        return PRIMARY_CTA_LABEL
+    return text or PRIMARY_CTA_LABEL
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -342,7 +354,7 @@ def render_service_cards_section(section: dict[str, Any]) -> str:
         if text:
             card_parts.append(f"  <p>{format_inline(text)}</p>")
         if button_text and button_href:
-            card_parts.append(f'  <a class="btn btn-secondary" href="{escape(button_href)}">{escape(button_text)}</a>')
+            card_parts.append(f'  <a class="btn btn-secondary" href="{escape(button_href)}">{escape(cta_label(button_text, button_href))}</a>')
         card_parts.append("</article>")
         card_items.append("\n              ".join(card_parts))
 
@@ -504,8 +516,8 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
         "{{FAQ}}": render_service_faq(service),
         "{{RELATED_ARTICLES}}": render_related_articles(service, articles),
         "{{UPDATED_AT}}": escape(service.get("updated_at", "")),
-        "{{PRIMARY_CTA_TEXT}}": escape(service.get("primary_cta_text", "Sprawdź termin")),
         "{{PRIMARY_CTA_HREF}}": escape(service.get("primary_cta_href", "/#contact")),
+        "{{PRIMARY_CTA_TEXT}}": escape(cta_label(service.get("primary_cta_text", PRIMARY_CTA_LABEL), service.get("primary_cta_href", "/#contact"))),
         "{{SECONDARY_CTA_TEXT}}": escape(service.get("secondary_cta_text", "Zobacz cennik")),
         "{{SECONDARY_CTA_HREF}}": escape(service.get("secondary_cta_href", "/cennik/")),
         "{{MID_CTA_LABEL}}": escape(service.get("mid_cta_label", "Szybka wycena")),
@@ -519,8 +531,8 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
                 "Podaj datę, miasto i liczbę gości. To wystarczy, żeby wrócić z konkretną odpowiedzią.",
             )
         ),
-        "{{MID_CTA_BUTTON_TEXT}}": escape(service.get("mid_cta_button_text", "Zapytaj o wycenę")),
         "{{MID_CTA_BUTTON_HREF}}": escape(service.get("mid_cta_button_href", "/#contact")),
+        "{{MID_CTA_BUTTON_TEXT}}": escape(cta_label(service.get("mid_cta_button_text", PRIMARY_CTA_LABEL), service.get("mid_cta_button_href", "/#contact"))),
         "{{BOTTOM_CTA_LABEL}}": escape(service.get("bottom_cta_label", "Rezerwacja")),
         "{{BOTTOM_CTA_TITLE_HTML}}": service.get(
             "bottom_cta_title_html",
@@ -532,8 +544,8 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
                 "Napisz kilka konkretów o wydarzeniu, a wrócimy z terminem i najbardziej sensownym pakietem.",
             )
         ),
-        "{{BOTTOM_CTA_BUTTON_TEXT}}": escape(service.get("bottom_cta_button_text", "Sprawdź dostępność terminu")),
         "{{BOTTOM_CTA_BUTTON_HREF}}": escape(service.get("bottom_cta_button_href", "/#contact")),
+        "{{BOTTOM_CTA_BUTTON_TEXT}}": escape(cta_label(service.get("bottom_cta_button_text", PRIMARY_CTA_LABEL), service.get("bottom_cta_button_href", "/#contact"))),
         "{{SIDEBAR_TITLE_HTML}}": service.get(
             "sidebar_title_html",
             'ZAPYTAJ O<br><span class="red">TERMIN</span>',
@@ -544,8 +556,8 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
                 "Podaj datę, miejsce i orientacyjną liczbę gości. Wrócimy z konkretną odpowiedzią i propozycją pakietu.",
             )
         ),
-        "{{SIDEBAR_BUTTON_TEXT}}": escape(service.get("sidebar_button_text", "Wyślij zapytanie")),
         "{{SIDEBAR_BUTTON_HREF}}": escape(service.get("sidebar_button_href", "/#contact")),
+        "{{SIDEBAR_BUTTON_TEXT}}": escape(cta_label(service.get("sidebar_button_text", PRIMARY_CTA_LABEL), service.get("sidebar_button_href", "/#contact"))),
         "{{RELATED_RESOURCES_LABEL}}": escape(service.get("related_resources_label", "Powiązane strony")),
     }
     output = template
@@ -589,6 +601,15 @@ def card_html(article: dict[str, Any]) -> str:
     card_alt = escape(article.get("card_alt", article.get("cover_alt", "")))
     card_title = article.get("card_title_html", article.get("title_html", escape(article.get("title_plain", ""))))
     card_excerpt = escape(article.get("card_excerpt", article.get("intro", "")))
+    meta_items = []
+    seen_meta = set()
+    for value in (article.get("read_time", ""), article.get("category", ""), article.get("tag", "")):
+        clean = (value or "").strip()
+        key = clean.lower()
+        if clean and key not in seen_meta:
+            seen_meta.add(key)
+            meta_items.append(f"<span>{escape(clean)}</span>")
+    meta_html = "\n              ".join(meta_items)
     return f"""        <article class="post-card">
           <a class="post-card-media" href="/aktualnosci/{article['slug']}/" aria-label="Czytaj artykuł">
             <img src="{card_image}" alt="{card_alt}" width="1200" height="1600" loading="lazy">
@@ -599,14 +620,11 @@ def card_html(article: dict[str, Any]) -> str:
               <h2>{card_title}</h2>
             </div>
             <div class="post-meta">
-              <span>{escape(article.get('read_time', ''))}</span>
-              <span>{escape(article.get('category', ''))}</span>
-              <span>{escape(article.get('tag', ''))}</span>
+              {meta_html}
             </div>
             <p>{card_excerpt}</p>
             <div class="actions">
               <a class="btn btn-primary" href="/aktualnosci/{article['slug']}/">Czytaj artykuł</a>
-              <a class="btn btn-secondary" href="/#contact">Zapytaj o termin</a>
             </div>
           </div>
         </article>"""

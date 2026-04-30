@@ -122,7 +122,7 @@
     {"href": "/#contact", "label": "Formularz kontaktowy"}
   ],
   "related_articles": ["najlepsze-drinki-na-wesele", "ile-kosztuje-mobilny-bar-trojmiasto", "mobilny-bar-czy-alkohol-samemu"],
-  "primary_cta_text": "Zapytaj o termin wesela",
+  "primary_cta_text": "Sprawdź dostępność terminu",
   "secondary_cta_text": "Zobacz cennik",
   "secondary_cta_href": "/cennik/",
   "mid_cta_label": "Wesele",
@@ -132,10 +132,10 @@
   "bottom_cta_label": "Rezerwacja",
   "bottom_cta_title_html": "ZAREZERWUJ<br><span class=\"red\">DRINK BAR NA WESELE</span>",
   "bottom_cta_text": "Jeśli zależy Ci na spokojnym procesie, gotowym barze i sprawnym serwisie dla gości, napisz do BAROWO. Bez zgadywania, bez dokładania kilku osobnych podwykonawców.",
-  "bottom_cta_button_text": "Zapytaj o termin wesela",
+  "bottom_cta_button_text": "Sprawdź dostępność terminu",
   "sidebar_title_html": "SPRAWDŹ<br><span class=\"red\">TERMIN WESELA</span>",
   "sidebar_text": "Podaj datę, salę i liczbę gości. Wrócimy z konkretną odpowiedzią i propozycją pakietu dopasowanego do wesela.",
-  "sidebar_button_text": "Wyślij zapytanie",
+  "sidebar_button_text": "Sprawdź dostępność terminu",
   "card_title_html": "Mobilny bar <span class=\"red\">na wesele</span>",
   "card_excerpt": "Pełna obsługa baru weselnego w Trójmieście: bar, barmani, szkło, koktajle i przygotowanie stanowiska."
 }

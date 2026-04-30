@@ -713,7 +713,7 @@
 
     els.back.disabled = currentStepIndex === 0;
     els.back.classList.toggle("planner-hidden", currentStepIndex === 0);
-    els.next.textContent = currentStepIndex === steps.length - 1 ? "Wyślij wynik i zapytaj o termin" : "Dalej";
+    els.next.textContent = currentStepIndex === steps.length - 1 ? "Sprawdź dostępność terminu" : "Dalej";
     setStatus("", "");
     plannerRoot.scrollIntoView({ block: "start", behavior: "smooth" });
   }
@@ -816,7 +816,7 @@
     } finally {
       els.next.disabled = false;
       els.back.disabled = currentStepIndex === 0;
-      els.next.textContent = "Wyślij wynik i zapytaj o termin";
+      els.next.textContent = "Sprawdź dostępność terminu";
     }
   }
 

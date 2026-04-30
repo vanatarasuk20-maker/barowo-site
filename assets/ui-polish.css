@@ -330,6 +330,7 @@ nav {
   justify-content: flex-start;
 }
 
+.planner-promo ul,
 .addon-spotlight ul {
   display: grid !important;
   grid-template-columns: 1fr;
@@ -339,6 +340,7 @@ nav {
   margin-top: 0 !important;
 }
 
+.planner-promo ul li,
 .addon-spotlight ul li {
   position: relative;
   min-height: 0;
@@ -349,6 +351,7 @@ nav {
   color: rgba(255, 255, 255, 0.78) !important;
 }
 
+.planner-promo ul li::before,
 .addon-spotlight ul li::before {
   content: "";
   position: absolute;
@@ -367,6 +370,22 @@ nav {
 
 .addon-spotlight-actions {
   justify-content: flex-start !important;
+}
+
+#how .steps {
+  align-items: stretch !important;
+}
+
+#how .step {
+  min-height: 260px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+#how .step-desc {
+  margin-top: auto !important;
 }
 
 .case-grid {
@@ -911,13 +930,18 @@ footer {
 }
 
 footer {
-  width: min(1180px, calc(100% - 40px)) !important;
-  margin: 56px auto 28px !important;
+  width: min(1480px, calc(100% - 40px)) !important;
+  margin: 72px auto 28px !important;
+  padding: 42px 20px !important;
   display: grid !important;
   justify-items: center !important;
   text-align: center !important;
   gap: 12px !important;
-  border-radius: var(--ui-radius-card) !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .footer-links {
@@ -1109,6 +1133,10 @@ textarea {
   align-items: stretch !important;
 }
 
+.news-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
 .case-card,
 .service-card,
 .post-card,
@@ -1116,15 +1144,15 @@ textarea {
   height: 100%;
 }
 
+.post-card {
+  grid-template-columns: 1fr !important;
+}
+
 .case-card img,
 .service-card-media,
-.service-card-media img,
 .post-card-media,
-.post-card-media img,
 .article-cover,
-.article-cover img,
-.hero-card img,
-.service-hero-media img {
+.hero-card {
   aspect-ratio: 16 / 9;
 }
 
@@ -1132,10 +1160,9 @@ textarea {
 .service-card-media img,
 .post-card-media img,
 .article-cover img,
-.hero-card img,
-.service-hero-media img {
+.hero-card img {
   width: 100% !important;
-  height: auto !important;
+  height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
 }
@@ -1143,15 +1170,31 @@ textarea {
 .service-card-media,
 .post-card-media,
 .article-cover,
-.service-hero-media {
+.hero-card {
   overflow: hidden;
+}
+
+.post-card .post-card-media {
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+}
+
+.post-card .post-card-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 
 .post-card-copy h2,
 .service-card-copy h2,
 .case-copy h2 {
-  max-width: 15ch;
+  max-width: 16ch;
   overflow-wrap: break-word;
+}
+
+.post-card-copy h2 {
+  font-size: clamp(2.2rem, 3vw, 3.35rem) !important;
 }
 
 .service-card-copy,
@@ -1234,10 +1277,35 @@ footer .footer-links {
 
 footer .footer-links a {
   color: rgba(255, 255, 255, 0.82) !important;
-  font-size: 0.86rem !important;
+  font-size: 0.9rem !important;
   font-weight: 800;
   letter-spacing: 0.06em !important;
   text-decoration: none !important;
+}
+
+.post-card .post-meta,
+.facts {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.post-card .post-meta span,
+.fact {
+  flex: 1 1 140px;
+  max-width: none;
+  min-height: 46px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.25 !important;
+  text-align: center;
 }
 
 footer .footer-links a:hover,
@@ -1274,6 +1342,43 @@ footer .footer-links a:focus-visible {
   .cta-band,
   .faq-wrap {
     padding: 24px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .service-grid,
+  .news-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-card,
+  .post-card {
+    grid-template-rows: auto 1fr !important;
+  }
+
+  .service-card-media,
+  .post-card-media {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .post-card .post-card-media {
+    min-height: 0 !important;
+  }
+
+  #how .step {
+    min-height: 230px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .news-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 

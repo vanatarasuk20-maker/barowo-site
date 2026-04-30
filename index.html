@@ -3209,7 +3209,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260430c">
+  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260430d">
 </head>
 
 <body>
@@ -3227,7 +3227,7 @@
       <li><a href="/planer-baru-weselnego/">Planer weselny</a></li>
       <li><a href="/realizacje/">Realizacje</a></li>
       <li class="nav-news-item"><a href="/aktualnosci/">Aktualności</a></li>
-      <li><a href="#contact" class="btn btn-primary nav-cta">Zarezerwuj</a></li>
+      <li><a href="#contact" class="btn btn-primary nav-cta">Sprawdź dostępność terminu</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false" onclick="toggleNav()">
       <span></span><span></span><span></span>
@@ -3253,7 +3253,7 @@
         50+ realizacji · 3 lata doświadczenia · odpowiedź maks. w 12h
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Sprawdź termin →</a>
+        <a href="#contact" class="btn btn-primary">Sprawdź dostępność terminu</a>
         <a href="#packages" class="btn btn-secondary">Zobacz pakiety</a>
       </div>
       <div class="hero-links" aria-label="Popularne strony BAROWO">
@@ -3328,6 +3328,7 @@
     <div class="packages-grid">
 
       <div class="pkg">
+        <div class="pkg-badge">Dobry start</div>
         <div class="pkg-name">Simple</div>
         <div class="pkg-barmen">🍸 1 Barman</div>
         <div class="pkg-fit">Na mniejsze imprezy, gdzie liczy się styl i szybki serwis.</div>
@@ -3354,7 +3355,7 @@
 
         <div class="pkg-divider"></div>
         <div class="pkg-hours"><strong>12 godzin</strong> obsługi w cenie · Kameralnie, stylowo i bez kolejek</div>
-        <a href="#contact" class="btn btn-primary pkg-cta">Zapytaj o wolny termin</a>
+        <a href="#contact" class="btn btn-primary pkg-cta">Sprawdź dostępność terminu</a>
       </div>
 
       <div class="pkg featured">
@@ -3385,11 +3386,11 @@
 
         <div class="pkg-divider"></div>
         <div class="pkg-hours"><strong>12 godzin</strong> obsługi w cenie · Najczęściej wybierany pakiet BAROWO</div>
-        <a href="#contact" class="btn btn-primary pkg-cta">Sprawdź dostępność</a>
+        <a href="#contact" class="btn btn-primary pkg-cta">Sprawdź dostępność terminu</a>
       </div>
 
       <div class="pkg">
-        <div class="pkg-badge" style="background:rgba(255,255,255,0.1);">👑 Premium</div>
+        <div class="pkg-badge">Premium</div>
         <div class="pkg-name">Premium</div>
         <div class="pkg-barmen">🍸🍸 2+ Barmanów</div>
         <div class="pkg-fit">Dla eventów, które mają wyglądać i działać naprawdę premium.</div>
@@ -3416,7 +3417,7 @@
 
         <div class="pkg-divider"></div>
         <div class="pkg-hours"><strong>12 godzin</strong> obsługi w cenie · Pełne doświadczenie premium bez kompromisów</div>
-        <a href="#contact" class="btn btn-primary pkg-cta">Zapytaj o wycenę premium</a>
+        <a href="#contact" class="btn btn-primary pkg-cta">Sprawdź dostępność terminu</a>
       </div>
 
     </div>
@@ -3444,21 +3445,6 @@
       <a href="/realizacje/" class="btn btn-secondary">Zobacz realizacje</a>
     </div>
 
-    <div class="pricing-info" aria-label="Najczęściej wybierane usługi BAROWO">
-      <div>
-        <div class="pi-item-title"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a></div>
-        <div class="pi-item-text">Bar, koktajle i barmani na wesela w Gdyni, Gdańsku, Sopocie i okolicach.</div>
-      </div>
-      <div>
-        <div class="pi-item-title"><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a></div>
-        <div class="pi-item-text">Profesjonalny setup i szybka obsługa gości na integracje, gale i spotkania firmowe.</div>
-      </div>
-      <div>
-        <div class="pi-item-title"><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a></div>
-        <div class="pi-item-text">Lokalna obsługa baru w Gdyni, Gdańsku, Sopocie i województwie pomorskim.</div>
-      </div>
-    </div>
-
     <div class="planner-promo">
       <div>
         <div class="label">Planer BAROWO</div>
@@ -3466,6 +3452,11 @@
         <p>Sprawdź to w 2 minuty. Odpowiedz na kilka pytań, a nasz planner podpowie, jaki format baru, ilu barmanów i jakie menu najlepiej sprawdzi się na Twoim weselu.</p>
       </div>
       <div class="planner-promo-actions">
+        <ul>
+          <li>rekomendacja pakietu i liczby barmanów</li>
+          <li>kierunek menu dopasowany do stylu wesela</li>
+          <li>podpowiedź, czy fontanna czekoladowa ma sens</li>
+        </ul>
         <a href="/planer-baru-weselnego/" class="btn btn-primary">Uruchom Planer Baru Weselnego</a>
       </div>
     </div>
@@ -3786,7 +3777,7 @@
         <input type="hidden" name="utm_term" value="">
         <input type="hidden" name="chocolateFountainInterest" value="">
         <input type="hidden" name="chocolateFountainMode" value="">
-        <button style="font-family: 'Manrope', sans-serif;" type="submit" class="btn btn-primary form-btn">Sprawdź dostępność terminu →</button>
+        <button style="font-family: 'Manrope', sans-serif;" type="submit" class="btn btn-primary form-btn">Sprawdź dostępność terminu</button>
         <div class="form-status" aria-live="polite"></div>
         <p style="font-size:0.72rem;color:var(--dim);margin-top:8px;text-align:center;font-family:Arial,sans-serif;">Odpowiadamy zwykle w kilka godzin. Zapytanie jest bezpłatne i do niczego nie zobowiązuje.</p>
       </form>
