@@ -186,6 +186,16 @@
       .replace(/'/g, "&#39;");
   }
 
+  function splitTitleHtml(value) {
+    var words = String(value || "").trim().split(/\s+/).filter(Boolean);
+    if (words.length < 3) return escapeHtml(value);
+    var splitAt = Math.max(1, Math.min(words.length - 1, Math.ceil(words.length / 2)));
+    return escapeHtml(words.slice(0, splitAt).join(" ")) +
+      "<br><span class=\"red\">" +
+      escapeHtml(words.slice(splitAt).join(" ")) +
+      "</span>";
+  }
+
   function setStatus(type, message) {
     if (!els.status) return;
     els.status.className = "planner-status";
@@ -547,24 +557,24 @@
       '<div class="planner-result-block">' +
         '<article class="planner-result-card planner-result-summary">' +
           '<div class="planner-result-kicker">Najlepiej pasuje</div>' +
-          '<div class="planner-result-main">' + escapeHtml(recommendation.recommendedPackage) + "</div>" +
+          '<div class="planner-result-main">' + escapeHtml(recommendation.recommendedPackage).toUpperCase() + "</div>" +
           '<p class="planner-result-intro">To jest kierunek, który najlepiej pasuje do Twojej liczby gości, oczekiwanego efektu i wybranego stylu obsługi.</p>' +
           '<ul class="planner-result-list">' + reasonItems + "</ul>" +
         "</article>" +
         '<div class="planner-result-grid">' +
           '<article class="planner-result-card">' +
-            "<h3>Rekomendowana liczba barmanów</h3>" +
+            "<h3>Rekomendowana liczba<br><span class=\"red\">barmanów</span></h3>" +
             "<p>Rekomendujemy: <strong>" + escapeHtml(recommendation.recommendedBartenders) + " barmanów</strong></p>" +
             "<p>Przy tej liczbie gości bar działa sprawniej, a kolejki są krótsze.</p>" +
           "</article>" +
           '<article class="planner-result-card">' +
-            "<h3>Styl menu</h3>" +
+            "<h3>Styl<br><span class=\"red\">menu</span></h3>" +
             "<p>Najlepiej pasuje: <strong>" + escapeHtml(recommendation.recommendedMenuStyle) + "</strong></p>" +
             '<ul class="planner-drink-list">' + drinkItems + "</ul>" +
           "</article>" +
         "</div>" +
         '<article class="planner-result-card planner-outlook-card">' +
-          "<h3>Typ obsługi</h3>" +
+          "<h3>Typ<br><span class=\"red\">obsługi</span></h3>" +
           "<p>" + escapeHtml(recommendation.typeText) + "</p>" +
           '<div class="planner-service-tip">' +
             '<div class="label">Orientacyjnie</div>' +
@@ -591,7 +601,7 @@
     contact.className = "planner-result-card planner-contact-card";
     contact.innerHTML =
       '<div class="planner-result-kicker">Kontakt po wycenę</div>' +
-      "<h3>Zostaw kontakt do konkretnej propozycji</h3>" +
+      "<h3>Zostaw kontakt<br><span class=\"red\">do konkretnej propozycji</span></h3>" +
       '<p class="planner-contact-note">Jeśli chcesz dostać szybką odpowiedź pod datę, miejsce i liczbę gości, zostaw telefon albo email. To wystarczy, żebyśmy wrócili z sensowną propozycją.</p>' +
       '<div class="planner-contact-grid">' +
       '<div class="planner-field">' +
@@ -691,7 +701,7 @@
 
     els.progressLabel.textContent = step.label;
     els.stepLabel.textContent = step.label;
-    els.title.textContent = step.title;
+    els.title.innerHTML = splitTitleHtml(step.title);
     els.copy.textContent = step.copy;
     els.progressBar.style.width = progress + "%";
     els.body.innerHTML = "";

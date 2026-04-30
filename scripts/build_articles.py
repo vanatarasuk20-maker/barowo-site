@@ -135,6 +135,19 @@ def format_inline(text: str) -> str:
     return text
 
 
+def split_heading_html(text: str) -> str:
+    if not text:
+        return ""
+    if "<" in text and ">" in text:
+        return text
+    words = escape(text).split()
+    if len(words) < 3:
+        return " ".join(words)
+
+    split_at = max(1, min(len(words) - 1, (len(words) + 1) // 2))
+    return " ".join(words[:split_at]) + '<br><span class="red">' + " ".join(words[split_at:]) + "</span>"
+
+
 def markdown_to_html(source: str) -> str:
     if re.search(r"<\s*(p|h2|h3|ul|ol|li|figure|div|blockquote|img)\b", source):
         return source.strip()
@@ -333,7 +346,7 @@ def render_service_cards_section(section: dict[str, Any]) -> str:
         card_parts.append("</article>")
         card_items.append("\n              ".join(card_parts))
 
-    title_markup = section.get("title_html") or format_inline(section.get("title", ""))
+    title_markup = section.get("title_html") or split_heading_html(section.get("title", ""))
     label = (section.get("label") or "").strip()
     intro = (section.get("intro") or "").strip()
     footnote = (section.get("footnote") or "").strip()
@@ -370,7 +383,7 @@ def render_service_sections(service: dict[str, Any]) -> str:
         bullets = section.get("bullets") or []
         parts = [
             '<section class="service-block">',
-            f'  <h2>{format_inline(title)}</h2>',
+            f'  <h2>{split_heading_html(title)}</h2>',
             f'  <p>{format_inline(body)}</p>',
         ]
         if bullets:
@@ -393,7 +406,7 @@ def render_service_faq(service: dict[str, Any]) -> str:
     )
     return f"""<section class="service-faq">
           <div class="label">FAQ</div>
-          <h2>Najczęstsze pytania</h2>
+          <h2>Najczęstsze<br><span class="red">pytania</span></h2>
 {items}
         </section>"""
 
