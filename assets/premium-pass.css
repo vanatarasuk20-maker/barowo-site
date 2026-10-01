@@ -1337,3 +1337,662 @@ html body #faq .faq-wrap {
     margin-bottom: 16px !important;
   }
 }
+
+/* ==========================================================================
+   BOLD LAYER (2026-10-01, round 2) — more atmosphere and selling power.
+   Same navy, same #e8000d, same Bebas Neue + Manrope.
+   ========================================================================== */
+
+/* Subtle film grain over the whole page — removes the flat "template" feel */
+html body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Bigger, more confident section headlines */
+html body h2 {
+  font-size: clamp(3rem, 6.2vw, 5.75rem) !important;
+  line-height: 0.92 !important;
+}
+
+/* ---------- HERO with real BAROWO video ---------- */
+html body #hero {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100svh - 76px) !important;
+  isolation: isolate;
+}
+
+html body #hero .hero-bg {
+  z-index: 1 !important;
+  background:
+    linear-gradient(90deg, rgba(6, 6, 26, 0.96) 0%, rgba(6, 6, 26, 0.86) 38%, rgba(6, 6, 26, 0.45) 70%, rgba(6, 6, 26, 0.7) 100%),
+    linear-gradient(180deg, rgba(6, 6, 26, 0.2) 0%, rgba(6, 6, 26, 0) 50%, rgba(6, 6, 26, 1) 100%) !important;
+}
+
+html body #hero .hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+html body #hero .hero-ambient {
+  position: absolute;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  object-fit: cover;
+  filter: blur(26px) saturate(1.15) brightness(0.55);
+}
+
+html body #hero .hero-content {
+  position: relative;
+  z-index: 2 !important;
+}
+
+html body #hero .hero-reel {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(300px, 26vw, 380px);
+  aspect-ratio: 9 / 16;
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(232, 0, 13, 0.15), 0 0 80px rgba(232, 0, 13, 0.18);
+  background: #0b0c22;
+}
+
+html body #hero .hero-reel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+html body #hero .hero-reel figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(6, 6, 26, 0.72);
+  backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+html body #hero .hero-reel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pp-red);
+  box-shadow: 0 0 0 0 rgba(232, 0, 13, 0.6);
+  animation: pp-pulse 1.8s ease-out infinite;
+}
+
+@keyframes pp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(232, 0, 13, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(232, 0, 13, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 0, 13, 0); }
+}
+
+html body #hero h1 .red {
+  text-shadow: 0 0 60px rgba(232, 0, 13, 0.35);
+}
+
+html body #hero .hero-actions .btn-primary {
+  min-height: 60px;
+  padding: 0 36px !important;
+  box-shadow: 0 14px 40px rgba(232, 0, 13, 0.35) !important;
+}
+
+html body #hero .hero-actions .btn-secondary {
+  min-height: 60px;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- TICKER ---------- */
+html body > .ticker {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  background: var(--pp-red);
+  transform: rotate(-1.2deg);
+  margin: -20px -20px 56px;
+  padding: 16px 0;
+  box-shadow: 0 20px 60px rgba(232, 0, 13, 0.25);
+}
+
+html body .ticker-track {
+  display: flex;
+  width: max-content;
+  animation: pp-ticker 38s linear infinite;
+}
+
+html body .ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: #fff;
+  white-space: nowrap;
+  padding: 0 28px;
+}
+
+html body .ticker-track span::after {
+  content: '✦';
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.6em;
+  margin-left: 56px;
+  color: rgba(6, 6, 26, 0.55);
+}
+
+@keyframes pp-ticker {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- FACTS ---------- */
+html body > .stats-bar {
+  gap: 0 !important;
+  border: 1px solid var(--pp-line);
+  border-radius: var(--pp-r-card);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)) !important;
+}
+
+html body > .stats-bar .stat {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  padding: 32px !important;
+}
+
+html body > .stats-bar .stat + .stat {
+  border-left: 1px solid var(--pp-line) !important;
+}
+
+html body .stat-n {
+  font-size: clamp(2.25rem, 3.6vw, 3.25rem) !important;
+}
+
+/* ---------- HOW: editorial steps with oversized outlined numbers ---------- */
+html body #how .step {
+  background: none !important;
+  border: 0 !important;
+  border-top: 1px solid var(--pp-line-strong) !important;
+  border-radius: 0 !important;
+  padding: 32px 24px 0 0 !important;
+  position: relative;
+}
+
+html body #how .step::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  background: var(--pp-red);
+}
+
+html body #how .step-num {
+  font-size: clamp(5rem, 8vw, 7.5rem) !important;
+  line-height: 0.85 !important;
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px var(--pp-red) !important;
+  margin-bottom: 8px !important;
+}
+
+html body #how .step-title {
+  font-size: 1.125rem !important;
+}
+
+/* ---------- PACKAGES ---------- */
+html body #packages .packages-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: end;
+  margin: calc(-1 * var(--pp-head-gap) + 16px) 0 24px;
+}
+
+html body #packages .packages-intro .packages-lead {
+  margin: 0 !important;
+}
+
+html body #packages .packages-price {
+  text-align: right;
+}
+
+html body #packages .packages-price span {
+  display: block;
+  font-size: var(--pp-fs-eyebrow);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pp-muted);
+  margin-bottom: 4px;
+}
+
+html body #packages .packages-price strong {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 0.9;
+  color: var(--pp-red);
+  text-shadow: 0 0 50px rgba(232, 0, 13, 0.3);
+}
+
+html body #packages .packages-included {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 40px;
+  padding: 0;
+}
+
+html body #packages .packages-included li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--pp-line-strong);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: var(--pp-fs-small);
+  font-weight: 700;
+  color: var(--pp-text);
+}
+
+html body #packages .packages-included li::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  border-radius: 50%;
+  background: var(--pp-red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat;
+}
+
+html body #packages .pkg {
+  transition: transform 0.35s ease, border-color 0.35s ease !important;
+}
+
+html body #packages .pkg:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(255, 255, 255, 0.24) !important;
+}
+
+html body #packages .pkg.featured {
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(232, 0, 13, 0.22), rgba(232, 0, 13, 0) 60%),
+    linear-gradient(180deg, #16112c, #0d0c22) !important;
+  border-color: rgba(232, 0, 13, 0.75) !important;
+  box-shadow: 0 30px 90px rgba(232, 0, 13, 0.18) !important;
+}
+
+html body #packages .pkg.featured:hover {
+  border-color: var(--pp-red) !important;
+}
+
+html body #packages .pkg-name {
+  font-size: 3rem !important;
+}
+
+@media (min-width: 1100px) {
+  html body #packages .packages-grid {
+    padding-top: 16px;
+  }
+
+  html body #packages .pkg.featured {
+    margin-top: -16px !important;
+    margin-bottom: -16px !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+/* ---------- PROOF mosaic ---------- */
+html body .proof-wall {
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-rows: repeat(2, 280px);
+}
+
+html body .proof-tile {
+  aspect-ratio: auto !important;
+}
+
+html body .proof-tile--lead {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+html body .proof-tile--tall {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+html body .proof-tile img {
+  transition: transform 0.8s cubic-bezier(.2, .7, .2, 1);
+}
+
+html body .proof-tile:hover img {
+  transform: scale(1.04);
+}
+
+html body .proof-tile--lead img {
+  object-position: 50% 25%;
+}
+
+html body .proof-tile figcaption strong {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+html body .proof-tile--cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 24px;
+  text-decoration: none;
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 60%),
+    var(--pp-red) !important;
+  border-color: var(--pp-red) !important;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+html body .proof-tile--cta:hover {
+  transform: translateY(-4px);
+}
+
+html body .proof-cta-kicker {
+  font-size: var(--pp-fs-eyebrow);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+html body .proof-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  line-height: 1;
+}
+
+html body .proof-cta-link {
+  font-size: var(--pp-fs-small);
+  font-weight: 700;
+}
+
+/* ---------- TEAM: big portraits ---------- */
+html body #team .team-card {
+  display: grid !important;
+  grid-template-columns: 200px minmax(0, 1fr) !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  overflow: hidden;
+  align-items: stretch !important;
+}
+
+html body #team .team-avatar {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 220px;
+  flex: none !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+
+html body #team .team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+}
+
+html body #team .team-card > div:last-child {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+html body #team .team-name {
+  font-size: 2.75rem !important;
+}
+
+/* ---------- CONTACT ---------- */
+html body #contact .contact-wrap .form {
+  border-top: 3px solid var(--pp-red) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)) !important;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ---------- Mobile sticky CTA ---------- */
+html body .mobile-cta {
+  display: none;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1099px) {
+  html body #hero .hero-reel {
+    display: none;
+  }
+
+  html body #hero .hero-bg {
+    background:
+      linear-gradient(180deg, rgba(6, 6, 26, 0.55) 0%, rgba(6, 6, 26, 0.6) 45%, rgba(6, 6, 26, 0.96) 100%) !important;
+  }
+
+  html body #hero .hero-ambient {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    filter: saturate(1.05) brightness(0.8);
+  }
+
+  html body .proof-wall {
+    grid-template-rows: repeat(2, 220px);
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  html body > .ticker {
+    margin: -16px -12px 40px;
+    padding: 12px 0;
+  }
+
+  html body > .stats-bar .stat {
+    padding: 16px 20px !important;
+  }
+
+  html body > .stats-bar .stat + .stat {
+    border-left: 0 !important;
+    border-top: 1px solid var(--pp-line) !important;
+  }
+
+  html body .stat-n {
+    font-size: 1.75rem !important;
+  }
+
+  html body #how .step {
+    padding: 24px 0 0 !important;
+  }
+
+  html body #how .steps {
+    gap: 32px !important;
+  }
+
+  html body #how .step-num {
+    font-size: 4.5rem !important;
+  }
+
+  html body #packages .packages-intro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  html body #packages .packages-price {
+    text-align: left;
+  }
+
+  html body #packages .packages-included {
+    margin-bottom: 24px;
+  }
+
+  html body .proof-wall {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: none;
+  }
+
+  html body .proof-tile--lead {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  html body .proof-tile--tall,
+  html body .proof-tile:not(.proof-tile--lead):not(.proof-tile--cta) {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 3 / 4 !important;
+  }
+
+  html body .proof-tile--cta {
+    grid-column: 1 / span 2;
+    min-height: 160px;
+  }
+
+  html body #team .team-card {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+  }
+
+  html body #team .team-avatar {
+    min-height: 160px;
+  }
+
+  html body #team .team-card > div:last-child {
+    padding: 20px;
+  }
+
+  html body #team .team-name {
+    font-size: 2rem !important;
+  }
+
+  html body .mobile-cta {
+    display: flex;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    z-index: 95;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 999px;
+    background: rgba(6, 6, 26, 0.88);
+    border: 1px solid var(--pp-line-strong);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: translateY(140%);
+    transition: transform 0.35s ease;
+  }
+
+  html body .mobile-cta.is-visible {
+    transform: translateY(0);
+  }
+
+  html body .mobile-cta .btn {
+    flex: 1;
+    min-height: 48px;
+  }
+
+  html body .mobile-cta-call {
+    flex: 0 0 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(232, 0, 13, 0.55);
+    color: #fff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .ticker-track,
+  html body #hero .hero-reel-dot {
+    animation: none !important;
+  }
+}
+
+/* round 2 tweaks */
+@media (min-width: 1100px) {
+  html body #hero .hero-ambient {
+    filter: blur(22px) saturate(1.3) brightness(0.85);
+  }
+
+  html body #hero .hero-bg {
+    background:
+      linear-gradient(90deg, rgba(6, 6, 26, 0.97) 0%, rgba(6, 6, 26, 0.88) 40%, rgba(6, 6, 26, 0.35) 72%, rgba(6, 6, 26, 0.55) 100%),
+      linear-gradient(180deg, rgba(6, 6, 26, 0.1) 0%, rgba(6, 6, 26, 0) 55%, rgba(6, 6, 26, 1) 100%) !important;
+  }
+}
+
+@media (max-width: 1099px) {
+  html body #hero .hero-bg {
+    background:
+      linear-gradient(180deg, rgba(6, 6, 26, 0.72) 0%, rgba(6, 6, 26, 0.66) 50%, rgba(6, 6, 26, 0.97) 100%) !important;
+  }
+}
+
+html body #hero h1 .red,
+html body #hero h1 {
+  text-shadow: 0 2px 30px rgba(6, 6, 26, 0.6);
+}
+
+html body #contact {
+  position: relative;
+}
+
+html body #contact::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 0;
+  width: 100vw;
+  height: 640px;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 60% at 20% 0%, rgba(232, 0, 13, 0.16), rgba(232, 0, 13, 0) 70%);
+  pointer-events: none;
+}
+
+html,
+html body {
+  overflow-x: clip;
+}

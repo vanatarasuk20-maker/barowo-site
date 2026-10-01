@@ -3238,6 +3238,10 @@
   <!-- HERO -->
   <section id="hero" aria-label="Hero">
     <div class="hero-bg"></div>
+    <div class="hero-media" aria-hidden="true">
+      <video class="hero-ambient js-autoplay" src="/assets/hero/barowo-hero-bar-540.mp4" poster="/assets/hero/barowo-hero-bar-poster.webp"
+        muted loop playsinline preload="metadata"></video>
+    </div>
 
     <div class="hero-content" style="width: 100%; max-width: none;">
       <div class="hero-tag">Premium mobilny bar · Trójmiasto</div>
@@ -3257,6 +3261,11 @@
         <a href="#contact" class="btn btn-primary">Sprawdź dostępność terminu</a>
         <a href="#packages" class="btn btn-secondary">Zobacz pakiety</a>
       </div>
+      <figure class="hero-reel" aria-hidden="true">
+        <video class="js-autoplay" src="/assets/hero/barowo-hero-bar-540.mp4" poster="/assets/hero/barowo-hero-bar-poster.webp"
+          muted loop playsinline preload="metadata" width="540" height="960"></video>
+        <figcaption><span class="hero-reel-dot"></span>Serwis BAROWO na żywo</figcaption>
+      </figure>
       <div class="hero-links" aria-label="Popularne strony BAROWO">
         <a href="/cennik/">Ile kosztuje mobilny bar</a>
         <a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a>
@@ -3265,6 +3274,14 @@
       </div>
     </div>
   </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Mobilny bar</span><span>Wesela</span><span>18-stki</span><span>Eventy firmowe</span><span>Autorskie koktajle</span><span>Fontanna czekoladowa</span><span>Gdynia · Gdańsk · Sopot</span>
+      <span>Mobilny bar</span><span>Wesela</span><span>18-stki</span><span>Eventy firmowe</span><span>Autorskie koktajle</span><span>Fontanna czekoladowa</span><span>Gdynia · Gdańsk · Sopot</span>
+    </div>
+  </div>
 
   <!-- STATS -->
   <div class="stats-bar" aria-label="Statystyki">
@@ -3317,7 +3334,13 @@
     <div class="label">Nasza oferta</div>
     <h2>WYBIERZ SWÓJ<br><span class="red">PAKIET</span></h2>
 
-    <p class="packages-lead">Wszystkie pakiety obejmują bar, szkło, alkohol, dodatki i&nbsp;obsługę. Różnią się liczbą barmanów, szerokością menu i&nbsp;oprawą.</p>
+    <div class="packages-intro">
+      <p class="packages-lead">Wszystkie pakiety to pełna obsługa — przyjeżdżamy z&nbsp;gotowym barem i&nbsp;zostawiamy Ci tylko zabawę. Różnią się liczbą barmanów, szerokością menu i&nbsp;oprawą.</p>
+      <div class="packages-price"><span>Pełna obsługa</span><strong>od 3300&nbsp;zł</strong></div>
+    </div>
+    <ul class="packages-included" aria-label="W każdym pakiecie">
+      <li>Mobilny bar</li><li>Szkło i sprzęt</li><li>Alkohol w cenie</li><li>Składniki i dodatki</li><li>Obsługa barmańska</li>
+    </ul>
 
     <div class="packages-grid">
 
@@ -3480,34 +3503,33 @@
 
     <p class="proof-intro">Prawdziwe realizacje BAROWO: setup baru, serwis w&nbsp;trakcie eventu i&nbsp;efekt na żywo. Więcej ujęć z&nbsp;kolejnych imprez pokazujemy na Instagramie i&nbsp;TikToku.</p>
 
-    <div class="proof-wall" aria-label="Zdjęcia i wideo z realizacji BAROWO">
-      <figure class="proof-tile">
-        <video class="proof-video" src="/assets/vid1-lite.mp4" poster="/assets/proof/barowo-serwis-koktajli-poster-540w.webp"
-          muted loop playsinline preload="none" width="540" height="960"
-          aria-label="Barman BAROWO przygotowuje koktajle przy barze"></video>
-        <figcaption>Koktajle przygotowywane na żywo</figcaption>
-      </figure>
-      <figure class="proof-tile">
-        <img src="/assets/proof/barowo-barman-artem-480w.webp"
+    <div class="proof-wall" aria-label="Zdjęcia z realizacji BAROWO">
+      <figure class="proof-tile proof-tile--lead">
+        <img src="/assets/proof/barowo-barman-artem-800w.webp"
           srcset="/assets/proof/barowo-barman-artem-480w.webp 480w, /assets/proof/barowo-barman-artem-800w.webp 787w"
-          sizes="(max-width: 760px) 50vw, 290px" width="787" height="1400"
+          sizes="(max-width: 760px) 100vw, 600px" width="787" height="1400"
           alt="Artem, head barman BAROWO, przy barze" loading="lazy" decoding="async">
-        <figcaption>Artem — head barman</figcaption>
+        <figcaption><strong>Artem</strong> head barman BAROWO</figcaption>
       </figure>
-      <figure class="proof-tile">
-        <img src="/assets/proof/barowo-drewniany-bar-480w.webp"
+      <figure class="proof-tile proof-tile--tall">
+        <img src="/assets/proof/barowo-drewniany-bar-800w.webp"
           srcset="/assets/proof/barowo-drewniany-bar-480w.webp 480w, /assets/proof/barowo-drewniany-bar-800w.webp 800w"
-          sizes="(max-width: 760px) 50vw, 290px" width="800" height="1067"
+          sizes="(max-width: 760px) 50vw, 300px" width="800" height="1067"
           alt="Drewniany mobilny bar BAROWO przygotowany na plenerowy event" loading="lazy" decoding="async">
         <figcaption>Drewniany bar na plener</figcaption>
       </figure>
       <figure class="proof-tile">
         <img src="/assets/proof/barowo-bialy-bar-480w.webp"
           srcset="/assets/proof/barowo-bialy-bar-480w.webp 480w, /assets/proof/barowo-bialy-bar-800w.webp 800w"
-          sizes="(max-width: 760px) 50vw, 290px" width="800" height="1000"
+          sizes="(max-width: 760px) 50vw, 300px" width="800" height="1000"
           alt="Biały mobilny bar BAROWO przygotowany pod namiotem eventowym" loading="lazy" decoding="async">
         <figcaption>Biały bar pod namiotem</figcaption>
       </figure>
+      <a class="proof-tile proof-tile--cta" href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">
+        <span class="proof-cta-kicker">Więcej realizacji</span>
+        <span class="proof-cta-title">@barowo_official</span>
+        <span class="proof-cta-link">Zobacz na Instagramie →</span>
+      </a>
     </div>
 
     <div class="hero-actions proof-actions">
@@ -3773,6 +3795,13 @@
     <div class="footer-links"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a><a href="/cennik/">Cennik</a><a href="#contact">Kontakt</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
     <div class="footer-region">Gdynia · Gdańsk · Sopot</div>
   </footer>
+
+  <div class="mobile-cta" id="mobileCta">
+    <a href="#contact" class="btn btn-primary">Sprawdź termin</a>
+    <a href="tel:+48889168003" class="mobile-cta-call" aria-label="Zadzwoń: +48 889 168 003">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    </a>
+  </div>
 
   <div class="callback-modal" id="callbackModal" role="dialog" aria-modal="true" aria-labelledby="callbackTitle" aria-hidden="true">
     <div class="callback-backdrop" data-callback-close></div>
@@ -4207,7 +4236,7 @@
 
     revealTargets.forEach((element) => revealObserver.observe(element));
 
-    const proofVideos = document.querySelectorAll('.proof-video');
+    const proofVideos = document.querySelectorAll('.js-autoplay, .proof-video');
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const saveData = navigator.connection && navigator.connection.saveData;
     if (proofVideos.length && !reduceMotion && !saveData && 'IntersectionObserver' in window) {
@@ -4222,6 +4251,26 @@
         });
       }, { threshold: 0.35 });
       proofVideos.forEach((video) => proofVideoObserver.observe(video));
+    }
+
+    const mobileCta = document.getElementById('mobileCta');
+    const heroSection = document.getElementById('hero');
+    const contactSection = document.getElementById('contact');
+    if (mobileCta && heroSection && contactSection && 'IntersectionObserver' in window) {
+      let heroVisible = true;
+      let contactVisible = false;
+      const syncMobileCta = () => mobileCta.classList.toggle('is-visible', !heroVisible && !contactVisible);
+      new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === heroSection) heroVisible = entry.isIntersecting;
+          if (entry.target === contactSection) contactVisible = entry.isIntersecting;
+        });
+        syncMobileCta();
+      }, { threshold: 0 }).observe(heroSection);
+      new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { contactVisible = entry.isIntersecting; });
+        syncMobileCta();
+      }, { threshold: 0 }).observe(contactSection);
     }
 
     const mediaTrack = document.getElementById('mediaTrack');
