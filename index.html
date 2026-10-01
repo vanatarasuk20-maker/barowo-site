@@ -3239,7 +3239,9 @@
   <section id="hero" aria-label="Hero">
     <div class="hero-bg"></div>
     <div class="hero-media" aria-hidden="true">
-      <video class="hero-ambient js-autoplay" src="/assets/hero/barowo-hero-bar-540.mp4" poster="/assets/hero/barowo-hero-bar-poster.webp"
+      <video class="hero-video hero-video--land js-autoplay" src="/assets/hero/barowo-hero-1600.mp4" poster="/assets/hero/barowo-hero-poster-1600.webp"
+        muted loop playsinline preload="metadata"></video>
+      <video class="hero-video hero-video--port js-autoplay" src="/assets/hero/barowo-hero-720.mp4" poster="/assets/hero/barowo-hero-poster-720.webp"
         muted loop playsinline preload="metadata"></video>
     </div>
 
@@ -3261,11 +3263,6 @@
         <a href="#contact" class="btn btn-primary">Sprawdź dostępność terminu</a>
         <a href="#packages" class="btn btn-secondary">Zobacz pakiety</a>
       </div>
-      <figure class="hero-reel" aria-hidden="true">
-        <video class="js-autoplay" src="/assets/hero/barowo-hero-bar-540.mp4" poster="/assets/hero/barowo-hero-bar-poster.webp"
-          muted loop playsinline preload="metadata" width="540" height="960"></video>
-        <figcaption><span class="hero-reel-dot"></span>Serwis BAROWO na żywo</figcaption>
-      </figure>
       <div class="hero-links" aria-label="Popularne strony BAROWO">
         <a href="/cennik/">Ile kosztuje mobilny bar</a>
         <a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a>
@@ -3345,6 +3342,7 @@
     <div class="packages-grid">
 
       <div class="pkg">
+        <figure class="pkg-media"><img src="/assets/realizacje/barowo-pakiet-simple-800w.webp" srcset="/assets/realizacje/barowo-pakiet-simple-480w.webp 480w, /assets/realizacje/barowo-pakiet-simple-800w.webp 800w" sizes="(max-width: 760px) 100vw, 380px" width="800" height="500" alt="Koktajle z pakietu Simple" loading="lazy" decoding="async"></figure>
         <div class="pkg-badge">Dobry start</div>
         <div class="pkg-name">Simple</div>
         <div class="pkg-barmen"><strong>1</strong> barman</div>
@@ -3376,6 +3374,7 @@
       </div>
 
       <div class="pkg featured">
+        <figure class="pkg-media"><img src="/assets/realizacje/barowo-pakiet-standard-800w.webp" srcset="/assets/realizacje/barowo-pakiet-standard-480w.webp 480w, /assets/realizacje/barowo-pakiet-standard-800w.webp 800w" sizes="(max-width: 760px) 100vw, 380px" width="800" height="500" alt="Koktajle spritz z pakietu Standard" loading="lazy" decoding="async"></figure>
         <div class="pkg-badge">Polecany na wesela</div>
         <div class="pkg-name">Standard</div>
         <div class="pkg-barmen"><strong>2</strong> barmanów</div>
@@ -3407,6 +3406,7 @@
       </div>
 
       <div class="pkg">
+        <figure class="pkg-media"><img src="/assets/realizacje/barowo-pakiet-premium-800w.webp" srcset="/assets/realizacje/barowo-pakiet-premium-480w.webp 480w, /assets/realizacje/barowo-pakiet-premium-800w.webp 800w" sizes="(max-width: 760px) 100vw, 380px" width="800" height="500" alt="Koktajl premium w kieliszku coupe" loading="lazy" decoding="async"></figure>
         <div class="pkg-badge">Premium</div>
         <div class="pkg-name">Premium</div>
         <div class="pkg-barmen"><strong>2+</strong> barmanów</div>
@@ -3505,25 +3505,46 @@
 
     <div class="proof-wall" aria-label="Zdjęcia z realizacji BAROWO">
       <figure class="proof-tile proof-tile--lead">
-        <img src="/assets/proof/barowo-barman-artem-800w.webp"
-          srcset="/assets/proof/barowo-barman-artem-480w.webp 480w, /assets/proof/barowo-barman-artem-800w.webp 787w"
-          sizes="(max-width: 760px) 100vw, 600px" width="787" height="1400"
-          alt="Artem, head barman BAROWO, przy barze" loading="lazy" decoding="async">
-        <figcaption><strong>Artem</strong> head barman BAROWO</figcaption>
+        <img src="/assets/realizacje/barowo-artem-serwis-mojito-1200w.webp"
+          srcset="/assets/realizacje/barowo-artem-serwis-mojito-600w.webp 600w, /assets/realizacje/barowo-artem-serwis-mojito-1200w.webp 1200w"
+          sizes="(max-width: 760px) 100vw, 600px" width="1200" height="1500"
+          alt="Artem, head barman BAROWO, przygotowuje koktajle przy barze" loading="lazy" decoding="async">
+        <figcaption><strong>Serwis na żywo</strong>Artem, head barman BAROWO</figcaption>
       </figure>
       <figure class="proof-tile proof-tile--tall">
-        <img src="/assets/proof/barowo-drewniany-bar-800w.webp"
-          srcset="/assets/proof/barowo-drewniany-bar-480w.webp 480w, /assets/proof/barowo-drewniany-bar-800w.webp 800w"
+        <img src="/assets/realizacje/barowo-spritz-800w.webp"
+          srcset="/assets/realizacje/barowo-spritz-480w.webp 480w, /assets/realizacje/barowo-spritz-800w.webp 800w"
           sizes="(max-width: 760px) 50vw, 300px" width="800" height="1067"
-          alt="Drewniany mobilny bar BAROWO przygotowany na plenerowy event" loading="lazy" decoding="async">
-        <figcaption>Drewniany bar na plener</figcaption>
+          alt="Dwa koktajle spritz z grejpfrutem przygotowane przez BAROWO" loading="lazy" decoding="async">
+        <figcaption>Spritz z grejpfrutem</figcaption>
       </figure>
       <figure class="proof-tile">
-        <img src="/assets/proof/barowo-bialy-bar-480w.webp"
-          srcset="/assets/proof/barowo-bialy-bar-480w.webp 480w, /assets/proof/barowo-bialy-bar-800w.webp 800w"
-          sizes="(max-width: 760px) 50vw, 300px" width="800" height="1000"
-          alt="Biały mobilny bar BAROWO przygotowany pod namiotem eventowym" loading="lazy" decoding="async">
-        <figcaption>Biały bar pod namiotem</figcaption>
+        <img src="/assets/realizacje/barowo-koktajl-coupe-800w.webp"
+          srcset="/assets/realizacje/barowo-koktajl-coupe-480w.webp 480w, /assets/realizacje/barowo-koktajl-coupe-800w.webp 800w"
+          sizes="(max-width: 760px) 50vw, 300px" width="800" height="1067"
+          alt="Koktajl w kieliszku coupe z płatkami róży" loading="lazy" decoding="async">
+        <figcaption>Koktajl w coupe</figcaption>
+      </figure>
+      <figure class="proof-tile">
+        <img src="/assets/realizacje/barowo-wizytownik-800w.webp"
+          srcset="/assets/realizacje/barowo-wizytownik-480w.webp 480w, /assets/realizacje/barowo-wizytownik-800w.webp 800w"
+          sizes="(max-width: 760px) 50vw, 300px" width="800" height="1067"
+          alt="Wizytownik BAROWO Parties &amp; Weddings na barze" loading="lazy" decoding="async">
+        <figcaption>BAROWO · parties &amp; weddings</figcaption>
+      </figure>
+      <figure class="proof-tile">
+        <img src="/assets/realizacje/barowo-barman-smoking-800w.webp"
+          srcset="/assets/realizacje/barowo-barman-smoking-480w.webp 480w, /assets/realizacje/barowo-barman-smoking-800w.webp 800w"
+          sizes="(max-width: 760px) 50vw, 300px" width="800" height="1067"
+          alt="Barman BAROWO w smokingu za barem" loading="lazy" decoding="async">
+        <figcaption>Obsługa w smokingach</figcaption>
+      </figure>
+      <figure class="proof-tile">
+        <img src="/assets/realizacje/barowo-dodatki-bar-800w.webp"
+          srcset="/assets/realizacje/barowo-dodatki-bar-480w.webp 480w, /assets/realizacje/barowo-dodatki-bar-800w.webp 800w"
+          sizes="(max-width: 760px) 50vw, 300px" width="800" height="1067"
+          alt="Dodatki koktajlowe i suszone owoce na barze BAROWO" loading="lazy" decoding="async">
+        <figcaption>Dodatki i dekoracje</figcaption>
       </figure>
       <a class="proof-tile proof-tile--cta" href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">
         <span class="proof-cta-kicker">Więcej realizacji</span>
@@ -3545,7 +3566,7 @@
     <h2>POZNAJ<br><span class="red">BARMANÓW</span></h2>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-avatar"><img src="/assets/Artem-opt.jpg" alt="Artem" loading="lazy"></div>
+        <div class="team-avatar"><img src="/assets/realizacje/barowo-team-artem-720w.webp" srcset="/assets/realizacje/barowo-team-artem-400w.webp 400w, /assets/realizacje/barowo-team-artem-720w.webp 720w" sizes="(max-width: 760px) 120px, 240px" width="720" height="720" alt="Artem, head barman BAROWO, z koktajlem przy barze" loading="lazy"></div>
         <div>
           <div class="team-name">Artem</div>
           <div class="team-role">Head Barman</div>
@@ -3553,7 +3574,7 @@
         </div>
       </div>
       <div class="team-card">
-        <div class="team-avatar"><img src="/assets/Ivan-opt.jpg" alt="Ivan" loading="lazy"></div>
+        <div class="team-avatar"><img src="/assets/realizacje/barowo-team-ivan-720w.webp" srcset="/assets/realizacje/barowo-team-ivan-400w.webp 400w, /assets/realizacje/barowo-team-ivan-720w.webp 720w" sizes="(max-width: 760px) 120px, 240px" width="720" height="720" alt="Ivan z BAROWO przy barze z koktajlem" loading="lazy"></div>
         <div>
           <div class="team-name">Ivan</div>
           <div class="team-role">Barman &amp; Marketing</div>
