@@ -15,9 +15,15 @@
   "direct_answer": "To nie jest sam wynajem urządzenia. BAROWO przygotowuje uporządkowaną słodką strefę z fontanną czekoladową, dodatkami i estetyką, która ma dobrze wyglądać na sali i działać wygodnie dla gości.",
   "service_type": "Fontanna czekoladowa / słodka strefa na event",
   "offer_note": "Wycena fontanny czekoladowej zależy od liczby gości, miejsca wydarzenia, dodatków i tego, czy jest dodatkiem do baru, czy osobną usługą.",
-  "areas": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto", "Pomorskie"],
-  "image": "/assets/chocolate-fountain-opt.jpg",
-  "image_alt": "Fontanna czekoladowa BAROWO przygotowana dla gości na evencie",
+  "areas": [
+    "Gdynia",
+    "Gdańsk",
+    "Sopot",
+    "Trójmiasto",
+    "Pomorskie"
+  ],
+  "image": "/assets/photos/fontanna-czekoladowa-barowo.jpg",
+  "image_alt": "Fontanna czekoladowa BAROWO",
   "highlights": [
     "Fontanna czekoladowa jako dodatek do baru albo osobna usługa",
     "Elegancki stół, dodatki i przygotowanie stanowiska",
@@ -64,14 +70,30 @@
       "title": "Na jakie wydarzenia sprawdzi się fontanna czekoladowa?",
       "intro": "Fontanna czekoladowa działa najlepiej tam, gdzie goście mają swobodnie podchodzić do słodkiej strefy w trakcie wydarzenia. To atrakcja dla dzieci i dorosłych, ale też element, który dobrze wygląda na zdjęciach.",
       "cards": [
-        {"title": "Wesele"},
-        {"title": "Poprawiny"},
-        {"title": "Urodziny"},
-        {"title": "Komunia"},
-        {"title": "Garden party"},
-        {"title": "Event firmowy"},
-        {"title": "Otwarcie lokalu"},
-        {"title": "Przyjęcie rodzinne"}
+        {
+          "title": "Wesele"
+        },
+        {
+          "title": "Poprawiny"
+        },
+        {
+          "title": "Urodziny"
+        },
+        {
+          "title": "Komunia"
+        },
+        {
+          "title": "Garden party"
+        },
+        {
+          "title": "Event firmowy"
+        },
+        {
+          "title": "Otwarcie lokalu"
+        },
+        {
+          "title": "Przyjęcie rodzinne"
+        }
       ]
     },
     {
@@ -149,12 +171,27 @@
     }
   ],
   "related_links": [
-    {"href": "/cennik/", "label": "Cennik mobilnego baru"},
-    {"href": "/oferta/mobilny-bar-na-wesele/", "label": "Mobilny bar na wesele"},
-    {"href": "/planer-baru-weselnego/", "label": "Planer Baru Weselnego"},
-    {"href": "/?service=fontanna-czekoladowa&chocolateFountainInterest=true&chocolateFountainMode=solo_service#contact", "label": "Zapytaj o fontannę"}
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/oferta/mobilny-bar-na-wesele/",
+      "label": "Mobilny bar na wesele"
+    },
+    {
+      "href": "/planer-baru-weselnego/",
+      "label": "Planer Baru Weselnego"
+    },
+    {
+      "href": "/?service=fontanna-czekoladowa&chocolateFountainInterest=true&chocolateFountainMode=solo_service#contact",
+      "label": "Zapytaj o fontannę"
+    }
   ],
-  "related_articles": ["najlepsze-drinki-na-wesele", "garden-party-z-barem-mobilnym"],
+  "related_articles": [
+    "najlepsze-drinki-na-wesele",
+    "garden-party-z-barem-mobilnym"
+  ],
   "primary_cta_text": "Zapytaj o fontannę",
   "primary_cta_href": "/?service=fontanna-czekoladowa&chocolateFountainInterest=true&chocolateFountainMode=solo_service#contact",
   "secondary_cta_text": "Dodaj do pakietu baru",

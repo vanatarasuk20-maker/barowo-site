@@ -88,7 +88,7 @@ def business_graph() -> dict[str, Any]:
         "description": "Mobilny bar na wesele, urodziny i event firmowy w Trójmieście.",
         "logo": absolute_url("/assets/logo-main.png"),
         "image": [
-            absolute_url("/assets/photo1-opt.jpg"),
+            absolute_url("/assets/photos/og-barowo.jpg"),
             absolute_url("/assets/photo2-opt.jpg"),
             absolute_url("/assets/photo3-opt.jpg"),
         ],
@@ -437,7 +437,7 @@ def render_service_jsonld(service: dict[str, Any]) -> str:
             "serviceType": service.get("service_type", "Mobilny bar"),
             "areaServed": service.get("areas", ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto"]),
             "url": page_url,
-            "image": absolute_url(service.get("image", "/assets/photo1-opt.jpg")),
+            "image": absolute_url(service.get("image", "/assets/photos/og-barowo.jpg")),
             "offers": {
                 "@type": "Offer",
                 "availability": "https://schema.org/InStock",
@@ -502,14 +502,14 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
         "{{OG_TITLE}}": escape(service.get("og_title", meta_title)),
         "{{OG_DESCRIPTION}}": escape(service.get("og_description", meta_description)),
         "{{OG_URL}}": service_url(service["slug"]),
-        "{{OG_IMAGE}}": escape(absolute_url(service.get("image", "/assets/photo1-opt.jpg"))),
+        "{{OG_IMAGE}}": escape(absolute_url(service.get("image", "/assets/photos/og-barowo.jpg"))),
         "{{CANONICAL_URL}}": service_url(service["slug"]),
         "{{JSONLD}}": render_service_jsonld(service),
         "{{H1_HTML}}": service.get("title_html", escape(service.get("title_plain", ""))),
         "{{EYEBROW}}": escape(service.get("eyebrow", "Oferta BAROWO")),
         "{{INTRO}}": escape(service.get("intro", "")),
         "{{DIRECT_ANSWER}}": escape(service.get("direct_answer", "")),
-        "{{IMAGE}}": escape(service.get("image", "/assets/photo1-opt.jpg")),
+        "{{IMAGE}}": escape(service.get("image", "/assets/photos/og-barowo.jpg")),
         "{{IMAGE_ALT}}": escape(service.get("image_alt", "Mobilny bar BAROWO")),
         "{{HIGHLIGHTS}}": render_list(service.get("highlights") or []),
         "{{SECTIONS}}": render_service_sections(service),
@@ -569,7 +569,7 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
 def service_card_html(service: dict[str, Any]) -> str:
     return f"""        <article class="service-card">
           <a class="service-card-media" href="/oferta/{service['slug']}/">
-            <img src="{escape(service.get('image', '/assets/photo1-opt.jpg'))}" alt="{escape(service.get('image_alt', 'Mobilny bar BAROWO'))}" width="1200" height="1600" loading="lazy">
+            <img src="{escape(service.get('image', '/assets/photos/og-barowo.jpg'))}" alt="{escape(service.get('image_alt', 'Mobilny bar BAROWO'))}" width="1200" height="1600" loading="lazy">
           </a>
           <div class="service-card-copy">
             <span>{escape(service.get('eyebrow', 'Oferta'))}</span>

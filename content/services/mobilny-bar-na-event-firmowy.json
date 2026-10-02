@@ -13,9 +13,15 @@
   "direct_answer": "Na wydarzeniach firmowych mobilny bar działa najlepiej wtedy, gdy jest pełną usługą, a nie samą atrakcją. Goście dostają estetyczny, szybki punkt serwisu, a organizator ma jeden uporządkowany temat mniej.",
   "service_type": "Mobilny bar na event firmowy",
   "offer_note": "BAROWO wycenia pełną obsługę baru eventowego, dlatego cena zależy od liczby gości, zakresu menu i logistyki wydarzenia.",
-  "areas": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto", "Pomorskie"],
-  "image": "/assets/articles/article2-bar-top.jpg",
-  "image_alt": "Elegancki mobilny bar na wydarzeniu firmowym",
+  "areas": [
+    "Gdynia",
+    "Gdańsk",
+    "Sopot",
+    "Trójmiasto",
+    "Pomorskie"
+  ],
+  "image": "/assets/photos/bar-menu-tablet.jpg",
+  "image_alt": "Mobilny bar BAROWO z menu na tablecie i świeżymi dodatkami",
   "highlights": [
     "Bar, szkło, barmani i setup w jednym zakresie",
     "Obsługa integracji, premier, konferencji i gal",
@@ -92,12 +98,27 @@
     }
   ],
   "related_links": [
-    {"href": "/cennik/", "label": "Cennik mobilnego baru"},
-    {"href": "/oferta/mobilny-bar-trojmiasto/", "label": "Mobilny bar Trójmiasto"},
-    {"href": "/oferta/fontanna-czekoladowa/", "label": "Fontanna czekoladowa"},
-    {"href": "/#contact", "label": "Formularz kontaktowy"}
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/oferta/mobilny-bar-trojmiasto/",
+      "label": "Mobilny bar Trójmiasto"
+    },
+    {
+      "href": "/oferta/fontanna-czekoladowa/",
+      "label": "Fontanna czekoladowa"
+    },
+    {
+      "href": "/#contact",
+      "label": "Formularz kontaktowy"
+    }
   ],
-  "related_articles": ["mobilny-bar-na-event-firmowy", "ile-kosztuje-mobilny-bar-trojmiasto"],
+  "related_articles": [
+    "mobilny-bar-na-event-firmowy",
+    "ile-kosztuje-mobilny-bar-trojmiasto"
+  ],
   "primary_cta_text": "Zapytaj o dostępność terminu",
   "secondary_cta_text": "Zobacz cennik",
   "secondary_cta_href": "/cennik/",

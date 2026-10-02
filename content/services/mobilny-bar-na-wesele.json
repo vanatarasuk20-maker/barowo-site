@@ -13,9 +13,15 @@
   "direct_answer": "Mobilny bar na wesele ma sens wtedy, gdy chcesz jeden zespół odpowiedzialny za tempo serwisu, estetykę baru i komfort gości. To nie jest sama obecność barmana, tylko pełna obsługa baru weselnego od setupu do ostatnich drinków.",
   "service_type": "Mobilny bar na wesele",
   "offer_note": "Pełna obsługa mobilnego baru BAROWO zaczyna się od 3000 zł, bo obejmują pełną obsługę mobilnego baru, a nie sam pokaz barmański.",
-  "areas": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto", "Pomorskie"],
-  "image": "/assets/articles/article1-guests.jpg",
-  "image_alt": "Goście weselni przy mobilnym barze BAROWO",
+  "areas": [
+    "Gdynia",
+    "Gdańsk",
+    "Sopot",
+    "Trójmiasto",
+    "Pomorskie"
+  ],
+  "image": "/assets/photos/bar-boho-wesele.jpg",
+  "image_alt": "Drewniany mobilny bar BAROWO w stylu Boho przygotowany na sali weselnej",
   "highlights": [
     "Bar, szkło, dodatki i barmani w jednym pakiecie",
     "Obsługa wesel w Gdańsku, Gdyni, Sopocie i okolicach",
@@ -115,13 +121,32 @@
     }
   ],
   "related_links": [
-    {"href": "/cennik/", "label": "Cennik mobilnego baru"},
-    {"href": "/oferta/mobilny-bar-trojmiasto/", "label": "Mobilny bar Trójmiasto"},
-    {"href": "/oferta/fontanna-czekoladowa/", "label": "Fontanna czekoladowa"},
-    {"href": "/planer-baru-weselnego/", "label": "Planer Baru Weselnego"},
-    {"href": "/#contact", "label": "Formularz kontaktowy"}
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/oferta/mobilny-bar-trojmiasto/",
+      "label": "Mobilny bar Trójmiasto"
+    },
+    {
+      "href": "/oferta/fontanna-czekoladowa/",
+      "label": "Fontanna czekoladowa"
+    },
+    {
+      "href": "/planer-baru-weselnego/",
+      "label": "Planer Baru Weselnego"
+    },
+    {
+      "href": "/#contact",
+      "label": "Formularz kontaktowy"
+    }
   ],
-  "related_articles": ["najlepsze-drinki-na-wesele", "ile-kosztuje-mobilny-bar-trojmiasto", "mobilny-bar-czy-alkohol-samemu"],
+  "related_articles": [
+    "najlepsze-drinki-na-wesele",
+    "ile-kosztuje-mobilny-bar-trojmiasto",
+    "mobilny-bar-czy-alkohol-samemu"
+  ],
   "primary_cta_text": "Sprawdź dostępność terminu",
   "secondary_cta_text": "Zobacz cennik",
   "secondary_cta_href": "/cennik/",

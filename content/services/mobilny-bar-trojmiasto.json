@@ -13,9 +13,15 @@
   "direct_answer": "Jeśli szukasz mobilnego baru w Trójmieście, najważniejsze są trzy rzeczy: dostępność terminu, dobrze dobrany pakiet i logistyka miejsca. BAROWO łączy bar, barmanów, szkło, koktajle i dojazd w jednym procesie.",
   "service_type": "Mobilny bar Trójmiasto",
   "offer_note": "Wycena zależy od daty, miasta, liczby gości i zakresu obsługi, ale zawsze dotyczy pełnego mobilnego baru, a nie samego pokazu.",
-  "areas": ["Trójmiasto", "Gdynia", "Gdańsk", "Sopot", "Pomorskie"],
-  "image": "/assets/photo1-opt.jpg",
-  "image_alt": "Mobilny bar BAROWO w Trójmieście",
+  "areas": [
+    "Trójmiasto",
+    "Gdynia",
+    "Gdańsk",
+    "Sopot",
+    "Pomorskie"
+  ],
+  "image": "/assets/photos/barman-prosecco.jpg",
+  "image_alt": "Barman BAROWO nalewa prosecco podczas wydarzenia",
   "highlights": [
     "Lokalna obsługa Gdyni, Gdańska, Sopotu i okolic",
     "Wesela, urodziny, eventy firmowe i garden party",
@@ -73,11 +79,23 @@
     }
   ],
   "related_links": [
-    {"href": "/cennik/", "label": "Cennik mobilnego baru"},
-    {"href": "/oferta/mobilny-bar-na-wesele/", "label": "Mobilny bar na wesele"},
-    {"href": "/oferta/mobilny-bar-na-event-firmowy/", "label": "Mobilny bar na event firmowy"}
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/oferta/mobilny-bar-na-wesele/",
+      "label": "Mobilny bar na wesele"
+    },
+    {
+      "href": "/oferta/mobilny-bar-na-event-firmowy/",
+      "label": "Mobilny bar na event firmowy"
+    }
   ],
-  "related_articles": ["ile-kosztuje-mobilny-bar-trojmiasto", "garden-party-z-barem-mobilnym"],
+  "related_articles": [
+    "ile-kosztuje-mobilny-bar-trojmiasto",
+    "garden-party-z-barem-mobilnym"
+  ],
   "primary_cta_text": "Sprawdź dostępność terminu",
   "secondary_cta_text": "Zobacz cennik",
   "secondary_cta_href": "/cennik/",
