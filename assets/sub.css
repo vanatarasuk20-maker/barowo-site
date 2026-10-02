@@ -252,3 +252,6 @@ body.sub.planner-page{background:inherit}
 .sub h1 br{display:inline}
 .sub .planner-inline-links{display:grid;gap:0}
 .sub .highlights a{color:var(--ink)}.sub .highlights a:hover{color:var(--red)}
+.sub .hero-media video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;max-height:640px;background:#0b0f2a}
+@media(max-width:1080px){.sub .hero-media video{aspect-ratio:4/3;max-height:520px}}
+.sub .planner-step-label{display:none}

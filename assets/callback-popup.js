@@ -166,7 +166,7 @@
       setStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
       window.setTimeout(function () { closeModal('submitted'); }, 1800);
     } catch (error) {
-      setStatus('error', 'Nie udało się wysłać numeru. Zadzwoń do nas: +48 889 168 003.');
+      setStatus('error', 'Nie udało się wysłać numeru. Zadzwoń do nas: +48 880 564 984.');
     } finally {
       if (submit) {
         submit.disabled = false;

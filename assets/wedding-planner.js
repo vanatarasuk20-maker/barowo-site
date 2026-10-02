@@ -96,15 +96,15 @@
     {
       key: "alcohol",
       label: "Krok 7 z 10",
-      title: "Jak chcecie rozwiązać alkohol?",
-      copy: "BAROWO nie sprzedaje alkoholu. Możemy za to przygotować rekomendowaną listę produktów pod menu i liczbę gości.",
+      title: "Jaki zakres alkoholi Was interesuje?",
+      copy: "Alkohol jest w cenie każdego pakietu. Wybierz, czego oczekujecie — to pomoże dobrać pakiet.",
       type: "single",
       field: "alcoholPreference",
       options: [
-        { value: "Chcemy, żeby BAROWO pomogło z listą produktów", label: "BAROWO ma pomóc z listą produktów" },
-        { value: "Mamy własny alkohol / sala zapewnia alkohol", label: "Mamy własny alkohol / sala zapewnia alkohol" },
-        { value: "Jeszcze nie wiemy", label: "Jeszcze nie wiemy" },
-        { value: "Chcemy pełną rekomendację", label: "Chcemy pełną rekomendację" }
+        { value: "Klasyka: wódka, rum, prosecco", label: "Klasyka: wódka, rum, prosecco" },
+        { value: "Szerzej: także whiskey i likier aperitivo", label: "Szerzej: także whiskey i likier aperitivo" },
+        { value: "Premium: także gin, likiery i bitter", label: "Premium: także gin, likiery i bitter" },
+        { value: "Chcemy pełną rekomendację", label: "Nie wiem — chcę rekomendację" }
       ]
     },
     {
@@ -165,6 +165,7 @@
 
   var endpoint = plannerRoot.dataset.endpoint || "";
   var currentStepIndex = 0;
+  var hasRendered = false;
   var els = {
     progressLabel: document.getElementById("plannerProgressLabel"),
     progressBar: document.getElementById("plannerProgressFill"),
@@ -233,32 +234,32 @@
 
     if (picks.indexOf("klasyczne koktajle") !== -1) {
       title = "klasyczne koktajle z mocnym trzonem";
-      drinks.push("Whisky Sour", "Cuba Libre", "Mojito");
+      drinks.push("Whiskey Sour", "Cuba Libre", "Mojito");
     }
 
     if (picks.indexOf("kwaśne / cytrusowe") !== -1) {
       title = "świeże i cytrusowe koktajle";
-      drinks.push("Whisky Sour", "Tom Collins", "Margarita");
+      drinks.push("Whiskey Sour", "Daiquiri", "Old Cuban");
     }
 
     if (picks.indexOf("mocniejsze drinki") !== -1) {
       title = "klasyczne i mocniejsze pozycje";
-      drinks.push("Old Fashioned", "Whisky Sour", "Cuba Libre");
+      drinks.push("Negroni", "Whiskey Sour", "Cuba Libre");
     }
 
     if (picks.indexOf("nie wiem, chcę gotowe menu") !== -1) {
       title = "sprawdzone menu 6-8 drinków";
-      drinks.push("Spritz", "Mojito", "Whisky Sour", "Hugo", "Pornstar Martini", "Cuba Libre");
+      drinks.push("Spritz", "Mojito", "Whiskey Sour", "Hugo", "Pornstar Martini", "Cuba Libre");
     }
 
     if (picks.indexOf("mocktaile bezalkoholowe") !== -1) {
-      drinks.push("1-2 mocktaile");
-    } else if (drinks.indexOf("1-2 mocktaile") === -1) {
-      drinks.push("1-2 mocktaile");
+      drinks.push("koktajle 0% (Standard i Premium)");
+    } else if (drinks.indexOf("koktajle 0% (Standard i Premium)") === -1) {
+      drinks.push("koktajle 0% (Standard i Premium)");
     }
 
     if (!drinks.length) {
-      drinks = ["Spritz", "Mojito", "Whisky Sour", "Hugo", "Pornstar Martini", "1-2 mocktaile"];
+      drinks = ["Spritz", "Mojito", "Whiskey Sour", "Hugo", "Pornstar Martini", "koktajle 0% (Standard i Premium)"];
     }
 
     var uniqueDrinks = [];
@@ -295,7 +296,7 @@
         break;
       case "120+ osób":
         packageScore = 1;
-        bartenders = "2-3";
+        bartenders = "2";
         break;
       default:
         packageScore = 1;
@@ -305,6 +306,8 @@
     if (state.expectationLevel === "Najprostsza sensowna opcja") packageScore -= 1;
     if (state.expectationLevel === "Dobry balans ceny i efektu") packageScore += 0;
     if (state.expectationLevel === "Premium efekt dla gości") packageScore += 1;
+    if (state.alcoholPreference === "Klasyka: wódka, rum, prosecco") packageScore -= 0.5;
+    if (state.alcoholPreference === "Premium: także gin, likiery i bitter") packageScore += 0.75;
     if (state.barFormat === "Premium cocktail bar") packageScore += 1;
     if (state.barFormat === "Open bar przez całą noc") packageScore += 1;
     if (state.barFormat === "Klasyczny drink bar") packageScore -= 0.25;
@@ -317,9 +320,6 @@
     if (packageScore <= 0.4) recommendedPackage = "Simple";
     if (packageScore >= 1.6) recommendedPackage = "Premium";
 
-    if (state.guestCountRange === "120+ osób" && recommendedPackage === "Premium") {
-      bartenders = "3";
-    }
 
     if ((state.guestCountRange === "30–50 osób" || state.guestCountRange === "do 30 osób") && recommendedPackage === "Premium") {
       bartenders = "2";
@@ -329,16 +329,22 @@
     var reasonBullets = [];
 
     if (state.guestCountRange === "80–120 osób" || state.guestCountRange === "120+ osób") {
-      reasonBullets.push("przy tej liczbie gości warto zaplanować " + bartenders + " barmanów");
+      reasonBullets.push(state.guestCountRange === "120+ osób"
+        ? "przy ponad 120 gościach liczbę barmanów ustalimy indywidualnie"
+        : "przy tej liczbie gości warto zaplanować " + bartenders + " barmanów");
       reasonBullets.push("bar będzie działał sprawniej i bez długich kolejek");
     } else {
       reasonBullets.push("zakres baru można dopasować bez przewymiarowania pakietu");
     }
 
-    reasonBullets.push("menu 6-8 drinków będzie czytelne i wygodne dla gości");
+    reasonBullets.push(recommendedPackage === "Simple"
+      ? "Simple: 1 barman, 7 koktajli, do 6 godzin obsługi"
+      : recommendedPackage === "Premium"
+        ? "Premium: 2 barmanów, 15 koktajli i 6 bezalkoholowych, do 8 godzin obsługi"
+        : "Standard: 2 barmanów, 8 koktajli i 3 bezalkoholowe, do 8 godzin obsługi");
 
     if (state.drinkPreferences.indexOf("mocktaile bezalkoholowe") !== -1 || state.alcoholPreference === "Chcemy pełną rekomendację") {
-      reasonBullets.push("warto dodać 1-2 mocktaile dla gości niepijących");
+      reasonBullets.push("w pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe dla gości niepijących");
     }
 
     if (state.weddingStyle) {
@@ -578,8 +584,8 @@
           "<p>" + escapeHtml(recommendation.typeText) + "</p>" +
           '<div class="planner-service-tip">' +
             '<div class="label">Orientacyjnie</div>' +
-            "<h3>Pełna obsługa mobilnego baru BAROWO zwykle zaczyna się od około 3300 zl.</h3>" +
-            "<p>To nie jest cena za sam pokaz barmański. Chodzi o kompletną obsługę baru: stanowisko, barmanów, szkło, sprzęt, menu i serwis gości przez wiele godzin.</p>" +
+            "<h3>Pełna obsługa mobilnego baru BAROWO zaczyna się od 3000 zł.</h3>" +
+            "<p>To kompletna obsługa baru: stanowisko, barmani, szkło, alkohol, menu i serwis gości przez 6–8 godzin, z możliwością przedłużenia.</p>" +
             '<div class="planner-inline-links"><a href="/cennik/">Zobacz cennik BAROWO</a></div>' +
           "</div>" +
         "</article>" +
@@ -715,7 +721,8 @@
     els.back.classList.toggle("planner-hidden", currentStepIndex === 0);
     els.next.textContent = currentStepIndex === steps.length - 1 ? "Sprawdź dostępność terminu" : "Dalej";
     setStatus("", "");
-    plannerRoot.scrollIntoView({ block: "start", behavior: "smooth" });
+    if (hasRendered) plannerRoot.scrollIntoView({ block: "start", behavior: "smooth" });
+    hasRendered = true;
   }
 
   function collectMetaFields() {

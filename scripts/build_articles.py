@@ -106,7 +106,7 @@ def business_graph() -> dict[str, Any]:
             absolute_url("/assets/photo2-opt.jpg"),
             absolute_url("/assets/photo3-opt.jpg"),
         ],
-        "telephone": "+48889168003",
+        "telephone": "+48880564984",
         "email": "barowo.pl@gmail.com",
         "priceRange": "od 3000 zł",
         "taxID": "9581736350",
@@ -543,6 +543,11 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
         "{{EYEBROW}}": escape(service.get("eyebrow", "Oferta BAROWO")),
         "{{INTRO}}": escape(service.get("intro", "")),
         "{{DIRECT_ANSWER}}": escape(service.get("direct_answer", "")),
+        "{{HERO_MEDIA}}": (
+            f'<video src="{escape(service["video"])}" poster="{escape(service.get("image", ""))}" autoplay muted loop playsinline preload="metadata" aria-label="{escape(service.get("image_alt", "Mobilny bar BAROWO"))}" width="720" height="900"></video>'
+            if service.get("video")
+            else f'<img src="{escape(service.get("image", "/assets/og/og-barowo.jpg"))}" alt="{escape(service.get("image_alt", "Mobilny bar BAROWO"))}" width="1200" height="1600">'
+        ),
         "{{IMAGE}}": escape(service.get("image", "/assets/og/og-barowo.jpg")),
         "{{IMAGE_ALT}}": escape(service.get("image_alt", "Mobilny bar BAROWO")),
         "{{HIGHLIGHTS}}": render_list(service.get("highlights") or []),

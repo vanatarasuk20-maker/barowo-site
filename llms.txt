@@ -15,6 +15,7 @@ Language of the website: Polish
 - Invoices: BAROWO issues invoices to companies. It is not a VAT payer, so the quoted price is final (no VAT added).
 - Legal entity: SumEffect Serhii Vasyliev, NIP 9581736350.
 - Team: Artem (head bartender), Ivan (bartender and client contact).
+- Add-ons for Simple and Standard: glass tower (wieża z kieliszków), welcome drink and chocolate fountain are available as options.
 - Extra: chocolate fountain (fontanna czekoladowa), available as an add-on or a separate service. It is included in the Premium package.
 
 ## Packages
@@ -50,7 +51,7 @@ Language of the website: Polish
 
 ## Contact
 
-- Phone: +48 889 168 003, +48 880 564 984
+- Phone: +48 880 564 984 (Ivan, bookings), +48 889 168 003 (Artem)
 - E-mail: barowo.pl@gmail.com
 - Booking form: https://barowo.com/#contact
 - Instagram: https://www.instagram.com/barowo_official

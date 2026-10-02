@@ -136,8 +136,8 @@
       "title": "Planujesz wesele?",
       "cards": [
         {
-          "title": "Sprawdź w plannerze, czy fontanna pasuje do Twojej oferty",
-          "text": "Jeśli układasz już mobilny bar, liczbę barmanów i menu, planner BAROWO podpowie też, czy fontanna czekoladowa ma sens przy Twojej liczbie gości i stylu wesela.",
+          "title": "Sprawdź w planerze, czy fontanna pasuje do Twojej oferty",
+          "text": "Jeśli układasz już mobilny bar, liczbę barmanów i menu, planer BAROWO podpowie też, czy fontanna czekoladowa ma sens przy Twojej liczbie gości i stylu wesela.",
           "button_text": "Przejdź do planera",
           "button_href": "/planer-baru-weselnego/"
         }
@@ -213,5 +213,6 @@
   "card_title_html": "Fontanna <span class=\"red\">czekoladowa</span>",
   "card_excerpt": "Słodka strefa z eleganckim stołem, dodatkami i przygotowaniem stanowiska na wesele, poprawiny lub event.",
   "chocolateFountainAddonPrice": "",
-  "chocolateFountainSoloPrice": ""
+  "chocolateFountainSoloPrice": "",
+  "video": "/assets/media/fontanna-loop.mp4"
 }

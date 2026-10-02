@@ -67,7 +67,7 @@
         "https://barowo.com/assets/photo3-opt.jpg"
       ],
       "logo": "https://barowo.com/assets/logo-main.png",
-      "telephone": "+48889168003",
+      "telephone": "+48880564984",
       "email": "barowo.pl@gmail.com",
       "address": {
         "@type": "PostalAddress",
@@ -85,7 +85,8 @@
       "contactPoint": [
         {
           "@type": "ContactPoint",
-          "telephone": "+48889168003",
+          "name": "Ivan",
+          "telephone": "+48880564984",
           "contactType": "customer service",
           "areaServed": "PL",
           "availableLanguage": [
@@ -95,7 +96,8 @@
         },
         {
           "@type": "ContactPoint",
-          "telephone": "+48880564984",
+          "name": "Artem",
+          "telephone": "+48889168003",
           "contactType": "customer service",
           "areaServed": "PL",
           "availableLanguage": [
@@ -214,7 +216,7 @@
         {
           "@type": "Offer",
           "name": "Pakiet Simple",
-          "description": "1 barman, mobilny bar Modern, wódka, rum i prosecco, 7 koktajli, obsługa do 6 godzin (z możliwością przedłużenia).",
+          "description": "1 barman, mobilny bar Modern, wódka, rum i prosecco, 7 koktajli, obsługa do 6 godzin (z możliwością przedłużenia). Opcjonalnie: wieża z kieliszków, welcome drink, fontanna czekoladowa.",
           "priceCurrency": "PLN",
           "priceSpecification": {
             "@type": "PriceSpecification",
@@ -226,7 +228,7 @@
         {
           "@type": "Offer",
           "name": "Pakiet Standard",
-          "description": "2 barmanów, bar Modern lub Boho, rozszerzony alkohol (whiskey, likier aperitivo), 8 koktajli i 3 bezalkoholowe, darmowa degustacja, obsługa do 8 godzin (z możliwością przedłużenia).",
+          "description": "2 barmanów, bar Modern lub Boho, rozszerzony alkohol (whiskey, likier aperitivo), 8 koktajli i 3 bezalkoholowe, darmowa degustacja, obsługa do 8 godzin (z możliwością przedłużenia). Opcjonalnie: wieża z kieliszków, welcome drink, fontanna czekoladowa.",
           "priceCurrency": "PLN",
           "url": "https://barowo.com/#packages"
         },
@@ -320,18 +322,19 @@
   </script>
   <link rel="preload" href="/assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/barowo.css?v=20261003c">
+  <link rel="stylesheet" href="/assets/barowo.css?v=20261003d">
 </head>
 <body>
   <a class="skip" href="#contact">Przejdź do formularza</a>
 <div class="top" role="region" aria-label="Kontakt"><div class="w">
   <span class="mono"><i></i>Pełna obsługa od 3000 zł · alkohol w cenie</span>
-  <span class="mono"><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a> · <a href="tel:+48889168003">+48 889 168 003</a></span>
+  <span class="mono"><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a> · <a href="tel:+48880564984">+48 880 564 984</a></span>
 </div></div>
 
 <nav aria-label="Główna nawigacja"><div class="w">
   <a class="brand" href="/" aria-label="BAROWO — strona główna"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238"><span class="mono">Mobilny bar · Gdynia</span></a>
   <ul class="nav-links" id="navLinks">
+    <li class="nav-home"><a href="/">Strona główna</a></li>
     <li><a href="/oferta/mobilny-bar-na-event-firmowy/">Dla firm</a></li>
     <li><a href="#how">Proces</a></li>
     <li><a href="#packages">Pakiety</a></li>
@@ -421,14 +424,14 @@
     <div class="r"><div class="lab">Mobilny bar</div><div>Modern</div><div class="hot">Modern lub Boho</div><div>Modern lub Boho</div></div>
     <div class="r"><div class="lab">Alkohole</div><div>Wódka, rum, prosecco</div><div class="hot">+ whiskey, likier aperitivo</div><div>+ gin, likier pomarańczowy, bitter, wermut</div></div>
     <div class="r"><div class="lab">Menu koktajli</div><div>7 koktajli</div><div class="hot">8 koktajli + 3 bez alkoholu</div><div>15 koktajli + 6 bez alkoholu</div></div>
-    <div class="r"><div class="lab">Wieża z kieliszków</div><div class="no">—</div><div class="no hot">—</div><div class="ok">✓</div></div>
+    <div class="r"><div class="lab">Wieża z kieliszków</div><div>opcja</div><div class="hot">opcja</div><div class="ok">w cenie</div></div>
     <div class="r"><div class="lab">Degustacja</div><div class="no">—</div><div class="ok hot">gratis</div><div class="ok">gratis</div></div>
-    <div class="r"><div class="lab">Welcome drink</div><div class="no">—</div><div class="no hot">—</div><div class="ok">✓</div></div>
+    <div class="r"><div class="lab">Welcome drink</div><div>opcja</div><div class="hot">opcja</div><div class="ok">w cenie</div></div>
     <div class="r"><div class="lab">Fontanna czekoladowa</div><div>opcja</div><div class="hot">opcja</div><div class="ok">w cenie</div></div>
     <div class="r end"><div class="lab"></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Simple')">Wybierz<span class="pk"> Simple</span></a></div><div class="hot"><a class="btn btn-r" href="#contact" onclick="pickPackage('Standard')">Wybierz<span class="pk"> Standard</span></a></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Premium')">Wybierz<span class="pk"> Premium</span></a></div></div>
   </div>
   <div class="rule" style="margin-top:0"></div>
-  <p class="note"><b>Wycena po krótkim zapytaniu</b> — cena zależy od liczby gości, czasu obsługi i menu. Każdy pakiet można dopasować, a czas pracy baru przedłużyć o dodatkowe godziny.</p>
+  <p class="note"><b>Wycena po krótkim zapytaniu</b> — cena zależy od liczby gości, czasu obsługi i menu. Każdy pakiet można dopasować: dodać wieżę z kieliszków, welcome drink albo fontannę czekoladową i przedłużyć czas pracy baru.</p>
   <div class="g4 r2 addons">
     <div class="cell span2"><p class="mono t">Planer BAROWO</p><h3>Dobierz bar do swojego wesela w 2 minuty</h3><p>Odpowiedz na kilka pytań — planer podpowie format baru, liczbę barmanów i kierunek menu.</p><a class="btn btn-o" href="/planer-baru-weselnego/">Uruchom planer</a></div>
     <div class="cell span2"><p class="mono t">Dodatek do baru</p><h3>Fontanna czekoladowa</h3><p>Słodka strefa dla gości — jako dodatek do mobilnego baru albo osobna usługa.</p><a class="btn btn-o" href="/oferta/fontanna-czekoladowa/">Zobacz fontannę</a></div>
@@ -596,8 +599,8 @@
     </div>
     <aside class="span2 contact-side">
       <p class="mono t">Wolisz zadzwonić?</p>
-      <a href="tel:+48889168003" class="contact-phone">+48 889 168 003</a>
-      <a href="tel:+48880564984" class="contact-phone">+48 880 564 984</a>
+      <a href="tel:+48880564984" class="contact-phone"><span class="who">Ivan · kontakt i rezerwacje</span>+48 880 564 984</a>
+      <a href="tel:+48889168003" class="contact-phone"><span class="who">Artem · head barman</span>+48 889 168 003</a>
       <dl class="contact-list">
         <div><dt>E-mail</dt><dd><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a></dd></div>
         <div><dt>Lokalizacja</dt><dd><a href="https://maps.google.com/?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia" target="_blank" rel="noopener">Stryjska 13, Gdynia</a></dd></div>
@@ -617,18 +620,30 @@
 </main>
 
 <footer><div class="w">
-  <div class="g4 r2">
-    <div class="cell"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238" loading="lazy"><p class="side">Mobilny bar na wesela, eventy firmowe i osiemnastki. Stryjska 13, Gdynia.</p></div>
-    <div class="cell"><p class="fh">Oferta</p><div class="footer-links"><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/bar-na-wigilie-firmowa/">Bar na wigilię firmową</a><a href="/oferta/bar-na-integracje-firmowa/">Bar na integrację firmową</a><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/drink-bar-na-wesele/">Drink bar na wesele</a><a href="/oferta/drink-bar-na-urodziny-gdansk/">Drink bar na urodziny</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a></div></div>
-    <div class="cell"><p class="fh">Strona</p><div class="footer-links"><a href="/oferta/">Usługi</a><a href="/realizacje/">Realizacje</a><a href="/cennik/">Cennik</a><a href="#contact">Kontakt</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div></div>
-    <div class="cell"><p class="fh">Kontakt</p><div class="footer-links"><a href="tel:+48889168003">+48 889 168 003</a><a href="tel:+48880564984">+48 880 564 984</a><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a><a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener">TikTok</a></div></div>
+  <div class="ft">
+    <div class="ft-brand">
+      <a href="/" aria-label="BAROWO — strona główna"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238" loading="lazy"></a>
+      <p>Mobilny bar na eventy firmowe i wesela w Trójmieście. Bar, barmani, szkło i alkohol w cenie — od 3000 zł.</p>
+      <a class="btn btn-r ft-cta" href="/#contact">Sprawdź termin</a>
+    </div>
+    <div class="ft-col"><p class="fh">Oferta</p><a href="/oferta/mobilny-bar-na-event-firmowy/">Event firmowy</a><a href="/oferta/bar-na-wigilie-firmowa/">Wigilia firmowa</a><a href="/oferta/bar-na-integracje-firmowa/">Integracja firmowa</a><a href="/oferta/mobilny-bar-na-wesele/">Wesele</a><a href="/oferta/drink-bar-na-urodziny-gdansk/">Urodziny</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a></div>
+    <div class="ft-col"><p class="fh">BAROWO</p><a href="/">Strona główna</a><a href="/oferta/">Wszystkie usługi</a><a href="/cennik/">Cennik</a><a href="/realizacje/">Realizacje</a><a href="/planer-baru-weselnego/">Planer weselny</a><a href="/aktualnosci/">Aktualności</a></div>
+    <div class="ft-col ft-contact"><p class="fh">Kontakt</p>
+      <a href="tel:+48880564984"><span>Ivan</span>+48 880 564 984</a>
+      <a href="tel:+48889168003"><span>Artem</span>+48 889 168 003</a>
+      <a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a>
+      <p class="ft-social"><a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener">TikTok</a></p>
+    </div>
   </div>
-  <div class="base mono"><span>© 2026 BAROWO — Mobilny Bar Trójmiasto · SumEffect Serhii Vasyliev, ul. Komandorska 18-20B/6, 81-223 Gdynia, NIP 9581736350 · Alkohol podajemy wyłącznie osobom pełnoletnim (18+)</span><span class="base-cities"><a href="/oferta/mobilny-bar-gdynia/">Gdynia</a> · <a href="/oferta/mobilny-bar-gdansk/">Gdańsk</a> · <a href="/oferta/mobilny-bar-sopot/">Sopot</a> · <a href="/oferta/mobilny-bar-trojmiasto/">Trójmiasto</a></span></div>
+  <div class="base mono">
+    <span>© 2026 BAROWO · SumEffect Serhii Vasyliev · ul. Komandorska 18-20B/6, 81-223 Gdynia · NIP 9581736350 · 18+</span>
+    <span class="base-cities"><a href="/oferta/mobilny-bar-gdynia/">Gdynia</a> · <a href="/oferta/mobilny-bar-gdansk/">Gdańsk</a> · <a href="/oferta/mobilny-bar-sopot/">Sopot</a> · <a href="/polityka-prywatnosci/">Polityka prywatności</a></span>
+  </div>
 </div></footer>
 
   <div class="mobile-cta" id="mobileCta" role="region" aria-label="Szybki kontakt">
     <a href="#contact" class="btn btn-r">Sprawdź termin</a>
-    <a href="tel:+48889168003" class="mobile-cta-call" aria-label="Zadzwoń: +48 889 168 003">
+    <a href="tel:+48880564984" class="mobile-cta-call" aria-label="Zadzwoń: +48 880 564 984">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
     </a>
   </div>
@@ -1024,7 +1039,7 @@
           setCallbackStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
           window.setTimeout(() => closeCallbackModal('submitted'), 1800);
         } catch (error) {
-          setCallbackStatus('error', 'Nie udało się wysłać numeru. Zadzwoń do nas: +48 889 168 003.');
+          setCallbackStatus('error', 'Nie udało się wysłać numeru. Zadzwoń do nas: +48 880 564 984.');
         } finally {
           if (callbackSubmit) {
             callbackSubmit.disabled = false;
@@ -1268,5 +1283,6 @@
       startMediaAutoplay();
     }
   </script>
+  <script src="/assets/motion.js?v=20261003a" defer></script>
 </body>
 </html>
