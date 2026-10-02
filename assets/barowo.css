@@ -412,3 +412,11 @@ body.menu-open .mobile-cta{display:none}
 }
 footer .base-cities a{color:inherit}footer .base-cities a:hover{color:var(--ink)}
 a.inl{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(255,43,43,.7);text-underline-offset:3px}a.inl:hover{color:var(--red)}
+.contact-map .map-gate{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;padding:28px}
+.contact-map .map-gate p{font-size:14.5px;color:var(--muted);max-width:360px}
+.contact-map .map-gate .mono.t{color:var(--red);margin:0}
+.contact-map .map-link{font-size:14px;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+footer .base{gap:24px;line-height:1.7}footer .base>span:first-child{max-width:760px}
+.cell h3 a:hover{color:var(--red)}
+.contact-map .map-gate .btn{background:none;color:var(--ink)}.contact-map .map-gate .btn:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:720px){.tbl .r>div{overflow-wrap:anywhere;hyphens:auto;min-width:0}}

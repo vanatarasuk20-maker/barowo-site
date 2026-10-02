@@ -1,0 +1,110 @@
+{
+  "slug": "bar-na-integracje-firmowa",
+  "published": true,
+  "priority": 2,
+  "updated_at": "2026-10-03",
+  "title_plain": "Bar na integrację firmową w Trójmieście",
+  "title_html": "BAR NA<br><span class=\"red\">INTEGRACJĘ FIRMOWĄ</span>",
+  "description": "Mobilny bar na integrację firmową, team building i garden party w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i alkohol w cenie.",
+  "meta_title": "Bar na Integrację Firmową Trójmiasto | Mobilny Bar — BAROWO",
+  "meta_description": "Mobilny bar na integrację firmową, team building lub garden party w Trójmieście. Barmani, bar, szkło i alkohol w cenie, koktajle 0% — od 3000 zł.",
+  "eyebrow": "Dla firm · Integracja",
+  "intro": "Integracja ma zbliżyć ludzi, a bar to naturalne miejsce spotkań. BAROWO przyjeżdża z gotowym barem i obsługą, żeby zespół mógł skupić się na sobie, a nie na logistyce.",
+  "direct_answer": "BAROWO obsługuje integracje firmowe, team buildingi i firmowe garden party w Trójmieście i do około 150 km od Gdyni. Bar, barmani, szkło i alkohol są w cenie, a menu obejmuje koktajle bezalkoholowe. Ceny od 3000 zł.",
+  "service_type": "Bar na integrację firmową",
+  "offer_note": "Pełna obsługa baru na integrację firmową od 3000 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca.",
+  "areas": [
+    "Gdynia",
+    "Gdańsk",
+    "Sopot",
+    "Trójmiasto",
+    "Pomorskie"
+  ],
+  "image": "/assets/photos/koktajl-z-lodem.jpg",
+  "image_alt": "Barman BAROWO przygotowuje koktajl z lodem i miętą",
+  "primary_cta_text": "Zapytaj o dostępność terminu",
+  "secondary_cta_text": "Zobacz cennik",
+  "secondary_cta_href": "/cennik/",
+  "mid_cta_label": "Integracja",
+  "mid_cta_title_html": "SPRAWDŹ,<br><span class=\"red\">DOSTĘPNOŚĆ TERMINU</span>",
+  "mid_cta_text": "Wyślij datę, miejsce i liczbę osób. Wrócimy z dostępnością terminu i propozycją pakietu.",
+  "mid_cta_button_text": "Sprawdź dostępność terminu",
+  "bottom_cta_label": "Organizator",
+  "bottom_cta_title_html": "ZAMÓW<br><span class=\"red\">BAR NA INTEGRACJĘ</span>",
+  "bottom_cta_text": "Napisz do BAROWO, a sprawdzimy termin i zaproponujemy pakiet dopasowany do Twojego zespołu.",
+  "bottom_cta_button_text": "Zapytaj o dostępność terminu",
+  "sidebar_title_html": "ZAPYTAJ O<br><span class=\"red\">TERMIN INTEGRACJI</span>",
+  "sidebar_text": "Podaj datę, lokalizację i liczbę gości. Wrócimy z konkretnym zakresem baru i propozycją obsługi.",
+  "sidebar_button_text": "Sprawdź dostępność terminu",
+  "card_title_html": "Bar na <span class=\"red\">integrację firmową</span>",
+  "card_excerpt": "Mobilny bar na integrację, team building i firmowe garden party w Trójmieście.",
+  "highlights": [
+    "Bar jako miejsce spotkań zespołu",
+    "Plener, hotel, sala albo ośrodek",
+    "Koktajle bezalkoholowe dla kierowców",
+    "Bar, barmani, szkło i alkohol w cenie"
+  ],
+  "sections": [
+    {
+      "title": "Bar, przy którym zespół się spotyka",
+      "body": "Na integracji ludzie z różnych działów rozmawiają ze sobą przy barze częściej niż przy stole. Dobrze ustawiony mobilny bar z płynnym serwisem robi z tego naturalne miejsce spotkań przez cały wieczór."
+    },
+    {
+      "title": "Integracja w plenerze, hotelu albo ośrodku",
+      "body": "Obsługujemy integracje w Trójmieście i w ośrodkach do około 150 km od Gdyni — nad morzem, na Kaszubach czy w hotelu konferencyjnym. Przed eventem ustalamy dostęp do miejsca, przestrzeń na bar i godziny pracy.",
+      "bullets": [
+        "integracja firmowa i wieczór dla zespołu",
+        "team building z wieczorną częścią przy barze",
+        "firmowe garden party i grill",
+        "wyjazd firmowy do hotelu lub ośrodka"
+      ]
+    },
+    {
+      "title": "Co obejmuje usługa?",
+      "body": "Pełna obsługa z alkoholem w cenie: mobilny bar, 1 lub 2 barmanów, szkło, lód, dodatki i menu koktajli. W pakiecie Simple bar pracuje do 6 godzin, w Standard i Premium do 8 godzin — z możliwością przedłużenia. Szczegóły w [cenniku](/cennik/)."
+    },
+    {
+      "title": "Koktajle bezalkoholowe",
+      "body": "Na integracjach część osób prowadzi albo po prostu nie pije alkoholu. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe, więc każdy ma coś dla siebie."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje bar na integrację firmową?",
+      "answer": "Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i alkohol. Końcowa cena zależy od liczby gości, terminu i miejsca."
+    },
+    {
+      "question": "Czy dojeżdżacie poza Trójmiasto?",
+      "answer": "Tak, do około 150 km od Gdyni. Dalsze wyjazdy ustalamy indywidualnie."
+    },
+    {
+      "question": "Czy bar może stanąć w plenerze?",
+      "answer": "Tak. Przed eventem ustalamy miejsce na bar, dostęp i godziny montażu."
+    },
+    {
+      "question": "Ile godzin pracuje bar?",
+      "answer": "Do 6 godzin w pakiecie Simple i do 8 godzin w pakietach Standard i Premium. Czas można przedłużyć."
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/oferta/mobilny-bar-na-event-firmowy/",
+      "label": "Mobilny bar na event firmowy"
+    },
+    {
+      "href": "/oferta/bar-na-wigilie-firmowa/",
+      "label": "Bar na wigilię firmową"
+    },
+    {
+      "href": "/aktualnosci/garden-party-z-barem-mobilnym/",
+      "label": "Garden party z mobilnym barem"
+    },
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
+    }
+  ],
+  "related_articles": [
+    "mobilny-bar-na-event-firmowy"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "slug": "bar-na-wigilie-firmowa",
+  "published": true,
+  "priority": 1,
+  "updated_at": "2026-10-03",
+  "title_plain": "Bar na wigilię firmową w Trójmieście",
+  "title_html": "BAR NA<br><span class=\"red\">WIGILIĘ FIRMOWĄ</span>",
+  "description": "Mobilny bar na wigilię firmową i spotkanie świąteczne w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i alkohol w cenie.",
+  "meta_title": "Bar na Wigilię Firmową Trójmiasto | Gdańsk, Gdynia, Sopot — BAROWO",
+  "meta_description": "Mobilny bar na wigilię firmową w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i alkohol w cenie, koktajle bezalkoholowe — od 3000 zł. Sprawdź termin.",
+  "eyebrow": "Dla firm · Wigilia firmowa",
+  "intro": "Wigilia firmowa to jeden wieczór, w którym cały zespół jest razem. BAROWO zajmuje się barem od początku do końca, żeby organizator też mógł świętować, a nie pilnować zaplecza.",
+  "direct_answer": "BAROWO przygotowuje mobilny bar na wigilie firmowe w Trójmieście i okolicach: bar, barmani, szkło i alkohol w cenie, menu z koktajlami bezalkoholowymi. Ceny od 3000 zł, 6 lub 8 godzin pracy baru zależnie od pakietu, z opcją przedłużenia.",
+  "service_type": "Bar na wigilię firmową",
+  "offer_note": "Pełna obsługa baru na wigilię firmową od 3000 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca.",
+  "areas": [
+    "Gdynia",
+    "Gdańsk",
+    "Sopot",
+    "Trójmiasto",
+    "Pomorskie"
+  ],
+  "image": "/assets/photos/barman-za-barem.jpg",
+  "image_alt": "Barman BAROWO za mobilnym barem",
+  "primary_cta_text": "Zapytaj o dostępność terminu",
+  "secondary_cta_text": "Zobacz cennik",
+  "secondary_cta_href": "/cennik/",
+  "mid_cta_label": "Wigilia firmowa",
+  "mid_cta_title_html": "SPRAWDŹ,<br><span class=\"red\">DOSTĘPNOŚĆ TERMINU</span>",
+  "mid_cta_text": "Wyślij datę, miejsce i liczbę gości. Wrócimy z dostępnością terminu i propozycją pakietu.",
+  "mid_cta_button_text": "Sprawdź dostępność terminu",
+  "bottom_cta_label": "Organizator",
+  "bottom_cta_title_html": "ZAREZERWUJ<br><span class=\"red\">BAR NA WIGILIĘ</span>",
+  "bottom_cta_text": "Grudniowe terminy szybko się zapełniają. Napisz do BAROWO, a sprawdzimy dostępność i zaproponujemy pakiet.",
+  "bottom_cta_button_text": "Zapytaj o dostępność terminu",
+  "sidebar_title_html": "ZAPYTAJ O<br><span class=\"red\">TERMIN WIGILII</span>",
+  "sidebar_text": "Podaj datę, lokalizację i liczbę gości. Wrócimy z konkretnym zakresem baru i propozycją obsługi.",
+  "sidebar_button_text": "Sprawdź dostępność terminu",
+  "card_title_html": "Bar na <span class=\"red\">wigilię firmową</span>",
+  "card_excerpt": "Mobilny bar na wigilię firmową i spotkanie świąteczne w Trójmieście.",
+  "highlights": [
+    "Bar, barmani, szkło i alkohol w cenie",
+    "Menu z koktajlami bezalkoholowymi",
+    "Restauracja, hotel, sala albo biuro",
+    "Grudniowe terminy warto rezerwować wcześniej"
+  ],
+  "sections": [
+    {
+      "title": "Wigilia firmowa bez stresu dla organizatora",
+      "body": "Na wigilii firmowej organizator zwykle zajmuje się wszystkim naraz: salą, jedzeniem, prezentami i programem. Bar to temat, który możesz w całości oddać BAROWO. Przyjeżdżamy z gotowym stanowiskiem, obsługujemy gości przez cały wieczór i zabieramy sprzęt po zakończeniu."
+    },
+    {
+      "title": "Co dostajesz w pakiecie?",
+      "body": "Każdy pakiet to pełna obsługa z alkoholem w cenie.",
+      "bullets": [
+        "mobilny bar i przygotowanie stanowiska",
+        "1 lub 2 barmanów, zależnie od pakietu",
+        "szkło, lód, dodatki i sprzęt",
+        "menu koktajli z opcjami bezalkoholowymi",
+        "6 godzin (Simple) lub 8 godzin (Standard, Premium) pracy baru, z możliwością przedłużenia"
+      ]
+    },
+    {
+      "title": "Gdzie stawiamy bar?",
+      "body": "W restauracji, hotelu, wynajętej sali albo w biurze firmy — w Gdańsku, Gdyni, Sopocie i do około 150 km od Gdyni. Przed eventem ustalamy dostęp do miejsca i godziny montażu."
+    },
+    {
+      "title": "Kiedy zarezerwować termin?",
+      "body": "Grudzień to najbardziej oblegany okres na imprezy firmowe, a liczba terminów jest ograniczona. Najlepiej zapytać o dostępność od razu po ustaleniu daty i miejsca wigilii. Zobacz też [pakiety i cennik](/cennik/)."
+    },
+    {
+      "type": "cards",
+      "label": "Dodatek",
+      "title": "Słodki akcent na wigilię",
+      "cards": [
+        {
+          "title": "Fontanna czekoladowa",
+          "text": "Fontanna czekoladowa z owocami to dodatek, który dobrze pasuje do świątecznego klimatu. W pakiecie Premium jest w cenie.",
+          "button_text": "Zobacz fontannę czekoladową",
+          "button_href": "/oferta/fontanna-czekoladowa/"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje bar na wigilię firmową?",
+      "answer": "Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i alkohol. Końcowa cena zależy od liczby gości, terminu i miejsca."
+    },
+    {
+      "question": "Czy alkohol jest w cenie?",
+      "answer": "Tak, alkohol jest w cenie każdego pakietu."
+    },
+    {
+      "question": "Czy obsługujecie wigilie firmowe w Gdańsku, Gdyni i Sopocie?",
+      "answer": "Tak, Trójmiasto to nasz podstawowy obszar. Dojeżdżamy też do około 150 km od Gdyni."
+    },
+    {
+      "question": "Ile godzin pracuje bar?",
+      "answer": "Do 6 godzin w pakiecie Simple i do 8 godzin w pakietach Standard i Premium. Czas można przedłużyć."
+    },
+    {
+      "question": "Czy macie drinki bezalkoholowe?",
+      "answer": "Tak. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe."
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/oferta/mobilny-bar-na-event-firmowy/",
+      "label": "Mobilny bar na event firmowy"
+    },
+    {
+      "href": "/oferta/bar-na-integracje-firmowa/",
+      "label": "Bar na integrację firmową"
+    },
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/#contact",
+      "label": "Formularz kontaktowy"
+    }
+  ],
+  "related_articles": [
+    "mobilny-bar-na-event-firmowy",
+    "ile-kosztuje-mobilny-bar-trojmiasto"
+  ]
+}

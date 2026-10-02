@@ -15,9 +15,11 @@ http://www.barowo.com/* https://barowo.com/:splat 301!
 /_concepts/* /404.html 404!
 /netlify.toml /404.html 404!
 /.gitignore /404.html 404!
-/oferta/mobilny-bar-na-wesele/index.html /oferta/mobilny-bar-na-wesele/ 301!
-/oferta/drink-bar-na-wesele/index.html /oferta/drink-bar-na-wesele/ 301!
 /oferta/mobilny-bar-na-event-firmowy/index.html /oferta/mobilny-bar-na-event-firmowy/ 301!
+/oferta/bar-na-wigilie-firmowa/index.html /oferta/bar-na-wigilie-firmowa/ 301!
+/oferta/mobilny-bar-na-wesele/index.html /oferta/mobilny-bar-na-wesele/ 301!
+/oferta/bar-na-integracje-firmowa/index.html /oferta/bar-na-integracje-firmowa/ 301!
+/oferta/drink-bar-na-wesele/index.html /oferta/drink-bar-na-wesele/ 301!
 /oferta/drink-bar-na-urodziny-gdansk/index.html /oferta/drink-bar-na-urodziny-gdansk/ 301!
 /oferta/fontanna-czekoladowa/index.html /oferta/fontanna-czekoladowa/ 301!
 /oferta/mobilny-bar-trojmiasto/index.html /oferta/mobilny-bar-trojmiasto/ 301!

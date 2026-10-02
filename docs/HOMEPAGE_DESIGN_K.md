@@ -67,3 +67,25 @@
   - `llms.txt` переписан: факты, пакеты, часы, зона работы, контакты;
   - `robots.txt` — `Disallow: /admin/`;
   - h1 на `/realizacje/` — «Realizacje mobilnego baru».
+
+## Юр. правки + фокус на eventy firmowe (2026-10-03)
+
+- **Алкоголь, закон о трезвости:** убраны названия алкогольных брендов (Aperol, Cointreau, Campari, Jameson, Bombay, Ostoya). Фото `aperol-spritz` переименовано в `koktajle-spritz`.
+- **Политика конфиденциальности переписана по RODO:**
+  - полный список данных;
+  - цели и основания;
+  - сроки хранения;
+  - получатели: Netlify, Cloudflare, Google, Telegram;
+  - передача данных вне ЕЭЗ;
+  - все права, включая жалобу в UODO;
+  - cookies и localStorage;
+  - пункт про 18+.
+- **Google Maps:** загружается только по клику (click-to-load), без cookies до клика.
+- **Футер:** данные исполнителя и 18+.
+- **SEO/GEO под корпоративные события:**
+  - на главной title, h1, lead и блок «Dla kogo» начинаются с firm; в FAQ новый вопрос; в LocalBusiness новые description, knowsAbout и serviceType;
+  - в меню «Dla firm» вместо «Planer»;
+  - новые страницы `/oferta/bar-na-wigilie-firmowa/` и `/oferta/bar-na-integracje-firmowa/`;
+  - страница `/oferta/mobilny-bar-na-event-firmowy/` переписана как главная страница направления, priority 0;
+  - у корпоративных `Service` — `BusinessAudience`;
+  - `llms.txt` — акцент на корпоративные события.

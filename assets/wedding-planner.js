@@ -228,7 +228,7 @@
 
     if (picks.indexOf("prosecco / spritz") !== -1 || picks.indexOf("lekkie i owocowe") !== -1) {
       title = "lekkie, owocowe i świeże koktajle";
-      drinks.push("Aperol Spritz", "Hugo", "Mojito", "Pornstar Martini");
+      drinks.push("Spritz", "Hugo", "Mojito", "Pornstar Martini");
     }
 
     if (picks.indexOf("klasyczne koktajle") !== -1) {
@@ -248,7 +248,7 @@
 
     if (picks.indexOf("nie wiem, chcę gotowe menu") !== -1) {
       title = "sprawdzone menu 6-8 drinków";
-      drinks.push("Aperol Spritz", "Mojito", "Whisky Sour", "Hugo", "Pornstar Martini", "Cuba Libre");
+      drinks.push("Spritz", "Mojito", "Whisky Sour", "Hugo", "Pornstar Martini", "Cuba Libre");
     }
 
     if (picks.indexOf("mocktaile bezalkoholowe") !== -1) {
@@ -258,7 +258,7 @@
     }
 
     if (!drinks.length) {
-      drinks = ["Aperol Spritz", "Mojito", "Whisky Sour", "Hugo", "Pornstar Martini", "1-2 mocktaile"];
+      drinks = ["Spritz", "Mojito", "Whisky Sour", "Hugo", "Pornstar Martini", "1-2 mocktaile"];
     }
 
     var uniqueDrinks = [];

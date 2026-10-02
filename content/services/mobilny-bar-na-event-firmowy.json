@@ -1,18 +1,18 @@
 {
   "slug": "mobilny-bar-na-event-firmowy",
   "published": true,
-  "priority": 3,
-  "updated_at": "2026-04-26",
-  "title_plain": "Mobilny bar na event firmowy",
-  "title_html": "MOBILNY BAR<br><span class=\"red\">NA EVENT FIRMOWY</span>",
-  "description": "Mobilny bar na event firmowy w Trójmieście. Profesjonalna obsługa barmańska, koktajle, estetyczny setup i szybka organizacja dla firm.",
-  "meta_title": "Mobilny Bar na Event Firmowy Gdańsk i Trójmiasto — BAROWO",
-  "meta_description": "Pełna obsługa mobilnego baru na event firmowy w Trójmieście. Barmani, bar, szkło, koktajle, przygotowanie stanowiska i obsługa gości.",
-  "eyebrow": "Firmy · Eventy",
-  "intro": "Mobilny bar na event firmowy ma działać sprawnie i bez organizacyjnego chaosu. BAROWO dowozi gotowy bar, barmanów, szkło, koktajle i proces, który nie przerzuca logistyki na zespół klienta.",
-  "direct_answer": "Na wydarzeniach firmowych mobilny bar działa najlepiej wtedy, gdy jest pełną usługą, a nie samą atrakcją. Goście dostają estetyczny, szybki punkt serwisu, a organizator ma jeden uporządkowany temat mniej.",
+  "priority": 0,
+  "updated_at": "2026-10-03",
+  "title_plain": "Mobilny bar na event firmowy w Trójmieście",
+  "title_html": "MOBILNY BAR<br><span class=\"red\">NA EVENT FIRMOWY W TRÓJMIEŚCIE</span>",
+  "description": "Mobilny bar na event firmowy w Gdańsku, Gdyni i Sopocie: integracje, wigilie firmowe, jubileusze, konferencje i otwarcia. Bar, barmani, szkło i alkohol w cenie.",
+  "meta_title": "Mobilny Bar na Event Firmowy Trójmiasto | Gdańsk, Gdynia, Sopot — BAROWO",
+  "meta_description": "Bar na imprezę firmową, integrację, wigilię firmową lub konferencję w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i alkohol w cenie — od 3000 zł.",
+  "eyebrow": "Dla firm · Trójmiasto",
+  "intro": "Organizujesz imprezę firmową, integrację, wigilię albo konferencję w Trójmieście? BAROWO przyjeżdża z gotowym barem, barmanami, szkłem i alkoholem. Twój zespół nie zajmuje się zakupami, lodem ani obsługą gości.",
+  "direct_answer": "BAROWO to mobilny bar z Gdyni dla firm z Gdańska, Gdyni, Sopotu i okolic (do ok. 150 km). Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło, alkohol i menu koktajli z opcjami bezalkoholowymi. Pakiety obejmują 6 lub 8 godzin pracy baru, z możliwością przedłużenia.",
   "service_type": "Mobilny bar na event firmowy",
-  "offer_note": "BAROWO wycenia pełną obsługę baru eventowego, dlatego cena zależy od liczby gości, zakresu menu i logistyki wydarzenia.",
+  "offer_note": "Pełna obsługa mobilnego baru na event firmowy od 3000 zł. Końcowa wycena zależy od liczby gości, terminu, miejsca i pakietu.",
   "areas": [
     "Gdynia",
     "Gdańsk",
@@ -23,52 +23,65 @@
   "image": "/assets/photos/bar-dalszy-plan.jpg",
   "image_alt": "Mobilny bar BAROWO, barman przygotowuje koktajle",
   "highlights": [
-    "Bar, szkło, barmani i setup w jednym zakresie",
-    "Obsługa integracji, premier, konferencji i gal",
-    "Szybki serwis przy większej liczbie gości",
-    "Jasne ustalenia bez organizacyjnego chaosu"
+    "Bar, barmani, szkło i alkohol w jednej usłudze",
+    "Integracje, wigilie firmowe, jubileusze, konferencje",
+    "Koktajle bezalkoholowe dla kierowców i nie pijących",
+    "Gdańsk, Gdynia, Sopot i do ok. 150 km od Gdyni"
   ],
   "sections": [
     {
-      "title": "Bar na event firmowy bez organizacyjnego chaosu",
-      "body": "Przy firmowym evencie najczęściej problemem nie jest sam alkohol, tylko koordynacja wszystkiego wokół niego. BAROWO działa jako gotowy punkt serwisu: przyjeżdża z barem, szkłem, sprzętem i zespołem, który wie, jak pracować w tempie wydarzenia."
+      "title": "Bar na imprezę firmową bez obciążania zespołu",
+      "body": "Przy evencie firmowym najwięcej czasu zabiera logistyka: zakupy alkoholu, lód, szkło, ktoś do nalewania i sprzątanie po wszystkim. BAROWO przejmuje ten cały obszar. Przyjeżdżamy z gotowym barem, ustawiamy stanowisko, obsługujemy gości przez cały event i zabieramy sprzęt po zakończeniu."
     },
     {
-      "title": "Co dostaje organizator?",
-      "body": "Organizator dostaje jedną usługę zamiast kilku luźnych elementów. To oznacza mniej pytań na ostatniej prostej, czytelny zakres odpowiedzialności i prostsze planowanie budżetu.",
+      "title": "Na jakie wydarzenia firmowe?",
+      "body": "Mobilny bar sprawdza się wszędzie tam, gdzie goście mają się spotkać, porozmawiać i dobrze spędzić czas — w hotelu, restauracji, wynajętej sali, w biurze albo w plenerze.",
       "bullets": [
-        "gotowy mobilny bar i przygotowanie stanowiska",
-        "zespół barmanów dopasowany do skali wydarzenia",
-        "szkło, dodatki, lód i zaplecze baru",
-        "menu alkoholowe i bezalkoholowe pod charakter eventu"
+        "[wigilia firmowa](/oferta/bar-na-wigilie-firmowa/) i spotkanie świąteczne",
+        "[integracja firmowa](/oferta/bar-na-integracje-firmowa/), team building i garden party",
+        "jubileusz firmy, gala, wieczór dla partnerów",
+        "konferencja — networking po części oficjalnej",
+        "otwarcie biura, lokalu albo showroomu"
       ]
     },
     {
-      "title": "Dla jakich eventów sprawdza się BAROWO?",
-      "body": "Najczęściej obsługujemy otwarcia lokali, imprezy firmowe, integracje, konferencje i eventy promocyjne. W każdym z tych formatów liczy się to samo: przewidywalny serwis, estetyka i szybka obsługa gości.",
+      "title": "Co obejmuje usługa?",
+      "body": "Jedna usługa zamiast kilku podwykonawców. Organizator dostaje jasny zakres i jedną osobę kontaktową.",
       "bullets": [
-        "otwarcie lokalu albo showroomu",
-        "impreza firmowa i wieczór integracyjny",
-        "konferencja albo networking po części oficjalnej",
-        "event promocyjny z udziałem klientów lub partnerów"
+        "mobilny bar Modern lub Boho i przygotowanie stanowiska",
+        "barmani — 1 lub 2, zależnie od pakietu",
+        "szkło, lód, dodatki i sprzęt barmański",
+        "alkohol w cenie pakietu",
+        "menu koktajli z opcjami bezalkoholowymi",
+        "demontaż i zabranie sprzętu po evencie"
       ]
     },
     {
-      "title": "Jak wygląda obsługa eventu?",
-      "body": "Na początku ustalamy format wydarzenia, liczbę gości, godziny pracy i charakter menu. Potem przygotowujemy zakres serwisu i logistykę miejsca. Jeśli najpierw chcesz zrozumieć budżet, sprawdź [cennik mobilnego baru](/cennik/)."
+      "title": "Pakiety i czas pracy baru",
+      "body": "Simple: 1 barman, bar Modern, do 6 godzin. Standard i Premium: 2 barmanów, bar Modern lub Boho, do 8 godzin. W każdym pakiecie alkohol jest w cenie, a czas pracy baru można przedłużyć. Szczegóły pakietów znajdziesz w [cenniku](/cennik/) i na [stronie głównej](/#packages)."
     },
     {
-      "title": "Dlaczego pełny bar działa lepiej niż sama atrakcja?",
-      "body": "Krótki pokaz barmański może zrobić efekt na kilka minut, ale nie rozwiązuje potrzeby realnej obsługi gości przez cały event. Pełny mobilny bar porządkuje ruch, daje wygodny punkt spotkań i wspiera odbiór marki w praktyce, a nie tylko na zdjęciach."
+      "title": "Jak wygląda współpraca z firmą?",
+      "body": "Najpierw wysyłasz datę, miejsce i liczbę gości. Wracamy z dostępnością terminu i propozycją pakietu. Potem ustalamy menu, godziny pracy baru i logistykę miejsca: dojazd, miejsce na bar i godziny montażu. W dniu eventu przyjeżdżamy gotowi.",
+      "bullets": [
+        "krótkie zapytanie: data, miejsce, liczba gości",
+        "propozycja pakietu i wycena",
+        "ustalenie menu, godzin i logistyki",
+        "obsługa eventu i demontaż"
+      ]
+    },
+    {
+      "title": "Gdańsk, Gdynia, Sopot i okolice",
+      "body": "Bazujemy w Gdyni, dlatego eventy firmowe w Trójmieście obsługujemy bez dodatkowej logistyki. Dojeżdżamy też do hoteli, sal i obiektów w województwie pomorskim, do około 150 km od Gdyni. Zobacz też: [mobilny bar Gdańsk](/oferta/mobilny-bar-gdansk/), [mobilny bar Gdynia](/oferta/mobilny-bar-gdynia/), [mobilny bar Sopot](/oferta/mobilny-bar-sopot/)."
     },
     {
       "type": "cards",
-      "label": "Upsell BAROWO",
+      "label": "Dodatek",
       "title": "Słodka strefa na event firmowy",
       "cards": [
         {
-          "title": "Fontanna czekoladowa jako dodatek albo osobna atrakcja",
-          "text": "Fontanna czekoladowa może być dodatkiem do mobilnego baru albo osobną atrakcją na event firmowy, otwarcie lokalu, integrację lub spotkanie z klientami.",
+          "title": "Fontanna czekoladowa",
+          "text": "Fontanna czekoladowa może być dodatkiem do baru albo osobną atrakcją na wigilię firmową, integrację lub spotkanie z klientami. W pakiecie Premium jest w cenie.",
           "button_text": "Zobacz fontannę czekoladową",
           "button_href": "/oferta/fontanna-czekoladowa/"
         }
@@ -77,34 +90,46 @@
   ],
   "faq": [
     {
-      "question": "Czy obsługujecie eventy firmowe w Gdańsku i całym Trójmieście?",
-      "answer": "Tak. To nasz podstawowy obszar pracy. Obsługujemy również dalsze lokalizacje w regionie po ustaleniu logistyki."
+      "question": "Czy obsługujecie eventy firmowe w Gdańsku, Gdyni i Sopocie?",
+      "answer": "Tak. Trójmiasto to nasz podstawowy obszar pracy. Dojeżdżamy też do obiektów w województwie pomorskim, do około 150 km od Gdyni."
     },
     {
-      "question": "Czy mobilny bar sprawdzi się na konferencji albo premierze produktu?",
-      "answer": "Tak, jeśli wydarzenie potrzebuje estetycznego punktu obsługi gości i płynnego serwisu po części oficjalnej. To częsty scenariusz dla BAROWO."
+      "question": "Ile kosztuje mobilny bar na event firmowy?",
+      "answer": "Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i alkohol. Końcowa cena zależy od liczby gości, terminu, miejsca i wybranego pakietu."
     },
     {
-      "question": "Czy można przygotować menu bezalkoholowe dla firmy?",
-      "answer": "Tak. Mocktaile i lżejsze opcje bez alkoholu są często ważną częścią firmowego eventu, zwłaszcza przy dłuższych wydarzeniach albo obecności kierowców."
+      "question": "Ile godzin pracuje bar na evencie firmowym?",
+      "answer": "W pakiecie Simple do 6 godzin, w pakietach Standard i Premium do 8 godzin. W każdym pakiecie czas pracy baru można przedłużyć."
     },
     {
-      "question": "Czy taki bar to bardziej atrakcja czy realna obsługa wydarzenia?",
-      "answer": "W BAROWO mówimy o realnej obsłudze wydarzenia. Bar ma działać przez wiele godzin i wspierać organizację eventu, a nie tylko zrobić krótki efekt wow."
+      "question": "Czy alkohol jest wliczony w cenę?",
+      "answer": "Tak, alkohol jest w cenie każdego pakietu. Zakres alkoholi i karta koktajli zależą od pakietu."
     },
     {
-      "question": "Czy mogę dostać szybką wycenę terminu?",
-      "answer": "Tak. Wystarczy data, lokalizacja, typ eventu i liczba gości. To pozwala szybko ocenić dostępność i zakres obsługi."
+      "question": "Czy przygotujecie koktajle bezalkoholowe dla firmy?",
+      "answer": "Tak. Koktajle bezalkoholowe są częścią menu w pakietach Standard i Premium, a na eventach firmowych dobrze sprawdzają się dla kierowców i osób, które nie piją alkoholu."
+    },
+    {
+      "question": "Czy bar może stanąć w biurze, hotelu albo w plenerze?",
+      "answer": "Tak. Przed eventem ustalamy dostęp do miejsca, przestrzeń na bar i godziny montażu, żeby wszystko było gotowe przed przyjściem gości."
+    },
+    {
+      "question": "Jak szybko dostanę wycenę?",
+      "answer": "Wystarczy data, miejsce, rodzaj eventu i liczba gości. Na tej podstawie wracamy z dostępnością terminu i propozycją pakietu."
     }
   ],
   "related_links": [
     {
-      "href": "/cennik/",
-      "label": "Cennik mobilnego baru"
+      "href": "/oferta/bar-na-wigilie-firmowa/",
+      "label": "Bar na wigilię firmową"
     },
     {
-      "href": "/oferta/mobilny-bar-trojmiasto/",
-      "label": "Mobilny bar Trójmiasto"
+      "href": "/oferta/bar-na-integracje-firmowa/",
+      "label": "Bar na integrację firmową"
+    },
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
     },
     {
       "href": "/oferta/fontanna-czekoladowa/",
@@ -134,5 +159,5 @@
   "sidebar_text": "Podaj datę, lokalizację i liczbę gości. Wrócimy z konkretnym zakresem baru i propozycją obsługi.",
   "sidebar_button_text": "Sprawdź dostępność terminu",
   "card_title_html": "Mobilny bar <span class=\"red\">na event firmowy</span>",
-  "card_excerpt": "Pełna obsługa baru na integrację, konferencję, premierę lub imprezę firmową w Trójmieście."
+  "card_excerpt": "Bar na integrację, wigilię firmową, jubileusz lub konferencję w Gdańsku, Gdyni i Sopocie."
 }
