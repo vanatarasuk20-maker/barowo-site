@@ -817,6 +817,7 @@
         throw new Error((responsePayload && responsePayload.error) || "planner_submit_failed");
       }
 
+      if (window.BAROWO_track) window.BAROWO_track("Lead", { content_name: "Planer weselny" });
       setStatus("success", "Dziękujemy. Wynik planera został wysłany. Zespół BAROWO wróci do Ciebie możliwie szybko z konkretną propozycją.");
     } catch (error) {
       setStatus("error", "Nie udało się wysłać wyniku planera. Zostaw zwykłe zapytanie przez formularz na stronie głównej albo zadzwoń do BAROWO.");

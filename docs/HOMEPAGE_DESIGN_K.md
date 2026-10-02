@@ -89,3 +89,17 @@
   - страница `/oferta/mobilny-bar-na-event-firmowy/` переписана как главная страница направления, priority 0;
   - у корпоративных `Service` — `BusinessAudience`;
   - `llms.txt` — акцент на корпоративные события.
+
+## Шаг 5 — cookies + Meta Pixel (2026-10-03)
+
+- **`assets/consent-init.js`:**
+  - баннер «Tylko niezbędne / Ustawienia / Akceptuję wszystkie»;
+  - Google Consent Mode v2 (по умолчанию denied);
+  - Meta Pixel и gtag загружаются только после согласия.
+- **Включение:** вписать `metaPixelId` (и при желании `ga4Id` / `googleAdsId`) в `config.integrations`. Пока ID пустые, баннер не показывается. Для теста — `?consent_test=1`.
+- **События:**
+  - `PageView`;
+  - `Lead` — форма, «Oddzwonimy», планер;
+  - `Contact` — клик по tel/mailto.
+- **Повторное открытие:** «Ustawienia cookies» в футере (`data-cookie-settings`).
+- **Политика:** раздел 8 переписан (Meta Pixel, согласие, art. 399 PKE); Meta добавлена в получатели и в передачу данных вне ЕЭЗ.

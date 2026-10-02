@@ -163,6 +163,7 @@
 
       form.reset();
       markSubmitted();
+      if (window.BAROWO_track) window.BAROWO_track('Lead', { content_name: 'Oddzwonimy' });
       setStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
       window.setTimeout(function () { closeModal('submitted'); }, 1800);
     } catch (error) {

@@ -468,3 +468,19 @@ footer .base{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 .contact-phone+.contact-phone{margin-top:18px}
 .person img{object-position:50% 0}
 .frame img{height:auto;display:block}
+
+/* ---- cookie consent ---- */
+.cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:400;display:flex;justify-content:center;pointer-events:none}
+.cc-box{pointer-events:auto;width:100%;max-width:760px;padding:24px 26px;background:#0d1230;border:1px solid rgba(232,235,250,.16);box-shadow:0 24px 60px -20px rgba(0,0,0,.8)}
+.cc-title{font:800 20px/1.2 var(--hd);text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+.cc-text{font-size:14px;line-height:1.6;color:var(--muted)}
+.cc-text a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.cc-settings{display:grid;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.cc-settings[hidden]{display:none}
+.cc-row{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);line-height:1.5}
+.cc-row input{margin-top:3px;accent-color:#e8000d;width:16px;height:16px;flex:0 0 16px}
+.cc-row b{color:var(--ink)}
+.cc-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;justify-content:flex-end}
+.cc-btn{height:44px;font-size:14px;padding:0 18px;background:none}
+.cc-btn.btn-r{background:linear-gradient(180deg,#ff2b2b,#e8000d)}
+@media(max-width:720px){.cc{left:10px;right:10px;bottom:10px}.cc-box{padding:18px}.cc-actions .cc-btn{flex:1 1 100%;justify-content:center}}

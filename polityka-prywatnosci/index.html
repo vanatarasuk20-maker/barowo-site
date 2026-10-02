@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260331">
   <link rel="manifest" href="/site.webmanifest?v=20260331">
   <script src="/assets/subpage-nav.js?v=20260426c" defer></script>
-  <script src="/assets/consent-init.js?v=20260331"></script>
+  <script src="/assets/consent-init.js?v=20261003a"></script>
   <script>
     if (window.location.protocol === 'file:') {
       document.write('<script src="/assets/local-preview.js"><' + '/script>');
@@ -36,13 +36,13 @@
   </script>
   <link rel="preload" href="/assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/barowo.css?v=20261003e">
+  <link rel="stylesheet" href="/assets/barowo.css?v=20261003f">
   <link rel="stylesheet" href="/assets/sub.css?v=20261003d">
 </head>
 
 <body class="sub">
   <div class="top" role="region" aria-label="Kontakt"><div class="w">
-  <span class="mono"><i></i>Pełna obsługa od 3000 zł · bar, barmani i koktajle</span>
+  <span class="mono"><i></i>Mobilny bar · pełna obsługa od 3000 zł</span>
   <span class="mono"><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a> · <a href="tel:+48880564984">+48 880 564 984</a></span>
 </div></div>
 
@@ -100,6 +100,7 @@
           <li>Odpowiedź na zapytanie, przygotowanie wyceny i sprawdzenie terminu — art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy na Twoje żądanie) oraz Twoja zgoda wyrażona w formularzu (art. 6 ust. 1 lit. a RODO).</li>
           <li>Realizacja umowy na obsługę wydarzenia — art. 6 ust. 1 lit. b RODO.</li>
           <li>Wystawianie dokumentów księgowych i przechowywanie ich przez czas wymagany przepisami — art. 6 ust. 1 lit. c RODO.</li>
+          <li>Mierzenie skuteczności reklam i statystyki strony (Meta Pixel, narzędzia analityczne) — wyłącznie za Twoją zgodą wyrażoną w banerze cookies (art. 6 ust. 1 lit. a RODO).</li>
           <li>Ustalenie, dochodzenie lub obrona roszczeń oraz ochrona formularzy przed spamem — nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO).</li>
         </ul>
         <p>Zgodę możesz wycofać w każdej chwili, pisząc na <a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a>. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania, które nastąpiło wcześniej.</p>
@@ -117,11 +118,12 @@
           <li>Netlify, Inc. — hosting strony (w tym logi serwera, np. adres IP),</li>
           <li>Cloudflare, Inc. — przekazanie danych z formularzy do naszego systemu obsługi zapytań,</li>
           <li>Google (Google Ireland Ltd. / Google LLC) — Google Apps Script i Arkusze Google, w których zapisujemy i obsługujemy zapytania, poczta e-mail, a także Mapy Google, jeśli sam je włączysz,</li>
+          <li>Meta Platforms Ireland Ltd. — Meta Pixel, tylko jeśli zgodzisz się na cookies marketingowe,</li>
           <li>biuro rachunkowe — jeśli dojdzie do zawarcia umowy.</li>
         </ul>
 
         <h2>6. Przekazywanie danych poza EOG</h2>
-        <p>Część dostawców (Netlify, Cloudflare, Google) może przetwarzać dane poza Europejskim Obszarem Gospodarczym, m.in. w USA. W takich przypadkach przekazanie odbywa się na podstawie decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony (EU-US Data Privacy Framework) albo standardowych klauzul umownych zatwierdzonych przez Komisję Europejską. Możesz poprosić nas o kopię stosowanych zabezpieczeń.</p>
+        <p>Część dostawców (Netlify, Cloudflare, Google, Meta) może przetwarzać dane poza Europejskim Obszarem Gospodarczym, m.in. w USA. W takich przypadkach przekazanie odbywa się na podstawie decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony (EU-US Data Privacy Framework) albo standardowych klauzul umownych zatwierdzonych przez Komisję Europejską. Możesz poprosić nas o kopię stosowanych zabezpieczeń.</p>
 
         <h2>7. Twoje prawa</h2>
         <p>Masz prawo do:</p>
@@ -137,13 +139,15 @@
         </ul>
         <p>Nie podejmujemy wobec Ciebie decyzji w sposób zautomatyzowany i nie profilujemy Cię.</p>
 
-        <h2>8. Pliki cookies i pamięć przeglądarki</h2>
-        <p>Strona barowo.com nie używa plików cookies analitycznych ani marketingowych. Czcionki i zdjęcia są serwowane z naszego serwera, bez łączenia się z zewnętrznymi dostawcami.</p>
+        <h2 id="cookies">8. Pliki cookies i pamięć przeglądarki</h2>
+        <p>Przy pierwszej wizycie wyświetlamy baner, w którym decydujesz, na jakie pliki cookies się zgadzasz. Swój wybór możesz w każdej chwili zmienić, klikając „Ustawienia cookies” w stopce strony.</p>
         <ul>
-          <li>Formularz „Oddzwonimy” zapisuje w pamięci przeglądarki (localStorage) czas ostatniego wysłania, żeby ograniczyć spam. Jest to niezbędne do działania usługi, o którą prosisz.</li>
-          <li>Mapa Google w sekcji kontakt ładuje się dopiero po kliknięciu „Pokaż mapę”. Wtedy Google może zapisać na Twoim urządzeniu własne pliki cookies — zasady opisuje <a href="https://policies.google.com/privacy?hl=pl" target="_blank" rel="noopener">Polityka prywatności Google</a>.</li>
+          <li><strong>Niezbędne</strong> (zawsze aktywne) — zapamiętanie Twojego wyboru w banerze oraz zapis w pamięci przeglądarki (localStorage) czasu wysłania formularza „Oddzwonimy”, żeby ograniczyć spam.</li>
+          <li><strong>Analityczne</strong> (tylko za zgodą) — statystyki odwiedzin, np. Google Analytics, jeśli zostanie uruchomione.</li>
+          <li><strong>Marketingowe</strong> (tylko za zgodą) — Meta Pixel (Meta Platforms Ireland Ltd.), który pozwala mierzyć skuteczność reklam w Facebooku i Instagramie oraz docierać z reklamą do osób, które odwiedziły stronę. Pixel rejestruje m.in. wyświetlenia stron, wysłanie formularza i kliknięcie w numer telefonu. Szczegóły: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Polityka prywatności Meta</a>.</li>
+          <li><strong>Mapa Google</strong> w sekcji kontakt ładuje się dopiero po kliknięciu „Pokaż mapę”. Wtedy Google może zapisać własne pliki cookies — zasady opisuje <a href="https://policies.google.com/privacy?hl=pl" target="_blank" rel="noopener">Polityka prywatności Google</a>.</li>
         </ul>
-        <p>Jeśli w przyszłości dodamy narzędzia analityczne lub reklamowe (np. Meta Pixel), uruchomią się one wyłącznie po Twojej zgodzie wyrażonej w banerze cookies, a ten dokument zostanie zaktualizowany. Ustawieniami cookies możesz też zarządzać w swojej przeglądarce.</p>
+        <p>Podstawą korzystania z cookies analitycznych i marketingowych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO w związku z art. 399 Prawa komunikacji elektronicznej). Bez zgody narzędzia te nie są uruchamiane. Ustawieniami cookies możesz też zarządzać w swojej przeglądarce.</p>
 
         <h2>9. Treści dotyczące alkoholu</h2>
         <p>Usługi BAROWO, w których podawany jest alkohol, są przeznaczone dla osób pełnoletnich. Nie podajemy alkoholu osobom poniżej 18 roku życia ani osobom nietrzeźwym.</p>
@@ -180,7 +184,7 @@
   </div>
   <div class="base mono">
     <span>© 2026 BAROWO · SumEffect Serhii Vasyliev · ul. Komandorska 18-20B/6, 81-223 Gdynia · NIP 9581736350 · 18+</span>
-    <span class="base-cities"><a href="/oferta/mobilny-bar-gdynia/">Gdynia</a> · <a href="/oferta/mobilny-bar-gdansk/">Gdańsk</a> · <a href="/oferta/mobilny-bar-sopot/">Sopot</a> · <a href="/polityka-prywatnosci/">Polityka prywatności</a></span>
+    <span class="base-cities"><a href="/oferta/mobilny-bar-gdynia/">Gdynia</a> · <a href="/oferta/mobilny-bar-gdansk/">Gdańsk</a> · <a href="/oferta/mobilny-bar-sopot/">Sopot</a> · <a href="/polityka-prywatnosci/">Polityka prywatności</a> · <a href="/polityka-prywatnosci/#cookies" data-cookie-settings>Ustawienia cookies</a></span>
   </div>
 </div></footer>
   <div class="mobile-cta is-visible" id="mobileCta" role="region" aria-label="Szybki kontakt">
