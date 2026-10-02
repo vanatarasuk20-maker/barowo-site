@@ -43,6 +43,20 @@ STATIC_PAGES = [
 ]
 
 
+def og_image_path(path: str) -> str:
+    """Return the 1200x630 social preview for a content image if one exists in /assets/og/."""
+    if not path:
+        return "/assets/og/og-barowo.jpg"
+    name = Path(path).name
+    candidate = ROOT / "assets" / "og" / name
+    if candidate.exists():
+        return "/assets/og/" + name
+    return path
+
+
+MIN_PRICE_PLN = 3000
+
+
 def slug_url(slug: str) -> str:
     return f"https://barowo.com/aktualnosci/{slug}/"
 
@@ -88,12 +102,20 @@ def business_graph() -> dict[str, Any]:
         "description": "Mobilny bar na wesele, urodziny i event firmowy w Trójmieście.",
         "logo": absolute_url("/assets/logo-main.png"),
         "image": [
-            absolute_url("/assets/photos/og-barowo.jpg"),
+            absolute_url("/assets/og/og-barowo.jpg"),
             absolute_url("/assets/photo2-opt.jpg"),
             absolute_url("/assets/photo3-opt.jpg"),
         ],
         "telephone": "+48889168003",
         "email": "barowo.pl@gmail.com",
+        "priceRange": "od 3000 zł",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Stryjska 13",
+            "addressLocality": "Gdynia",
+            "addressRegion": "Pomorskie",
+            "addressCountry": "PL",
+        },
         "sameAs": BUSINESS_SAME_AS,
         "areaServed": BUSINESS_AREAS,
         "serviceType": BUSINESS_SERVICE_TYPES,
@@ -296,9 +318,9 @@ def article_footer_copy(article: dict[str, Any]) -> str:
 def render_article_page(template: str, article: dict[str, Any]) -> str:
     published_at = article.get("published_at", "")
     modified_at = article.get("modified_at", article.get("updated_at", published_at))
-    og_image = absolute_url(article.get("cover_image", article.get("card_image", "")))
+    og_image = absolute_url(og_image_path(article.get("cover_image", article.get("card_image", ""))))
     replacements = {
-        "{{PAGE_TITLE}}": escape(f"{article['title_plain']} | BAROWO"),
+        "{{PAGE_TITLE}}": escape(article.get("meta_title", f"{article['title_plain']} | BAROWO")),
         "{{META_DESCRIPTION}}": escape(article.get("description", "")),
         "{{OG_TITLE}}": escape(article.get("title_plain", "")),
         "{{OG_DESCRIPTION}}": escape(article.get("description", "")),
@@ -437,12 +459,13 @@ def render_service_jsonld(service: dict[str, Any]) -> str:
             "serviceType": service.get("service_type", "Mobilny bar"),
             "areaServed": service.get("areas", ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto"]),
             "url": page_url,
-            "image": absolute_url(service.get("image", "/assets/photos/og-barowo.jpg")),
+            "image": absolute_url(service.get("image", "/assets/og/og-barowo.jpg")),
             "offers": {
                 "@type": "Offer",
                 "availability": "https://schema.org/InStock",
                 "url": page_url,
                 "priceCurrency": "PLN",
+
                 "description": service.get("offer_note", "Wycena indywidualna zależna od daty, lokalizacji, liczby gości i zakresu obsługi."),
             },
         },
@@ -471,6 +494,13 @@ def render_service_jsonld(service: dict[str, Any]) -> str:
                 ],
             }
         )
+    if service.get("slug") != "fontanna-czekoladowa":
+        # bar packages start from MIN_PRICE_PLN; the fountain alone is priced separately
+        graph[1]["offers"]["priceSpecification"] = {
+            "@type": "PriceSpecification",
+            "minPrice": MIN_PRICE_PLN,
+            "priceCurrency": "PLN",
+        }
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
 
 
@@ -502,14 +532,14 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
         "{{OG_TITLE}}": escape(service.get("og_title", meta_title)),
         "{{OG_DESCRIPTION}}": escape(service.get("og_description", meta_description)),
         "{{OG_URL}}": service_url(service["slug"]),
-        "{{OG_IMAGE}}": escape(absolute_url(service.get("image", "/assets/photos/og-barowo.jpg"))),
+        "{{OG_IMAGE}}": escape(absolute_url(og_image_path(service.get("image", "")))),
         "{{CANONICAL_URL}}": service_url(service["slug"]),
         "{{JSONLD}}": render_service_jsonld(service),
         "{{H1_HTML}}": service.get("title_html", escape(service.get("title_plain", ""))),
         "{{EYEBROW}}": escape(service.get("eyebrow", "Oferta BAROWO")),
         "{{INTRO}}": escape(service.get("intro", "")),
         "{{DIRECT_ANSWER}}": escape(service.get("direct_answer", "")),
-        "{{IMAGE}}": escape(service.get("image", "/assets/photos/og-barowo.jpg")),
+        "{{IMAGE}}": escape(service.get("image", "/assets/og/og-barowo.jpg")),
         "{{IMAGE_ALT}}": escape(service.get("image_alt", "Mobilny bar BAROWO")),
         "{{HIGHLIGHTS}}": render_list(service.get("highlights") or []),
         "{{SECTIONS}}": render_service_sections(service),
@@ -569,7 +599,7 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
 def service_card_html(service: dict[str, Any]) -> str:
     return f"""        <article class="service-card">
           <a class="service-card-media" href="/oferta/{service['slug']}/">
-            <img src="{escape(service.get('image', '/assets/photos/og-barowo.jpg'))}" alt="{escape(service.get('image_alt', 'Mobilny bar BAROWO'))}" width="1200" height="1600" loading="lazy">
+            <img src="{escape(service.get('image', '/assets/og/og-barowo.jpg'))}" alt="{escape(service.get('image_alt', 'Mobilny bar BAROWO'))}" width="1200" height="1600" loading="lazy">
           </a>
           <div class="service-card-copy">
             <span>{escape(service.get('eyebrow', 'Oferta'))}</span>

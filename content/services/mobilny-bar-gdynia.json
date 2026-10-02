@@ -10,10 +10,21 @@
   "intro": "BAROWO ma bazę w Gdyni, dlatego realizacje w mieście są dla nas naturalnym kierunkiem. Obsługujemy przyjęcia prywatne, wesela, eventy firmowe i imprezy plenerowe.",
   "direct_answer": "Mobilny bar w Gdyni najlepiej rezerwować, gdy znasz datę, miejsce i orientacyjną liczbę gości. Na tej podstawie dobieramy pakiet, menu i logistykę tak, żeby bar działał płynnie od początku imprezy.",
   "service_type": "Mobilny bar Gdynia",
-  "areas": ["Gdynia", "Orłowo", "Redłowo", "Śródmieście", "Pomorskie"],
+  "areas": [
+    "Gdynia",
+    "Orłowo",
+    "Redłowo",
+    "Śródmieście",
+    "Pomorskie"
+  ],
   "image": "/assets/photo2-opt.jpg",
   "image_alt": "Serwis mobilnego baru BAROWO w Gdyni",
-  "highlights": ["Baza BAROWO w Gdyni", "Szybka lokalna logistyka", "Wesela, urodziny i eventy", "Pakiety dopasowane do liczby gości"],
+  "highlights": [
+    "Baza BAROWO w Gdyni",
+    "Szybka lokalna logistyka",
+    "Wesela, urodziny i eventy",
+    "Pakiety dopasowane do liczby gości"
+  ],
   "sections": [
     {
       "title": "Na jakie imprezy w Gdyni warto zamówić bar?",
@@ -22,7 +33,12 @@
     {
       "title": "Co trzeba podać w zapytaniu?",
       "body": "Najbardziej pomaga data, miejsce, liczba gości i typ wydarzenia. Jeśli nie wiesz, który pakiet wybrać, napisz to wprost - doradzimy najrozsądniejszą opcję.",
-      "bullets": ["data wydarzenia", "lokalizacja w Gdyni lub okolicy", "liczba gości", "charakter imprezy"]
+      "bullets": [
+        "data wydarzenia",
+        "lokalizacja w Gdyni lub okolicy",
+        "liczba gości",
+        "charakter imprezy"
+      ]
     },
     {
       "title": "Czy obsługujemy okolice Gdyni?",
@@ -43,7 +59,11 @@
       "answer": "Zakres ustalamy indywidualnie, ale największy sens ma pełny pakiet, bo wtedy odpowiadamy za cały efekt i logistykę."
     }
   ],
-  "related_articles": ["ile-kosztuje-mobilny-bar-trojmiasto", "mobilny-bar-na-poprawiny"],
+  "related_articles": [
+    "ile-kosztuje-mobilny-bar-trojmiasto",
+    "mobilny-bar-na-poprawiny"
+  ],
   "card_title_html": "Mobilny bar <span class=\"red\">Gdynia</span>",
-  "card_excerpt": "Lokalna obsługa baru w Gdyni: wesela, urodziny, eventy i plener."
+  "card_excerpt": "Lokalna obsługa baru w Gdyni: wesela, urodziny, eventy i plener.",
+  "meta_title": "Mobilny Bar Gdynia | Wesela, Urodziny, Eventy — BAROWO"
 }

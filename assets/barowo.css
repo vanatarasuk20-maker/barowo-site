@@ -410,3 +410,5 @@ body.menu-open .mobile-cta{display:none}
   .g4.contact .contact-side{padding:48px 0 0;border-left:0;border-top:1px solid var(--line);margin-top:48px}
   .g4.contact .contact-map{aspect-ratio:16/7}
 }
+footer .base-cities a{color:inherit}footer .base-cities a:hover{color:var(--ink)}
+a.inl{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(255,43,43,.7);text-underline-offset:3px}a.inl:hover{color:var(--red)}

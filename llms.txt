@@ -1,39 +1,48 @@
 # BAROWO
 
-BAROWO is a mobile bar and bartender service based in Gdynia, serving Gdynia, Gdańsk, Sopot, Trójmiasto and Pomorskie.
+> BAROWO is a mobile bar and bartending service from Gdynia, Poland. It serves weddings, birthdays (including 18th birthdays), corporate events and private parties in Trójmiasto (Gdynia, Gdańsk, Sopot) and the Pomorskie region, up to about 150 km from Gdynia. Full service starts from 3000 PLN, and alcohol is included in every package.
 
 Primary website: https://barowo.com/
+Language of the website: Polish
 
-## What BAROWO does
+## Key facts
 
-- Mobile bar for weddings
-- Drink bar for weddings and birthdays
-- Mobile bar for corporate events
-- Bartender service with bar setup, glassware, cocktail menu and service team
+- Service: full mobile bar service. The bar, bartenders, glassware, alcohol, cocktail ingredients, menu and service at the event are all included.
+- Price: from 3000 PLN (pełna obsługa od 3000 zł). The final quote depends on the number of guests, date, location and package.
+- Service time: Simple package up to 6 hours, Standard and Premium up to 8 hours. In every package the bar can stay longer for extra hours.
+- Area: Gdynia, Gdańsk, Sopot, Trójmiasto and Pomorskie, up to about 150 km from Gdynia. Longer trips are agreed individually.
+- Address: Stryjska 13, Gdynia, Poland.
+- Team: Artem (head bartender), Ivan (bartender and client contact).
+- Extra: chocolate fountain (fontanna czekoladowa), available as an add-on or a separate service. It is included in the Premium package.
+
+## Packages
+
+- Simple: 1 bartender, Modern mobile bar, vodka, rum and prosecco, 7 cocktails, up to 6 hours of service.
+- Standard: 2 bartenders, Modern or Boho bar, additionally whiskey and Aperol, 8 cocktails and 3 non-alcoholic drinks, free tasting, up to 8 hours of service.
+- Premium: 2 bartenders, Modern or Boho bar, premium spirits (including gin, Cointreau, Campari, vermouth), 15 cocktails and 6 non-alcoholic drinks. It also includes a welcome drink, a glass tower, a chocolate fountain and a free tasting. Up to 8 hours of service.
 
 ## Key pages
 
-- Homepage: https://barowo.com/
+- Homepage with packages, FAQ and contact form: https://barowo.com/
+- Pricing explained: https://barowo.com/cennik/
 - Offer hub: https://barowo.com/oferta/
-- Pricing explainer: https://barowo.com/cennik/
-- Realizations and use cases: https://barowo.com/realizacje/
-- Blog / guides: https://barowo.com/aktualnosci/
-
-## Service pages
-
-- https://barowo.com/oferta/mobilny-bar-na-wesele/
-- https://barowo.com/oferta/drink-bar-na-wesele/
-- https://barowo.com/oferta/mobilny-bar-na-event-firmowy/
-- https://barowo.com/oferta/drink-bar-na-urodziny-gdansk/
-- https://barowo.com/oferta/mobilny-bar-trojmiasto/
-- https://barowo.com/oferta/mobilny-bar-gdynia/
-- https://barowo.com/oferta/mobilny-bar-gdansk/
-- https://barowo.com/oferta/mobilny-bar-sopot/
-
-## Useful summary
-
-BAROWO provides complete mobile bar service for private and corporate events in Trójmiasto and Pomorskie. The service can include a mobile bar, bartenders, glassware, cocktail ingredients, menu planning and event service. Pricing depends on date, location, number of guests, event type, package and menu scope.
+- Mobile bar for weddings: https://barowo.com/oferta/mobilny-bar-na-wesele/
+- Drink bar for weddings: https://barowo.com/oferta/drink-bar-na-wesele/
+- Mobile bar for corporate events: https://barowo.com/oferta/mobilny-bar-na-event-firmowy/
+- Drink bar for birthdays in Gdańsk: https://barowo.com/oferta/drink-bar-na-urodziny-gdansk/
+- Chocolate fountain: https://barowo.com/oferta/fontanna-czekoladowa/
+- Mobile bar Trójmiasto: https://barowo.com/oferta/mobilny-bar-trojmiasto/
+- Mobile bar Gdynia: https://barowo.com/oferta/mobilny-bar-gdynia/
+- Mobile bar Gdańsk: https://barowo.com/oferta/mobilny-bar-gdansk/
+- Mobile bar Sopot: https://barowo.com/oferta/mobilny-bar-sopot/
+- Wedding bar planner (interactive): https://barowo.com/planer-baru-weselnego/
+- Use cases: https://barowo.com/realizacje/
+- Guides (blog): https://barowo.com/aktualnosci/
 
 ## Contact
 
-Use the contact form at https://barowo.com/#contact or the phone/email listed on the website.
+- Phone: +48 889 168 003, +48 880 564 984
+- E-mail: barowo.pl@gmail.com
+- Booking form: https://barowo.com/#contact
+- Instagram: https://www.instagram.com/barowo_official
+- TikTok: https://www.tiktok.com/@barowo.official

@@ -49,3 +49,21 @@
 - **Закрыты служебные папки.** `/docs`, `/tools`, `/scripts`, `/templates`, `/content`, `/_concepts`, `netlify.toml` и `.gitignore` теперь отдают 404. Правило в `scripts/build_articles.py`, потому что `_redirects` генерируется. Раньше они были доступны публично (publish = "."), в том числе URL вебхука Apps Script.
 - **Заголовки:** добавлены `X-Frame-Options: SAMEORIGIN` и `X-Robots-Tag: noindex` для 404.
 - **CSS:** версии `barowo.css` и `sub.css` подняты до `?v=20261003a` (у `/assets/*` кэш immutable).
+
+## Шаг 4 — SEO/GEO (2026-10-03)
+
+- **Пакеты (владелец):** дегустация бесплатна только в Standard и Premium. Wieża z kieliszków и welcome drink — только в Premium.
+- **Title и description:** уникальные на всех страницах, title ≤72 символов, description 110–155. На главной в title добавлено «od 3000 zł».
+- **Превью-картинки:** `assets/og/` — отдельная картинка 1200×630 на каждую страницу. Скрипт сборки берёт `/assets/og/<имя фото страницы>`. Добавлены `og:image:width` и `og:image:height`.
+- **JSON-LD:**
+  - `LocalBusiness` на главной: `priceRange`, адрес, `employee`, `knowsAbout`, `makesOffer` с тремя пакетами;
+  - у `Service` — `minPrice` 3000 PLN (кроме фонтана).
+- **Cennik:**
+  - новая секция «Pakiety»;
+  - ответ про алкохол исправлен на «Tak, w cenie każdego pakietu»;
+  - новый вопрос «Ile godzin trwa obsługa?».
+- **Внутренние ссылки:** в футере ссылки на Gdynia, Gdańsk, Sopot, Trójmiasto, Drink bar na wesele и na urodziny; на главной города в тексте стали ссылками.
+- **Прочее:**
+  - `llms.txt` переписан: факты, пакеты, часы, зона работы, контакты;
+  - `robots.txt` — `Disallow: /admin/`;
+  - h1 на `/realizacje/` — «Realizacje mobilnego baru».
