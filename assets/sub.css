@@ -251,3 +251,4 @@ body.sub.planner-page{background:inherit}
 .sub .hero-intro+.article-meta,.sub .lead+.article-meta{margin-top:28px}
 .sub h1 br{display:inline}
 .sub .planner-inline-links{display:grid;gap:0}
+.sub .highlights a{color:var(--ink)}.sub .highlights a:hover{color:var(--red)}

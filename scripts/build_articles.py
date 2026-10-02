@@ -698,6 +698,15 @@ def write_redirects(articles: list[dict[str, Any]], services: list[dict[str, Any
         "/aktualnosci/index.html /aktualnosci/ 301!",
         "/planer-weselny/ /planer-baru-weselnego/ 301!",
         "/planer-weselny/index.html /planer-baru-weselnego/ 301!",
+        # internal folders are part of the repo, not of the website
+        "/docs/* /404.html 404!",
+        "/tools/* /404.html 404!",
+        "/scripts/* /404.html 404!",
+        "/templates/* /404.html 404!",
+        "/content/* /404.html 404!",
+        "/_concepts/* /404.html 404!",
+        "/netlify.toml /404.html 404!",
+        "/.gitignore /404.html 404!",
     ]
     for service in services:
         lines.append(f"/oferta/{service['slug']}/index.html /oferta/{service['slug']}/ 301!")

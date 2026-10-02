@@ -25,7 +25,7 @@
    - one cell padding (40), one section rhythm (144), one h2→content gap (64)
    ============================================================ */
 :root{
-  --bg:#070a1f;--bg-2:#0b0f2a;--ink:#f7f7fa;--muted:rgba(232,235,250,.66);--dim:rgba(232,235,250,.42);
+  --bg:#070a1f;--bg-2:#0b0f2a;--ink:#f7f7fa;--muted:rgba(232,235,250,.66);--dim:rgba(232,235,250,.56);
   --line:rgba(232,235,250,.12);--red:#ff2b2b;--red-d:#e8000d;
   --hd:'Big Shoulders Display','Archivo Black',Impact,sans-serif;
   --tx:'Manrope',-apple-system,'Segoe UI',sans-serif;
@@ -164,7 +164,7 @@ h2{font:900 clamp(42px,5.2vw,76px)/1.12 var(--hd);text-transform:uppercase;lette
 footer{padding:96px 0 48px}
 footer .cell{padding-top:0}
 footer img{height:26px;width:auto;margin-bottom:18px}
-footer h4{font:400 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
+footer h4,footer .fh{font:400 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
 footer li{list-style:none;margin-bottom:8px;font-size:14.5px;color:var(--muted)}
 footer .base{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:56px;padding-top:20px}
 
@@ -394,3 +394,19 @@ body.callback-open{overflow:hidden}
 }
 @media(max-width:720px){footer .g4>.cell:last-child{border-bottom:0}footer .base{margin-top:16px}}
 body.menu-open .mobile-cta{display:none}
+
+/* ---- tablet fixes 2026-10-02 (769–1080px) ---- */
+@media(min-width:721px) and (max-width:1080px){
+  .g4.r2>.span2{grid-column:span 1}
+  .g4.r2>.span2+.span2{padding-left:var(--cell);border-left:1px solid var(--line)}
+  .g4.r2.steps{grid-template-columns:repeat(3,1fr)}
+  .g4.r2.steps>.cell:nth-child(2){padding-left:0;border-left:0}
+  .g4.r2.steps>.cell:nth-child(3){padding-left:var(--cell);border-left:1px solid var(--line)}
+  .person{grid-template-columns:1fr;gap:24px}
+  .person img{width:160px}
+  .g4.contact{grid-template-columns:1fr}
+  .g4.contact>*{grid-column:1/-1}
+  .g4.contact .form{padding-right:0}
+  .g4.contact .contact-side{padding:48px 0 0;border-left:0;border-top:1px solid var(--line);margin-top:48px}
+  .g4.contact .contact-map{aspect-ratio:16/7}
+}
