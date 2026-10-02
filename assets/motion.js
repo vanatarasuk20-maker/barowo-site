@@ -1,8 +1,17 @@
 /* BAROWO — light motion + always start new pages at the top */
 (function () {
-  // A new page without #anchor always opens at the top (no restored mid-page scroll).
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  if (!location.hash) window.scrollTo(0, 0);
+  // A new page without #anchor always opens at the top.
+  // scrollIntoView also moves outer scroll containers (e.g. when the site is shown inside a preview frame).
+  var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || {};
+  function toTop() {
+    if (location.hash || nav.type === 'back_forward') return;
+    window.scrollTo(0, 0);
+    try { document.documentElement.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) {
+      try { document.documentElement.scrollIntoView(true); } catch (e2) {}
+    }
+  }
+  toTop();
+  window.addEventListener('load', toTop);
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) return;
