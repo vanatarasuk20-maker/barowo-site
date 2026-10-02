@@ -21,9 +21,6 @@
   <link rel="canonical" href="https://barowo.com/oferta/">
   <link rel="icon" href="/favicon.ico?v=20260331" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=20260331">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800;900;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/subpage-nav.css?v=20260426c">
-  <link rel="stylesheet" href="/assets/callback-popup.css?v=20260426">
   <script src="/assets/consent-init.js?v=20260331"></script>
   <script src="/assets/subpage-nav.js?v=20260426c" defer></script>
   <script src="/assets/callback-popup.js?v=20260430a" defer></script>
@@ -88,65 +85,37 @@
   ]
 }
   </script>
-  <style>
-    :root { --navy:#06061a; --red:#e8000d; --white:#fff; --dim:rgba(255,255,255,.68); --line:rgba(255,255,255,.1); --card:rgba(255,255,255,.05); }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-x: hidden; background:#050617; }
-    body { min-height: 100vh; background: radial-gradient(circle at 18% 10%, rgba(232,0,13,.12), transparent 24%), linear-gradient(180deg,#07081f 0%,#050617 100%); color: var(--white); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    img { display:block; max-width:100%; }
-    nav { position: sticky; top:0; z-index:10; display:flex; justify-content:space-between; align-items:center; min-height:82px; padding:14px min(48px,5vw); background:rgba(6,6,26,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
-    .nav-logo img, footer img { width:46px; height:46px; object-fit:contain; }
-    .nav-links { display:flex; gap:24px; list-style:none; align-items:center; }
-    .nav-links a { color:var(--dim); font-size:.74rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
-    .nav-links a.is-active, .nav-links a:hover { color:var(--white); }
-    .nav-cta { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:999px; background:var(--red); color:var(--white)!important; }
-    .shell { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
-    .hero { padding:82px 0 42px; max-width:980px; }
-    .label { color:var(--red); font-size:.76rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; margin-bottom:22px; }
-    h1, h2 { font-family:'Bebas Neue', sans-serif; font-weight:400; line-height:.95; letter-spacing:0; }
-    h1 { max-width:980px; font-size:clamp(3.1rem,7vw,6.4rem); margin-bottom:24px; overflow-wrap:break-word; }
-    h2 { font-size:clamp(2rem,3.2vw,3.2rem); }
-    .red { color:var(--red); }
-    .lead { max-width:760px; color:rgba(255,255,255,.82); font-size:1.08rem; line-height:1.75; }
-    .service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding:26px 0 82px; }
-    .service-card { display:grid; grid-template-rows:190px 1fr; min-width:0; overflow:hidden; border:1px solid var(--line); background:rgba(255,255,255,.045); border-radius:8px; transition:transform .2s ease, border-color .2s ease; }
-    .service-card:hover { transform:translateY(-3px); border-color:rgba(255,255,255,.22); }
-    .service-card-media { position:relative; overflow:hidden; }
-    .service-card-media::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(5,6,23,0) 35%, rgba(5,6,23,.35) 100%); }
-    .service-card-media img { width:100%; height:100%; object-fit:cover; }
-    .service-card-copy { display:flex; flex-direction:column; align-items:flex-start; gap:12px; padding:22px; }
-    .service-card-copy > span { color:var(--red); font-size:.72rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
-    .service-card-copy h2 { font-size:clamp(1.9rem,2.8vw,2.7rem); }
-    .service-card-copy p { color:rgba(255,255,255,.78); line-height:1.62; font-size:.95rem; }
-    .btn-red { display:inline-flex; min-height:44px; align-items:center; justify-content:center; padding:0 20px; margin-top:auto; border-radius:999px; background:var(--red); font-size:.76rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
-    footer { border-top:1px solid var(--line); padding:42px 20px; text-align:center; color:var(--dim); }
-    footer img { margin:0 auto 14px; }
-    .footer-links { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-top:14px; }
-    @media (max-width: 1100px) { .service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media (max-width: 980px) { }
-    @media (max-width: 620px) { .shell { width:min(100% - 28px,1120px); } .hero { padding-top:54px; } h1 { font-size:clamp(2.65rem,12.4vw,3.35rem); line-height:.96; } .lead { max-width:100%; font-size:1rem; line-height:1.72; } .label, .service-card-copy > span { letter-spacing:.1em; } .service-grid { grid-template-columns:1fr; gap:16px; } .service-card { grid-template-rows:210px 1fr; } .btn-red { width:100%; } }
-  </style>
-  <link rel="stylesheet" href="/assets/ui-polish.css?v=20260430d">
+  <link rel="preload" href="/assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/barowo.css?v=20261002s">
+  <link rel="stylesheet" href="/assets/sub.css?v=20261002s">
 </head>
 
-<body>
-  <nav>
-    <a href="/" class="nav-logo" aria-label="BAROWO - Strona główna"><img src="/assets/logo-main.png?v=20260331" alt="BAROWO" width="46" height="46"></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/#how">Jak to działa</a></li>
-      <li><a href="/#packages">Pakiety</a></li>
-      <li><a href="/oferta/" class="is-active">Usługi</a></li>
-      <li><a href="/cennik/">Cennik</a></li>
-      <li><a href="/planer-baru-weselnego/">Planer weselny</a></li>
-      <li><a href="/realizacje/">Realizacje</a></li>
-      <li class="nav-news-item"><a href="/aktualnosci/">Aktualności</a></li>
-      <li><a href="/#contact" class="btn btn-primary nav-cta">Sprawdź dostępność terminu</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </nav>
+<body class="sub">
+  <div class="top"><div class="w">
+  <span class="mono"><i></i>Pełna obsługa od 3300 zł · alkohol w cenie</span>
+  <span class="mono"><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a> · <a href="tel:+48889168003">+48 889 168 003</a></span>
+</div></div>
+
+<nav aria-label="Główna nawigacja"><div class="w">
+  <a class="brand" href="/" aria-label="BAROWO — strona główna"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238"><span class="mono">Mobilny bar · Gdynia</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#how">Proces</a></li>
+    <li><a href="/#packages">Pakiety</a></li>
+    <li><a href="/oferta/" class="is-active" aria-current="page">Usługi</a></li>
+    <li><a href="/realizacje/">Realizacje</a></li>
+    <li><a href="/cennik/">Cennik</a></li>
+    <li><a href="/planer-baru-weselnego/">Planer</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li class="nav-cta-item"><a href="/#contact" class="btn btn-r">Sprawdź dostępność terminu</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn btn-r" href="/#contact">Sprawdź termin</a>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  </div>
+</div></nav>
   <main class="shell">
-    <section class="hero">
+    <section class="s-hero">
       <div class="label">Oferta BAROWO</div>
       <h1>MOBILNY BAR<br><span class="red">NA TWOJE WYDARZENIE</span></h1>
       <p class="lead">Wybierz najbliższy scenariusz: wesele, urodziny, event firmowy albo lokalizację w Trójmieście. Każda strona odpowiada na konkretne pytania przed rezerwacją i prowadzi do szybkiego zapytania o termin.</p>
@@ -261,11 +230,21 @@
         </article>
     </section>
   </main>
-  <footer>
-    <img src="/assets/logo-main.png?v=20260331" alt="BAROWO" width="46" height="46">
-    <div>© 2026 BAROWO — Mobilny Bar Trójmiasto.</div>
-    <div class="footer-links"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a><a href="/cennik/">Cennik</a><a href="/#contact">Kontakt</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
-  </footer>
+  <footer><div class="w">
+  <div class="g4 r2">
+    <div class="cell"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238" loading="lazy"><p class="side">Mobilny bar na wesela, eventy firmowe i osiemnastki. Stryjska 13, Gdynia.</p></div>
+    <div class="cell"><h4>Oferta</h4><div class="footer-links"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a></div></div>
+    <div class="cell"><h4>Strona</h4><div class="footer-links"><a href="/oferta/">Usługi</a><a href="/realizacje/">Realizacje</a><a href="/cennik/">Cennik</a><a href="/#contact">Kontakt</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div></div>
+    <div class="cell"><h4>Kontakt</h4><div class="footer-links"><a href="tel:+48889168003">+48 889 168 003</a><a href="tel:+48880564984">+48 880 564 984</a><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a><a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener">TikTok</a></div></div>
+  </div>
+  <div class="base mono"><span>© 2026 BAROWO — Mobilny Bar Trójmiasto</span><span>Gdynia · Gdańsk · Sopot</span></div>
+</div></footer>
+  <div class="mobile-cta is-visible" id="mobileCta">
+    <a href="/#contact" class="btn btn-r">Sprawdź termin</a>
+    <a href="tel:+48889168003" class="mobile-cta-call" aria-label="Zadzwoń: +48 889 168 003">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    </a>
+  </div>
 </body>
 
 </html>

@@ -393,3 +393,4 @@ body.callback-open{overflow:hidden}
   .close-lead{font-size:16px}
 }
 @media(max-width:720px){footer .g4>.cell:last-child{border-bottom:0}footer .base{margin-top:16px}}
+body.menu-open .mobile-cta{display:none}
