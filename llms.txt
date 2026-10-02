@@ -1,13 +1,13 @@
 # BAROWO
 
-> BAROWO is a mobile bar and bartending service from Gdynia, Poland. Its main focus is corporate events in Trójmiasto (Gdańsk, Gdynia, Sopot): company parties, team integration events, Christmas parties (wigilia firmowa), anniversaries, conferences and openings. It also serves weddings, birthdays and private parties in the Pomorskie region, up to about 150 km from Gdynia. Full service starts from 3000 PLN, and alcohol is included in every package.
+> BAROWO is a mobile bar and bartending service from Gdynia, Poland. Its main focus is corporate events in Trójmiasto (Gdańsk, Gdynia, Sopot): company parties, team integration events, Christmas parties (wigilia firmowa), anniversaries, conferences and openings. It also serves weddings, birthdays and private parties in the Pomorskie region, up to about 150 km from Gdynia. Full service starts from 3000 PLN.
 
 Primary website: https://barowo.com/
 Language of the website: Polish
 
 ## Key facts
 
-- Service: full mobile bar service. The bar, bartenders, glassware, alcohol, cocktail ingredients, menu and service at the event are all included.
+- Service: full mobile bar service. The bar, bartenders, glassware, cocktail ingredients, menu and service at the event are all included.
 - Price: from 3000 PLN (pełna obsługa od 3000 zł). The final quote depends on the number of guests, date, location and package.
 - Service time: Simple package up to 6 hours, Standard and Premium up to 8 hours. In every package the bar can stay longer for extra hours.
 - Area: Gdynia, Gdańsk, Sopot, Trójmiasto and Pomorskie, up to about 150 km from Gdynia. Longer trips are agreed individually.
@@ -20,16 +20,16 @@ Language of the website: Polish
 
 ## Packages
 
-- Simple: 1 bartender, Modern mobile bar, vodka, rum and prosecco, 7 cocktails, up to 6 hours of service.
-- Standard: 2 bartenders, Modern or Boho bar, additionally whiskey and an aperitivo liqueur, 8 cocktails and 3 non-alcoholic drinks, free tasting, up to 8 hours of service.
-- Premium: 2 bartenders, Modern or Boho bar, premium spirits (including gin, orange liqueur, bitter, vermouth), 15 cocktails and 6 non-alcoholic drinks. It also includes a welcome drink, a glass tower, a chocolate fountain and a free tasting. Up to 8 hours of service.
+- Simple: 1 bartender, Modern mobile bar, 7 cocktails, up to 6 hours of service.
+- Standard: 2 bartenders, Modern or Boho bar, 8 cocktails and 3 non-alcoholic drinks, free tasting, up to 8 hours of service.
+- Premium: 2 bartenders, Modern or Boho bar, premium cocktail card, 15 cocktails and 6 non-alcoholic drinks. It also includes a welcome drink, a glass tower, a chocolate fountain and a free tasting. Up to 8 hours of service.
 
 ## For companies (corporate events)
 
 - Corporate events hub: https://barowo.com/oferta/mobilny-bar-na-event-firmowy/
 - Bar for a company Christmas party (wigilia firmowa): https://barowo.com/oferta/bar-na-wigilie-firmowa/
 - Bar for team integration events and company garden parties: https://barowo.com/oferta/bar-na-integracje-firmowa/
-- What companies get: mobile bar set up at the venue (hotel, restaurant, hall, office or outdoors), 1–2 bartenders, glassware, ice, alcohol included, cocktail menu with non-alcoholic options, 6–8 hours of service (extendable), dismantling after the event.
+- What companies get: mobile bar set up at the venue (hotel, restaurant, hall, office or outdoors), 1–2 bartenders, glassware, ice, cocktail menu with non-alcoholic options, 6–8 hours of service (extendable), dismantling after the event.
 
 ## Key pages
 

@@ -96,14 +96,14 @@
     {
       key: "alcohol",
       label: "Krok 7 z 10",
-      title: "Jaki zakres alkoholi Was interesuje?",
-      copy: "Alkohol jest w cenie każdego pakietu. Wybierz, czego oczekujecie — to pomoże dobrać pakiet.",
+      title: "Jak rozbudowana ma być karta koktajli?",
+      copy: "Wybierz, jak rozbudowana ma być karta koktajli — to pomoże dobrać pakiet.",
       type: "single",
       field: "alcoholPreference",
       options: [
-        { value: "Klasyka: wódka, rum, prosecco", label: "Klasyka: wódka, rum, prosecco" },
-        { value: "Szerzej: także whiskey i likier aperitivo", label: "Szerzej: także whiskey i likier aperitivo" },
-        { value: "Premium: także gin, likiery i bitter", label: "Premium: także gin, likiery i bitter" },
+        { value: "Klasyka: sprawdzone koktajle", label: "Klasyka: sprawdzone koktajle" },
+        { value: "Szersza karta z koktajlami 0%", label: "Szersza karta z koktajlami 0%" },
+        { value: "Premium: autorskie koktajle", label: "Premium: autorskie koktajle" },
         { value: "Chcemy pełną rekomendację", label: "Nie wiem — chcę rekomendację" }
       ]
     },
@@ -306,8 +306,8 @@
     if (state.expectationLevel === "Najprostsza sensowna opcja") packageScore -= 1;
     if (state.expectationLevel === "Dobry balans ceny i efektu") packageScore += 0;
     if (state.expectationLevel === "Premium efekt dla gości") packageScore += 1;
-    if (state.alcoholPreference === "Klasyka: wódka, rum, prosecco") packageScore -= 0.5;
-    if (state.alcoholPreference === "Premium: także gin, likiery i bitter") packageScore += 0.75;
+    if (state.alcoholPreference === "Klasyka: sprawdzone koktajle") packageScore -= 0.5;
+    if (state.alcoholPreference === "Premium: autorskie koktajle") packageScore += 0.75;
     if (state.barFormat === "Premium cocktail bar") packageScore += 1;
     if (state.barFormat === "Open bar przez całą noc") packageScore += 1;
     if (state.barFormat === "Klasyczny drink bar") packageScore -= 0.25;
@@ -585,7 +585,7 @@
           '<div class="planner-service-tip">' +
             '<div class="label">Orientacyjnie</div>' +
             "<h3>Pełna obsługa mobilnego baru BAROWO zaczyna się od 3000 zł.</h3>" +
-            "<p>To kompletna obsługa baru: stanowisko, barmani, szkło, alkohol, menu i serwis gości przez 6–8 godzin, z możliwością przedłużenia.</p>" +
+            "<p>To kompletna obsługa baru: stanowisko, barmani, szkło, menu i serwis gości przez 6–8 godzin, z możliwością przedłużenia.</p>" +
             '<div class="planner-inline-links"><a href="/cennik/">Zobacz cennik BAROWO</a></div>' +
           "</div>" +
         "</article>" +

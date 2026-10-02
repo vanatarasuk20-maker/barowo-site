@@ -5,12 +5,12 @@
   "updated_at": "2026-10-03",
   "title_plain": "Mobilny bar na event firmowy w Trójmieście",
   "title_html": "MOBILNY BAR<br><span class=\"red\">NA EVENT FIRMOWY W TRÓJMIEŚCIE</span>",
-  "description": "Mobilny bar na event firmowy w Gdańsku, Gdyni i Sopocie: integracje, wigilie firmowe, jubileusze, konferencje i otwarcia. Bar, barmani, szkło i alkohol w cenie.",
+  "description": "Mobilny bar na event firmowy w Gdańsku, Gdyni i Sopocie: integracje, wigilie firmowe, jubileusze, konferencje i otwarcia. Bar, barmani, szkło i koktajle w jednej usłudze.",
   "meta_title": "Mobilny Bar na Event Firmowy Trójmiasto | Gdańsk, Gdynia, Sopot — BAROWO",
-  "meta_description": "Bar na imprezę firmową, integrację, wigilię firmową lub konferencję w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i alkohol w cenie — od 3000 zł.",
+  "meta_description": "Bar na imprezę firmową, integrację, wigilię firmową lub konferencję w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i koktajle — od 3000 zł.",
   "eyebrow": "Dla firm · Trójmiasto",
-  "intro": "Organizujesz imprezę firmową, integrację, wigilię albo konferencję w Trójmieście? BAROWO przyjeżdża z gotowym barem, barmanami, szkłem i alkoholem. Twój zespół nie zajmuje się zakupami, lodem ani obsługą gości.",
-  "direct_answer": "BAROWO to mobilny bar z Gdyni dla firm z Gdańska, Gdyni, Sopotu i okolic (do ok. 150 km). Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło, alkohol i menu koktajli z opcjami bezalkoholowymi. Pakiety obejmują 6 lub 8 godzin pracy baru, z możliwością przedłużenia.",
+  "intro": "Organizujesz imprezę firmową, integrację, wigilię albo konferencję w Trójmieście? BAROWO przyjeżdża z gotowym barem, barmanami, szkłem i menu koktajli. Twój zespół nie zajmuje się zakupami, lodem ani obsługą gości.",
+  "direct_answer": "BAROWO to mobilny bar z Gdyni dla firm z Gdańska, Gdyni, Sopotu i okolic (do ok. 150 km). Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i menu koktajli z opcjami bezalkoholowymi. Pakiety obejmują 6 lub 8 godzin pracy baru, z możliwością przedłużenia.",
   "service_type": "Mobilny bar na event firmowy",
   "offer_note": "Pełna obsługa mobilnego baru na event firmowy od 3000 zł. Końcowa wycena zależy od liczby gości, terminu, miejsca i pakietu.",
   "areas": [
@@ -23,7 +23,7 @@
   "image": "/assets/photos/bar-dalszy-plan.jpg",
   "image_alt": "Mobilny bar BAROWO, barman przygotowuje koktajle",
   "highlights": [
-    "Bar, barmani, szkło i alkohol — faktura dla firmy",
+    "Bar, barmani, szkło i koktajle — faktura dla firmy",
     "Integracje, wigilie firmowe, jubileusze, konferencje",
     "Koktajle bezalkoholowe dla kierowców i nie pijących",
     "Gdańsk, Gdynia, Sopot i do ok. 150 km od Gdyni"
@@ -51,7 +51,6 @@
         "mobilny bar Modern lub Boho i przygotowanie stanowiska",
         "barmani — 1 lub 2, zależnie od pakietu",
         "szkło, lód, dodatki i sprzęt barmański",
-        "alkohol w cenie pakietu",
         "menu koktajli z opcjami bezalkoholowymi",
         "demontaż i zabranie sprzętu po evencie",
         "faktura dla firmy — cena końcowa, bez doliczania VAT"
@@ -59,7 +58,7 @@
     },
     {
       "title": "Pakiety i czas pracy baru",
-      "body": "Simple: 1 barman, bar Modern, do 6 godzin. Standard i Premium: 2 barmanów, bar Modern lub Boho, do 8 godzin. W każdym pakiecie alkohol jest w cenie, a czas pracy baru można przedłużyć. Szczegóły pakietów znajdziesz w [cenniku](/cennik/) i na [stronie głównej](/#packages)."
+      "body": "Simple: 1 barman, bar Modern, do 6 godzin. Standard i Premium: 2 barmanów, bar Modern lub Boho, do 8 godzin. W każdym pakiecie czas pracy baru można przedłużyć. Szczegóły pakietów znajdziesz w [cenniku](/cennik/) i na [stronie głównej](/#packages)."
     },
     {
       "title": "Jak wygląda współpraca z firmą?",
@@ -96,7 +95,7 @@
     },
     {
       "question": "Ile kosztuje mobilny bar na event firmowy?",
-      "answer": "Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i alkohol. Końcowa cena zależy od liczby gości, terminu, miejsca i wybranego pakietu."
+      "answer": "Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i menu koktajli. Końcowa cena zależy od liczby gości, terminu, miejsca i wybranego pakietu."
     },
     {
       "question": "Czy wystawiacie fakturę dla firmy?",
@@ -105,10 +104,6 @@
     {
       "question": "Ile godzin pracuje bar na evencie firmowym?",
       "answer": "W pakiecie Simple do 6 godzin, w pakietach Standard i Premium do 8 godzin. W każdym pakiecie czas pracy baru można przedłużyć."
-    },
-    {
-      "question": "Czy alkohol jest wliczony w cenę?",
-      "answer": "Tak, alkohol jest w cenie każdego pakietu. Zakres alkoholi i karta koktajli zależą od pakietu."
     },
     {
       "question": "Czy przygotujecie koktajle bezalkoholowe dla firmy?",
