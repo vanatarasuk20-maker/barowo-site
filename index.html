@@ -185,7 +185,7 @@
 </script>
   <link rel="preload" href="/assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/barowo.css?v=20261002k">
+  <link rel="stylesheet" href="/assets/barowo.css?v=20261002m">
 </head>
 <body>
   <a class="skip" href="#contact">Przejdź do formularza</a>
@@ -215,7 +215,7 @@
 <main id="main">
 <section class="hero" id="hero" aria-label="Mobilny bar BAROWO"><div class="w">
   <p class="mono k">BAROWO · Premium mobilny bar · Trójmiasto</p>
-  <h1>Mobilny bar na wesela <br>i eventy w Trójmieście. <br><span class="grad">Alkohol w cenie</span>, Ty się bawisz.</h1>
+  <h1>Mobilny bar na wesela <br>i eventy w&nbsp;Trójmieście. <br><span class="grad">Alkohol w cenie</span>, Ty&nbsp;się bawisz.</h1>
   <div class="g4 hero-row">
     <p class="lead span2"><b>Przyjeżdżamy z gotowym barem, szkłem, alkoholem i barmanami.</b> Ty wybierasz termin — my ogarniamy resztę.</p>
     <div class="cta span2">
@@ -284,9 +284,9 @@
     <div class="r"><div class="lab">Mobilny bar i szkło</div><div class="ok">✓</div><div class="ok hot">✓</div><div class="ok">✓</div></div>
     <div class="r"><div class="lab">Alkohol i składniki</div><div class="ok">✓</div><div class="ok hot">✓</div><div class="ok">✓</div></div>
     <div class="r"><div class="lab">Menu koktajli</div><div>Klasyki</div><div class="hot">Szersze menu</div><div>Premium selekcja</div></div>
-    <div class="r"><div class="lab">Dwa bary do wyboru</div><div class="no">—</div><div class="ok hot">✓</div><div class="no">do ustalenia</div></div>
+    <div class="r"><div class="lab">Efekt na sali</div><div>Elegancki bar</div><div class="hot">Dwa bary do wyboru</div><div>Najmocniej&shy;sza oprawa</div></div>
     <div class="r"><div class="lab">Fontanna czekoladowa</div><div>opcja</div><div class="hot">opcja</div><div>opcja</div></div>
-    <div class="r end"><div class="lab"></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Simple')">Wybierz Simple</a></div><div class="hot"><a class="btn btn-r" href="#contact" onclick="pickPackage('Standard')">Wybierz Standard</a></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Premium')">Wybierz Premium</a></div></div>
+    <div class="r end"><div class="lab"></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Simple')">Wybierz<span class="pk"> Simple</span></a></div><div class="hot"><a class="btn btn-r" href="#contact" onclick="pickPackage('Standard')">Wybierz<span class="pk"> Standard</span></a></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Premium')">Wybierz<span class="pk"> Premium</span></a></div></div>
   </div>
   <div class="rule" style="margin-top:0"></div>
   <p class="note"><b>Wycena po krótkim zapytaniu</b> — cena zależy od liczby gości, czasu obsługi i menu. Każdy pakiet można dopasować.</p>
@@ -338,21 +338,16 @@
 </div></section>
 
 <section class="close" id="contact"><div class="w">
-  <p class="mono idx"><b>BAROWO / 06</b> | Kolejne kroki</p>
-  <h2>Jedno zapytanie. <span class="grad">Termin, menu i wycena.</span></h2>
-  <div class="rule"></div>
-  <div class="g4 r2">
-    <div class="cell"><p class="mono t">01 · Zapytanie</p><p>Data, miejsce, liczba gości. Formularz zajmuje minutę.</p></div>
-    <div class="cell"><p class="mono t">02 · Odpowiedź</p><p>Wracamy z dostępnością terminu i wyceną pakietu.</p></div>
-    <div class="cell"><p class="mono t">03 · Rezerwacja</p><p>Ustalamy menu i szczegóły. Na życzenie — degustacja.</p></div>
-    <div class="cell"><p class="mono t">04 · Event</p><p>Przyjeżdżamy gotowi. Ty witasz gości i bawisz się spokojnie.</p></div>  </div>
+  <p class="mono idx"><b>BAROWO / 06</b> | Kontakt</p>
+  <h2>Jedno zapytanie. <span class="grad">Termin, menu i&nbsp;wycena.</span></h2>
+  <p class="close-lead">Podaj datę, miejsce i liczbę gości — wrócimy z dostępnością terminu i wyceną. Bez zobowiązań.</p>
 
-  <div class="g4 contact" style="margin-top:var(--gap);border-top:1px solid var(--line)">
+  <div class="g4 contact">
     <div class="span2">
       <form action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST" class="form">
         <div class="form-row">
           <div class="fg">
-            <label for="leadName">Imię i nazwisko *</label>
+            <label for="leadName">Imię *</label>
             <input type="text" id="leadName" name="name" placeholder="Jan Kowalski" autocomplete="name" required>
           </div>
           <div class="fg">
@@ -360,53 +355,20 @@
             <input type="tel" id="leadPhone" name="phone" placeholder="+48 123 456 789" autocomplete="tel">
           </div>
         </div>
-        <div class="fg">
-          <label for="leadEmail">E-mail *</label>
-          <input type="email" id="leadEmail" name="email" placeholder="twoj@email.pl" autocomplete="email" required>
-        </div>
         <div class="form-row">
           <div class="fg">
-            <label for="leadEventType">Rodzaj eventu</label>
-            <select id="leadEventType" name="event_type">
-              <option value="">Wybierz...</option>
-              <option>Wesele</option>
-              <option>Urodziny / 18-tka</option>
-              <option>Event firmowy</option>
-              <option>Wieczór panieński / kawalerski</option>
-              <option>Inne</option>
-            </select>
+            <label for="leadEmail">E-mail *</label>
+            <input type="email" id="leadEmail" name="email" placeholder="twoj@email.pl" autocomplete="email" required>
           </div>
           <div class="fg">
-            <label for="leadEventDate">Planowana data</label>
-            <input type="text" id="leadEventDate" name="event_date" inputmode="numeric" pattern="\d{2}\.\d{2}\.\d{4}" placeholder="dd.mm.yyyy">
+            <label for="leadEventDate">Data wydarzenia</label>
+            <input type="text" id="leadEventDate" name="event_date" inputmode="numeric" pattern="\d{2}\.\d{2}\.\d{4}" placeholder="dd.mm.rrrr">
           </div>
         </div>
         <div class="form-row">
           <div class="fg">
-            <label for="leadServiceType">Zakres usługi</label>
-            <select id="leadServiceType" name="serviceType">
-              <option value="">Wybierz usługę...</option>
-              <option value="Mobilny bar">Mobilny bar</option>
-              <option value="Fontanna czekoladowa">Fontanna czekoladowa</option>
-              <option value="Mobilny bar + fontanna czekoladowa">Mobilny bar + fontanna czekoladowa</option>
-              <option value="Nie wiem jeszcze">Nie wiem jeszcze</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="leadCity">Miasto / lokalizacja</label>
-            <input type="text" id="leadCity" name="city" placeholder="Np. Gdańsk, Gdynia, sala albo miejscowość">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="fg">
-            <label for="leadPackage">Pakiet</label>
-            <select id="leadPackage" name="package">
-              <option value="">Wybierz pakiet...</option>
-              <option>Simple</option>
-              <option>Standard</option>
-              <option>Premium</option>
-              <option>Nie wiem jeszcze</option>
-            </select>
+            <label for="leadCity">Miejscowość / sala</label>
+            <input type="text" id="leadCity" name="city" placeholder="Np. Gdynia">
           </div>
           <div class="fg">
             <label for="leadGuests">Liczba gości</label>
@@ -419,11 +381,49 @@
             </select>
           </div>
         </div>
-        <div class="fg">
-          <label for="leadMessage">Wiadomość</label>
-          <textarea id="leadMessage" name="message" placeholder="Opowiedz nam o swoim wydarzeniu — lokalizacja, oczekiwania, pytania..."></textarea>
-        </div>
-        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+        <details class="form-more" id="formMore">
+          <summary>Dodaj szczegóły <span>— opcjonalnie</span></summary>
+          <div class="form-more-body">
+            <div class="form-row">
+              <div class="fg">
+                <label for="leadEventType">Rodzaj eventu</label>
+                <select id="leadEventType" name="event_type">
+                  <option value="">Wybierz...</option>
+                  <option>Wesele</option>
+                  <option>Urodziny / 18-tka</option>
+                  <option>Event firmowy</option>
+                  <option>Wieczór panieński / kawalerski</option>
+                  <option>Inne</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label for="leadPackage">Pakiet</label>
+                <select id="leadPackage" name="package">
+                  <option value="">Wybierz pakiet...</option>
+                  <option>Simple</option>
+                  <option>Standard</option>
+                  <option>Premium</option>
+                  <option>Nie wiem jeszcze</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="leadServiceType">Zakres usługi</label>
+              <select id="leadServiceType" name="serviceType">
+                <option value="">Wybierz usługę...</option>
+                <option value="Mobilny bar">Mobilny bar</option>
+                <option value="Fontanna czekoladowa">Fontanna czekoladowa</option>
+                <option value="Mobilny bar + fontanna czekoladowa">Mobilny bar + fontanna czekoladowa</option>
+                <option value="Nie wiem jeszcze">Nie wiem jeszcze</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="leadMessage">Wiadomość</label>
+              <textarea id="leadMessage" name="message" placeholder="Oczekiwania, pytania, styl menu..."></textarea>
+            </div>
+          </div>
+        </details>
+<div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
           <label for="crmCompanyField">Company</label>
           <input type="text" id="crmCompanyField" name="company" tabindex="-1" autocomplete="off">
         </div>
@@ -659,6 +659,9 @@
         const packageParam = urlParams.get('package') || urlParams.get('recommendedPackage') || '';
         if (packageParam) packageField.value = packageParam;
       }
+
+      const formMore = document.getElementById('formMore');
+      if (formMore && [eventTypeField, packageField, serviceField].some((f) => f && f.value)) formMore.open = true;
 
       if (cityField && urlParams.get('city')) {
         cityField.value = urlParams.get('city');
@@ -956,6 +959,8 @@
     function pickPackage(name) {
       const field = document.getElementById('leadPackage');
       if (field) field.value = name;
+      const more = document.getElementById('formMore');
+      if (more) more.open = true;
     }
     window.pickPackage = pickPackage;
 

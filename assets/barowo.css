@@ -368,3 +368,28 @@ body.callback-open{overflow:hidden}
 }
 @media(max-width:720px){nav .nav-links{inset:0}}
 @media(max-width:1080px){nav .nav-links .nav-cta-item a{width:100%;height:56px;font-size:16px;justify-content:center}}
+
+/* ---- polish pass 2026-10-02 ---- */
+.faq-q>.faq-icon{padding:0}
+.close-lead{max-width:560px;margin-top:28px;font-size:17px;line-height:1.6;color:var(--muted)}
+.close .contact{margin-top:var(--gap);border-top:1px solid var(--line)}
+.form-more{margin:4px 0 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.form-more summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:18px 0;font:700 15px var(--tx);color:var(--ink)}
+.form-more summary::-webkit-details-marker{display:none}
+.form-more summary span{font-weight:400;color:var(--dim)}
+.form-more summary::after{content:"+";margin-left:auto;width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--line);font:400 20px/1 var(--hd);color:var(--dim);transition:transform .25s}
+.form-more[open] summary::after{transform:rotate(45deg);color:var(--red)}
+.form-more summary:hover::after{color:var(--red)}
+.form-more-body{padding-top:4px}
+.form-legal{margin-top:0;padding-top:0;border-top:0}
+.tbl .r{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tbl .end .btn{gap:0}
+.tbl .pk{margin-left:.35em}
+@media(max-width:720px){
+  .tbl .r{grid-template-columns:92px repeat(3,minmax(0,1fr))}
+  .tbl .r>.lab{font-size:9.5px;line-height:1.5;letter-spacing:.03em;overflow-wrap:anywhere}
+  .tbl .pk{display:none}
+  .tbl .end .btn{font-size:12px}
+  .close-lead{font-size:16px}
+}
+@media(max-width:720px){footer .g4>.cell:last-child{border-bottom:0}footer .base{margin-top:16px}}
