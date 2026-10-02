@@ -467,3 +467,4 @@ footer .base{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 .contact-phone .who{display:block;font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
 .contact-phone+.contact-phone{margin-top:18px}
 .person img{object-position:50% 0}
+.frame img{height:auto;display:block}
