@@ -4,7 +4,7 @@
   var config = {
     version: '20261003',
     integrations: {
-      metaPixelId: null,     // e.g. '123456789012345' from Meta Events Manager
+      metaPixelId: '976159074797460', // Meta Pixel "Barowo" (Events Manager)
       ga4Id: null,           // e.g. 'G-XXXXXXXXXX' (optional)
       googleAdsId: null      // e.g. 'AW-XXXXXXXXX' (optional)
     }
