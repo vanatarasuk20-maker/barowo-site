@@ -109,6 +109,8 @@ def business_graph() -> dict[str, Any]:
         "telephone": "+48889168003",
         "email": "barowo.pl@gmail.com",
         "priceRange": "od 3000 zł",
+        "taxID": "9581736350",
+        "legalName": "SumEffect Serhii Vasyliev",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Stryjska 13",

@@ -23,7 +23,7 @@
   "image": "/assets/photos/bar-dalszy-plan.jpg",
   "image_alt": "Mobilny bar BAROWO, barman przygotowuje koktajle",
   "highlights": [
-    "Bar, barmani, szkło i alkohol w jednej usłudze",
+    "Bar, barmani, szkło i alkohol — faktura dla firmy",
     "Integracje, wigilie firmowe, jubileusze, konferencje",
     "Koktajle bezalkoholowe dla kierowców i nie pijących",
     "Gdańsk, Gdynia, Sopot i do ok. 150 km od Gdyni"
@@ -53,7 +53,8 @@
         "szkło, lód, dodatki i sprzęt barmański",
         "alkohol w cenie pakietu",
         "menu koktajli z opcjami bezalkoholowymi",
-        "demontaż i zabranie sprzętu po evencie"
+        "demontaż i zabranie sprzętu po evencie",
+        "faktura dla firmy — cena końcowa, bez doliczania VAT"
       ]
     },
     {
@@ -96,6 +97,10 @@
     {
       "question": "Ile kosztuje mobilny bar na event firmowy?",
       "answer": "Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i alkohol. Końcowa cena zależy od liczby gości, terminu, miejsca i wybranego pakietu."
+    },
+    {
+      "question": "Czy wystawiacie fakturę dla firmy?",
+      "answer": "Tak, wystawiamy fakturę. Nie jesteśmy płatnikiem VAT, więc podana cena jest ceną końcową — nie doliczamy do niej VAT."
     },
     {
       "question": "Ile godzin pracuje bar na evencie firmowym?",

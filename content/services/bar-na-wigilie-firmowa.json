@@ -92,6 +92,10 @@
       "answer": "Tak, alkohol jest w cenie każdego pakietu."
     },
     {
+      "question": "Czy wystawiacie fakturę dla firmy?",
+      "answer": "Tak, wystawiamy fakturę. Nie jesteśmy płatnikiem VAT, więc podana cena jest ceną końcową — nie doliczamy do niej VAT."
+    },
+    {
       "question": "Czy obsługujecie wigilie firmowe w Gdańsku, Gdyni i Sopocie?",
       "answer": "Tak, Trójmiasto to nasz podstawowy obszar. Dojeżdżamy też do około 150 km od Gdyni."
     },

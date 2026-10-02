@@ -78,6 +78,10 @@
       "answer": "Tak, do około 150 km od Gdyni. Dalsze wyjazdy ustalamy indywidualnie."
     },
     {
+      "question": "Czy wystawiacie fakturę dla firmy?",
+      "answer": "Tak, wystawiamy fakturę. Nie jesteśmy płatnikiem VAT, więc podana cena jest ceną końcową — nie doliczamy do niej VAT."
+    },
+    {
       "question": "Czy bar może stanąć w plenerze?",
       "answer": "Tak. Przed eventem ustalamy miejsce na bar, dostęp i godziny montażu."
     },
