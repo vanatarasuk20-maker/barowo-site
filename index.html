@@ -30,11 +30,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=20260331">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260331">
   <link rel="manifest" href="/site.webmanifest?v=20260331">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800;900&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
-    rel="stylesheet">
   <script src="/assets/consent-init.js?v=20260331"></script>
   <script>
     if (window.location.protocol === 'file:') {
@@ -188,303 +183,172 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="/assets/kiosk.css?v=20261002a">
+  <link rel="preload" href="/assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/barowo.css?v=20261002k">
 </head>
 <body>
   <a class="skip" href="#contact">Przejdź do formularza</a>
+<div class="top"><div class="w">
+  <span class="mono"><i></i>Pełna obsługa od 3300 zł · alkohol w cenie</span>
+  <span class="mono"><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a> · <a href="tel:+48889168003">+48 889 168 003</a></span>
+</div></div>
 
-  <nav>
-    <a href="/" class="nav-logo" aria-label="BAROWO - Mobilny Bar">
-      <img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238">
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#how">Jak to działa</a></li>
-      <li><a href="#packages">Pakiety</a></li>
-      <li><a href="/oferta/">Usługi</a></li>
-      <li><a href="/cennik/">Cennik</a></li>
-      <li><a href="/planer-baru-weselnego/">Planer weselny</a></li>
-      <li><a href="/realizacje/">Realizacje</a></li>
-      <li class="nav-news-item"><a href="/aktualnosci/">Aktualności</a></li>
-      <li><a href="#contact" class="btn btn-primary nav-cta">Sprawdź dostępność terminu</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+<nav aria-label="Główna nawigacja"><div class="w">
+  <a class="brand" href="/" aria-label="BAROWO — strona główna"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238"><span class="mono">Mobilny bar · Gdynia</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#how">Proces</a></li>
+    <li><a href="#packages">Pakiety</a></li>
+    <li><a href="/oferta/">Usługi</a></li>
+    <li><a href="/realizacje/">Realizacje</a></li>
+    <li><a href="/cennik/">Cennik</a></li>
+    <li><a href="/planer-baru-weselnego/">Planer</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li class="nav-cta-item"><a href="#contact" class="btn btn-r">Sprawdź dostępność terminu</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn btn-r" href="#contact">Sprawdź termin</a>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleNav()"><span></span><span></span><span></span></button>
+  </div>
+</div></nav>
 
-  <main>
-  <!-- HERO -->
-  <section id="hero" class="poster poster--hero" aria-label="Hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="kicker"><span>BAROWO</span> Premium mobilny bar · Trójmiasto</p>
-        <h1 class="mega">
-          <span class="line">BAR, KTÓRY</span>
-          <span class="line red">ROBI EFEKT</span>
-          <span class="line">BEZ STRESU</span>
-        </h1>
-        <div class="hero-foot">
-          <p class="lead">Przyjeżdżamy z&nbsp;gotowym barem, szkłem, alkoholem i&nbsp;obsługą. Ty wybierasz termin — my ogarniamy resztę.</p>
-          <div class="actions">
-            <a href="#contact" class="btn btn-primary btn-xl">Sprawdź dostępność terminu</a>
-            <a href="#packages" class="btn btn-ghost btn-xl">Zobacz pakiety</a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-board">
-        <figure class="pinned hero-pin" style="--tilt:2.5deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <img src="/assets/media/hero-toast-1300w.webp" srcset="/assets/media/hero-toast-700w.webp 700w, /assets/media/hero-toast-1300w.webp 1300w" sizes="(max-width: 760px) 80vw, 34vw" width="1300" height="1733" alt="Barman BAROWO podaje koktajl w kieliszku coupe przy barze" fetchpriority="high" decoding="async">
-          <figcaption>Serwis BAROWO · koktajl w coupe</figcaption>
-        </figure>
-      </div>
+<main id="main">
+<section class="hero" id="hero" aria-label="Mobilny bar BAROWO"><div class="w">
+  <p class="mono k">BAROWO · Premium mobilny bar · Trójmiasto</p>
+  <h1>Mobilny bar na wesela <br>i eventy w Trójmieście. <br><span class="grad">Alkohol w cenie</span>, Ty się bawisz.</h1>
+  <div class="g4 hero-row">
+    <p class="lead span2"><b>Przyjeżdżamy z gotowym barem, szkłem, alkoholem i barmanami.</b> Ty wybierasz termin — my ogarniamy resztę.</p>
+    <div class="cta span2">
+      <a class="btn btn-r" href="#contact">Sprawdź dostępność terminu <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+      <a class="btn btn-o" href="#packages">Zobacz pakiety</a>
     </div>
-    <div class="wrap hero-links" aria-label="Popularne strony BAROWO">
-      <a href="/cennik/">Ile kosztuje mobilny bar</a>
-      <a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a>
-      <a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a>
-      <a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a>
+  </div>
+  <div class="hero-links" aria-label="Popularne strony BAROWO">
+    <a href="/cennik/">Ile kosztuje mobilny bar</a>
+    <a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a>
+    <a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a>
+    <a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a>
+  </div>
+  <div class="g4 r2 facts">
+    <div class="cell"><b class="red">3300 zł</b><span>Pełna obsługa od tej kwoty</span></div>
+    <div class="cell"><b>W cenie</b><span>Alkohol, szkło i barmani</span></div>
+    <div class="cell"><b>1–2+</b><span>Barmanów — zależnie od pakietu</span></div>
+    <div class="cell"><b>150 km</b><span>Gdynia, Gdańsk, Sopot i okolice</span></div>
+  </div>
+</div></section>
+
+<figure class="frame">
+  <img src="/assets/media/frame-bar-2000w.webp" srcset="/assets/media/frame-bar-1000w.webp 1000w, /assets/media/frame-bar-2000w.webp 2000w" sizes="100vw" width="2000" height="1125" alt="Barman BAROWO przygotowuje koktajle przy mobilnym barze" loading="lazy" decoding="async">
+  <div class="caps"><div class="w"><span class="mono" style="color:#fff">Frame / 001 · <b>BAROWO</b> · mobilny bar</span><span class="mono" style="color:#fff">Gdynia · Gdańsk · Sopot</span></div></div>
+</figure>
+
+<section class="sec" id="dla-kogo"><div class="w">
+  <p class="mono idx"><b>BAROWO / 01</b> | Dla kogo</p>
+  <h2>Dwa rodzaje imprez. Jeden bar, który ogarnia wszystko.</h2>
+  <div class="rule"></div>
+  <div class="g4 r2">
+    <div class="cell span2">
+      <p class="mono t">A · Wesela</p>
+      <h3>Goście przy barze cały wieczór, Ty przy parkiecie</h3>
+      <p>Przyjeżdżamy z gotowym stanowiskiem, szkłem, alkoholem i dodatkami — Ty nie liczysz butelek i nie szukasz barmana na ostatnią chwilę.</p>
+      <p>Menu dobieramy do stylu wesela. Na życzenie umawiamy degustację.</p>
     </div>
-  </section>
-
-  <!-- OCCASIONS + FACTS -->
-  <section class="poster poster--occasions" aria-label="Na jakie okazje">
-    <div class="wrap">
-      <p class="mega mega--stack" aria-label="Wesela, eventy firmowe, osiemnastki">
-        <span class="line">WESELA</span>
-        <span class="line">EVENTY</span>
-        <span class="line red">OSIEMNASTKI</span>
-      </p>
-      <dl class="facts" aria-label="Najważniejsze informacje">
-        <div><dt>od 3300&nbsp;zł</dt><dd>Pełna obsługa mobilnego baru</dd></div>
-        <div><dt>Alkohol w&nbsp;cenie</dt><dd>Razem z barem, szkłem i&nbsp;barmanami</dd></div>
-        <div><dt>Trójmiasto</dt><dd>Gdynia · Gdańsk · Sopot i&nbsp;okolice do 150&nbsp;km</dd></div>
-      </dl>
+    <div class="cell span2">
+      <p class="mono t">B · Eventy firmowe i 18-stki</p>
+      <h3>Tempo serwisu i wygląd, który pasuje do marki</h3>
+      <p>Przy większej liczbie gości liczy się płynność. Dobieramy liczbę barmanów i układ baru tak, żeby nie było kolejek, a stanowisko dobrze wyglądało na zdjęciach.</p>
+      <p>Działamy w Trójmieście i do około 150 km od Gdyni.</p>
     </div>
-  </section>
+  </div>
+</div></section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how" class="poster poster--how">
-    <div class="wrap">
-      <p class="eyebrow">Jak to działa</p>
-      <h2 class="mega mega--h2"><span class="line">3 KROKI DO</span> <span class="line red">IDEALNEJ IMPREZY</span></h2>
-      <ol class="steps">
-        <li><span class="step-n">01</span><h3>Wysyłasz krótkie zapytanie</h3><p>Data, miejsce i&nbsp;liczba gości wystarczą, żebyśmy ruszyli. Resztę doprecyzujemy razem.</p></li>
-        <li><span class="step-n">02</span><h3>Dopasowujemy ofertę</h3><p>Doradzamy pakiet, menu i&nbsp;zakres obsługi. Jeśli chcesz — umawiamy degustację.</p></li>
-        <li><span class="step-n">03</span><h3>Przyjeżdżamy i&nbsp;ogarniamy wszystko</h3><p>Bar, szkło, dodatki i&nbsp;serwis są po naszej stronie. Ty witasz gości i&nbsp;bawisz się spokojnie.</p></li>
-      </ol>
-    </div>
-  </section>
+<section class="sec" id="how"><div class="w">
+  <p class="mono idx"><b>BAROWO / 02</b> | Proces</p>
+  <h2>Od zapytania do ostatniego drinka — w 3 krokach.</h2>
+  <div class="rule"></div>
+  <div class="g4 r2">
+    <div class="cell side hide-t"><b>Bez formularzy na 15 pól.</b>Data, miejsce i liczba gości wystarczą, żebyśmy ruszyli.</div>
+    <div class="cell"><span class="step-n">01</span><p class="mono t">Zapytanie</p><h3>Krótka wiadomość</h3><p>Odpowiadamy z dostępnością terminu i wyceną. Bez zobowiązań.</p></div>
+    <div class="cell"><span class="step-n">02</span><p class="mono t">Pakiet i menu</p><h3>Dobieramy bar</h3><p>Pakiet, liczba barmanów i koktajle. Jeśli chcesz — degustacja.</p></div>
+    <div class="cell"><span class="step-n">03</span><p class="mono t">Event</p><h3>Przyjeżdżamy gotowi</h3><p>Bar, szkło, alkohol i serwis są po naszej stronie. Ty witasz gości.</p></div>
+  </div>
+</div></section>
 
-  <!-- PACKAGES -->
-  <section id="packages" class="poster poster--packages">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Nasza oferta</p>
-          <h2 class="mega mega--h2"><span class="line">WYBIERZ SWÓJ</span> <span class="line red">PAKIET</span></h2>
-        </div>
+<section class="sec" id="packages"><div class="w">
+  <p class="mono idx"><b>BAROWO / 03</b> | Pakiety</p>
+  <h2>3 pakiety. <span class="grad">Alkohol w każdym.</span> Pełna obsługa od 3300 zł.</h2>
+  <div class="tbl">
+    <div class="r head"><div class="lab">Pakiet →</div><div>Simple</div><div class="hot">Standard<small>Polecany na wesela</small></div><div>Premium</div></div>
+    <div class="r"><div class="lab">Barmani</div><div class="big">1</div><div class="big hot">2</div><div class="big">2+</div></div>
+    <div class="r"><div class="lab">Dla kogo</div><div>Mniejsze imprezy</div><div class="hot">Wesela i eventy</div><div>Duże eventy premium</div></div>
+    <div class="r"><div class="lab">Mobilny bar i szkło</div><div class="ok">✓</div><div class="ok hot">✓</div><div class="ok">✓</div></div>
+    <div class="r"><div class="lab">Alkohol i składniki</div><div class="ok">✓</div><div class="ok hot">✓</div><div class="ok">✓</div></div>
+    <div class="r"><div class="lab">Menu koktajli</div><div>Klasyki</div><div class="hot">Szersze menu</div><div>Premium selekcja</div></div>
+    <div class="r"><div class="lab">Dwa bary do wyboru</div><div class="no">—</div><div class="ok hot">✓</div><div class="no">do ustalenia</div></div>
+    <div class="r"><div class="lab">Fontanna czekoladowa</div><div>opcja</div><div class="hot">opcja</div><div>opcja</div></div>
+    <div class="r end"><div class="lab"></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Simple')">Wybierz Simple</a></div><div class="hot"><a class="btn btn-r" href="#contact" onclick="pickPackage('Standard')">Wybierz Standard</a></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Premium')">Wybierz Premium</a></div></div>
+  </div>
+  <div class="rule" style="margin-top:0"></div>
+  <p class="note"><b>Wycena po krótkim zapytaniu</b> — cena zależy od liczby gości, czasu obsługi i menu. Każdy pakiet można dopasować.</p>
+  <div class="g4 r2 addons">
+    <div class="cell span2"><p class="mono t">Planer BAROWO</p><h3>Dobierz bar do swojego wesela w 2 minuty</h3><p>Odpowiedz na kilka pytań — planer podpowie format baru, liczbę barmanów i kierunek menu.</p><a class="btn btn-o" href="/planer-baru-weselnego/">Uruchom planer</a></div>
+    <div class="cell span2"><p class="mono t">Dodatek do baru</p><h3>Fontanna czekoladowa</h3><p>Słodka strefa dla gości — jako dodatek do mobilnego baru albo osobna usługa.</p><a class="btn btn-o" href="/oferta/fontanna-czekoladowa/">Zobacz fontannę</a></div>
+  </div>
+</div></section>
 
-      </div>
-      <div class="pkg-bar">
-      <ul class="included" aria-label="W każdym pakiecie">
-        <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>Mobilny bar</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>Szkło i&nbsp;sprzęt</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>Alkohol w&nbsp;cenie</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>Składniki i&nbsp;dodatki</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>Obsługa barmańska</li>
-      </ul>
-        <p class="price-tag"><span>Pełna obsługa</span><b>od 3300&nbsp;zł</b></p>
-      </div>
-      <div class="pkgs">
-      <article class="poster-pkg ">
-        <figure class="poster-pkg-media"><img src="/assets/media/pkg-drink-900w.webp" srcset="/assets/media/pkg-drink-480w.webp 480w, /assets/media/pkg-drink-900w.webp 900w" sizes="(max-width: 760px) 100vw, 400px" width="900" height="562" alt="Koktajl z pakietu Simple na barze BAROWO" loading="lazy" decoding="async"></figure>
-        <div class="poster-pkg-body">
-          <div class="poster-pkg-top"><span class="tag">Dobry start</span><span class="poster-pkg-crew"><b>1</b> barman</span></div>
-          <h3 class="poster-pkg-name">Simple</h3>
-          <p class="poster-pkg-fit">Na mniejsze imprezy, gdzie liczy się styl i&nbsp;szybki serwis.</p>
-          <ul class="poster-pkg-list"><li><span>Bar</span>Elegancki bar i&nbsp;czysty setup od pierwszej minuty</li><li><span>Koktajle</span>Sprawdzone klasyki, które pasują każdemu</li><li><span>Dodatki</span>Wszystko gotowe, bez braków i&nbsp;improwizacji</li></ul>
-          <p class="poster-pkg-note">Kameralnie, stylowo i&nbsp;bez kolejek</p>
-          <a href="/?package=Simple#contact" class="btn btn-primary">Sprawdź termin z pakietem Simple</a>
-        </div>
-      </article>
-      <article class="poster-pkg is-hot">
-        <figure class="poster-pkg-media"><img src="/assets/media/pkg-lod-900w.webp" srcset="/assets/media/pkg-lod-480w.webp 480w, /assets/media/pkg-lod-900w.webp 900w" sizes="(max-width: 760px) 100vw, 400px" width="900" height="562" alt="Barman BAROWO przygotowuje koktajle w pakiecie Standard" loading="lazy" decoding="async"></figure>
-        <div class="poster-pkg-body">
-          <div class="poster-pkg-top"><span class="tag">Polecany na wesela</span><span class="poster-pkg-crew"><b>2</b> barmanów</span></div>
-          <h3 class="poster-pkg-name">Standard</h3>
-          <p class="poster-pkg-fit">Najlepszy wybór na wesela i&nbsp;eventy, gdzie liczy się płynność.</p>
-          <ul class="poster-pkg-list"><li><span>Bar</span>Dwa bary do wyboru i&nbsp;sprawny ruch przy większym obłożeniu</li><li><span>Koktajle</span>Szersze menu i&nbsp;mocniejszy efekt „wow”</li><li><span>Dodatki</span>Dodatki, które dobrze wyglądają na sali i&nbsp;na zdjęciach</li></ul>
-          <p class="poster-pkg-note">Płynny serwis przy większej liczbie gości</p>
-          <a href="/?package=Standard#contact" class="btn btn-light">Sprawdź termin z pakietem Standard</a>
-        </div>
-      </article>
-      <article class="poster-pkg ">
-        <figure class="poster-pkg-media"><img src="/assets/media/pkg-szampan-900w.webp" srcset="/assets/media/pkg-szampan-480w.webp 480w, /assets/media/pkg-szampan-900w.webp 900w" sizes="(max-width: 760px) 100vw, 400px" width="900" height="562" alt="Serwis szampana w pakiecie Premium" loading="lazy" decoding="async"></figure>
-        <div class="poster-pkg-body">
-          <div class="poster-pkg-top"><span class="tag">Premium</span><span class="poster-pkg-crew"><b>2+</b> barmanów</span></div>
-          <h3 class="poster-pkg-name">Premium</h3>
-          <p class="poster-pkg-fit">Dla eventów, które mają wyglądać i&nbsp;działać naprawdę premium.</p>
-          <ul class="poster-pkg-list"><li><span>Bar</span>Najmocniejsza oprawa wizualna i&nbsp;efekt od wejścia</li><li><span>Koktajle</span>Premium selekcja alkoholi i&nbsp;autorskie menu</li><li><span>Dodatki</span>Możliwość rozbudowy o&nbsp;fontannę czekoladową</li></ul>
-          <p class="poster-pkg-note">Pełne doświadczenie premium bez kompromisów</p>
-          <a href="/?package=Premium#contact" class="btn btn-primary">Sprawdź termin z pakietem Premium</a>
-        </div>
-      </article>
-      </div>
-      <dl class="terms">
-        <div><dt>Pełna obsługa od 3300&nbsp;zł</dt><dd>Bar, sprzęt, szkło, alkohol, składniki i&nbsp;barmani — jedno zamówienie. Dokładną wycenę dostajesz po krótkim zapytaniu.</dd></div>
-        <div><dt>Czas obsługi pod Twój event</dt><dd>Długość serwisu ustalamy razem z&nbsp;planem imprezy — tak, żeby bar działał wtedy, kiedy goście go potrzebują.</dd></div>
-        <div><dt>Indywidualne podejście</dt><dd>Każdy pakiet można zmienić — menu, opcje bezalkoholowe, dodatki, motyw imprezy.</dd></div>
-      </dl>
-      <div class="actions actions--quiet">
-        <a href="/cennik/" class="btn btn-ghost">Jak działa wycena?</a>
-        <a href="/realizacje/" class="btn btn-ghost">Zobacz realizacje</a>
-      </div>
+<section class="sec" id="team"><div class="w">
+  <p class="mono idx"><b>BAROWO / 04</b> | Zespół</p>
+  <h2>Z nami rozmawiasz. Z nami pracujesz na miejscu.</h2>
+  <div class="rule"></div>
+  <div class="g4 r2">
+    <div class="cell span2 person"><img src="/assets/media/team-artem-720w.webp" srcset="/assets/media/team-artem-400w.webp 400w, /assets/media/team-artem-720w.webp 720w" sizes="(max-width: 720px) 110px, 200px" width="720" height="720" loading="lazy" alt="Artem, head barman BAROWO"><div><p class="mono t">Head barman</p><h3>Artem</h3><p>Tworzy autorskie menu i pilnuje jakości każdego drinka — od pierwszego do ostatniego serwisu.</p></div></div>
+    <div class="cell span2 person"><img src="/assets/media/team-ivan-720w.webp" srcset="/assets/media/team-ivan-400w.webp 400w, /assets/media/team-ivan-720w.webp 720w" sizes="(max-width: 720px) 110px, 200px" width="720" height="720" loading="lazy" alt="Ivan z BAROWO"><div><p class="mono t">Barman &amp; kontakt</p><h3>Ivan</h3><p>Odpowiada za kontakt, organizację i spokojny proces rezerwacji. Ma być jasno, szybko i bez stresu.</p></div></div>
+  </div>
+</div></section>
 
-      <div class="duo">
-        <article class="mini-poster">
-          <p class="eyebrow">Planer BAROWO</p>
-          <h3 class="mega mega--h3"><span class="line">DOBIERZ BAR</span> <span class="line red">DO WESELA</span></h3>
-          <p>Odpowiedz na kilka pytań — w&nbsp;2&nbsp;minuty planer podpowie format baru, liczbę barmanów i&nbsp;kierunek menu. Doradzi też, czy fontanna czekoladowa ma sens.</p>
-          <a href="/planer-baru-weselnego/" class="btn btn-primary">Uruchom planer</a>
-        </article>
-        <article class="mini-poster">
-          <p class="eyebrow">Dodatki do baru</p>
-          <h3 class="mega mega--h3"><span class="line">FONTANNA</span> <span class="line red">CZEKOLADOWA</span></h3>
-          <p>Słodka strefa dla gości — jako dodatek do mobilnego baru albo osobna usługa. Z&nbsp;eleganckim stołem, dodatkami i&nbsp;przygotowaniem strefy.</p>
-          <div class="actions">
-            <a href="/oferta/fontanna-czekoladowa/" class="btn btn-primary">Zobacz fontannę</a>
-            <a href="/?service=mobilny-bar-plus-fontanna-czekoladowa&amp;chocolateFountainInterest=true&amp;chocolateFountainMode=addon_to_bar#contact" class="btn btn-ghost">Dodaj do pakietu</a>
-          </div>
-        </article>
+<section class="sec" id="faq"><div class="w">
+  <p class="mono idx"><b>BAROWO / 05</b> | FAQ</p>
+  <h2>Pytania, które słyszymy najczęściej.</h2>
+  <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="faq(this)"><span class="n">Q.01</span><span class="qt">Kim jesteście?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div>BAROWO to mobilny bar z Trójmiasta. Specjalizujemy się w obsłudze barmańskiej wesel, urodzin i eventów firmowych. Przywozimy cały sprzęt i ogarniamy wszystko od A do Z — Ty się po prostu bawisz.</div></div>
       </div>
-    </div>
-  </section>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="faq(this)"><span class="n">Q.02</span><span class="qt">Co znaczy „wszystko w cenie”?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div>Bar, sprzęt, szkło, alkohol, składniki koktajlowe, barmani, dojazd — wszystko jest wliczone w jedną cenę. Nie ma żadnych ukrytych kosztów ani dopłat po evencie.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="faq(this)"><span class="n">Q.03</span><span class="qt">Jak długo pracujecie na imprezie?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div>Czas obsługi ustalamy indywidualnie pod Twoje wydarzenie — zależnie od planu imprezy. Każdy pakiet można dopasować do Twoich potrzeb.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="faq(this)"><span class="n">Q.04</span><span class="qt">Na czym polega degustacja?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div>Opcjonalnie możesz przyjechać do nas na degustację koktajli przed eventem. Razem wybierzemy menu idealne pod Twoją imprezę — smaki, kolory, tematykę. Bez zobowiązań.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="faq(this)"><span class="n">Q.05</span><span class="qt">Jak daleko dojeżdżacie?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div>Obsługujemy głównie województwo pomorskie, do 150&nbsp;km od centrum Gdyni. W przypadku odleglejszych lokalizacji skontaktuj się z nami — dogadamy się indywidualnie.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="faq(this)"><span class="n">Q.06</span><span class="qt">Czy można zmienić skład pakietu?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a"><div>Tak. Każdy pakiet można modyfikować — zmienić alkohole, dodać opcje bezalkoholowe, dostosować do tematu imprezy. Napisz do nas, a przygotujemy ofertę idealnie skrojoną pod Ciebie.</div></div>
+      </div>
+  </div>
+</div></section>
 
-  <!-- REALIZACJE -->
-  <section class="poster poster--board" aria-label="Realizacje">
-    <div class="wrap">
-      <p class="eyebrow">Realizacje</p>
-      <h2 class="mega mega--h2"><span class="line">ZOBACZ, JAK TO</span> <span class="line red">WYGLĄDA W&nbsp;AKCJI</span></h2>
-      <div class="board">
-        <figure class="pinned b1 is-video" style="--tilt:-2deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <video class="js-autoplay" src="/assets/media/clip-koktajl.mp4" poster="/assets/media/clip-koktajl-poster.webp" muted loop playsinline preload="none" width="464" height="848" aria-label="Koktajl BAROWO podany na barze podczas eventu"></video>
-          <figcaption>Koktajl na evencie</figcaption>
-        </figure>
-        <figure class="pinned b2" style="--tilt:1.5deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <img src="/assets/media/proof-lod-900w.webp" srcset="/assets/media/proof-lod-480w.webp 480w, /assets/media/proof-lod-900w.webp 900w" sizes="(max-width: 760px) 50vw, 300px" width="900" height="1200" alt="Barman BAROWO napełnia szklanki lodem przy barze" loading="lazy" decoding="async">
-          <figcaption>Mojito na lodzie kruszonym</figcaption>
-        </figure>
-        <figure class="pinned b3" style="--tilt:-1deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <img src="/assets/media/proof-wiz-900w.webp" srcset="/assets/media/proof-wiz-480w.webp 480w, /assets/media/proof-wiz-900w.webp 900w" sizes="(max-width: 760px) 50vw, 300px" width="900" height="1200" alt="Wizytownik BAROWO na barze obok dodatków" loading="lazy" decoding="async">
-          <figcaption>BAROWO · parties &amp; weddings</figcaption>
-        </figure>
-        <figure class="pinned b4" style="--tilt:2deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <img src="/assets/media/proof-szampan-900w.webp" srcset="/assets/media/proof-szampan-480w.webp 480w, /assets/media/proof-szampan-900w.webp 900w" sizes="(max-width: 760px) 50vw, 300px" width="900" height="1200" alt="Barman BAROWO nalewa szampana, zdjęcie czarno-białe" loading="lazy" decoding="async">
-          <figcaption>Serwis szampana</figcaption>
-        </figure>
-        <figure class="pinned b5 is-video" style="--tilt:1deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <video class="js-autoplay" src="/assets/media/clip-kieliszki.mp4" poster="/assets/media/clip-kieliszki-poster.webp" muted loop playsinline preload="none" width="464" height="848" aria-label="Kieliszki coupe przygotowane na wieżę szampana w ogrodzie"></video>
-          <figcaption>Wieża z&nbsp;kieliszków</figcaption>
-        </figure>
-        <figure class="pinned b6" style="--tilt:-2.5deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <img src="/assets/media/proof-dalszy-900w.webp" srcset="/assets/media/proof-dalszy-480w.webp 480w, /assets/media/proof-dalszy-900w.webp 900w" sizes="(max-width: 760px) 50vw, 300px" width="900" height="1200" alt="Mobilny bar BAROWO z barmanem przygotowującym koktajl" loading="lazy" decoding="async">
-          <figcaption>Bar gotowy na gości</figcaption>
-        </figure>
-        <a class="board-cta" href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">
-          <span>Więcej realizacji</span>
-          <b>@barowo_official</b>
-          <span>Instagram →</span>
-        </a>
-      </div>
-      <div class="actions">
-        <a href="/realizacje/" class="btn btn-primary">Zobacz realizacje</a>
-        <a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener" class="btn btn-ghost">Instagram →</a>
-        <a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener" class="btn btn-ghost">TikTok →</a>
-      </div>
-    </div>
-  </section>
+<section class="close" id="contact"><div class="w">
+  <p class="mono idx"><b>BAROWO / 06</b> | Kolejne kroki</p>
+  <h2>Jedno zapytanie. <span class="grad">Termin, menu i wycena.</span></h2>
+  <div class="rule"></div>
+  <div class="g4 r2">
+    <div class="cell"><p class="mono t">01 · Zapytanie</p><p>Data, miejsce, liczba gości. Formularz zajmuje minutę.</p></div>
+    <div class="cell"><p class="mono t">02 · Odpowiedź</p><p>Wracamy z dostępnością terminu i wyceną pakietu.</p></div>
+    <div class="cell"><p class="mono t">03 · Rezerwacja</p><p>Ustalamy menu i szczegóły. Na życzenie — degustacja.</p></div>
+    <div class="cell"><p class="mono t">04 · Event</p><p>Przyjeżdżamy gotowi. Ty witasz gości i bawisz się spokojnie.</p></div>  </div>
 
-  <!-- TEAM -->
-  <section id="team" class="poster poster--team">
-    <div class="wrap team-grid">
-      <div>
-        <p class="eyebrow">Nasz zespół</p>
-        <h2 class="mega mega--h2"><span class="line">POZNAJ</span> <span class="line red">BARMANÓW</span></h2>
-        <p class="lead">Bar prowadzą założyciele BAROWO. Z&nbsp;nami rozmawiasz przed eventem i&nbsp;z&nbsp;nami pracujesz na miejscu.</p>
-      </div>
-      <div class="team-board">
-        <figure class="pinned t1" style="--tilt:-2deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <img src="/assets/media/team-artem-720w.webp" srcset="/assets/media/team-artem-400w.webp 400w, /assets/media/team-artem-720w.webp 720w" sizes="(max-width: 760px) 45vw, 280px" width="720" height="720" alt="Artem, head barman BAROWO, z koktajlem przy barze" loading="lazy" decoding="async">
-          <figcaption><b>Artem</b> Head barman · tworzy autorskie menu i&nbsp;pilnuje jakości każdego drinka</figcaption>
-        </figure>
-        <figure class="pinned t2" style="--tilt:2deg">
-          <svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 9V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v5a3 3 0 0 1-3 3v2h5.97v7l1 1 1-1v-7H19v-2a3 3 0 0 1-3-3z"/></svg>
-          <img src="/assets/media/team-ivan-720w.webp" srcset="/assets/media/team-ivan-400w.webp 400w, /assets/media/team-ivan-720w.webp 720w" sizes="(max-width: 760px) 45vw, 280px" width="720" height="720" alt="Ivan z BAROWO przy barze z koktajlami" loading="lazy" decoding="async">
-          <figcaption><b>Ivan</b> Barman &amp; marketing · kontakt, organizacja i&nbsp;spokojny proces rezerwacji</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="poster poster--faq">
-    <div class="wrap faq-grid">
-      <div>
-        <p class="eyebrow">Masz pytania?</p>
-        <h2 class="mega mega--h2"><span class="line">FAQ</span></h2>
-        <p class="lead">Nie znalazłeś odpowiedzi? Zadzwoń lub napisz — odpowiemy konkretnie i&nbsp;podpowiemy najlepszy pakiet.</p>
-        <a href="#contact" class="btn btn-primary">Napisz do nas</a>
-      </div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q" onclick="faq(this)">Kim jesteście? <span class="faq-icon">+</span></button>
-            <div class="faq-a">BAROWO to mobilny bar z Trójmiasta. Specjalizujemy się w obsłudze barmańskiej wesel,
-              urodzin i eventów firmowych. Przywozimy cały sprzęt i ogarniamy wszystko od A do Z — Ty się po prostu
-              bawisz.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faq(this)">Co znaczy "wszystko w cenie"? <span
-                class="faq-icon">+</span></button>
-            <div class="faq-a">Bar, sprzęt, szkło, składniki koktajlowe, barmani, dojazd — wszystko jest wliczone w
-              jedną cenę. Nie ma żadnych ukrytych kosztów ani dopłat po evencie.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faq(this)">Jak długo pracujecie na imprezie? <span
-                class="faq-icon">+</span></button>
-            <div class="faq-a">Czas obsługi ustalamy indywidualnie pod Twoje wydarzenie — zależnie od planu imprezy. Każdy pakiet można dopasować do Twoich potrzeb.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faq(this)">Na czym polega degustacja? <span
-                class="faq-icon">+</span></button>
-            <div class="faq-a">Opcjonalnie możesz przyjechać do nas na degustację koktajli przed eventem. Razem
-              wybierzemy menu idealne pod Twoją imprezę — smaki, kolory, tematykę. Bez zobowiązań.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faq(this)">Jak daleko dojeżdżacie? <span class="faq-icon">+</span></button>
-            <div class="faq-a">Obsługujemy głównie województwo pomorskie, do 150&nbsp;km od centrum Gdyni. W przypadku odleglejszych
-              lokalizacji skontaktuj się z nami — dogadamy się indywidualnie.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" onclick="faq(this)">Czy można zmienić skład pakietu? <span
-                class="faq-icon">+</span></button>
-            <div class="faq-a">Tak! Każdy pakiet można modyfikować — zmienić alkohole, dodać opcje bezalkoholowe,
-              dostosować do tematu imprezy. Napisz do nas, a przygotujemy ofertę idealnie skrojoną pod Ciebie.</div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="poster poster--contact">
-    <div class="wrap">
-      <p class="eyebrow">Rezerwacja</p>
-      <h2 class="mega mega--h2"><span class="line">ZAREZERWUJ</span> <span class="line red">TERMIN</span></h2>
-      <p class="lead contact-lead">Wystarczy data, miejsce i&nbsp;liczba gości. Wrócimy z&nbsp;informacją o&nbsp;dostępności terminu i&nbsp;wyceną — zapytanie jest bezpłatne i&nbsp;do niczego nie zobowiązuje.</p>
-      <div class="contact-wrap">
+  <div class="g4 contact" style="margin-top:var(--gap);border-top:1px solid var(--line)">
+    <div class="span2">
       <form action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST" class="form">
         <div class="form-row">
           <div class="fg">
@@ -586,38 +450,34 @@
         <div class="form-status" aria-live="polite"></div>
         <p class="form-footnote">Zapytanie jest bezpłatne i&nbsp;do niczego nie zobowiązuje.</p>
       </form>
-        <aside class="contact-side">
-          <p class="contact-kicker">Wolisz zadzwonić?</p>
-          <a href="tel:+48889168003" class="contact-phone">+48 889 168 003</a>
-          <a href="tel:+48880564984" class="contact-phone">+48 880 564 984</a>
-          <dl class="contact-list">
-            <div><dt>E-mail</dt><dd><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a></dd></div>
-            <div><dt>Lokalizacja</dt><dd><a href="https://maps.google.com/?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia" target="_blank" rel="noopener">Stryjska 13, Gdynia</a></dd></div>
-            <div><dt>Social</dt><dd><a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">Instagram @barowo_official</a><br><a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener">TikTok @barowo.official</a></dd></div>
-          </dl>
-          <div class="contact-map">
-            <iframe title="Mapa BAROWO przy Stryjskiej 13 w Gdyni" src="https://www.google.com/maps?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </aside>
-      </div>
     </div>
-  </section>
-  </main>
+    <aside class="span2 contact-side">
+      <p class="mono t">Wolisz zadzwonić?</p>
+      <a href="tel:+48889168003" class="contact-phone">+48 889 168 003</a>
+      <a href="tel:+48880564984" class="contact-phone">+48 880 564 984</a>
+      <dl class="contact-list">
+        <div><dt>E-mail</dt><dd><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a></dd></div>
+        <div><dt>Lokalizacja</dt><dd><a href="https://maps.google.com/?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia" target="_blank" rel="noopener">Stryjska 13, Gdynia</a></dd></div>
+        <div><dt>Social</dt><dd><a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">Instagram @barowo_official</a><br><a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener">TikTok @barowo.official</a></dd></div>
+      </dl>
+      <div class="contact-map"><iframe title="Mapa BAROWO przy Stryjskiej 13 w Gdyni" src="https://www.google.com/maps?q=Barowo%20mobilny%20bar%2C%20Stryjska%2013%2C%20Gdynia&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </aside>
+  </div>
+</div></section>
+</main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <img class="footer-mark" src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238" loading="lazy">
-      <div class="footer-links"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a><a href="/cennik/">Cennik</a><a href="#contact">Kontakt</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div>
-      <div class="footer-bottom">
-        <span>© 2026 BAROWO — Mobilny Bar Trójmiasto. Wszystkie prawa zastrzeżone.</span>
-        <span>Gdynia · Gdańsk · Sopot</span>
-      </div>
-    </div>
-  </footer>
+<footer><div class="w">
+  <div class="g4 r2">
+    <div class="cell"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238" loading="lazy"><p class="side">Mobilny bar na wesela, eventy firmowe i osiemnastki. Stryjska 13, Gdynia.</p></div>
+    <div class="cell"><h4>Oferta</h4><div class="footer-links"><a href="/oferta/mobilny-bar-na-wesele/">Mobilny bar na wesele</a><a href="/oferta/mobilny-bar-na-event-firmowy/">Mobilny bar na event firmowy</a><a href="/oferta/mobilny-bar-trojmiasto/">Mobilny bar Trójmiasto</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a><a href="/planer-baru-weselnego/">Planer Baru Weselnego</a></div></div>
+    <div class="cell"><h4>Strona</h4><div class="footer-links"><a href="/oferta/">Usługi</a><a href="/realizacje/">Realizacje</a><a href="/cennik/">Cennik</a><a href="#contact">Kontakt</a><a href="/aktualnosci/">Aktualności</a><a href="/polityka-prywatnosci/">Polityka prywatności</a></div></div>
+    <div class="cell"><h4>Kontakt</h4><div class="footer-links"><a href="tel:+48889168003">+48 889 168 003</a><a href="tel:+48880564984">+48 880 564 984</a><a href="mailto:barowo.pl@gmail.com">barowo.pl@gmail.com</a><a href="https://www.instagram.com/barowo_official" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@barowo.official" target="_blank" rel="noopener">TikTok</a></div></div>
+  </div>
+  <div class="base mono"><span>© 2026 BAROWO — Mobilny Bar Trójmiasto</span><span>Gdynia · Gdańsk · Sopot</span></div>
+</div></footer>
 
   <div class="mobile-cta" id="mobileCta">
-    <a href="#contact" class="btn btn-primary">Sprawdź termin</a>
+    <a href="#contact" class="btn btn-r">Sprawdź termin</a>
     <a href="tel:+48889168003" class="mobile-cta-call" aria-label="Zadzwoń: +48 889 168 003">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
     </a>
@@ -1092,6 +952,12 @@
         syncMobileCta();
       }, { threshold: 0 }).observe(contactSection);
     }
+
+    function pickPackage(name) {
+      const field = document.getElementById('leadPackage');
+      if (field) field.value = name;
+    }
+    window.pickPackage = pickPackage;
 
     const mediaTrack = document.getElementById('mediaTrack');
     const mediaPrev = document.getElementById('mediaPrev');
