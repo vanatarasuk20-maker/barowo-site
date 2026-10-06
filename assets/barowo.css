@@ -486,3 +486,17 @@ footer .base{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 @media(max-width:720px){.cc{left:10px;right:10px;bottom:10px}.cc-box{padding:18px}.cc-actions .cc-btn{flex:1 1 100%;justify-content:center}}
 .more-kinds{margin-top:var(--cell);border-top:1px solid var(--line)}
 .tbl-note{margin-top:16px;font-size:14px;color:var(--muted)}
+
+/* Google reviews */
+.g-rating{display:inline-flex;align-items:center;gap:6px;width:100%;justify-content:flex-end;margin-top:6px;font-size:14px;color:var(--muted);text-decoration:none}
+.g-rating b{color:var(--ink)}
+.g-rating:hover{color:var(--ink)}
+.stars{color:#ffb400;letter-spacing:2px}
+.reviews .rev{margin:0;padding-bottom:var(--cell);display:flex;flex-direction:column;gap:18px}
+.reviews .rev blockquote{margin:0;font-size:16px;line-height:1.6;color:var(--ink)}
+.reviews .rev figcaption{margin-top:auto;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.reviews .rev .stars{margin:0;font-size:15px;color:#ffb400}
+.rev-more{margin-top:28px}
+@media(max-width:1080px){.g-rating{justify-content:flex-start}}
+@media(max-width:1080px) and (min-width:721px){.reviews>.rev:nth-child(n+3){border-top:1px solid var(--line)}}
+@media(max-width:720px){.reviews>.rev+.rev{border-top:1px solid var(--line)}}
