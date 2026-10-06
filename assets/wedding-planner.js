@@ -338,10 +338,10 @@
     }
 
     reasonBullets.push(recommendedPackage === "Simple"
-      ? "Simple: 1 barman, 7 koktajli, do 6 godzin obsługi"
+      ? "Simple: 1 barman, propozycja 7 koktajli, do 6 godzin obsługi"
       : recommendedPackage === "Premium"
-        ? "Premium: 2 barmanów, 15 koktajli i 6 bezalkoholowych, do 8 godzin obsługi"
-        : "Standard: 2 barmanów, 8 koktajli i 3 bezalkoholowe, do 8 godzin obsługi");
+        ? "Premium: 2+ barmanów, propozycja 15 koktajli i 6 bezalkoholowych, do 8 godzin obsługi"
+        : "Standard: 2+ barmanów, propozycja 8 koktajli i 3 bezalkoholowych, do 8 godzin obsługi");
 
     if (state.drinkPreferences.indexOf("mocktaile bezalkoholowe") !== -1 || state.alcoholPreference === "Chcemy pełną rekomendację") {
       reasonBullets.push("w pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe dla gości niepijących");

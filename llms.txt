@@ -20,9 +20,11 @@ Language of the website: Polish
 
 ## Packages
 
-- Simple: 1 bartender, Modern mobile bar, 7 cocktails, up to 6 hours of service.
-- Standard: 2 bartenders, Modern or Boho bar, 8 cocktails and 3 non-alcoholic drinks, free tasting, up to 8 hours of service.
-- Premium: 2 bartenders, Modern or Boho bar, premium cocktail card, 15 cocktails and 6 non-alcoholic drinks. It also includes a welcome drink, a glass tower, a chocolate fountain and a free tasting. Up to 8 hours of service.
+- Simple: 1 bartender, Modern mobile bar, a proposed menu of 7 cocktails, up to 6 hours of service.
+- Standard: 2 or more bartenders (depending on guest count), Modern or Boho bar, a proposed menu of 8 cocktails and 3 non-alcoholic drinks, free tasting, up to 8 hours of service.
+- Premium: 2 or more bartenders (depending on guest count), Modern or Boho bar, premium cocktail card with a proposed 15 cocktails and 6 non-alcoholic drinks. It also includes a welcome drink, a glass tower, a chocolate fountain and a free tasting. Up to 8 hours of service.
+
+Cocktail counts in every package are a proposal: the menu, including non-alcoholic drinks, can be extended on request.
 
 ## For companies (corporate events)
 

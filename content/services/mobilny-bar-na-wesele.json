@@ -43,9 +43,10 @@
       "title": "Ile kosztuje mobilny bar na wesele?",
       "body": "Pełna obsługa zaczyna się od 3000 zł. Ostateczna cena zależy od liczby gości, daty, lokalizacji i pakietu. Szczegóły i porównanie pakietów znajdziesz w [cenniku](/cennik/).",
       "bullets": [
-        "Simple — 1 barman, bar Modern, karta 7 koktajli, do 6 godzin obsługi",
-        "Standard — 2 barmanów, bar Modern lub Boho, 8 koktajli + 3 koktajle 0%, darmowa degustacja, do 8 godzin",
-        "Premium — 2 barmanów, 15 koktajli + 6 koktajli 0%, welcome drink, wieża z kieliszków i fontanna czekoladowa w cenie, darmowa degustacja, do 8 godzin",
+        "Simple — 1 barman, bar Modern, propozycja 7 koktajli, do 6 godzin obsługi",
+        "Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, propozycja 8 koktajli + 3 koktajli 0%, darmowa degustacja, do 8 godzin",
+        "Premium — 2+ barmanów (zależnie od liczby gości), propozycja 15 koktajli + 6 koktajli 0%, welcome drink, wieża z kieliszków i fontanna czekoladowa w cenie, darmowa degustacja, do 8 godzin",
+        "liczba koktajli to nasza propozycja — kartę, także 0%, możemy rozszerzyć według Waszych życzeń",
         "każdy pakiet można przedłużyć o dodatkowe godziny"
       ]
     },
@@ -69,7 +70,7 @@
     },
     {
       "title": "Ile barmanów potrzeba na wesele?",
-      "body": "To zależy od liczby gości, długości serwisu i tego, jak intensywny ma być ruch przy barze. Tak samo liczy to nasz [planer baru](/planer-baru-weselnego/): do ok. 50 gości zwykle wystarcza jeden barman, przy 50–120 gościach pracuje dwóch barmanów, a przy 120+ gościach skład ustalamy indywidualnie, żeby nie było kolejek."
+      "body": "To zależy od liczby gości, długości serwisu i tego, jak intensywny ma być ruch przy barze. Tak samo liczy to nasz [planer baru](/planer-baru-weselnego/): do ok. 50 gości zwykle wystarcza jeden barman, przy 50–120 gościach pracuje dwóch barmanów, a przy większej liczbie gości dokładamy kolejnych barmanów, żeby nie było kolejek."
     },
     {
       "title": "Przykładowe menu drinków",
@@ -135,7 +136,7 @@
     },
     {
       "question": "Czy macie koktajle bezalkoholowe?",
-      "answer": "Tak. W pakiecie Standard karta obejmuje 3 koktajle 0%, a w Premium 6. To dobra opcja dla kierowców, młodszych gości i osób, które nie piją."
+      "answer": "Tak. W pakiecie Standard proponujemy 3 koktajle 0%, a w Premium 6 — a jeśli chcecie więcej, kartę rozszerzymy. To dobra opcja dla kierowców, młodszych gości i osób, które nie piją."
     },
     {
       "question": "Czy wystawiacie fakturę?",

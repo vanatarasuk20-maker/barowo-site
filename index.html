@@ -217,7 +217,7 @@
         {
           "@type": "Offer",
           "name": "Pakiet Simple",
-          "description": "1 barman, mobilny bar Modern, 7 koktajli, obsługa do 6 godzin (z możliwością przedłużenia). Opcjonalnie: wieża z kieliszków, welcome drink, fontanna czekoladowa.",
+          "description": "1 barman, mobilny bar Modern, proponowana karta 7 koktajli (można rozszerzyć), obsługa do 6 godzin (z możliwością przedłużenia). Opcjonalnie: wieża z kieliszków, welcome drink, fontanna czekoladowa.",
           "priceCurrency": "PLN",
           "priceSpecification": {
             "@type": "PriceSpecification",
@@ -229,14 +229,14 @@
         {
           "@type": "Offer",
           "name": "Pakiet Standard",
-          "description": "2 barmanów, bar Modern lub Boho, 8 koktajli i 3 bezalkoholowe, darmowa degustacja, obsługa do 8 godzin (z możliwością przedłużenia). Opcjonalnie: wieża z kieliszków, welcome drink, fontanna czekoladowa.",
+          "description": "2 lub więcej barmanów (zależnie od liczby gości), bar Modern lub Boho, proponowana karta 8 koktajli i 3 bezalkoholowych (można rozszerzyć), darmowa degustacja, obsługa do 8 godzin (z możliwością przedłużenia). Opcjonalnie: wieża z kieliszków, welcome drink, fontanna czekoladowa.",
           "priceCurrency": "PLN",
           "url": "https://barowo.com/#packages"
         },
         {
           "@type": "Offer",
           "name": "Pakiet Premium",
-          "description": "2 barmanów, bar Modern lub Boho, karta premium z autorskimi koktajlami, 15 koktajli i 6 bezalkoholowych, welcome drink, wieża z kieliszków, fontanna czekoladowa w cenie, darmowa degustacja, obsługa do 8 godzin (z możliwością przedłużenia).",
+          "description": "2 lub więcej barmanów (zależnie od liczby gości), bar Modern lub Boho, karta premium z autorskimi koktajlami: proponowane 15 koktajli i 6 bezalkoholowych (można rozszerzyć), welcome drink, wieża z kieliszków, fontanna czekoladowa w cenie, darmowa degustacja, obsługa do 8 godzin (z możliwością przedłużenia).",
           "priceCurrency": "PLN",
           "url": "https://barowo.com/#packages"
         }
@@ -323,7 +323,7 @@
   </script>
   <link rel="preload" href="/assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/barowo.css?v=20261006a">
+  <link rel="stylesheet" href="/assets/barowo.css?v=20261006b">
 </head>
 <body>
   <a class="skip" href="#contact">Przejdź do formularza</a>
@@ -432,17 +432,18 @@
   <h2>3 pakiety. <span class="grad">Pełna obsługa</span> od 3000 zł.</h2>
   <div class="tbl">
     <div class="r head"><div class="lab">Pakiet →</div><div>Simple</div><div class="hot">Standard<small>Polecany na wesela</small></div><div>Premium</div></div>
-    <div class="r"><div class="lab">Barmani</div><div class="big">1</div><div class="big hot">2</div><div class="big">2</div></div>
+    <div class="r"><div class="lab">Barmani</div><div class="big">1</div><div class="big hot">2+</div><div class="big">2+</div></div>
     <div class="r"><div class="lab">Czas pracy</div><div>do 6 h</div><div class="hot">do 8 h</div><div>do 8 h</div></div>
     <div class="r"><div class="lab">Dla kogo</div><div>Mniejsze imprezy</div><div class="hot">Wesela i eventy</div><div>Duże eventy premium</div></div>
     <div class="r"><div class="lab">Mobilny bar</div><div>Modern</div><div class="hot">Modern lub Boho</div><div>Modern lub Boho</div></div>
-    <div class="r"><div class="lab">Menu koktajli</div><div>7 koktajli</div><div class="hot">8 koktajli + 3 bez alkoholu</div><div>15 koktajli + 6 bez alkoholu</div></div>
+    <div class="r"><div class="lab">Menu koktajli*</div><div>7 koktajli</div><div class="hot">8 koktajli + 3 bez alkoholu</div><div>15 koktajli + 6 bez alkoholu</div></div>
     <div class="r"><div class="lab">Wieża z kieliszków</div><div>opcja</div><div class="hot">opcja</div><div class="ok">w cenie</div></div>
     <div class="r"><div class="lab">Degustacja</div><div class="no">—</div><div class="ok hot">gratis</div><div class="ok">gratis</div></div>
     <div class="r"><div class="lab">Welcome drink</div><div>opcja</div><div class="hot">opcja</div><div class="ok">w cenie</div></div>
     <div class="r"><div class="lab">Fontanna czekoladowa</div><div>opcja</div><div class="hot">opcja</div><div class="ok">w cenie</div></div>
     <div class="r end"><div class="lab"></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Simple')">Wybierz<span class="pk"> Simple</span></a></div><div class="hot"><a class="btn btn-r" href="#contact" onclick="pickPackage('Standard')">Wybierz<span class="pk"> Standard</span></a></div><div><a class="btn btn-o" href="#contact" onclick="pickPackage('Premium')">Wybierz<span class="pk"> Premium</span></a></div></div>
   </div>
+  <p class="tbl-note">* Liczba koktajli w pakietach to nasza propozycja — kartę, także koktajle 0%, możemy rozszerzyć według Twoich życzeń.</p>
   <div class="rule" style="margin-top:0"></div>
   <p class="note"><b>Wycena po krótkim zapytaniu</b> — cena zależy od liczby gości, czasu obsługi i menu. Każdy pakiet można dopasować: dodać wieżę z kieliszków, welcome drink albo fontannę czekoladową i przedłużyć czas pracy baru.</p>
   <div class="g4 r2 addons">

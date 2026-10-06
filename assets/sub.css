@@ -255,3 +255,13 @@ body.sub.planner-page{background:inherit}
 .sub .hero-media video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;max-height:640px;background:#0b0f2a}
 @media(max-width:1080px){.sub .hero-media video{aspect-ratio:4/3;max-height:520px}}
 .sub .planner-step-label{display:none}
+/* equal card image sizes in 3/2-column grids (oferta + aktualności) */
+@media(min-width:1081px){
+  .sub .service-card:nth-child(3n+1),.sub .post-card:nth-child(3n+1){padding-left:0;padding-right:var(--cell)}
+  .sub .service-card:nth-child(3n+2),.sub .post-card:nth-child(3n+2){padding-left:calc(var(--cell)/2);padding-right:calc(var(--cell)/2)}
+  .sub .service-card:nth-child(3n),.sub .post-card:nth-child(3n){padding-left:var(--cell);padding-right:0}
+}
+@media(min-width:721px) and (max-width:1080px){
+  .sub .service-card:nth-child(2n),.sub .post-card:nth-child(2n){padding-right:0}
+}
+@media(max-width:720px){.sub .service-card,.sub .post-card{padding-right:0}}
