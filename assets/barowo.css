@@ -501,3 +501,21 @@ footer .base{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 @media(max-width:1080px) and (min-width:721px){.reviews>.rev:nth-child(n+3){border-top:1px solid var(--line)}}
 @media(max-width:720px){.reviews>.rev+.rev{border-top:1px solid var(--line)}}
 .clients{font-size:15px;color:var(--ink)}.clients .mono{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.team-note{max-width:760px;margin-top:20px;font-size:18px;line-height:1.6;color:var(--muted)}
+
+/* ---- motion v2 (moderate) ---- */
+.rule.rv{opacity:1;transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.rule.rv.rv-in{transform:scaleX(1)}
+.hero-media.rv,.service-card-media.rv,.post-card-media.rv{opacity:1;transform:none;clip-path:inset(12% 0 0 0);transition:clip-path 1s cubic-bezier(.2,.7,.2,1)}
+.hero-media.rv.rv-in,.service-card-media.rv.rv-in,.post-card-media.rv.rv-in{clip-path:inset(0 0 0 0)}
+.hero-media.rv img,.service-card-media.rv img,.post-card-media.rv img{transform:scale(1.08);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.hero-media.rv.rv-in img,.service-card-media.rv.rv-in img,.post-card-media.rv.rv-in img{transform:scale(1)}
+.service-card:hover .service-card-media.rv-in img,.post-card:hover .post-card-media.rv-in img{transform:scale(1.03)}
+.rev.rv .stars{clip-path:inset(0 100% 0 0);transition:clip-path .9s .25s steps(5,end)}
+.rev.rv.rv-in .stars{clip-path:inset(0 0 0 0)}
+.btn-r{position:relative;overflow:hidden}
+.btn-r::before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+.btn-r:hover::before{left:120%}
+.g-rating .stars{display:inline-block;animation:starpop .8s 1s both}
+@keyframes starpop{0%{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.12)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.rule.rv,.hero-media.rv,.service-card-media.rv,.post-card-media.rv,.rev.rv .stars{transform:none;clip-path:none;transition:none}.hero-media.rv img,.service-card-media.rv img,.post-card-media.rv img{transform:none}.btn-r::before{display:none}.g-rating .stars{animation:none}}

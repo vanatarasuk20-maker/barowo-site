@@ -26,7 +26,7 @@
     "18-stki, 30-stki, 40-stki i każde urodziny",
     "Kolorowe koktajle, także w wersji 0%",
     "Dom, ogród, sala lub restauracja",
-    "5 gwiazdek w opiniach Google"
+    "100+ obsłużonych imprez · 5 gwiazdek w Google"
   ],
   "sections": [
     {
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "title": "Drink bar na 18-stkę",
+      "title": "Barman na 18-stkę — osiemnastka z drink barem",
       "body": "Na osiemnastce część gości często nie ma jeszcze 18 lat. Dlatego przygotowujemy kolorowe koktajle 0%, które wyglądają tak samo efektownie jak klasyczne drinki i świetnie wychodzą na zdjęciach. Zasady serwisu i kartę ustalamy z organizatorem przed imprezą."
     },
     {
@@ -90,6 +90,10 @@
     {
       "question": "Ile kosztuje barman na urodziny?",
       "answer": "Pełna obsługa BAROWO — bar, barman, szkło, lód i karta koktajli — zaczyna się od 3000 zł. Cena zależy od liczby gości, terminu, miejsca i pakietu."
+    },
+    {
+      "question": "Ile kosztuje barman na 18-stkę?",
+      "answer": "Barman na osiemnastkę z pełną obsługą baru zaczyna się od 3000 zł. W cenie są bar, szkło, lód, karta koktajli (także 0%) i obsługa gości."
     },
     {
       "question": "Czy drink bar nadaje się na 18-stkę?",

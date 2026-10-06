@@ -10,7 +10,7 @@
   "meta_description": "Mobilny bar na wesele w Gdańsku, Gdyni i Sopocie od 3000 zł. Barmani, bar, szkło, lód i karta koktajli z opcjami 0%. 3 pakiety, do 8 godzin obsługi. Sprawdź termin.",
   "eyebrow": "Wesela · Trójmiasto",
   "intro": "Pełna obsługa drink baru na wesele: bar, barmani, szkło, koktajle, przygotowanie stanowiska i obsługa gości. BAROWO przyjeżdża gotowe do pracy, żeby para młoda nie musiała składać baru z kilku osobnych usług.",
-  "direct_answer": "Mobilny bar na wesele ma sens wtedy, gdy chcesz jeden zespół odpowiedzialny za tempo serwisu, estetykę baru i komfort gości. To nie jest sama obecność barmana, tylko pełna obsługa baru weselnego od setupu do ostatnich drinków.",
+  "direct_answer": "Mobilny bar na wesele ma sens wtedy, gdy chcesz jeden zespół odpowiedzialny za tempo serwisu, estetykę baru i komfort gości. To nie jest sama obecność barmana, tylko pełna obsługa baru weselnego od setupu do ostatnich drinków. Za nami ponad 100 obsłużonych wydarzeń.",
   "service_type": "Mobilny bar na wesele",
   "offer_note": "Pełna obsługa mobilnego baru BAROWO na wesele zaczyna się od 3000 zł. Cena obejmuje bar, barmanów, szkło, lód, kartę koktajli i obsługę gości — to nie sam pokaz barmański.",
   "areas": [
@@ -155,6 +155,10 @@
     {
       "href": "/cennik/",
       "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/oferta/barman-na-wesele-trojmiasto/",
+      "label": "Barman na wesele"
     },
     {
       "href": "/oferta/mobilny-bar-trojmiasto/",
