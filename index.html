@@ -32,7 +32,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=20260331">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260331">
   <link rel="manifest" href="/site.webmanifest?v=20260331">
-  <script src="/assets/consent-init.js?v=20261003b"></script>
+  <script src="/assets/consent-init.js?v=20261006a"></script>
   <script>
     if (window.location.protocol === 'file:') {
       document.write('<script src="/assets/local-preview.js"><' + '/script>');
@@ -876,6 +876,7 @@
           formData.forEach((value, key) => {
             body.append(key, value);
           });
+          if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
 
           const response = await fetch(submitUrl.toString(), {
             method: 'POST',
@@ -1024,6 +1025,7 @@
           const submitUrl = new URL(callbackForm.action);
           submitUrl.searchParams.set('format', 'json');
           formData.forEach((value, key) => body.append(key, value));
+          if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
 
           const response = await fetch(submitUrl.toString(), {
             method: 'POST',

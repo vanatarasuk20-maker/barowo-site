@@ -150,6 +150,7 @@
       var submitUrl = new URL(form.action);
       submitUrl.searchParams.set('format', 'json');
       formData.forEach(function (value, key) { body.append(key, value); });
+      if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
 
       var response = await fetch(submitUrl.toString(), {
         method: 'POST',

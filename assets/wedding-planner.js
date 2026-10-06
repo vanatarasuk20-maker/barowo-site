@@ -691,6 +691,10 @@
         setStatus("error", "Podaj telefon albo email.");
         return false;
       }
+      if (state.phone.trim() && window.BAROWO_phoneOk && !window.BAROWO_phoneOk(state.phone)) {
+        setStatus("error", "Wpisz poprawny numer telefonu, np. +48 123 456 789.");
+        return false;
+      }
       if (!state.privacyConsent) {
         setStatus("error", "Zaznacz zgodę na kontakt, żeby wysłać wynik planera.");
         return false;
@@ -803,6 +807,7 @@
         if (value === null || value === undefined) return;
         body.append(key, String(value));
       });
+      if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
 
       var response = await fetch(submitUrl.toString(), {
         method: "POST",

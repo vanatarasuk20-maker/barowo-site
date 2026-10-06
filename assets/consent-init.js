@@ -150,3 +150,88 @@
 
   w.BAROWO_CONSENT = config;
 })();
+
+/* BAROWO — traffic source (ad vs organic) for the CRM + phone check.
+   Stored per browser session (sessionStorage); kept 30 days only with analytics/marketing consent. */
+(function () {
+  var w = window, d = document, KEY = 'barowo_attr_v1', TTL = 30 * 864e5;
+  var P = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+  function rd(st) { try { var v = JSON.parse(st.getItem(KEY) || 'null'); return v && (!v.exp || v.exp > Date.now()) ? v : null; } catch (e) { return null; } }
+  function consented() { try { var c = JSON.parse(localStorage.getItem('barowo_consent_v1') || 'null'); return !!(c && (c.marketing || c.analytics)); } catch (e) { return false; } }
+  function wr(v) {
+    try { sessionStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {}
+    try { if (consented()) { v.exp = Date.now() + TTL; localStorage.setItem(KEY, JSON.stringify(v)); } } catch (e) {}
+  }
+  function host(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return ''; } }
+  function channel(t) {
+    var s = (t.utm_source || '').toLowerCase(), m = (t.utm_medium || '').toLowerCase(), r = t.ref_host || '';
+    var paid = /paid|cpc|ppc|ads|cpm|social_paid|paidsocial/.test(m);
+    if (/^(meta|facebook|fb|instagram|ig)$/.test(s)) return paid || !m ? 'meta_ads' : 'meta_link';
+    if (t.gclid || (s === 'google' && paid)) return 'google_ads';
+    if (s) return paid ? 'other_ads' : 'campaign';
+    if (/(^|\.)google\./.test(r)) return 'google_organic';
+    if (/(^|\.)(bing\.com|duckduckgo\.com|yahoo\.|ecosia\.org)/.test(r)) return 'search_organic';
+    if (/instagram\.com$/.test(r)) return 'instagram';
+    if (/(facebook\.com|fb\.com|messenger\.com)$/.test(r)) return 'facebook';
+    if (/tiktok\.com$/.test(r)) return 'tiktok';
+    if (t.fbclid) return 'meta_link';
+    if (r) return 'referral';
+    return 'direct';
+  }
+  var q = new URLSearchParams(location.search), touch = {}, has = false;
+  P.forEach(function (k) { var v = q.get(k); if (v) { touch[k] = v.slice(0, 200); has = true; } });
+  var ref = d.referrer || '', rh = host(ref), self = host(location.href);
+  var external = rh && rh !== self && rh !== 'barowo.com';
+  var store = rd(sessionStorage) || rd(localStorage) || null;
+  if (has || external || !store) {
+    touch.ref_host = external ? rh : '';
+    touch.referrer = external ? ref.slice(0, 300) : '';
+    touch.landing = location.pathname + location.search.slice(0, 300);
+    touch.ts = new Date().toISOString();
+    touch.channel = channel(touch);
+    if (!store) store = { first: touch, last: touch };
+    else if (has || external || store.last.channel === 'direct') store.last = touch;
+  }
+  if (store) wr(store);
+  function fields() {
+    var f = store.first || {}, l = store.last || {}, o = {};
+    var src = (l.utm_source || l.gclid || l.fbclid) ? l : (f.utm_source || f.gclid || f.fbclid) ? f : l;
+    P.forEach(function (k) { o[k] = src[k] || ''; });
+    o.traffic_channel = l.channel || '';
+    o.first_channel = f.channel || '';
+    o.landing_page = f.landing || '';
+    o.last_landing_page = l.landing || '';
+    o.first_referrer = f.referrer || '';
+    o.first_visit_at = f.ts || '';
+    return o;
+  }
+  w.BAROWO_attr = {
+    fields: fields,
+    /* fill URLSearchParams / FormData before sending; URL values on the current page win */
+    merge: function (body) {
+      var o = fields();
+      Object.keys(o).forEach(function (k) {
+        var cur = body.get ? body.get(k) : '';
+        if (!cur && o[k]) body.set(k, o[k]);
+      });
+      return body;
+    }
+  };
+
+  /* phone: PL 9 digits (optionally +48 / 0048), or international +CC 8–15 digits */
+  function phoneOk(v) {
+    var raw = (v || '').trim(); if (!raw) return true;
+    if (/[^\d+\s().\-\/]/.test(raw)) return false;
+    var plus = raw.charAt(0) === '+', dg = raw.replace(/\D/g, '');
+    if (!plus && dg.indexOf('00') === 0) { plus = true; dg = dg.slice(2); }
+    if (plus) return dg.indexOf('48') === 0 ? dg.length === 11 : dg.length >= 8 && dg.length <= 15;
+    if (dg.length === 11 && dg.indexOf('48') === 0) return true;
+    return dg.length === 9;
+  }
+  w.BAROWO_phoneOk = phoneOk;
+  var MSG = 'Wpisz poprawny numer telefonu, np. +48 123 456 789.';
+  function check(el) { if (el && el.type === 'tel' && el.setCustomValidity) el.setCustomValidity(phoneOk(el.value) ? '' : MSG); }
+  d.addEventListener('input', function (e) { check(e.target); }, true);
+  d.addEventListener('change', function (e) { check(e.target); }, true);
+  d.addEventListener('submit', function (e) { var f = e.target; if (f && f.querySelectorAll) [].forEach.call(f.querySelectorAll('input[type=tel]'), check); }, true);
+})();
