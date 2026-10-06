@@ -2,17 +2,17 @@
   "slug": "mobilny-bar-na-wesele",
   "published": true,
   "priority": 1,
-  "updated_at": "2026-04-26",
+  "updated_at": "2026-10-06",
   "title_plain": "Mobilny bar na wesele w Trójmieście",
   "title_html": "MOBILNY BAR<br><span class=\"red\">NA WESELE W TRÓJMIEŚCIE</span>",
   "description": "Mobilny bar na wesele w Gdyni, Gdańsku, Sopocie i okolicach. Bar, szkło, koktajle, barmani i obsługa gości w jednym dopasowanym pakiecie.",
-  "meta_title": "Mobilny Bar na Wesele Trójmiasto | Barmani, Koktajle, Open Bar — BAROWO",
-  "meta_description": "Mobilny bar na wesele w Gdańsku, Gdyni, Sopocie i całym Trójmieście. Pełna obsługa: bar, barmani, szkło, koktajle i przygotowanie stanowiska.",
+  "meta_title": "Mobilny Bar na Wesele Trójmiasto — cena od 3000 zł | BAROWO",
+  "meta_description": "Mobilny bar na wesele w Gdańsku, Gdyni i Sopocie od 3000 zł. Barmani, bar, szkło, lód i karta koktajli z opcjami 0%. 3 pakiety, do 8 godzin obsługi. Sprawdź termin.",
   "eyebrow": "Wesela · Trójmiasto",
   "intro": "Pełna obsługa drink baru na wesele: bar, barmani, szkło, koktajle, przygotowanie stanowiska i obsługa gości. BAROWO przyjeżdża gotowe do pracy, żeby para młoda nie musiała składać baru z kilku osobnych usług.",
   "direct_answer": "Mobilny bar na wesele ma sens wtedy, gdy chcesz jeden zespół odpowiedzialny za tempo serwisu, estetykę baru i komfort gości. To nie jest sama obecność barmana, tylko pełna obsługa baru weselnego od setupu do ostatnich drinków.",
   "service_type": "Mobilny bar na wesele",
-  "offer_note": "Pełna obsługa mobilnego baru BAROWO zaczyna się od 3000 zł, bo obejmują pełną obsługę mobilnego baru, a nie sam pokaz barmański.",
+  "offer_note": "Pełna obsługa mobilnego baru BAROWO na wesele zaczyna się od 3000 zł. Cena obejmuje bar, barmanów, szkło, lód, kartę koktajli i obsługę gości — to nie sam pokaz barmański.",
   "areas": [
     "Gdynia",
     "Gdańsk",
@@ -36,8 +36,22 @@
         "mobilny bar i sprzęt barmański gotowe do przyjazdu na salę",
         "barmani dopasowani do liczby gości i tempa serwisu",
         "szkło, dodatki, lód i zaplecze potrzebne do pracy baru",
-        "menu koktajlowe z opcjami alkoholowymi i bezalkoholowymi"
+        "karta koktajli: klasyki, autorskie pozycje i koktajle 0%"
       ]
+    },
+    {
+      "title": "Ile kosztuje mobilny bar na wesele?",
+      "body": "Pełna obsługa zaczyna się od 3000 zł. Ostateczna cena zależy od liczby gości, daty, lokalizacji i pakietu. Szczegóły i porównanie pakietów znajdziesz w [cenniku](/cennik/).",
+      "bullets": [
+        "Simple — 1 barman, bar Modern, karta 7 koktajli, do 6 godzin obsługi",
+        "Standard — 2 barmanów, bar Modern lub Boho, 8 koktajli + 3 koktajle 0%, darmowa degustacja, do 8 godzin",
+        "Premium — 2 barmanów, 15 koktajli + 6 koktajli 0%, welcome drink, wieża z kieliszków i fontanna czekoladowa w cenie, darmowa degustacja, do 8 godzin",
+        "każdy pakiet można przedłużyć o dodatkowe godziny"
+      ]
+    },
+    {
+      "title": "Degustacja przed weselem",
+      "body": "W pakietach Standard i Premium degustacja jest bezpłatna. Spotykamy się przed weselem, próbujecie koktajli z karty i razem ustalamy finalne menu — tak, żeby w dniu wesela nic nie było niespodzianką."
     },
     {
       "title": "Dlaczego pary młode wybierają BAROWO?",
@@ -49,13 +63,13 @@
       "bullets": [
         "krótkie zapytanie: data, miasto, sala i liczba gości",
         "dobór pakietu i zakresu obsługi pod realne potrzeby wesela",
-        "ustalenie menu, alkoholi i logistyki miejsca",
+        "ustalenie karty koktajli i logistyki miejsca",
         "realizacja w dniu wesela bez improwizacji przy barze"
       ]
     },
     {
       "title": "Ile barmanów potrzeba na wesele?",
-      "body": "To zależy od liczby gości, długości serwisu i tego, jak intensywny ma być ruch przy barze. Przy mniejszych weselach wystarczy sprawny, dobrze policzony skład. Przy większych salach albo bardziej rozbudowanym menu potrzebny jest mocniejszy zespół, żeby uniknąć kolejek."
+      "body": "To zależy od liczby gości, długości serwisu i tego, jak intensywny ma być ruch przy barze. Tak samo liczy to nasz [planer baru](/planer-baru-weselnego/): do ok. 50 gości zwykle wystarcza jeden barman, przy 50–120 gościach pracuje dwóch barmanów, a przy 120+ gościach skład ustalamy indywidualnie, żeby nie było kolejek."
     },
     {
       "title": "Przykładowe menu drinków",
@@ -64,7 +78,7 @@
         "Spritz i Hugo jako lekkie pozycje startowe",
         "Pornstar Martini, Mojito lub Whiskey Sour na główny serwis",
         "autorskie koktajle pod kolorystykę albo charakter wesela",
-        "mocktaile 0% dla kierowców i gości bez alkoholu"
+        "koktajle 0% dla kierowców i gości, którzy nie piją"
       ]
     },
     {
@@ -108,8 +122,24 @@
       "answer": "Tak. To nasz podstawowy obszar pracy. Obsługujemy też dalsze lokalizacje w województwie pomorskim po wcześniejszym ustaleniu logistyki."
     },
     {
-      "question": "Czy można zamówić open bar na wesele?",
-      "answer": "Tak, ale zakres open baru ustalamy pod liczbę gości, długość wesela i menu. Dzięki temu da się przygotować serwis, który jest wygodny i przewidywalny kosztowo."
+      "question": "Ile kosztuje mobilny bar na wesele w Trójmieście?",
+      "answer": "Pełna obsługa BAROWO zaczyna się od 3000 zł. Cena zależy od liczby gości, terminu, miejsca i wybranego pakietu (Simple, Standard lub Premium). Po podaniu daty i liczby gości przygotujemy konkretną wycenę."
+    },
+    {
+      "question": "Ile godzin pracuje bar na weselu?",
+      "answer": "W pakiecie Simple do 6 godzin, w pakietach Standard i Premium do 8 godzin. W każdym pakiecie bar może zostać dłużej — dodatkowe godziny ustalamy przy rezerwacji."
+    },
+    {
+      "question": "Czy jest degustacja przed weselem?",
+      "answer": "Tak, w pakietach Standard i Premium degustacja jest bezpłatna. Pomaga wybrać koktajle i dopracować kartę pod Wasze wesele."
+    },
+    {
+      "question": "Czy macie koktajle bezalkoholowe?",
+      "answer": "Tak. W pakiecie Standard karta obejmuje 3 koktajle 0%, a w Premium 6. To dobra opcja dla kierowców, młodszych gości i osób, które nie piją."
+    },
+    {
+      "question": "Czy wystawiacie fakturę?",
+      "answer": "Tak, wystawiamy zwykłą fakturę. Nie jesteśmy płatnikiem VAT, więc podana cena jest ceną końcową."
     },
     {
       "question": "Ile wcześniej rezerwować barmana na wesele w Trójmieście?",
@@ -144,8 +174,7 @@
   ],
   "related_articles": [
     "najlepsze-drinki-na-wesele",
-    "ile-kosztuje-mobilny-bar-trojmiasto",
-    "mobilny-bar-czy-alkohol-samemu"
+    "ile-kosztuje-mobilny-bar-trojmiasto"
   ],
   "primary_cta_text": "Sprawdź dostępność terminu",
   "secondary_cta_text": "Zobacz cennik",
@@ -162,5 +191,5 @@
   "sidebar_text": "Podaj datę, salę i liczbę gości. Wrócimy z konkretną odpowiedzią i propozycją pakietu dopasowanego do wesela.",
   "sidebar_button_text": "Sprawdź dostępność terminu",
   "card_title_html": "Mobilny bar <span class=\"red\">na wesele</span>",
-  "card_excerpt": "Pełna obsługa baru weselnego w Trójmieście: bar, barmani, szkło, koktajle i przygotowanie stanowiska."
+  "card_excerpt": "Pełna obsługa baru weselnego w Trójmieście od 3000 zł: bar, barmani, szkło, karta koktajli i degustacja."
 }

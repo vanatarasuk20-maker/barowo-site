@@ -484,3 +484,4 @@ footer .base{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 .cc-btn{height:44px;font-size:14px;padding:0 18px;background:none}
 .cc-btn.btn-r{background:linear-gradient(180deg,#ff2b2b,#e8000d)}
 @media(max-width:720px){.cc{left:10px;right:10px;bottom:10px}.cc-box{padding:18px}.cc-actions .cc-btn{flex:1 1 100%;justify-content:center}}
+.more-kinds{margin-top:var(--cell);border-top:1px solid var(--line)}

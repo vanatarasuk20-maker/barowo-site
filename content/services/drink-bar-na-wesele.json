@@ -41,8 +41,8 @@
       ]
     },
     {
-      "title": "Czy drink bar zastępuje alkohol na stołach?",
-      "body": "To zależy od stylu wesela. Część par traktuje drink bar jako główną atrakcję alkoholową, część jako premium dodatek do klasycznej organizacji. Pomagamy dobrać zakres tak, żeby budżet i efekt miały sens."
+      "title": "Czy drink bar zastępuje napoje na stołach?",
+      "body": "To zależy od stylu wesela. Część par traktuje drink bar jako główną atrakcję wieczoru, część jako premium dodatek do klasycznej organizacji. Pomagamy dobrać zakres tak, żeby budżet i efekt miały sens."
     }
   ],
   "faq": [
@@ -52,7 +52,7 @@
     },
     {
       "question": "Ile drinków trzeba zaplanować na wesele?",
-      "answer": "To zależy od liczby gości, czasu trwania i pozostałego alkoholu. Przy zapytaniu pomagamy oszacować realne zużycie."
+      "answer": "To zależy od liczby gości, czasu trwania i stylu wesela. Przy zapytaniu pomagamy oszacować realne zużycie."
     },
     {
       "question": "Czy menu można dopasować kolorystycznie?",
@@ -60,8 +60,7 @@
     }
   ],
   "related_articles": [
-    "najlepsze-drinki-na-wesele",
-    "mobilny-bar-czy-alkohol-samemu"
+    "najlepsze-drinki-na-wesele"
   ],
   "card_title_html": "Drink bar <span class=\"red\">na wesele</span>",
   "card_excerpt": "Koktajle, mocktaile i sprawny serwis baru jako atrakcja weselna dla gości.",
