@@ -105,6 +105,10 @@
   "offer_note": "Pełna obsługa drink baru BAROWO na urodziny zaczyna się od 3000 zł: bar, barman, szkło, lód, karta koktajli i obsługa gości.",
   "related_links": [
     {
+      "href": "/oferta/drink-bar-na-urodziny/",
+      "label": "Drink bar na urodziny i 18-stkę"
+    },
+    {
       "href": "/cennik/",
       "label": "Cennik mobilnego baru"
     },

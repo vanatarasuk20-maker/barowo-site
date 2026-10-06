@@ -1,0 +1,159 @@
+{
+  "slug": "drink-bar-na-urodziny",
+  "published": true,
+  "priority": 3,
+  "updated_at": "2026-10-06",
+  "title_plain": "Drink bar na urodziny i 18-stkę",
+  "title_html": "DRINK BAR<br><span class=\"red\">NA URODZINY I 18-STKĘ</span>",
+  "description": "Mobilny drink bar z barmanem na urodziny i 18-stkę w Trójmieście i na Pomorzu. Kolorowe koktajle, także 0%, pełna obsługa od 3000 zł.",
+  "meta_title": "Drink Bar i Barman na Urodziny i 18-stkę — Trójmiasto | od 3000 zł",
+  "meta_description": "Barman i mobilny drink bar na urodziny, 18-stkę i imprezę w domu. Gdynia, Gdańsk, Sopot i Pomorskie. Koktajle także 0%, 5,0 w Google. Pełna obsługa od 3000 zł.",
+  "eyebrow": "Urodziny · 18-stki · Trójmiasto",
+  "intro": "Barman, mobilny bar i karta kolorowych koktajli na urodziny, 18-stkę albo imprezę w domu. Przyjeżdżamy z gotowym stanowiskiem, szkłem i lodem — Ty świętujesz, my obsługujemy gości.",
+  "direct_answer": "Drink bar na urodziny to pełna obsługa baru z barmanem: przyjazd, ustawienie baru, karta koktajli dopasowana do imprezy (także 0%) i sprzątanie po wszystkim. W BAROWO pełna obsługa zaczyna się od 3000 zł.",
+  "service_type": "Drink bar na urodziny",
+  "offer_note": "Pełna obsługa drink baru BAROWO na urodziny zaczyna się od 3000 zł: bar, barman, szkło, lód, karta koktajli i obsługa gości.",
+  "areas": [
+    "Gdynia",
+    "Gdańsk",
+    "Sopot",
+    "Trójmiasto",
+    "Pomorskie"
+  ],
+  "image": "/assets/photos/koktajl-z-lodem.jpg",
+  "image_alt": "Kolorowy koktajl z lodem przygotowany przez BAROWO",
+  "highlights": [
+    "18-stki, 30-stki, 40-stki i każde urodziny",
+    "Kolorowe koktajle, także w wersji 0%",
+    "Dom, ogród, sala lub restauracja",
+    "5,0 w Google — 25 opinii"
+  ],
+  "sections": [
+    {
+      "title": "Barman na urodziny, który rozkręca imprezę",
+      "body": "Bar to nie tylko miejsce z napojami. To punkt, wokół którego zbierają się goście: rozmowy, zdjęcia, kolejne rundy koktajli. Barman BAROWO dba o tempo, porządek i to, żeby każdy gość dostał coś dla siebie."
+    },
+    {
+      "title": "Co dostajesz w cenie?",
+      "body": "Przyjeżdżamy z gotowym barem i wszystkim, czego potrzeba do pracy.",
+      "bullets": [
+        "mobilny bar Modern (w pakietach Standard i Premium także Boho)",
+        "barman lub barmani — zależnie od liczby gości",
+        "szkło, lód, dodatki i sprzęt barmański",
+        "karta koktajli dopasowana do imprezy, w tym koktajle 0%",
+        "ustawienie baru przed imprezą i sprzątanie po niej"
+      ]
+    },
+    {
+      "title": "Drink bar na 18-stkę",
+      "body": "Na osiemnastce część gości często nie ma jeszcze 18 lat. Dlatego przygotowujemy kolorowe koktajle 0%, które wyglądają tak samo efektownie jak klasyczne drinki i świetnie wychodzą na zdjęciach. Zasady serwisu i kartę ustalamy z organizatorem przed imprezą."
+    },
+    {
+      "title": "Ile kosztuje drink bar na urodziny?",
+      "body": "Pełna obsługa zaczyna się od 3000 zł. Ostateczna cena zależy od liczby gości, terminu, miejsca i pakietu. Porównanie pakietów znajdziesz w [cenniku](/cennik/).",
+      "bullets": [
+        "Simple — 1 barman, bar Modern, propozycja 7 koktajli, do 6 godzin",
+        "Standard — 2+ barmanów, bar Modern lub Boho, propozycja 8 koktajli + 3 koktajli 0%, darmowa degustacja, do 8 godzin",
+        "Premium — 2+ barmanów, propozycja 15 koktajli + 6 koktajli 0%, welcome drink, wieża z kieliszków i fontanna czekoladowa w cenie, do 8 godzin",
+        "liczba koktajli to propozycja — kartę możemy rozszerzyć"
+      ]
+    },
+    {
+      "type": "cards",
+      "label": "Dodatek",
+      "title": "Fontanna czekoladowa na urodziny",
+      "cards": [
+        {
+          "title": "Słodka atrakcja obok baru",
+          "text": "Fontanna czekoladowa z owocami i dodatkami to hit na 18-stkach i rodzinnych urodzinach. Możesz ją dodać do każdego pakietu, a w Premium jest w cenie.",
+          "button_text": "Zobacz fontannę czekoladową",
+          "button_href": "/oferta/fontanna-czekoladowa/"
+        }
+      ]
+    },
+    {
+      "title": "Gdzie obsługujemy urodziny?",
+      "body": "Gdynię, Gdańsk, Sopot i całe Pomorskie do ok. 150 km od Gdyni — w domu, w ogrodzie, w wynajętej sali lub restauracji. Zobacz też [drink bar na urodziny w Gdańsku](/oferta/drink-bar-na-urodziny-gdansk/) i [mobilny bar Trójmiasto](/oferta/mobilny-bar-trojmiasto/)."
+    },
+    {
+      "title": "Jak zarezerwować?",
+      "body": "Wyślij datę, miejsce i liczbę gości. Wrócimy z dostępnością terminu i propozycją pakietu. Rezerwację potwierdzamy umową.",
+      "bullets": [
+        "krótkie zapytanie przez formularz lub telefon",
+        "dobór pakietu i karty koktajli",
+        "potwierdzenie terminu",
+        "przyjazd, obsługa imprezy i sprzątanie"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile kosztuje barman na urodziny?",
+      "answer": "Pełna obsługa BAROWO — bar, barman, szkło, lód i karta koktajli — zaczyna się od 3000 zł. Cena zależy od liczby gości, terminu, miejsca i pakietu."
+    },
+    {
+      "question": "Czy drink bar nadaje się na 18-stkę?",
+      "answer": "Tak. Przygotowujemy kolorowe koktajle 0% dla gości, którzy nie skończyli 18 lat, a zasady serwisu i kartę ustalamy z organizatorem przed imprezą."
+    },
+    {
+      "question": "Ile godzin pracuje bar?",
+      "answer": "W pakiecie Simple do 6 godzin, w Standard i Premium do 8 godzin. W każdym pakiecie można dokupić dodatkowe godziny."
+    },
+    {
+      "question": "Czy możecie przyjechać do domu albo do ogrodu?",
+      "answer": "Tak. Obsługujemy imprezy w domu, w ogrodzie, w sali i w restauracji. Warunki miejsca ustalimy przy rezerwacji."
+    },
+    {
+      "question": "Gdzie dojeżdżacie?",
+      "answer": "Gdynia, Gdańsk, Sopot i całe województwo pomorskie do ok. 150 km od Gdyni. Dalsze wyjazdy ustalamy indywidualnie."
+    },
+    {
+      "question": "Czy można zrobić menu tematyczne?",
+      "answer": "Tak. Dopasujemy kolory, smaki i nazwy koktajli do motywu imprezy."
+    },
+    {
+      "question": "Jak wcześnie trzeba rezerwować?",
+      "answer": "Najlepiej od razu po ustaleniu daty — weekendy, zwłaszcza w sezonie, rezerwują się szybko."
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/cennik/",
+      "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/oferta/drink-bar-na-urodziny-gdansk/",
+      "label": "Drink bar na urodziny Gdańsk"
+    },
+    {
+      "href": "/oferta/fontanna-czekoladowa/",
+      "label": "Fontanna czekoladowa"
+    },
+    {
+      "href": "/oferta/mobilny-bar-trojmiasto/",
+      "label": "Mobilny bar Trójmiasto"
+    }
+  ],
+  "related_articles": [
+    "drink-bar-na-urodziny-gdansk",
+    "garden-party-z-barem-mobilnym"
+  ],
+  "primary_cta_text": "Sprawdź termin urodzin",
+  "primary_cta_href": "/?event_type=Urodziny%20%2F%2018-tka#contact",
+  "mid_cta_label": "Urodziny",
+  "mid_cta_title_html": "Zapytaj o <span class=\"red\">termin urodzin</span>",
+  "mid_cta_text": "Podaj datę, miejsce i liczbę gości. Wrócimy z dostępnością i propozycją pakietu.",
+  "mid_cta_button_text": "Sprawdź dostępność terminu",
+  "mid_cta_button_href": "/?event_type=Urodziny%20%2F%2018-tka#contact",
+  "bottom_cta_label": "Rezerwacja",
+  "bottom_cta_title_html": "Urodziny z barem, <span class=\"red\">bez organizacyjnego stresu</span>",
+  "bottom_cta_text": "Ty zapraszasz gości, my ogarniamy bar: od ustawienia po sprzątanie.",
+  "bottom_cta_button_text": "Sprawdź termin",
+  "bottom_cta_button_href": "/?event_type=Urodziny%20%2F%2018-tka#contact",
+  "sidebar_title_html": "Sprawdź <span class=\"red\">termin</span>",
+  "sidebar_text": "Data, miejsce i liczba gości wystarczą do wyceny.",
+  "sidebar_button_text": "Sprawdź termin",
+  "sidebar_button_href": "/?event_type=Urodziny%20%2F%2018-tka#contact",
+  "card_title_html": "Drink bar <span class=\"red\">na urodziny i 18-stkę</span>",
+  "card_excerpt": "Barman i mobilny drink bar na urodziny i 18-stkę w Trójmieście — od 3000 zł, z koktajlami 0%."
+}
