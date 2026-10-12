@@ -6,7 +6,8 @@
     integrations: {
       metaPixelId: '976159074797460', // Meta Pixel "Barowo" (Events Manager)
       ga4Id: null,           // e.g. 'G-XXXXXXXXXX' (optional)
-      googleAdsId: 'AW-18388504691' // Google Ads (konto BAROWO)
+      googleAdsId: 'AW-18388504691', // Google Ads (konto BAROWO)
+      googleAdsLeadEvent: 'ads_conversion___1' // konwersja Google Ads: wysłane zapytanie (formularz, „Oddzwonimy”, planer)
     }
   };
   var STORAGE_KEY = 'barowo_consent_v1';
@@ -83,6 +84,8 @@
       if (loaded.google) {
         var map = { Lead: 'generate_lead', Contact: 'contact' };
         w.gtag('event', map[event] || event, params);
+        var lead = config.integrations.googleAdsLeadEvent;
+        if (event === 'Lead' && lead && config.integrations.googleAdsId) w.gtag('event', lead, { content_name: params.content_name || '' });
       }
     } catch (e) {}
   };
