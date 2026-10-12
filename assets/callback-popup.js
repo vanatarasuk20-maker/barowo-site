@@ -151,6 +151,7 @@
       submitUrl.searchParams.set('format', 'json');
       formData.forEach(function (value, key) { body.append(key, value); });
       if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
+      if (window.BAROWO_prepareLead) await window.BAROWO_prepareLead(body);
 
       var response = await fetch(submitUrl.toString(), {
         method: 'POST',
@@ -164,7 +165,7 @@
 
       form.reset();
       markSubmitted();
-      if (window.BAROWO_track) window.BAROWO_track('Lead', { content_name: 'Oddzwonimy' });
+      if (window.BAROWO_trackLead) window.BAROWO_trackLead(payload, 'Oddzwonimy', body);
       setStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
       window.setTimeout(function () { closeModal('submitted'); }, 1800);
     } catch (error) {

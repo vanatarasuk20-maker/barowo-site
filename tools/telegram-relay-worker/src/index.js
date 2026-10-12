@@ -93,6 +93,7 @@ async function callAppsScriptText(url, init = {}) {
     method: init.method || "GET",
     headers: init.headers || {},
     body: init.body,
+    signal: init.signal,
     redirect: "follow"
   });
 
@@ -193,36 +194,26 @@ async function handleLeadRequest(request, env, url, ctx) {
 
   const requestBody = params.toString();
 
-  const forwardPromise = callAppsScriptText(getAppsScriptBaseUrl(env), {
+  const upstream = await callAppsScriptText(getAppsScriptBaseUrl(env), {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded;charset=UTF-8"
     },
-    body: requestBody
-  }).then((upstream) => {
-    let payload = null;
-    try {
-      payload = JSON.parse(upstream.text);
-    } catch (error) {
-      payload = null;
-    }
-
-    if (!payload || payload.ok !== true) {
-      throw new Error("lead_forward_failed");
-    }
-  }).catch((error) => {
-    console.error("lead_forward_failed", {
-      message: error.message,
-      path: url.pathname
-    });
-    throw error;
+    body: requestBody,
+    signal: AbortSignal.timeout(25000)
   });
-
-  ctx.waitUntil(forwardPromise);
+  let payload;
+  try { payload = JSON.parse(upstream.text); } catch (error) { payload = null; }
+  if (upstream.status < 200 || upstream.status >= 300 || !payload || payload.ok !== true) throw new Error("lead_forward_failed");
+  const status = payload.status;
+  if (!["created", "merged", "spam"].includes(status)) throw new Error("lead_unconfirmed");
+  const validUid = status === "created" ? /^[a-f0-9]{8}$/i.test(payload.uid || "") : /^[a-zA-Z0-9_-]{1,80}$/.test(payload.uid || "");
+  if (status !== "spam" && !validUid) throw new Error("lead_id_missing");
 
   const responseBody = {
     ok: true,
-    status: "accepted",
+    status: status,
+    uid: status === "spam" ? "" : payload.uid,
     redirect_url: returnUrl
   };
 

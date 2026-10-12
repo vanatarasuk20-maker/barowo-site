@@ -808,6 +808,7 @@
         body.append(key, String(value));
       });
       if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
+      if (window.BAROWO_prepareLead) await window.BAROWO_prepareLead(body);
 
       var response = await fetch(submitUrl.toString(), {
         method: "POST",
@@ -822,7 +823,7 @@
         throw new Error((responsePayload && responsePayload.error) || "planner_submit_failed");
       }
 
-      if (window.BAROWO_track) window.BAROWO_track("Lead", { content_name: "Planer weselny" });
+      if (window.BAROWO_trackLead) window.BAROWO_trackLead(responsePayload, "Planer weselny", body);
       setStatus("success", "Dziękujemy. Wynik planera został wysłany. Zespół BAROWO wróci do Ciebie możliwie szybko z konkretną propozycją.");
     } catch (error) {
       setStatus("error", "Nie udało się wysłać wyniku planera. Zostaw zwykłe zapytanie przez formularz na stronie głównej albo zadzwoń do BAROWO.");

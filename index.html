@@ -32,7 +32,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=20260331">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260331">
   <link rel="manifest" href="/site.webmanifest?v=20260331">
-  <script src="/assets/consent-init.js?v=20261012c"></script>
+  <script src="/assets/consent-init.js?v=20261013a"></script>
   <script>
     if (window.location.protocol === 'file:') {
       document.write('<script src="/assets/local-preview.js"><' + '/script>');
@@ -924,6 +924,7 @@
             body.append(key, value);
           });
           if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
+          if (window.BAROWO_prepareLead) await window.BAROWO_prepareLead(body);
 
           const response = await fetch(submitUrl.toString(), {
             method: 'POST',
@@ -940,7 +941,7 @@
 
           contactForm.reset();
           if (consentError) consentError.textContent = '';
-          if (window.BAROWO_track) window.BAROWO_track('Lead', { content_name: 'Formularz kontaktowy' });
+          if (window.BAROWO_trackLead) window.BAROWO_trackLead(payload, 'Formularz kontaktowy', body);
           setFormStatus('success', 'Dziękujemy. Zapytanie zostało wysłane. Zespół BAROWO wróci do Ciebie możliwie szybko z odpowiedzią i dostępnością terminu.');
         } catch (error) {
           setFormStatus('error', 'Nie udało się wysłać formularza z tej strony. Zadzwoń do nas lub napisz na barowo.pl@gmail.com, a zajmiemy się tym od razu.');
@@ -1073,6 +1074,7 @@
           submitUrl.searchParams.set('format', 'json');
           formData.forEach((value, key) => body.append(key, value));
           if (window.BAROWO_attr) window.BAROWO_attr.merge(body);
+          if (window.BAROWO_prepareLead) await window.BAROWO_prepareLead(body);
 
           const response = await fetch(submitUrl.toString(), {
             method: 'POST',
@@ -1086,7 +1088,7 @@
 
           callbackForm.reset();
           markCallbackSubmitted();
-          if (window.BAROWO_track) window.BAROWO_track('Lead', { content_name: 'Oddzwonimy' });
+          if (window.BAROWO_trackLead) window.BAROWO_trackLead(payload, 'Oddzwonimy', body);
           setCallbackStatus('success', 'Dziękujemy. Oddzwonimy możliwie szybko.');
           window.setTimeout(() => closeCallbackModal('submitted'), 1800);
         } catch (error) {

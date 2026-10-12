@@ -2,10 +2,10 @@
    To switch tracking on, put the IDs below. Nothing loads before the visitor agrees. */
 (function () {
   var config = {
-    version: '20261012',
+    version: '20261013',
     integrations: {
       metaPixelId: '976159074797460', // Meta Pixel "Barowo" (Events Manager)
-      ga4Id: null,           // e.g. 'G-XXXXXXXXXX' (optional)
+      ga4Id: 'G-5Y67Z119TZ', // Existing BAROWO GA4 web stream
       googleAdsId: 'AW-18388504691', // Google Ads (konto BAROWO)
       googleAdsLeadSendTo: 'AW-18388504691/aA7bCOXo4JkdEPOgqcBE' // Google Ads: BAROWO - wysłane zapytanie
     }
@@ -37,7 +37,7 @@
     wait_for_update: 500
   });
 
-  var loaded = { meta: false, google: false };
+  var loaded = { meta: false, google: false, analytics: false, ads: false };
   var currentConsent = { analytics: false, marketing: false };
 
   function loadScript(src) {
@@ -57,17 +57,41 @@
     w.fbq('track', 'PageView');
   }
   function loadGoogle() {
-    var i = config.integrations, first = i.ga4Id || i.googleAdsId;
-    if (!first || loaded.google) return;
-    loaded.google = true;
-    loadScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(first));
-    w.gtag('js', new Date());
-    if (i.ga4Id) w.gtag('config', i.ga4Id, { anonymize_ip: true });
-    if (i.googleAdsId) w.gtag('config', i.googleAdsId);
+    var i = config.integrations;
+    var first = currentConsent.analytics ? i.ga4Id : currentConsent.marketing ? i.googleAdsId : null;
+    if (!first) return;
+    if (!loaded.google) {
+      loaded.google = true;
+      loadScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(first));
+      w.gtag('js', new Date());
+    }
+    if (i.ga4Id && currentConsent.analytics && !loaded.analytics) {
+      loaded.analytics = true;
+      var gaConfig = {
+        page_location: location.origin + location.pathname,
+        page_referrer: cleanUrl(d.referrer),
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      };
+      var campaign = new URLSearchParams(location.search);
+      ['source', 'medium', 'campaign', 'content', 'term'].forEach(function (key) {
+        var value = campaign.get('utm_' + key);
+        if (value) gaConfig[key === 'campaign' ? 'campaign_name' : 'campaign_' + key] = value.slice(0, 100);
+      });
+      w.gtag('config', i.ga4Id, gaConfig);
+    }
+    if (i.googleAdsId && currentConsent.marketing && !loaded.ads) {
+      loaded.ads = true;
+      w.gtag('config', i.googleAdsId);
+    }
+  }
+  function cleanUrl(value) {
+    try { var u = new URL(value); return u.origin + u.pathname; } catch (e) { return ''; }
   }
   function apply(c) {
     if (!c) return;
     currentConsent = c;
+    w['ga-disable-' + config.integrations.ga4Id] = !c.analytics;
     w.gtag('consent', 'update', {
       analytics_storage: c.analytics ? 'granted' : 'denied',
       ad_storage: c.marketing ? 'granted' : 'denied',
@@ -83,15 +107,68 @@
     params = params || {};
     try { if (w.fbq && loaded.meta && currentConsent.marketing) w.fbq('track', event, params); } catch (e) {}
     try {
-      if (loaded.google && (currentConsent.analytics || currentConsent.marketing)) {
+      if (loaded.google) {
         var map = { Lead: 'generate_lead', Contact: 'contact' };
-        w.gtag('event', map[event] || event, params);
+        var safe = {};
+        ['content_name', 'lead_id', 'lead_source', 'form_type'].forEach(function (key) {
+          if (params[key]) safe[key] = String(params[key]).slice(0, 100);
+        });
+        if (loaded.analytics && currentConsent.analytics) {
+          safe.send_to = config.integrations.ga4Id;
+          safe.page_location = location.origin + location.pathname;
+          w.gtag('event', map[event] || event, safe);
+        }
         var lead = config.integrations.googleAdsLeadSendTo;
-        if (event === 'Lead' && lead && config.integrations.googleAdsId && currentConsent.marketing) {
-          w.gtag('event', 'conversion', { send_to: lead, content_name: params.content_name || '' });
+        if (event === 'Lead' && lead && loaded.ads && currentConsent.marketing) {
+          w.gtag('event', 'conversion', { send_to: lead, content_name: safe.content_name || '', transaction_id: safe.lead_id || '' });
         }
       }
     } catch (e) {}
+  };
+
+  w.BAROWO_getConsent = function () {
+    return { analytics: !!currentConsent.analytics, marketing: !!currentConsent.marketing };
+  };
+
+  // Anonymous Analytics identifiers go to CRM only with analytics consent.
+  // A blocked tag must never prevent someone from submitting an enquiry.
+  w.BAROWO_prepareLead = async function (body) {
+    body.set('analytics_consent', currentConsent.analytics ? 'yes' : 'no');
+    body.set('marketing_consent', currentConsent.marketing ? 'yes' : 'no');
+    body.delete('ga_client_id');
+    body.delete('ga_session_id');
+    if (!loaded.analytics || !currentConsent.analytics) return body;
+    function getId(name, pattern) {
+      return new Promise(function (resolve) {
+        var done = false;
+        function finish(value) {
+          if (done) return;
+          done = true;
+          resolve(pattern.test(String(value || '')) ? String(value) : '');
+        }
+        w.setTimeout(function () { finish(''); }, 800);
+        w.gtag('get', config.integrations.ga4Id, name, finish);
+      });
+    }
+    var ids = await Promise.all([getId('client_id', /^\d+\.\d+$/), getId('session_id', /^\d{1,20}$/)]);
+    body.set('marketing_consent', currentConsent.marketing ? 'yes' : 'no');
+    if (!currentConsent.analytics) { body.set('analytics_consent', 'no'); return body; }
+    if (ids[0]) body.set('ga_client_id', ids[0]);
+    if (ids[1]) body.set('ga_session_id', ids[1]);
+    return body;
+  };
+
+  var countedLeads = {};
+  w.BAROWO_trackLead = function (result, label, body) {
+    if (!result || result.ok !== true || result.status !== 'created' || !/^[a-f0-9]{8}$/i.test(result.uid || '')) return;
+    if (countedLeads[result.uid]) return;
+    countedLeads[result.uid] = true;
+    w.BAROWO_track('Lead', {
+      content_name: label,
+      lead_id: result.uid,
+      form_type: body.get('source') || 'website',
+      lead_source: body.get('traffic_channel') || 'direct'
+    });
   };
 
   /* ---------- banner ---------- */
@@ -110,7 +187,7 @@
     root.innerHTML =
       '<div class="cc-box">' +
         '<p class="cc-title">Pliki cookies</p>' +
-        '<p class="cc-text">Używamy plików cookies niezbędnych do działania strony. Za Twoją zgodą użyjemy też cookies analitycznych i marketingowych (Meta Pixel, Google Ads), żeby mierzyć skuteczność reklam. Zgodę możesz zmienić w każdej chwili. Szczegóły w <a href="/polityka-prywatnosci/">Polityce prywatności</a>.</p>' +
+        '<p class="cc-text">Używamy plików cookies niezbędnych do działania strony. Za Twoją zgodą Google Analytics mierzy odwiedziny i zapytania, a Meta Pixel i Google Ads pomagają mierzyć skuteczność reklam. Zgodę możesz zmienić w każdej chwili. Szczegóły w <a href="/polityka-prywatnosci/">Polityce prywatności</a>.</p>' +
         '<div class="cc-settings"' + (showSettings ? '' : ' hidden') + '>' +
           '<label class="cc-row"><input type="checkbox" checked disabled> <span><b>Niezbędne</b> — działanie strony i formularzy. Zawsze aktywne.</span></label>' +
           '<label class="cc-row"><input type="checkbox" id="ccAnalytics"' + (c.analytics ? ' checked' : '') + '> <span><b>Analityczne</b> — statystyki odwiedzin.</span></label>' +
@@ -164,7 +241,7 @@
   var w = window, d = document, KEY = 'barowo_attr_v1', TTL = 30 * 864e5;
   var P = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
   function rd(st) { try { var v = JSON.parse(st.getItem(KEY) || 'null'); return v && (!v.exp || v.exp > Date.now()) ? v : null; } catch (e) { return null; } }
-  function consented() { try { var c = JSON.parse(localStorage.getItem('barowo_consent_v1') || 'null'); return !!(c && (c.marketing || c.analytics)); } catch (e) { return false; } }
+  function consented() { var c = w.BAROWO_getConsent(); return c.marketing || c.analytics; }
   function wr(v) {
     try { sessionStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {}
     try { if (consented()) { v.exp = Date.now() + TTL; localStorage.setItem(KEY, JSON.stringify(v)); } } catch (e) {}
@@ -189,7 +266,7 @@
   P.forEach(function (k) { var v = q.get(k); if (v) { touch[k] = v.slice(0, 200); has = true; } });
   var ref = d.referrer || '', rh = host(ref), self = host(location.href);
   var external = rh && rh !== self && rh !== 'barowo.com';
-  var store = rd(sessionStorage) || rd(localStorage) || null;
+  var store = rd(sessionStorage) || (consented() ? rd(localStorage) : null) || null;
   if (has || external || !store) {
     touch.ref_host = external ? rh : '';
     touch.referrer = external ? ref.slice(0, 300) : '';
