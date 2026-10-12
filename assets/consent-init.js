@@ -2,11 +2,11 @@
    To switch tracking on, put the IDs below. Nothing loads before the visitor agrees. */
 (function () {
   var config = {
-    version: '20261003',
+    version: '20261012',
     integrations: {
       metaPixelId: '976159074797460', // Meta Pixel "Barowo" (Events Manager)
       ga4Id: null,           // e.g. 'G-XXXXXXXXXX' (optional)
-      googleAdsId: null      // e.g. 'AW-XXXXXXXXX' (optional)
+      googleAdsId: 'AW-18388504691' // Google Ads (konto BAROWO)
     }
   };
   var STORAGE_KEY = 'barowo_consent_v1';
@@ -103,11 +103,11 @@
     root.innerHTML =
       '<div class="cc-box">' +
         '<p class="cc-title">Pliki cookies</p>' +
-        '<p class="cc-text">Używamy plików cookies niezbędnych do działania strony. Za Twoją zgodą użyjemy też cookies analitycznych i marketingowych (np. Meta Pixel), żeby mierzyć skuteczność reklam. Zgodę możesz zmienić w każdej chwili. Szczegóły w <a href="/polityka-prywatnosci/">Polityce prywatności</a>.</p>' +
+        '<p class="cc-text">Używamy plików cookies niezbędnych do działania strony. Za Twoją zgodą użyjemy też cookies analitycznych i marketingowych (Meta Pixel, Google Ads), żeby mierzyć skuteczność reklam. Zgodę możesz zmienić w każdej chwili. Szczegóły w <a href="/polityka-prywatnosci/">Polityce prywatności</a>.</p>' +
         '<div class="cc-settings"' + (showSettings ? '' : ' hidden') + '>' +
           '<label class="cc-row"><input type="checkbox" checked disabled> <span><b>Niezbędne</b> — działanie strony i formularzy. Zawsze aktywne.</span></label>' +
           '<label class="cc-row"><input type="checkbox" id="ccAnalytics"' + (c.analytics ? ' checked' : '') + '> <span><b>Analityczne</b> — statystyki odwiedzin.</span></label>' +
-          '<label class="cc-row"><input type="checkbox" id="ccMarketing"' + (c.marketing ? ' checked' : '') + '> <span><b>Marketingowe</b> — mierzenie i dopasowanie reklam (Meta Pixel).</span></label>' +
+          '<label class="cc-row"><input type="checkbox" id="ccMarketing"' + (c.marketing ? ' checked' : '') + '> <span><b>Marketingowe</b> — mierzenie i dopasowanie reklam (Meta Pixel, Google Ads).</span></label>' +
         '</div>' +
         '<div class="cc-actions">' +
           '<button type="button" class="btn btn-o cc-btn" data-cc="reject">Tylko niezbędne</button>' +
