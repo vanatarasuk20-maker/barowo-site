@@ -7,7 +7,7 @@
       metaPixelId: '976159074797460', // Meta Pixel "Barowo" (Events Manager)
       ga4Id: null,           // e.g. 'G-XXXXXXXXXX' (optional)
       googleAdsId: 'AW-18388504691', // Google Ads (konto BAROWO)
-      googleAdsLeadEvent: 'ads_conversion___1' // konwersja Google Ads: wysłane zapytanie (formularz, „Oddzwonimy”, planer)
+      googleAdsLeadSendTo: 'AW-18388504691/aA7bCOXo4JkdEPOgqcBE' // Google Ads: BAROWO - wysłane zapytanie
     }
   };
   var STORAGE_KEY = 'barowo_consent_v1';
@@ -38,6 +38,7 @@
   });
 
   var loaded = { meta: false, google: false };
+  var currentConsent = { analytics: false, marketing: false };
 
   function loadScript(src) {
     var s = d.createElement('script'); s.async = true; s.src = src; d.head.appendChild(s);
@@ -66,6 +67,7 @@
   }
   function apply(c) {
     if (!c) return;
+    currentConsent = c;
     w.gtag('consent', 'update', {
       analytics_storage: c.analytics ? 'granted' : 'denied',
       ad_storage: c.marketing ? 'granted' : 'denied',
@@ -73,19 +75,21 @@
       ad_personalization: c.marketing ? 'granted' : 'denied'
     });
     if (c.marketing) loadMeta();
-    if (c.analytics || c.marketing) loadGoogle();
+    if (c.marketing || (c.analytics && config.integrations.ga4Id)) loadGoogle();
   }
 
   /* ---------- events: BAROWO_track('Lead', {content_name: 'Formularz'}) ---------- */
   w.BAROWO_track = function (event, params) {
     params = params || {};
-    try { if (w.fbq && loaded.meta) w.fbq('track', event, params); } catch (e) {}
+    try { if (w.fbq && loaded.meta && currentConsent.marketing) w.fbq('track', event, params); } catch (e) {}
     try {
-      if (loaded.google) {
+      if (loaded.google && (currentConsent.analytics || currentConsent.marketing)) {
         var map = { Lead: 'generate_lead', Contact: 'contact' };
         w.gtag('event', map[event] || event, params);
-        var lead = config.integrations.googleAdsLeadEvent;
-        if (event === 'Lead' && lead && config.integrations.googleAdsId) w.gtag('event', lead, { content_name: params.content_name || '' });
+        var lead = config.integrations.googleAdsLeadSendTo;
+        if (event === 'Lead' && lead && config.integrations.googleAdsId && currentConsent.marketing) {
+          w.gtag('event', 'conversion', { send_to: lead, content_name: params.content_name || '' });
+        }
       }
     } catch (e) {}
   };
