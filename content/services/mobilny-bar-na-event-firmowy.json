@@ -2,7 +2,7 @@
   "slug": "mobilny-bar-na-event-firmowy",
   "published": true,
   "priority": 0,
-  "updated_at": "2026-10-03",
+  "updated_at": "2026-10-13",
   "title_plain": "Mobilny bar na event firmowy w Trójmieście",
   "title_html": "MOBILNY BAR<br><span class=\"red\">NA EVENT FIRMOWY W TRÓJMIEŚCIE</span>",
   "description": "Mobilny bar na event firmowy w Gdańsku, Gdyni i Sopocie: integracje, wigilie firmowe, jubileusze, konferencje i otwarcia. Bar, barmani, szkło i koktajle w jednej usłudze.",
@@ -86,6 +86,10 @@
           "button_href": "/oferta/fontanna-czekoladowa/"
         }
       ]
+    },
+    {
+      "title": "Dlaczego BAROWO?",
+      "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
     }
   ],
   "faq": [

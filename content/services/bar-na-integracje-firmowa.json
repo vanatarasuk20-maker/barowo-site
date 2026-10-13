@@ -2,7 +2,7 @@
   "slug": "bar-na-integracje-firmowa",
   "published": true,
   "priority": 2,
-  "updated_at": "2026-10-03",
+  "updated_at": "2026-10-13",
   "title_plain": "Bar na integrację firmową w Trójmieście",
   "title_html": "BAR NA<br><span class=\"red\">INTEGRACJĘ FIRMOWĄ</span>",
   "description": "Mobilny bar na integrację firmową, team building i garden party w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i menu koktajli w jednej usłudze.",
@@ -66,6 +66,27 @@
     {
       "title": "Koktajle bezalkoholowe",
       "body": "Na integracjach część osób prowadzi albo po prostu nie pije alkoholu. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe, więc każdy ma coś dla siebie."
+    },
+    {
+      "title": "Integracja jesienią i zimą — bar w środku",
+      "body": "Poza sezonem letnim integracje przenoszą się do hoteli, restauracji, sal i ośrodków konferencyjnych. Mobilny bar ustawiamy w środku, a przed eventem ustalamy z obiektem dostęp i godziny montażu. Na grudzień zobacz też [bar na wigilię firmową](/oferta/bar-na-wigilie-firmowa/)."
+    },
+    {
+      "title": "Jak wygląda współpraca?",
+      "body": "Wysyłasz datę, miejsce i liczbę osób. Wracamy z dostępnością terminu i propozycją pakietu, potem ustalamy menu, godziny pracy baru i logistykę. W dniu integracji przyjeżdżamy wcześniej, rozstawiamy bar, obsługujemy gości i zabieramy sprzęt po zakończeniu."
+    },
+    {
+      "title": "Pakiety i cena",
+      "body": "Każdy pakiet to pełna obsługa baru, a ceny zaczynają się od 3000 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca. Szczegóły znajdziesz w [cenniku](/cennik/).",
+      "bullets": [
+        "Simple — 1 barman, bar Modern, proponowana karta 7 koktajli, do 6 godzin obsługi",
+        "Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, 8 koktajli i 3 bezalkoholowe, darmowa degustacja, do 8 godzin",
+        "Premium — 2+ barmanów, karta 15 koktajli i 6 bezalkoholowych, welcome drink, wieża z kieliszków, fontanna czekoladowa w cenie, do 8 godzin"
+      ]
+    },
+    {
+      "title": "Dlaczego BAROWO?",
+      "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
     }
   ],
   "faq": [
@@ -88,6 +109,14 @@
     {
       "question": "Ile godzin pracuje bar?",
       "answer": "Do 6 godzin w pakiecie Simple i do 8 godzin w pakietach Standard i Premium. Czas można przedłużyć."
+    },
+    {
+      "question": "Czy obsługujecie integracje w hotelach na Kaszubach?",
+      "answer": "Tak, dojeżdżamy do hoteli i ośrodków do około 150 km od Gdyni. Logistykę uwzględniamy w wycenie."
+    },
+    {
+      "question": "Czy przygotujecie koktajle bezalkoholowe?",
+      "answer": "Tak. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe."
     }
   ],
   "related_links": [
@@ -106,6 +135,14 @@
     {
       "href": "/cennik/",
       "label": "Cennik mobilnego baru"
+    },
+    {
+      "href": "/oferta/fontanna-czekoladowa/",
+      "label": "Fontanna czekoladowa"
+    },
+    {
+      "href": "/#contact",
+      "label": "Formularz kontaktowy"
     }
   ],
   "related_articles": [

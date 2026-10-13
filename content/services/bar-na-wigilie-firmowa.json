@@ -2,12 +2,12 @@
   "slug": "bar-na-wigilie-firmowa",
   "published": true,
   "priority": 1,
-  "updated_at": "2026-10-03",
+  "updated_at": "2026-10-13",
   "title_plain": "Bar na wigilię firmową w Trójmieście",
   "title_html": "BAR NA<br><span class=\"red\">WIGILIĘ FIRMOWĄ</span>",
   "description": "Mobilny bar na wigilię firmową i spotkanie świąteczne w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i menu koktajli w jednej usłudze.",
   "meta_title": "Bar na Wigilię Firmową Trójmiasto | Gdańsk, Gdynia, Sopot — BAROWO",
-  "meta_description": "Mobilny bar na wigilię firmową w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i koktajle, także bezalkoholowe — od 3000 zł. Sprawdź termin.",
+  "meta_description": "Mobilny bar na wigilię firmową w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i koktajle, także bezalkoholowe — od 3000 zł. Grudniowe terminy — sprawdź dostępność.",
   "eyebrow": "Dla firm · Wigilia firmowa",
   "intro": "Wigilia firmowa to jeden wieczór, w którym cały zespół jest razem. BAROWO zajmuje się barem od początku do końca, żeby organizator też mógł świętować, a nie pilnować zaplecza.",
   "direct_answer": "BAROWO przygotowuje mobilny bar na wigilie firmowe w Trójmieście i okolicach: bar, barmani, szkło i menu koktajli, także bezalkoholowych. Ceny od 3000 zł, 6 lub 8 godzin pracy baru zależnie od pakietu, z opcją przedłużenia.",
@@ -80,6 +80,29 @@
           "button_href": "/oferta/fontanna-czekoladowa/"
         }
       ]
+    },
+    {
+      "title": "Jak wygląda organizacja baru na wigilię?",
+      "body": "Cały proces jest prosty i zaczyna się od jednej wiadomości.",
+      "bullets": [
+        "wysyłasz datę, miejsce i orientacyjną liczbę gości",
+        "sprawdzamy termin i proponujemy pakiet",
+        "ustalamy menu, godziny pracy baru i warunki montażu z salą lub hotelem",
+        "w dniu wigilii przyjeżdżamy wcześniej, rozstawiamy bar i obsługujemy gości",
+        "po zakończeniu sprzątamy stanowisko i zabieramy sprzęt"
+      ]
+    },
+    {
+      "title": "Świąteczna karta i drinki bezalkoholowe",
+      "body": "Kartę koktajli dopasowujemy do charakteru wieczoru. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe, więc o dobry drink zadbają też kierowcy i osoby, które nie piją alkoholu. W tych pakietach jest też darmowa degustacja przed wydarzeniem."
+    },
+    {
+      "title": "Wigilia firmowa w Gdańsku, Gdyni i Sopocie",
+      "body": "Obsługujemy wigilie w całym Trójmieście: [mobilny bar w Gdyni](/oferta/mobilny-bar-gdynia/), [w Gdańsku](/oferta/mobilny-bar-gdansk/) i [w Sopocie](/oferta/mobilny-bar-sopot/), a także do około 150 km od Gdyni. Planujesz też inne spotkanie zespołu? Zobacz [mobilny bar na event firmowy](/oferta/mobilny-bar-na-event-firmowy/) i [bar na integrację firmową](/oferta/bar-na-integracje-firmowa/)."
+    },
+    {
+      "title": "Dlaczego BAROWO?",
+      "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
     }
   ],
   "faq": [
@@ -102,6 +125,18 @@
     {
       "question": "Czy macie drinki bezalkoholowe?",
       "answer": "Tak. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe."
+    },
+    {
+      "question": "Jak wcześnie zarezerwować bar na wigilię firmową?",
+      "answer": "Najlepiej od razu po ustaleniu daty i miejsca. Grudzień to najbardziej oblegany okres na imprezy firmowe, a liczba terminów jest ograniczona."
+    },
+    {
+      "question": "Czy bar może stanąć w biurze firmy?",
+      "answer": "Tak, jeśli w biurze jest miejsce na bezpieczne ustawienie stanowiska. Przed wydarzeniem ustalamy dostęp i godziny montażu."
+    },
+    {
+      "question": "Czy jest degustacja przed wigilią?",
+      "answer": "Tak, w pakietach Standard i Premium degustacja jest darmowa."
     }
   ],
   "related_links": [
@@ -120,6 +155,14 @@
     {
       "href": "/#contact",
       "label": "Formularz kontaktowy"
+    },
+    {
+      "href": "/oferta/fontanna-czekoladowa/",
+      "label": "Fontanna czekoladowa"
+    },
+    {
+      "href": "/aktualnosci/ile-kosztuje-mobilny-bar-trojmiasto/",
+      "label": "Ile kosztuje mobilny bar?"
     }
   ],
   "related_articles": [
