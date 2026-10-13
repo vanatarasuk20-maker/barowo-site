@@ -716,7 +716,7 @@ def write_sitemap(articles: list[dict[str, Any]], services: list[dict[str, Any]]
         for service in services
     )
     urls.extend(
-        (slug_url(article["slug"]), article.get("published_at", datetime.now().strftime("%Y-%m-%d")))
+        (slug_url(article["slug"]), article.get("modified_at", article.get("updated_at", article.get("published_at", datetime.now().strftime("%Y-%m-%d")))))
         for article in articles
     )
     urls.append((PRIVACY_URL, datetime.now().strftime("%Y-%m-%d")))
