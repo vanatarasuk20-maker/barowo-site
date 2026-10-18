@@ -338,9 +338,9 @@
     }
 
     reasonBullets.push(recommendedPackage === "Simple"
-      ? "Simple: 1 barman, propozycja 7 koktajli, do 6 godzin obsługi"
+      ? "Simple: 1 barman, propozycja 7 koktajli, menu na tablecie, do 6 godzin obsługi"
       : recommendedPackage === "Premium"
-        ? "Premium: 2+ barmanów, propozycja 15 koktajli i 6 bezalkoholowych, do 8 godzin obsługi"
+        ? "Premium: 2+ barmanów, propozycja 15 koktajli i 6 bezalkoholowych, welcome drink i wieża z kieliszków w cenie, do 8 godzin obsługi"
         : "Standard: 2+ barmanów, propozycja 8 koktajli i 3 bezalkoholowych, do 8 godzin obsługi");
 
     if (state.drinkPreferences.indexOf("mocktaile bezalkoholowe") !== -1 || state.alcoholPreference === "Chcemy pełną rekomendację") {
@@ -584,7 +584,7 @@
           "<p>" + escapeHtml(recommendation.typeText) + "</p>" +
           '<div class="planner-service-tip">' +
             '<div class="label">Orientacyjnie</div>' +
-            "<h3>Pełna obsługa mobilnego baru BAROWO zaczyna się od 3000 zł.</h3>" +
+            "<h3>Pełna obsługa mobilnego baru BAROWO zaczyna się od 3300 zł.</h3>" +
             "<p>To kompletna obsługa baru: stanowisko, barmani, szkło, menu i serwis gości przez 6–8 godzin, z możliwością przedłużenia.</p>" +
             '<div class="planner-inline-links"><a href="/cennik/">Zobacz cennik BAROWO</a></div>' +
           "</div>" +

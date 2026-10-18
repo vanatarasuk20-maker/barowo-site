@@ -2,17 +2,17 @@
   "slug": "bar-na-wigilie-firmowa",
   "published": true,
   "priority": 1,
-  "updated_at": "2026-10-13",
+  "updated_at": "2026-10-18",
   "title_plain": "Bar na wigilię firmową w Trójmieście",
   "title_html": "BAR NA<br><span class=\"red\">WIGILIĘ FIRMOWĄ</span>",
   "description": "Mobilny bar na wigilię firmową i spotkanie świąteczne w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i menu koktajli w jednej usłudze.",
   "meta_title": "Bar na Wigilię Firmową Trójmiasto | Gdańsk, Gdynia, Sopot — BAROWO",
-  "meta_description": "Mobilny bar na wigilię firmową w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i koktajle, także bezalkoholowe — od 3000 zł. Grudniowe terminy — sprawdź dostępność.",
+  "meta_description": "Mobilny bar na wigilię firmową w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i koktajle, także bezalkoholowe — od 3300 zł. Grudniowe terminy — sprawdź dostępność.",
   "eyebrow": "Dla firm · Wigilia firmowa",
   "intro": "Wigilia firmowa to jeden wieczór, w którym cały zespół jest razem. BAROWO zajmuje się barem od początku do końca, żeby organizator też mógł świętować, a nie pilnować zaplecza.",
-  "direct_answer": "BAROWO przygotowuje mobilny bar na wigilie firmowe w Trójmieście i okolicach: bar, barmani, szkło i menu koktajli, także bezalkoholowych. Ceny od 3000 zł, 6 lub 8 godzin pracy baru zależnie od pakietu, z opcją przedłużenia.",
+  "direct_answer": "BAROWO przygotowuje mobilny bar na wigilie firmowe w Trójmieście i okolicach: bar, barmani, szkło i menu koktajli, także bezalkoholowych. Ceny od 3300 zł, 6 lub 8 godzin pracy baru zależnie od pakietu, z opcją przedłużenia.",
   "service_type": "Bar na wigilię firmową",
-  "offer_note": "Pełna obsługa baru na wigilię firmową od 3000 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca.",
+  "offer_note": "Pełna obsługa baru na wigilię firmową od 3300 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca.",
   "areas": [
     "Gdynia",
     "Gdańsk",
@@ -75,7 +75,7 @@
       "cards": [
         {
           "title": "Fontanna czekoladowa",
-          "text": "Fontanna czekoladowa z owocami to dodatek, który dobrze pasuje do świątecznego klimatu. W pakiecie Premium jest w cenie.",
+          "text": "Fontanna czekoladowa z owocami to dodatek, który dobrze pasuje do świątecznego klimatu. Można ją dodać do każdego pakietu.",
           "button_text": "Zobacz fontannę czekoladową",
           "button_href": "/oferta/fontanna-czekoladowa/"
         }
@@ -94,7 +94,7 @@
     },
     {
       "title": "Świąteczna karta i drinki bezalkoholowe",
-      "body": "Kartę koktajli dopasowujemy do charakteru wieczoru. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe, więc o dobry drink zadbają też kierowcy i osoby, które nie piją alkoholu. W tych pakietach jest też darmowa degustacja przed wydarzeniem."
+      "body": "Kartę koktajli dopasowujemy do charakteru wieczoru. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe, więc o dobry drink zadbają też kierowcy i osoby, które nie piją alkoholu."
     },
     {
       "title": "Wigilia firmowa w Gdańsku, Gdyni i Sopocie",
@@ -108,7 +108,7 @@
   "faq": [
     {
       "question": "Ile kosztuje bar na wigilię firmową?",
-      "answer": "Pełna obsługa zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i menu koktajli. Końcowa cena zależy od liczby gości, terminu i miejsca."
+      "answer": "Pełna obsługa zaczyna się od 3300 zł i obejmuje bar, barmanów, szkło i menu koktajli. Końcowa cena zależy od liczby gości, terminu i miejsca."
     },
     {
       "question": "Czy wystawiacie fakturę dla firmy?",
@@ -133,10 +133,6 @@
     {
       "question": "Czy bar może stanąć w biurze firmy?",
       "answer": "Tak, jeśli w biurze jest miejsce na bezpieczne ustawienie stanowiska. Przed wydarzeniem ustalamy dostęp i godziny montażu."
-    },
-    {
-      "question": "Czy jest degustacja przed wigilią?",
-      "answer": "Tak, w pakietach Standard i Premium degustacja jest darmowa."
     }
   ],
   "related_links": [

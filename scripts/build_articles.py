@@ -54,7 +54,7 @@ def og_image_path(path: str) -> str:
     return path
 
 
-MIN_PRICE_PLN = 3000
+MIN_PRICE_PLN = 3300
 
 
 def slug_url(slug: str) -> str:
@@ -108,7 +108,7 @@ def business_graph() -> dict[str, Any]:
         ],
         "telephone": "+48880564984",
         "email": "barowo.pl@gmail.com",
-        "priceRange": "od 3000 zł",
+        "priceRange": "od 3300 zł",
         "taxID": "9581736350",
         "legalName": "SumEffect Serhii Vasyliev",
         "address": {

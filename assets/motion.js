@@ -61,7 +61,7 @@
   // safety: always show everything when printing
   window.addEventListener('beforeprint', function () { nodes.forEach(function (el) { el.classList.add('rv-in'); }); });
 
-  // count-up for the key numbers (3000 zł, 100+, 6–8 h, 150 km)
+  // count-up for the key numbers (3300 zł, 100+, 6–8 h, 150 km)
   if (!/bot|crawl|spider|lighthouse|headless/i.test(navigator.userAgent)) Array.prototype.forEach.call(document.querySelectorAll('.facts b'), function (b) {
     var m = b.textContent.match(/^(\d+)(.*)$/);
     if (!m || /–/.test(b.textContent)) return;

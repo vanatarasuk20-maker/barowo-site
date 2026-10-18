@@ -2,7 +2,7 @@
   "slug": "mobilny-bar-gdansk",
   "published": true,
   "priority": 7,
-  "updated_at": "2026-10-13",
+  "updated_at": "2026-10-18",
   "title_plain": "Mobilny bar Gdańsk",
   "title_html": "MOBILNY BAR<br><span class=\"red\">GDAŃSK</span>",
   "description": "Mobilny bar w Gdańsku na urodziny, wesele, garden party i event firmowy. Koktajle, barmani i pełny setup BAROWO.",
@@ -61,11 +61,11 @@
     },
     {
       "title": "Pakiety i cena",
-      "body": "Każdy pakiet to pełna obsługa baru, a ceny zaczynają się od 3000 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca. Szczegóły znajdziesz w [cenniku](/cennik/).",
+      "body": "Każdy pakiet to pełna obsługa baru, a ceny zaczynają się od 3300 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca. Szczegóły znajdziesz w [cenniku](/cennik/). Dodatki do każdego pakietu: fontanna czekoladowa, wieża z kieliszków, welcome drink, personalizowana stylistyka menu, personalizowany dressing do koktajli i certyfikowane szkolenie barmańskie.",
       "bullets": [
-        "Simple — 1 barman, bar Modern, proponowana karta 7 koktajli, do 6 godzin obsługi",
-        "Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, 8 koktajli i 3 bezalkoholowe, darmowa degustacja, do 8 godzin",
-        "Premium — 2+ barmanów, karta 15 koktajli i 6 bezalkoholowych, welcome drink, wieża z kieliszków, fontanna czekoladowa w cenie, do 8 godzin"
+        "Simple — 1 barman, mobilny bar Modern, szkło (long, short, kieliszki do wina), menu na tablecie, propozycja 7 koktajli, do 6 godzin obsługi",
+        "Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, szkło także z kieliszkami koktajlowymi, menu na tablecie, propozycja 8 koktajli i 3 bezalkoholowych, suszone owoce i syropy smakowe, do 8 godzin",
+        "Premium — 2+ barmanów, bar Modern lub Boho, karta premium: propozycja 15 koktajli i 6 bezalkoholowych, welcome drink i wieża z kieliszków w cenie, dekoracje premium (jadalne kwiaty, owoce liofilizowane, wata cukrowa), do 8 godzin"
       ]
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "question": "Ile kosztuje mobilny bar w Gdańsku?",
-      "answer": "Pełna obsługa baru zaczyna się od 3000 zł i obejmuje bar, barmanów, szkło i menu koktajli. Końcowa cena zależy od liczby gości, terminu i miejsca."
+      "answer": "Pełna obsługa baru zaczyna się od 3300 zł i obejmuje bar, barmanów, szkło i menu koktajli. Końcowa cena zależy od liczby gości, terminu i miejsca."
     },
     {
       "question": "Czy to wynajem samego baru czy usługa z barmanami?",
