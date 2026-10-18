@@ -496,9 +496,9 @@ def render_service_jsonld(service: dict[str, Any]) -> str:
                 ],
             }
         )
-    if service.get("slug") in {"mobilny-bar-na-event-firmowy", "bar-na-wigilie-firmowa", "bar-na-integracje-firmowa"}:
+    if service.get("slug") in {"mobilny-bar-na-event-firmowy", "bar-na-wigilie-firmowa", "bar-na-integracje-firmowa", "szkolenie-barmanskie-dla-firm"}:
         graph[1]["audience"] = {"@type": "BusinessAudience", "name": "Firmy z Trójmiasta i województwa pomorskiego"}
-    if service.get("slug") != "fontanna-czekoladowa":
+    if service.get("slug") not in {"fontanna-czekoladowa", "szkolenie-barmanskie-dla-firm"}:
         # bar packages start from MIN_PRICE_PLN; the fountain alone is priced separately
         graph[1]["offers"]["priceSpecification"] = {
             "@type": "PriceSpecification",

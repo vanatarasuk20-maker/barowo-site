@@ -1,0 +1,109 @@
+{
+  "slug": "szkolenie-barmanskie-dla-firm",
+  "published": true,
+  "priority": 2,
+  "updated_at": "2026-10-18",
+  "title_plain": "Szkolenie barmańskie dla firm w Trójmieście",
+  "title_html": "SZKOLENIE<br><span class=\"red\">BARMAŃSKIE DLA FIRM</span>",
+  "description": "Szkolenie barmańskie dla zespołów firmowych w Gdańsku, Gdyni i Sopocie. Około 2 godzin, do 30 osób, każdy przygotowuje własne koktajle i dostaje certyfikat BAROWO.",
+  "meta_title": "Szkolenie Barmańskie dla Firm Trójmiasto | Team Building — BAROWO",
+  "meta_description": "Szkolenie barmańskie dla firm w Gdańsku, Gdyni i Sopocie: ok. 2 godziny, do 30 osób, własne koktajle i certyfikat BAROWO. Osobno albo razem z mobilnym barem.",
+  "eyebrow": "Dla firm · Team building",
+  "intro": "Szkolenie barmańskie to team building, w którym każdy staje za barem. Przyjeżdżamy do Was, pokazujemy pracę barmana, a uczestnicy przygotowują własne koktajle.",
+  "direct_answer": "BAROWO prowadzi szkolenie barmańskie dla zespołów firmowych w Trójmieście i do około 150 km od Gdyni. Szkolenie trwa około 2 godzin, bierze w nim udział do 30 osób, a każdy uczestnik przygotowuje własne koktajle. Na koniec uczestnicy dostają certyfikat BAROWO. Szkolenie może być osobną atrakcją albo częścią eventu z mobilnym barem. Cenę ustalamy indywidualnie.",
+  "service_type": "Szkolenie barmańskie dla firm",
+  "offer_note": "Cenę szkolenia barmańskiego ustalamy indywidualnie — zależy od liczby uczestników, miejsca i terminu.",
+  "areas": ["Gdynia", "Gdańsk", "Sopot", "Trójmiasto", "Pomorskie"],
+  "image": "/assets/photos/koktajl-coupe-premium.jpg",
+  "image_alt": "Koktajl w kryształowym kieliszku coupe przygotowany przez BAROWO",
+  "primary_cta_text": "Zapytaj o szkolenie",
+  "secondary_cta_text": "Bar na event firmowy",
+  "secondary_cta_href": "/oferta/mobilny-bar-na-event-firmowy/",
+  "mid_cta_label": "Szkolenie barmańskie",
+  "mid_cta_title_html": "ZAPLANUJ<br><span class=\"red\">SZKOLENIE DLA ZESPOŁU</span>",
+  "mid_cta_text": "Wyślij datę, miejsce i liczbę uczestników. Wrócimy z dostępnością terminu i wyceną szkolenia.",
+  "mid_cta_button_text": "Zapytaj o szkolenie",
+  "bottom_cta_label": "Organizator",
+  "bottom_cta_title_html": "ZAMÓW<br><span class=\"red\">SZKOLENIE BARMAŃSKIE</span>",
+  "bottom_cta_text": "Napisz do BAROWO — sprawdzimy termin i przygotujemy wycenę szkolenia dla Twojego zespołu.",
+  "bottom_cta_button_text": "Zapytaj o szkolenie",
+  "sidebar_title_html": "ZAPYTAJ O<br><span class=\"red\">SZKOLENIE</span>",
+  "sidebar_text": "Podaj datę, miejsce i liczbę uczestników (do 30 osób). Wrócimy z wyceną i propozycją przebiegu.",
+  "sidebar_button_text": "Zapytaj o szkolenie",
+  "card_title_html": "Szkolenie <span class=\"red\">barmańskie dla firm</span>",
+  "card_excerpt": "Team building za barem: ok. 2 godziny, do 30 osób, własne koktajle i certyfikat BAROWO.",
+  "highlights": [
+    "Około 2 godzin, do 30 uczestników",
+    "Każdy przygotowuje własne koktajle",
+    "Certyfikat BAROWO dla uczestników",
+    "U Was: biuro, hotel, restauracja albo sala"
+  ],
+  "sections": [
+    {
+      "title": "Team building, w którym każdy staje za barem",
+      "body": "Zamiast kolejnego wykładu zespół uczy się czegoś nowego razem. Barman BAROWO pokazuje pracę za barem, a uczestnicy przygotowują własne koktajle. To dobry sposób na integrację ludzi z różnych działów — przy barze łatwo zacząć rozmowę."
+    },
+    {
+      "title": "Jak wygląda szkolenie?",
+      "body": "Szkolenie trwa około 2 godzin i może w nim wziąć udział do 30 osób.",
+      "bullets": [
+        "przyjeżdżamy do Was z barem i sprzętem barmańskim",
+        "barman BAROWO pokazuje, jak przygotować koktajle",
+        "każdy uczestnik przygotowuje własne koktajle",
+        "na koniec uczestnicy dostają certyfikat BAROWO"
+      ]
+    },
+    {
+      "title": "Osobno albo razem z barem",
+      "body": "Szkolenie może być osobną atrakcją albo częścią większego wydarzenia. Możesz połączyć je z [mobilnym barem na event firmowy](/oferta/mobilny-bar-na-event-firmowy/), [integracją firmową](/oferta/bar-na-integracje-firmowa/) albo [wigilią firmową](/oferta/bar-na-wigilie-firmowa/) — najpierw zespół uczy się za barem, a potem bar obsługuje gości przez resztę wieczoru. Szczegóły pakietów znajdziesz w [cenniku](/cennik/)."
+    },
+    {
+      "title": "Gdzie prowadzimy szkolenie?",
+      "body": "U Was: w biurze, hotelu, restauracji, wynajętej sali albo ośrodku — w Gdańsku, Gdyni, Sopocie i do około 150 km od Gdyni. Przed szkoleniem ustalamy miejsce na bar, liczbę uczestników i godziny."
+    },
+    {
+      "title": "Dlaczego BAROWO?",
+      "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Obsługiwaliśmy już eventy firmowe m.in. dla firm IT, banku, biur architektonicznych i studiów projektowych."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ile trwa szkolenie barmańskie?",
+      "answer": "Około 2 godzin."
+    },
+    {
+      "question": "Ile osób może wziąć udział?",
+      "answer": "Do 30 osób."
+    },
+    {
+      "question": "Jaki certyfikat dostają uczestnicy?",
+      "answer": "Uczestnicy dostają certyfikat BAROWO potwierdzający udział w szkoleniu barmańskim."
+    },
+    {
+      "question": "Gdzie odbywa się szkolenie?",
+      "answer": "U Was — w biurze, hotelu, restauracji albo sali w Trójmieście i do około 150 km od Gdyni. Przyjeżdżamy z barem i sprzętem."
+    },
+    {
+      "question": "Czy szkolenie można połączyć z mobilnym barem?",
+      "answer": "Tak. Szkolenie może być osobną atrakcją albo częścią eventu firmowego z mobilnym barem BAROWO."
+    },
+    {
+      "question": "Ile kosztuje szkolenie barmańskie dla firm?",
+      "answer": "Cenę ustalamy indywidualnie. Zależy od liczby uczestników, miejsca i terminu."
+    },
+    {
+      "question": "Czy wystawiacie fakturę dla firmy?",
+      "answer": "Tak, wystawiamy fakturę. Nie jesteśmy płatnikiem VAT, więc podana cena jest ceną końcową — nie doliczamy do niej VAT."
+    }
+  ],
+  "related_links": [
+    {"href": "/oferta/mobilny-bar-na-event-firmowy/", "label": "Mobilny bar na event firmowy"},
+    {"href": "/oferta/bar-na-integracje-firmowa/", "label": "Bar na integrację firmową"},
+    {"href": "/oferta/bar-na-wigilie-firmowa/", "label": "Bar na wigilię firmową"},
+    {"href": "/cennik/", "label": "Cennik mobilnego baru"},
+    {"href": "/#contact", "label": "Formularz kontaktowy"}
+  ],
+  "related_articles": [
+    "mobilny-bar-na-event-firmowy"
+  ]
+}

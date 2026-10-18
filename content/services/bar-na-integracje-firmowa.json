@@ -77,11 +77,24 @@
     },
     {
       "title": "Pakiety i cena",
-      "body": "Każdy pakiet to pełna obsługa baru, a ceny zaczynają się od 3300 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca. Szczegóły znajdziesz w [cenniku](/cennik/). Dodatki do każdego pakietu: fontanna czekoladowa, wieża z kieliszków, welcome drink, personalizowana stylistyka menu, personalizowany dressing do koktajli i certyfikowane szkolenie barmańskie.",
+      "body": "Każdy pakiet to pełna obsługa baru, a ceny zaczynają się od 3300 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca. Szczegóły znajdziesz w [cenniku](/cennik/). Dodatki do każdego pakietu: fontanna czekoladowa, wieża z kieliszków, welcome drink, personalizowana stylistyka menu, personalizowany dressing do koktajli i [szkolenie barmańskie](/oferta/szkolenie-barmanskie-dla-firm/) z certyfikatem BAROWO.",
       "bullets": [
         "Simple — 1 barman, mobilny bar Modern, szkło (long, short, kieliszki do wina), menu na tablecie, propozycja 7 koktajli, do 6 godzin obsługi",
         "Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, szkło także z kieliszkami koktajlowymi, menu na tablecie, propozycja 8 koktajli i 3 bezalkoholowych, suszone owoce i syropy smakowe, do 8 godzin",
         "Premium — 2+ barmanów, bar Modern lub Boho, karta premium: propozycja 15 koktajli i 6 bezalkoholowych, welcome drink i wieża z kieliszków w cenie, dekoracje premium (jadalne kwiaty, owoce liofilizowane, wata cukrowa), do 8 godzin"
+      ]
+    },
+    {
+      "type": "cards",
+      "label": "Atrakcja dla zespołu",
+      "title": "Szkolenie barmańskie dla firm",
+      "cards": [
+        {
+          "title": "Team building za barem",
+          "text": "Około 2 godzin, do 30 osób. Każdy uczestnik przygotowuje własne koktajle i dostaje certyfikat BAROWO. Szkolenie może być osobną atrakcją albo częścią eventu z barem.",
+          "button_text": "Zobacz szkolenie barmańskie",
+          "button_href": "/oferta/szkolenie-barmanskie-dla-firm/"
+        }
       ]
     },
     {
@@ -117,6 +130,10 @@
     {
       "question": "Czy przygotujecie koktajle bezalkoholowe?",
       "answer": "Tak. W pakietach Standard i Premium menu obejmuje koktajle bezalkoholowe."
+    },
+    {
+      "question": "Czy prowadzicie szkolenie barmańskie dla zespołu?",
+      "answer": "Tak. Szkolenie trwa około 2 godzin, bierze w nim udział do 30 osób, każdy przygotowuje własne koktajle i dostaje certyfikat BAROWO. Można je zamówić osobno albo razem z mobilnym barem."
     }
   ],
   "related_links": [
@@ -127,6 +144,10 @@
     {
       "href": "/oferta/bar-na-wigilie-firmowa/",
       "label": "Bar na wigilię firmową"
+    },
+    {
+      "href": "/oferta/szkolenie-barmanskie-dla-firm/",
+      "label": "Szkolenie barmańskie dla firm"
     },
     {
       "href": "/aktualnosci/garden-party-z-barem-mobilnym/",

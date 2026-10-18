@@ -101,6 +101,19 @@
       "body": "Obsługujemy wigilie w całym Trójmieście: [mobilny bar w Gdyni](/oferta/mobilny-bar-gdynia/), [w Gdańsku](/oferta/mobilny-bar-gdansk/) i [w Sopocie](/oferta/mobilny-bar-sopot/), a także do około 150 km od Gdyni. Planujesz też inne spotkanie zespołu? Zobacz [mobilny bar na event firmowy](/oferta/mobilny-bar-na-event-firmowy/) i [bar na integrację firmową](/oferta/bar-na-integracje-firmowa/)."
     },
     {
+      "type": "cards",
+      "label": "Atrakcja dla zespołu",
+      "title": "Szkolenie barmańskie dla firm",
+      "cards": [
+        {
+          "title": "Team building za barem",
+          "text": "Około 2 godzin, do 30 osób. Każdy uczestnik przygotowuje własne koktajle i dostaje certyfikat BAROWO. Szkolenie może być osobną atrakcją albo częścią eventu z barem.",
+          "button_text": "Zobacz szkolenie barmańskie",
+          "button_href": "/oferta/szkolenie-barmanskie-dla-firm/"
+        }
+      ]
+    },
+    {
       "title": "Dlaczego BAROWO?",
       "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
     }
@@ -133,6 +146,10 @@
     {
       "question": "Czy bar może stanąć w biurze firmy?",
       "answer": "Tak, jeśli w biurze jest miejsce na bezpieczne ustawienie stanowiska. Przed wydarzeniem ustalamy dostęp i godziny montażu."
+    },
+    {
+      "question": "Czy prowadzicie szkolenie barmańskie dla zespołu?",
+      "answer": "Tak. Szkolenie trwa około 2 godzin, bierze w nim udział do 30 osób, każdy przygotowuje własne koktajle i dostaje certyfikat BAROWO. Można je zamówić osobno albo razem z mobilnym barem."
     }
   ],
   "related_links": [
@@ -143,6 +160,10 @@
     {
       "href": "/oferta/bar-na-integracje-firmowa/",
       "label": "Bar na integrację firmową"
+    },
+    {
+      "href": "/oferta/szkolenie-barmanskie-dla-firm/",
+      "label": "Szkolenie barmańskie dla firm"
     },
     {
       "href": "/cennik/",

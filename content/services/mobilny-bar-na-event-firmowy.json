@@ -88,6 +88,19 @@
       ]
     },
     {
+      "type": "cards",
+      "label": "Atrakcja dla zespołu",
+      "title": "Szkolenie barmańskie dla firm",
+      "cards": [
+        {
+          "title": "Team building za barem",
+          "text": "Około 2 godzin, do 30 osób. Każdy uczestnik przygotowuje własne koktajle i dostaje certyfikat BAROWO. Szkolenie może być osobną atrakcją albo częścią eventu z barem.",
+          "button_text": "Zobacz szkolenie barmańskie",
+          "button_href": "/oferta/szkolenie-barmanskie-dla-firm/"
+        }
+      ]
+    },
+    {
       "title": "Dlaczego BAROWO?",
       "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
     }
@@ -120,6 +133,10 @@
     {
       "question": "Jak szybko dostanę wycenę?",
       "answer": "Wystarczy data, miejsce, rodzaj eventu i liczba gości. Na tej podstawie wracamy z dostępnością terminu i propozycją pakietu."
+    },
+    {
+      "question": "Czy prowadzicie szkolenie barmańskie dla zespołu?",
+      "answer": "Tak. Szkolenie trwa około 2 godzin, bierze w nim udział do 30 osób, każdy przygotowuje własne koktajle i dostaje certyfikat BAROWO. Można je zamówić osobno albo razem z mobilnym barem."
     }
   ],
   "related_links": [
@@ -130,6 +147,10 @@
     {
       "href": "/oferta/bar-na-integracje-firmowa/",
       "label": "Bar na integrację firmową"
+    },
+    {
+      "href": "/oferta/szkolenie-barmanskie-dla-firm/",
+      "label": "Szkolenie barmańskie dla firm"
     },
     {
       "href": "/cennik/",
