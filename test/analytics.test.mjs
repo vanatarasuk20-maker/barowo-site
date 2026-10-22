@@ -49,8 +49,25 @@ test('revocation disables GA4 and later Ads/Meta lead events',()=>{
 });
 test('page URLs omit arbitrary query fields while UTM campaign attribution survives',()=>{
   const f=fixture({analytics:true},{url:'https://barowo.com/?email=private@example.invalid&utm_source=google&utm_medium=cpc&utm_campaign=Wigilia'});
-  const c=f.configs().find(x=>x[1]===GA)[2];assert.equal(c.page_location,'https://barowo.com/');assert.equal(c.campaign_source,'google');assert.equal(c.campaign_medium,'cpc');assert.equal(c.campaign_name,'Wigilia');
+  const c=f.configs().find(x=>x[1]===GA)[2];assert.equal(c.page_location,'https://barowo.com/?utm_source=google&utm_medium=cpc&utm_campaign=Wigilia');assert.equal(c.campaign_source,'google');assert.equal(c.campaign_medium,'cpc');assert.equal(c.campaign_name,'Wigilia');
   assert.ok(!JSON.stringify(c).includes('private@example'));
+});
+test('Google click identifiers reach GA4 page and lead events without arbitrary query data',()=>{
+  for(const key of ['gclid','dclid','gbraid','wbraid']){
+    const f=fixture({analytics:true,marketing:true},{url:`https://barowo.com/oferta/drink-bar-na-urodziny/?${key}=Click-ID_123&email=private@example.invalid&phone=600100200&token=private-token#private-fragment`});
+    const config=f.configs().find(x=>x[1]===GA)[2];
+    assert.equal(config.page_location,`https://barowo.com/oferta/drink-bar-na-urodziny/?${key}=Click-ID_123`);
+    f.w.BAROWO_track('Lead',{lead_id:'deadbeef'});
+    assert.equal(f.events('generate_lead')[0][2].page_location,config.page_location);
+    const sent=JSON.stringify([config,...f.events('generate_lead')]);
+    for(const field of ['private@example','600100200','private-token','private-fragment'])assert.ok(!sent.includes(field));
+  }
+});
+test('untagged visits remain untagged and a click ID never bypasses consent',()=>{
+  const organic=fixture({analytics:true},{url:'https://barowo.com/cennik/?email=private@example.invalid',referrer:'https://www.google.com/'});
+  assert.equal(organic.configs().find(x=>x[1]===GA)[2].page_location,'https://barowo.com/cennik/');
+  const denied=fixture({analytics:false,marketing:false},{url:'https://barowo.com/?gclid=Click-ID_123'});
+  assert.equal(denied.configs().length,0);assert.equal(denied.scripts.length,0);
 });
 test('CRM receives anonymous IDs only with analytics consent',async()=>{
   const f=fixture({analytics:true,marketing:false});const body=new URLSearchParams({email:'private@example.invalid'});

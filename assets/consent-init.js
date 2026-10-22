@@ -68,7 +68,7 @@
     if (i.ga4Id && currentConsent.analytics && !loaded.analytics) {
       loaded.analytics = true;
       var gaConfig = {
-        page_location: location.origin + location.pathname,
+        page_location: analyticsPageLocation(),
         page_referrer: cleanUrl(d.referrer),
         allow_google_signals: false,
         allow_ad_personalization_signals: false
@@ -87,6 +87,19 @@
   }
   function cleanUrl(value) {
     try { var u = new URL(value); return u.origin + u.pathname; } catch (e) { return ''; }
+  }
+  function analyticsPageLocation() {
+    var page = new URL(location.origin + location.pathname);
+    var query = new URLSearchParams(location.search);
+    // Preserve attribution identifiers in GA4's document location, while
+    // excluding arbitrary URL fields (email, form values, tokens and hashes).
+    ['gclid', 'dclid', 'gbraid', 'wbraid', 'gad_source', 'gad_campaignid',
+      'utm_source', 'utm_medium', 'utm_campaign', 'utm_id', 'utm_content', 'utm_term', 'utm_source_platform'
+    ].forEach(function (key) {
+      var value = query.get(key);
+      if (value) page.searchParams.set(key, value);
+    });
+    return page.href;
   }
   function apply(c) {
     if (!c) return;
@@ -115,7 +128,7 @@
         });
         if (loaded.analytics && currentConsent.analytics) {
           safe.send_to = config.integrations.ga4Id;
-          safe.page_location = location.origin + location.pathname;
+          safe.page_location = analyticsPageLocation();
           w.gtag('event', map[event] || event, safe);
         }
         var lead = config.integrations.googleAdsLeadSendTo;
