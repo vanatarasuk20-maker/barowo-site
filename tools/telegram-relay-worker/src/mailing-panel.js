@@ -43,7 +43,7 @@ label.f{display:block;font-size:12px;letter-spacing:.06em;text-transform:upperca
 .item.off{opacity:.45;cursor:default}
 .hint{font-size:13px;color:var(--dim);margin:6px 0 0}
 .warn{font-size:13px;color:#ffb3b8;border-left:3px solid var(--red);padding:8px 10px;background:rgba(232,0,13,.08);margin-top:12px}
-iframe{width:100%;height:620px;border:0;background:#f1f2f6;display:block}
+iframe{width:100%;height:760px;border:0;background:#f1f2f6;display:block}
 .send{display:grid;gap:8px;margin-top:12px}
 @media(min-width:560px){.send{grid-template-columns:1fr 1fr}}
 .camp{font-size:13px;color:var(--dim);border-top:1px solid var(--line);padding:8px 0}
@@ -89,7 +89,13 @@ iframe{width:100%;height:620px;border:0;background:#f1f2f6;display:block}
     <h2><span>02</span> Wiadomość</h2>
     <label class="f" for="tpl">Szablon</label>
     <select id="tpl"></select>
-    <label class="f" for="subject">Temat</label>
+    <label class="f" for="h1">Nagłówek — biała linia</label>
+    <input type="text" id="h1" maxlength="40" placeholder="np. Wolne terminy.">
+    <label class="f" for="h2">Nagłówek — czerwona linia</label>
+    <input type="text" id="h2" maxlength="40" placeholder="np. Sezon 2027.">
+    <label class="f" for="img">Zdjęcie</label>
+    <select id="img"><option value="season">Koktajl (ciemne tło)</option><option value="bar">Barman Artem</option><option value="birthday">Koktajl z watą cukrową</option><option value="glass">Szkło i kieliszki</option><option value="">Bez zdjęcia</option></select>
+    <label class="f" for="subject">Temat maila (widać w skrzynce)</label>
     <input type="text" id="subject" maxlength="150">
     <label class="f" for="body">Treść</label>
     <textarea id="body" maxlength="4000"></textarea>
@@ -164,7 +170,7 @@ iframe{width:100%;height:620px;border:0;background:#f1f2f6;display:block}
     schedulePreview();
   }
   function values(){var t=$("btnText").value.trim(),u=$("btnUrl").value.trim();
-    return{subject:$("subject").value.trim(),body:$("body").value,button:t||u?t+" | "+u:""}}
+    return{subject:$("subject").value.trim(),body:$("body").value,button:t||u?t+" | "+u:"",h1:$("h1").value.trim(),h2:$("h2").value.trim(),image:$("img").value}}
   var pt;function schedulePreview(){clearTimeout(pt);pt=setTimeout(preview,500)}
   function preview(){
     var first=selectedList()[0],name=first?first.name:"Anna";
@@ -179,7 +185,7 @@ iframe{width:100%;height:620px;border:0;background:#f1f2f6;display:block}
       return'<div class="camp"><b>'+esc(c.subject)+'</b><br>'+esc(c.id)+' · wysłano '+c.sent+(c.waiting?' · w kolejce '+c.waiting:'')+(c.other?' · pominięte/błędy '+c.other:'')+(c.status==="done"?' · ✅ zakończona':'')+'</div>'}).join(""):"";
   }
   function applyTemplate(id){var t=state.templates.filter(function(x){return x.id===id})[0];if(!t)return;
-    $("subject").value=t.subject;$("body").value=t.body;var parts=(t.button||"").split("|");
+    $("subject").value=t.subject;$("body").value=t.body;$("h1").value=t.h1||"";$("h2").value=t.h2||"";$("img").value=t.image||"";var parts=(t.button||"").split("|");
     $("btnText").value=(parts[0]||"").trim();$("btnUrl").value=(parts.slice(1).join("|")||"").trim();schedulePreview()}
   function chip(group,key){document.querySelectorAll("#"+group+" .chip").forEach(function(b){b.addEventListener("click",function(){
     var k=b.dataset[key],map=key==="type"?state.types:state.statuses;map[k]=!map[k];b.setAttribute("aria-pressed",String(!!map[k]));render()})})}
@@ -190,7 +196,7 @@ iframe{width:100%;height:620px;border:0;background:#f1f2f6;display:block}
   $("selVisible").addEventListener("click",function(){visible().forEach(function(c){if(!c.unsubscribed)state.selected[c.uid]=true});render()});
   $("unselVisible").addEventListener("click",function(){visible().forEach(function(c){delete state.selected[c.uid]});render()});
   $("unselAll").addEventListener("click",function(){state.selected={};render()});
-  ["subject","body","btnText","btnUrl"].forEach(function(id){$(id).addEventListener("input",schedulePreview)});
+  ["subject","body","btnText","btnUrl","h1","h2","img"].forEach(function(id){$(id).addEventListener("input",schedulePreview);$(id).addEventListener("change",schedulePreview)});
   $("tpl").addEventListener("change",function(){applyTemplate(this.value)});
   $("test").addEventListener("click",function(){var b=this;b.disabled=true;
     api("test",{values:values()}).then(function(j){toast("📧 Test wysłany na "+j.sentTo+". Sprawdź skrzynkę.")}).catch(function(e){toast("❌ "+e.message)}).then(function(){b.disabled=false})});
