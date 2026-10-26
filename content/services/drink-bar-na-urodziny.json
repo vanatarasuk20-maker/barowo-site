@@ -2,14 +2,14 @@
   "slug": "drink-bar-na-urodziny",
   "published": true,
   "priority": 3,
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-26",
   "title_plain": "Drink bar na urodziny i 18-stkę",
   "title_html": "DRINK BAR<br><span class=\"red\">NA URODZINY I 18-STKĘ</span>",
-  "description": "Mobilny drink bar z barmanem na urodziny i 18-stkę w Trójmieście i na Pomorzu. Kolorowe koktajle, także 0%, pełna obsługa od 3300 zł.",
-  "meta_title": "Drink Bar i Barman na Urodziny i 18-stkę — Trójmiasto | od 3300 zł",
-  "meta_description": "Barman i mobilny drink bar na urodziny, 18-stkę i imprezę w domu. Gdynia, Gdańsk, Sopot i Pomorskie. Koktajle także 0%, 5,0 w Google. Pełna obsługa od 3300 zł.",
+  "description": "Drink bar na urodziny i 18-stkę od 3300 zł. Barman, bar, szkło i koktajle w Trójmieście i Pomorskiem. Sprawdź termin osiemnastki.",
+  "meta_title": "Drink bar na urodziny i 18-stkę — Pomorskie | BAROWO",
+  "meta_description": "Drink bar na urodziny i 18-stkę od 3300 zł. Barman, bar, szkło i koktajle w Trójmieście i Pomorskiem. Sprawdź termin osiemnastki.",
   "eyebrow": "Urodziny · 18-stki · Trójmiasto",
-  "intro": "Barman, mobilny bar i karta kolorowych koktajli na urodziny, 18-stkę albo imprezę w domu. Przyjeżdżamy z gotowym stanowiskiem, szkłem i lodem — Ty świętujesz, my obsługujemy gości.",
+  "intro": "Drink bar na urodziny i 18-stkę w Trójmieście i Pomorskiem od 3300 zł za pełną obsługę. Przyjeżdżamy z barmanem, mobilnym barem, szkłem i menu koktajli, żeby gospodarz mógł świętować razem z gośćmi.",
   "direct_answer": "Drink bar na urodziny to pełna obsługa baru z barmanem: przyjazd, ustawienie baru, karta koktajli dopasowana do imprezy (także 0%) i sprzątanie po wszystkim. W BAROWO pełna obsługa zaczyna się od 3300 zł.",
   "service_type": "Drink bar na urodziny",
   "offer_note": "Pełna obsługa drink baru BAROWO na urodziny zaczyna się od 3300 zł: bar, barman, szkło, lód, karta koktajli i obsługa gości.",
@@ -49,8 +49,8 @@
       "body": "Na osiemnastce część gości często nie ma jeszcze 18 lat. Dlatego przygotowujemy kolorowe koktajle 0%, które wyglądają tak samo efektownie jak klasyczne drinki i świetnie wychodzą na zdjęciach. Zasady serwisu i kartę ustalamy z organizatorem przed imprezą."
     },
     {
-      "title": "Ile kosztuje drink bar na urodziny?",
-      "body": "Pełna obsługa zaczyna się od 3300 zł. Ostateczna cena zależy od liczby gości, terminu, miejsca i pakietu. Porównanie pakietów znajdziesz w [cenniku](/cennik/). Dodatki do każdego pakietu: fontanna czekoladowa, wieża z kieliszków, welcome drink, personalizowana stylistyka menu, personalizowany dressing do koktajli i [szkolenie barmańskie](/oferta/szkolenie-barmanskie-dla-firm/) z certyfikatem BAROWO.",
+      "title": "Ile kosztuje barman na 18?",
+      "body": "Barman na 18 urodziny w BAROWO kosztuje od 3300 zł za pełną obsługę z mobilnym barem. To cena wyjściowa usługi z wyposażeniem i serwisem, a nie stawka za samą pracę jednej osoby. Simple obejmuje 1 barmana i do 6 godzin; Standard i Premium 2+ barmanów, zależnie od liczby gości, oraz do 8 godzin. Każdy pakiet można przedłużyć. Końcowa cena zależy od terminu, miejsca, liczby gości i menu. Sprawdź [cennik mobilnego baru](/cennik/) i wyślij dane osiemnastki przez [formularz](/#contact).",
       "bullets": [
         "Simple — 1 barman, mobilny bar Modern, szkło (long, short, kieliszki do wina), menu na tablecie, propozycja 7 koktajli, do 6 godzin obsługi",
         "Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, szkło także z kieliszkami koktajlowymi, menu na tablecie, propozycja 8 koktajli i 3 bezalkoholowych, suszone owoce i syropy smakowe, do 8 godzin",
@@ -73,7 +73,7 @@
     },
     {
       "title": "Gdzie obsługujemy urodziny?",
-      "body": "Gdynię, Gdańsk, Sopot i całe Pomorskie do ok. 150 km od Gdyni — w domu, w ogrodzie, w wynajętej sali lub restauracji. Zobacz też [drink bar na urodziny w Gdańsku](/oferta/drink-bar-na-urodziny-gdansk/) i [mobilny bar Trójmiasto](/oferta/mobilny-bar-trojmiasto/)."
+      "body": "Gdynię, Gdańsk, Sopot i całe Pomorskie — w domu, w ogrodzie, w wynajętej sali lub restauracji. Zobacz też [drink bar na urodziny w Gdańsku](/oferta/drink-bar-na-urodziny-gdansk/) i [mobilny bar Trójmiasto](/oferta/mobilny-bar-trojmiasto/)."
     },
     {
       "title": "Jak zarezerwować?",
@@ -109,7 +109,7 @@
     },
     {
       "question": "Gdzie dojeżdżacie?",
-      "answer": "Gdynia, Gdańsk, Sopot i całe województwo pomorskie do ok. 150 km od Gdyni. Dalsze wyjazdy ustalamy indywidualnie."
+      "answer": "Gdynia, Gdańsk, Sopot i całe województwo pomorskie w województwie pomorskim. Dalsze wyjazdy ustalamy indywidualnie."
     },
     {
       "question": "Czy można zrobić menu tematyczne?",
@@ -135,11 +135,10 @@
     },
     {
       "href": "/oferta/mobilny-bar-trojmiasto/",
-      "label": "Mobilny bar Trójmiasto"
+      "label": "Gdańsk, Gdynia i Sopot — oferty dla miast"
     }
   ],
   "related_articles": [
-    "drink-bar-na-urodziny-gdansk",
     "garden-party-z-barem-mobilnym"
   ],
   "primary_cta_text": "Sprawdź termin urodzin",
@@ -159,5 +158,6 @@
   "sidebar_button_text": "Sprawdź termin",
   "sidebar_button_href": "/?event_type=Urodziny%20%2F%2018-tka#contact",
   "card_title_html": "Drink bar <span class=\"red\">na urodziny i 18-stkę</span>",
-  "card_excerpt": "Barman i mobilny drink bar na urodziny i 18-stkę w Trójmieście — od 3300 zł, z koktajlami 0%."
+  "card_excerpt": "Barman i mobilny drink bar na urodziny i 18-stkę w Trójmieście — od 3300 zł, z koktajlami 0%.",
+  "link_label": "Drink bar na urodziny"
 }

@@ -2,20 +2,16 @@
   "slug": "mobilny-bar-sopot",
   "published": true,
   "priority": 8,
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-26",
   "title_plain": "Mobilny bar Sopot",
   "title_html": "MOBILNY BAR<br><span class=\"red\">SOPOT</span>",
-  "description": "Mobilny bar w Sopocie na event, wesele, urodziny i prywatną imprezę. Profesjonalni barmani, koktajle i elegancki setup BAROWO.",
+  "description": "Mobilny bar Sopot od 3300 zł za pełną obsługę. Bar, barmani, szkło i menu na wesele, urodziny lub event. Sprawdź dostępność terminu.",
   "eyebrow": "Lokalnie · Sopot",
-  "intro": "W Sopocie bar często musi pasować do bardziej eleganckiego, miejskiego lub nadmorskiego klimatu wydarzenia. BAROWO dowozi gotowy setup i obsługę, która wygląda profesjonalnie od pierwszego kontaktu.",
-  "direct_answer": "Mobilny bar w Sopocie sprawdzi się, jeśli chcesz dodać wydarzeniu efekt premium, uporządkować obsługę baru i dać gościom estetyczny punkt koktajlowy bez organizacyjnego chaosu.",
+  "intro": "Mobilny bar w Sopocie od 3300 zł za pełną obsługę wesela, firmówki lub urodzin. BAROWO zapewnia bar, barmanów, szkło i menu koktajli. Podaj datę, adres i liczbę gości, aby otrzymać ofertę.",
+  "direct_answer": "Dla wydarzenia w Sopocie ustalimy menu, liczbę barmanów i harmonogram. Simple obejmuje do 6 godzin, a Standard i Premium do 8 godzin; każdy pakiet można przedłużyć. Dojazd i montaż potwierdzamy indywidualnie.",
   "service_type": "Mobilny bar Sopot",
   "areas": [
-    "Sopot",
-    "Trójmiasto",
-    "Gdynia",
-    "Gdańsk",
-    "Pomorskie"
+    "Sopot"
   ],
   "image": "/assets/photo4-opt.jpg",
   "image_alt": "Realizacja mobilnego baru BAROWO w Sopocie",
@@ -27,89 +23,67 @@
   ],
   "sections": [
     {
-      "title": "Na jakie wydarzenia w Sopocie pasuje mobilny bar?",
-      "body": "Mobilny bar dobrze działa na eventach firmowych, weselach, urodzinach, bankietach i imprezach w lokalach lub plenerze. W Sopocie szczególnie ważny jest wygląd setupu i kultura obsługi."
+      "title": "Bar w Sopocie — zacznij od miejsca i formatu",
+      "body": "Przy zapytaniu o mobilny bar w Sopocie najwięcej pomagają konkretne informacje o przyjęciu. Czy planujesz wesele, spotkanie zespołu, urodziny, czy imprezę prywatną? W jakim obiekcie i w jakich godzinach ma działać stanowisko? BAROWO zapewnia pełną obsługę: bar, barmanów, szkło, lód, sprzęt, dodatki i kartę koktajli. Cena zaczyna się od 3300 zł, a zakres dobieramy do wydarzenia. Nie trzeba znać wszystkich nazw drinków ani mieć zamkniętego planu przed pierwszą rozmową. Wystarczy opisać oczekiwany sposób obsługi i wskazać, co jest już potwierdzone, a co pozostaje do ustalenia z obiektem. Przygotowaną propozycję omówimy przed potwierdzeniem, aby wszystkie szczegóły były jasne. Jeżeli koordynator obiektu zmieni zasady dostępu do przestrzeni, przekaż je zespołowi przed przyjazdem, aby ponownie uzgodnić przygotowanie baru."
     },
     {
-      "title": "Jak dopasowujemy bar do miejsca?",
-      "body": "Przed realizacją ustalamy charakter lokalu, dostęp do miejsca, godziny montażu, liczbę gości i oczekiwany styl. Dzięki temu bar nie jest przypadkowym dodatkiem, tylko częścią wydarzenia.",
-      "bullets": [
-        "setup pasujący do przestrzeni",
-        "menu pod charakter imprezy",
-        "sprawny ruch gości przy barze",
-        "jasny zakres obsługi"
-      ]
+      "title": "Przyjęcie w hotelu lub restauracji — uzgodnij współpracę",
+      "body": "Jeśli gościnę organizuje hotel albo restauracja, zapytaj koordynatora o możliwość ustawienia dodatkowego baru. Potwierdź wybrane miejsce, dostęp do niego przed wydarzeniem i zasady wejścia wykonawców. Warto przekazać jeden kontakt do osoby odpowiedzialnej za salę, żeby ustalenia dotyczące montażu nie przechodziły przez kilka osób. Zespół baru i obsługa obiektu powinny znać godziny rozpoczęcia serwisu oraz plan zakończenia. Nie zakładamy, że każdy lokal dysponuje takim samym układem lub zapleczem. Zdjęcie albo plan przestrzeni może pomóc w rozmowie o ustawieniu stanowiska, zanim potwierdzimy ostateczny zakres i warunki."
     },
     {
-      "title": "Co z wydarzeniami firmowymi?",
-      "body": "Sopot często wybierany jest na integracje i wydarzenia biznesowe. W takich realizacjach liczy się przewidywalność, estetyka i obsługa, która nie wymaga ciągłej kontroli organizatora."
+      "title": "Wesele w Sopocie — bar zgodny z planem przyjęcia",
+      "body": "Na weselu liczą się moment wejścia gości, welcome drink, posiłki i część taneczna. Podaj, w jakich godzinach chcesz korzystać z baru i czy serwis ma być powiązany z konkretnym punktem programu. Dobierzemy pakiet oraz liczbę barmanów do liczby gości i menu. Jeśli planujesz dodatkowe atrakcje, zapisz je od razu, aby ustalić ich miejsce w harmonogramie. Opis stanowiska znajdziesz jako [mobilny bar na wesele](/oferta/mobilny-bar-na-wesele/), a informacje o pracy zespołu na stronie [barman na wesele w Trójmieście](/oferta/barman-na-wesele-trojmiasto/). Przed przyjęciem potwierdzamy ustalenia z salą i organizatorem."
     },
     {
-      "title": "Wynajem mobilnego baru w Sopocie — z barmanami, nie sama lada",
-      "body": "Wynajem baru w BAROWO to pełna usługa, a nie samo wypożyczenie lady. Przyjeżdżamy z barem, barmanami i całym zapleczem, rozstawiamy stanowisko, obsługujemy gości przez całe wydarzenie i zabieramy sprzęt po zakończeniu.",
-      "bullets": [
-        "mobilny bar Modern lub Boho i przygotowanie stanowiska",
-        "barmani dopasowani do liczby gości",
-        "szkło, lód, sprzęt barmański i dodatki do drinków",
-        "menu koktajli z opcjami bezalkoholowymi",
-        "obsługa do 6 godzin (Simple) lub do 8 godzin (Standard, Premium), z możliwością przedłużenia"
-      ]
+      "title": "Prywatne urodziny i 18-stka — wybór smaków i obsługi",
+      "body": "Na urodzinach karta powinna odpowiadać gospodarzowi i gościom, a bar mieścić się w rytmie spotkania. Możesz wskazać smaki owocowe, świeże lub bardziej wytrawne, zamiast kompletować gotową listę receptur. Na osiemnastce ustalamy z organizatorem zasady serwisu i opcje dla osób, które nie piją alkoholu. W menu Standard i Premium są koktajle bezalkoholowe; szczegóły oraz rozszerzenia potwierdzamy przed imprezą. Podaj adres przyjęcia i liczbę uczestników, niezależnie od tego, czy wybierasz lokal, dom, czy ogród. Pełny zakres i pytania o cenę opisuje strona [drink bar na urodziny i 18-stkę](/oferta/drink-bar-na-urodziny/)."
     },
     {
-      "title": "Gdzie stawiamy bar w Sopocie?",
-      "body": "Bar stawiamy w hotelach, restauracjach, salach bankietowych, willach i ogrodach, a także w plenerze, jeśli warunki miejsca pozwalają na bezpieczne ustawienie stanowiska. Sopot leży między Gdynią a Gdańskiem, więc dojazd planujemy bez dodatkowej logistyki."
+      "title": "Spotkanie firmowe po części oficjalnej",
+      "body": "Jeśli bar ma działać podczas integracji, jubileuszu lub spotkania z klientami, wyślij program wydarzenia. Ważne jest, kiedy uczestnicy kończą prezentacje i przechodzą do rozmów. Przy wspólnym rozpoczęciu części nieformalnej warto odpowiednio zaplanować obsadę oraz kartę. Barmani odpowiadają za przygotowanie stanowiska i serwis w ustalonych godzinach, a organizator może zająć się uczestnikami. BAROWO wystawia fakturę bez VAT i potwierdza zakres przed rezerwacją. Zobacz [bar na firmówkę](/oferta/mobilny-bar-na-event-firmowy/) oraz [bar na integrację firmową](/oferta/bar-na-integracje-firmowa/). Na spotkanie świąteczne przygotowaliśmy osobną ofertę [wigilii firmowej z barem](/oferta/bar-na-wigilie-firmowa/)."
     },
     {
-      "title": "Pakiety i cena",
-      "body": "Każdy pakiet to pełna obsługa baru, a ceny zaczynają się od 3300 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca. Szczegóły znajdziesz w [cenniku](/cennik/). Dodatki do każdego pakietu: fontanna czekoladowa, wieża z kieliszków, welcome drink, personalizowana stylistyka menu, personalizowany dressing do koktajli i [szkolenie barmańskie](/oferta/szkolenie-barmanskie-dla-firm/) z certyfikatem BAROWO.",
-      "bullets": [
-        "Simple — 1 barman, mobilny bar Modern, szkło (long, short, kieliszki do wina), menu na tablecie, propozycja 7 koktajli, do 6 godzin obsługi",
-        "Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, szkło także z kieliszkami koktajlowymi, menu na tablecie, propozycja 8 koktajli i 3 bezalkoholowych, suszone owoce i syropy smakowe, do 8 godzin",
-        "Premium — 2+ barmanów, bar Modern lub Boho, karta premium: propozycja 15 koktajli i 6 bezalkoholowych, welcome drink i wieża z kieliszków w cenie, dekoracje premium (jadalne kwiaty, owoce liofilizowane, wata cukrowa), do 8 godzin"
-      ]
+      "title": "Dojazd z Gdyni, montaż i wariant plenerowy",
+      "body": "Przyjeżdżamy do Sopotu z bazy w Gdyni. Warunki dojazdu potwierdzamy w indywidualnej ofercie dla adresu wydarzenia. Opisz możliwość podjazdu, schody lub windę oraz godziny, w których można wnieść wyposażenie. Jeśli stanowisko ma działać na zewnątrz, ustalimy osłonę baru, podłoże i plan na zmianę pogody. Nie warto zostawiać tych ustaleń na moment przyjazdu barmanów. Po potwierdzeniu miejsca uzgodnimy przygotowanie oraz zabranie sprzętu, tak aby dopasować je do zasad obiektu. Gdy impreza przenosi się do innej miejscowości, podaj nowy adres; regionalną obsługę opisuje strona [mobilny bar Pomorskie](/oferta/mobilny-bar-pomorskie/)."
     },
     {
-      "title": "Usługi BAROWO w Sopocie",
-      "body": "Wybierz stronę, która najlepiej pasuje do Twojego wydarzenia: [mobilny bar na wesele](/oferta/mobilny-bar-na-wesele/), [barman na wesele](/oferta/barman-na-wesele-trojmiasto/), [mobilny bar na event firmowy](/oferta/mobilny-bar-na-event-firmowy/), [bar na wigilię firmową](/oferta/bar-na-wigilie-firmowa/), [bar na integrację firmową](/oferta/bar-na-integracje-firmowa/), [drink bar na urodziny i 18-stkę](/oferta/drink-bar-na-urodziny/) oraz [fontanna czekoladowa](/oferta/fontanna-czekoladowa/). Jeśli planujesz wesele, sprawdź też [Planer Baru Weselnego](/planer-baru-weselnego/)."
-    },
-    {
-      "title": "Dlaczego BAROWO?",
-      "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
+      "title": "Pakiety BAROWO — sprawdź czas, menu i dodatki",
+      "body": "Simple obejmuje 1 barmana, bar Modern, propozycję 7 koktajli i do 6 godzin. Standard ma 2+ barmanów zależnie od liczby gości, bar Modern lub Boho, 8 koktajli i 3 bezalkoholowe oraz do 8 godzin. W Premium proponujemy 15 koktajli i 6 bezalkoholowych, welcome drink, wieżę z kieliszków i do 8 godzin. Każdy pakiet można przedłużyć, a kartę rozszerzyć. W [cenniku mobilnego baru](/cennik/) porównasz wyposażenie i dodatki. Po wybraniu wstępnego zakresu prześlij datę, adres w Sopocie, liczbę osób i godziny pracy przez [formularz kontaktowy](/#contact). Najpierw sprawdzamy termin, potem potwierdzamy szczegóły obsługi."
     }
   ],
   "faq": [
     {
-      "question": "Czy obsługujecie eventy firmowe w Sopocie?",
-      "answer": "Tak, obsługujemy eventy firmowe, integracje, bankiety i prywatne wydarzenia w Sopocie."
+      "question": "Czy obsługujecie imprezy w Sopocie?",
+      "answer": "Tak. Sopot należy do obszaru naszej obsługi. Warunki dla hotelu, restauracji, sali lub prywatnego miejsca ustalamy po otrzymaniu adresu."
     },
     {
-      "question": "Czy bar można dopasować do eleganckiego wydarzenia?",
-      "answer": "Tak. Możemy dobrać menu, dodatki i styl serwisu pod bardziej premium charakter wydarzenia."
+      "question": "Jaka jest cena drink baru w Sopocie?",
+      "answer": "Pełna obsługa BAROWO zaczyna się od 3300 zł. Końcowy koszt wymaga ustalenia liczby gości, terminu, czasu serwisu, miejsca i pakietu."
     },
     {
-      "question": "Jak zapytać o termin?",
-      "answer": "Wyślij datę, miejsce w Sopocie, liczbę gości i typ wydarzenia. Wrócimy z informacją o dostępności i propozycją pakietu."
+      "question": "Czy trzeba mieć własne szkło i sprzęt barmański?",
+      "answer": "Nie w zakresie opisanej usługi. Przywozimy wyposażenie, szkło, lód i dodatki potrzebne do uzgodnionej obsługi baru."
     },
     {
-      "question": "Ile kosztuje mobilny bar w Sopocie?",
-      "answer": "Pełna obsługa baru zaczyna się od 3300 zł i obejmuje bar, barmanów, szkło i menu koktajli. Końcowa cena zależy od liczby gości, terminu i miejsca."
+      "question": "Czy bar może pracować w sopockim plenerze?",
+      "answer": "Tak, po sprawdzeniu warunków ustawienia. Ustalamy z organizatorem osłonę stanowiska, podłoże, dostęp i plan na zmianę pogody."
     },
     {
-      "question": "Czy to wynajem samego baru czy usługa z barmanami?",
-      "answer": "Oferujemy pełną usługę: bar razem z barmanami, szkłem, sprzętem i menu koktajli. Dzięki temu odpowiadamy za całą obsługę gości, a Ty nie musisz organizować zaplecza."
+      "question": "Czy można zamówić koktajle bezalkoholowe?",
+      "answer": "Tak. Standard i Premium obejmują propozycje 0%. Kartę oraz ewentualne rozszerzenia ustalamy przed wydarzeniem."
     },
     {
-      "question": "Czy wystawiacie fakturę?",
-      "answer": "Tak, wystawiamy fakturę. Nie jesteśmy płatnikiem VAT, więc podana cena jest ceną końcową — nie doliczamy do niej VAT."
+      "question": "Co muszę wiedzieć przed rezerwacją w Sopocie?",
+      "answer": "Przygotuj datę, adres, liczbę gości i godziny obsługi. Dojazd, ustawienie baru i zakres pakietu potwierdzamy w indywidualnej ofercie."
     }
   ],
   "related_articles": [
-    "mobilny-bar-na-event-firmowy",
-    "ile-kosztuje-mobilny-bar-trojmiasto"
+    "jak-zorganizowac-firmowke-z-barem",
+    "ile-kosztuje-barman-na-wesele"
   ],
   "card_title_html": "Mobilny bar <span class=\"red\">Sopot</span>",
   "card_excerpt": "Elegancki bar na event, wesele, urodziny albo firmowe spotkanie w Sopocie.",
-  "meta_title": "Mobilny Bar Sopot | Wesela, Urodziny, Eventy — BAROWO",
+  "meta_title": "Mobilny bar Sopot — wesela i imprezy z barem | BAROWO",
   "related_links": [
     {
       "href": "/cennik/",
@@ -131,5 +105,7 @@
       "href": "/#contact",
       "label": "Formularz kontaktowy"
     }
-  ]
+  ],
+  "meta_description": "Mobilny bar Sopot od 3300 zł za pełną obsługę. Bar, barmani, szkło i menu na wesele, urodziny lub event. Sprawdź dostępność terminu.",
+  "link_label": "Mobilny bar Sopot"
 }

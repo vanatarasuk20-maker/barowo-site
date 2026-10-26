@@ -2,15 +2,15 @@
   "slug": "mobilny-bar-trojmiasto",
   "published": true,
   "priority": 5,
-  "updated_at": "2026-04-26",
-  "title_plain": "Mobilny bar Trójmiasto — Gdańsk, Gdynia, Sopot",
-  "title_html": "MOBILNY BAR TRÓJMIASTO<br><span class=\"red\">GDAŃSK, GDYNIA, SOPOT</span>",
-  "description": "Mobilny bar w Trójmieście: obsługa wesel, urodzin, garden party i eventów firmowych w Gdyni, Gdańsku, Sopocie oraz okolicach.",
-  "meta_title": "Mobilny Bar Trójmiasto | Gdańsk, Gdynia, Sopot — BAROWO",
-  "meta_description": "Mobilny bar w Trójmieście na wesele, urodziny, garden party i event firmowy. Obsługujemy Gdańsk, Gdynię, Sopot i okolice.",
-  "eyebrow": "Gdynia · Gdańsk · Sopot",
-  "intro": "BAROWO działa lokalnie w Trójmieście, dlatego dobrze zna logistykę sal, plenerów i wydarzeń nad morzem. To skraca ustalenia i pomaga dowieźć mobilny bar bez niepotrzebnego chaosu po stronie klienta.",
-  "direct_answer": "Jeśli szukasz mobilnego baru w Trójmieście, najważniejsze są trzy rzeczy: dostępność terminu, dobrze dobrany pakiet i logistyka miejsca. BAROWO łączy bar, barmanów, szkło, koktajle i dojazd w jednym procesie.",
+  "updated_at": "2026-10-26",
+  "title_plain": "Gdańsk, Gdynia, Sopot — wybierz miasto",
+  "title_html": "GDAŃSK, GDYNIA, SOPOT<br><span class=\"red\">WYBIERZ MIASTO</span>",
+  "description": "Gdańsk, Gdynia czy Sopot? Wybierz lokalną ofertę BAROWO. Pełna obsługa baru od 3300 zł, wydarzenia także w Pomorskiem. Sprawdź miasto.",
+  "meta_title": "Bar w Gdańsku, Gdyni i Sopocie — wybierz miasto | BAROWO",
+  "meta_description": "Gdańsk, Gdynia czy Sopot? Wybierz lokalną ofertę BAROWO. Pełna obsługa baru od 3300 zł, wydarzenia także w Pomorskiem. Sprawdź miasto.",
+  "eyebrow": "Obszar obsługi BAROWO",
+  "intro": "Wybierz Gdańsk, Gdynię lub Sopot, aby przejść do oferty dla swojego miasta. BAROWO obsługuje też wydarzenia w województwie pomorskim. Pełna obsługa mobilnego baru zaczyna się od 3300 zł.",
+  "direct_answer": "Ta strona pomaga znaleźć lokalną ofertę i przygotować informacje o miejscu wydarzenia. Dojazd oraz warunki montażu ustalamy dla konkretnego adresu, przed potwierdzeniem zakresu i ceny.",
   "service_type": "Mobilny bar Trójmiasto",
   "offer_note": "Wycena zależy od daty, miasta, liczby gości i zakresu obsługi, ale zawsze dotyczy pełnego mobilnego baru, a nie samego pokazu.",
   "areas": [
@@ -30,52 +30,73 @@
   ],
   "sections": [
     {
-      "title": "Mobilny bar w Trójmieście",
-      "body": "Mobilny bar w Trójmieście to nie tylko kwestia dowozu baru. Liczy się też znajomość lokalnych sal, czasu montażu, warunków dojazdu i tego, jak działa serwis na miejscu. Dlatego BAROWO pracuje lokalnie i planuje wydarzenia z uwzględnieniem realiów regionu."
-    },
-    {
-      "title": "Obsługiwane miasta i okolice",
-      "body": "Obsługujemy Gdynię, Gdańsk, Sopot i dalsze lokalizacje w województwie pomorskim. Jeśli wydarzenie odbywa się poza centrum Trójmiasta, zakres dojazdu i montażu ustalamy przed wyceną, żeby wszystko było jasne od początku."
-    },
-    {
-      "title": "Na jakie wydarzenia przyjeżdża BAROWO?",
-      "body": "Najczęściej obsługujemy wesela, urodziny, garden party, poprawiny i eventy firmowe. Jeśli chcesz zobaczyć bardziej szczegółowe scenariusze, sprawdź [mobilny bar na wesele](/oferta/mobilny-bar-na-wesele/) albo [mobilny bar na event firmowy](/oferta/mobilny-bar-na-event-firmowy/).",
-      "bullets": [
-        "wesele i poprawiny",
-        "urodziny i imprezy prywatne",
-        "garden party i realizacje plenerowe",
-        "integracje, konferencje i imprezy firmowe"
+      "type": "cards",
+      "label": "Miasta i region",
+      "title": "Gdzie odbędzie się wydarzenie?",
+      "cards": [
+        {
+          "title": "Gdańsk",
+          "text": "Wybierz ofertę dla Gdańska: mobilny bar na wesele, spotkanie firmowe lub urodziny. Podaj adres i harmonogram wydarzenia.",
+          "button_text": "Mobilny bar Gdańsk",
+          "button_href": "/oferta/mobilny-bar-gdansk/"
+        },
+        {
+          "title": "Gdynia",
+          "text": "BAROWO bazuje w Gdyni. Zobacz ofertę baru z barmanami na przyjęcia i wydarzenia firmowe w mieście.",
+          "button_text": "Mobilny bar Gdynia",
+          "button_href": "/oferta/mobilny-bar-gdynia/"
+        },
+        {
+          "title": "Sopot",
+          "text": "Sprawdź ofertę dla Sopotu i ustal ustawienie baru, dostęp do miejsca oraz godziny montażu i obsługi gości.",
+          "button_text": "Mobilny bar Sopot",
+          "button_href": "/oferta/mobilny-bar-sopot/"
+        },
+        {
+          "title": "Pomorskie poza Trójmiastem",
+          "text": "Planujesz imprezę w innej miejscowości województwa pomorskiego? Prześlij miejscowość i adres. Potwierdzimy dojazd oraz warunki obsługi w indywidualnej ofercie.",
+          "button_text": "Mobilny bar Pomorskie — dojazd",
+          "button_href": "/oferta/mobilny-bar-pomorskie/"
+        }
       ]
     },
     {
-      "title": "Co zawiera usługa?",
-      "body": "Usługa obejmuje mobilny bar, barmanów, szkło, sprzęt, dodatki do drinków i przygotowanie stanowiska. Jeśli najpierw chcesz zrozumieć budżet, zobacz [cennik mobilnego baru](/cennik/). Jeśli zależy Ci na szybkim sprawdzeniu terminu, skorzystaj z [formularza kontaktowego](/#contact)."
+      "title": "Jak przygotować informacje o lokalizacji?",
+      "body": "W zapytaniu podaj miejscowość, nazwę lub adres obiektu oraz to, czy bar będzie wewnątrz, czy w plenerze. Dodaj informacje o schodach, windzie, możliwości podjazdu i godzinach udostępnienia miejsca. Pozwala to ustalić montaż bez domysłów."
     },
     {
-      "title": "Dlaczego lokalny mobilny bar ma znaczenie?",
-      "body": "Lokalny zespół szybciej ocenia, ile czasu potrzeba na montaż, jakie są warunki wjazdu, jak rozłożyć bar w plenerze i jak policzyć tempo serwisu. To ważne zarówno przy weselach nad morzem, jak i przy eventach firmowych w mieście."
+      "title": "Dopasuj ofertę do rodzaju imprezy",
+      "body": "Wybierz [mobilny bar na wesele](/oferta/mobilny-bar-na-wesele/), [barmana na wesele](/oferta/barman-na-wesele-trojmiasto/), [bar na firmówkę](/oferta/mobilny-bar-na-event-firmowy/) lub [drink bar na 18-stkę](/oferta/drink-bar-na-urodziny/). Na koniec roku mamy osobną ofertę [wigilii firmowej z barem](/oferta/bar-na-wigilie-firmowa/)."
+    },
+    {
+      "title": "Dojazd i montaż — co ustalamy przed rezerwacją?",
+      "body": "Warunki dojazdu i montażu potwierdzamy dla konkretnego wydarzenia. Nie zakładaj automatycznie, że każdy adres oznacza ten sam zakres. Wyślij miejsce, datę i liczbę gości, a uwzględnimy logistykę w ofercie."
+    },
+    {
+      "title": "Gdzie porównać pakiety i cenę?",
+      "body": "Simple obejmuje do 6 godzin obsługi, a Standard i Premium do 8 godzin, z możliwością przedłużenia każdego pakietu. Porównanie wyposażenia i menu znajdziesz w [cenniku mobilnego baru](/cennik/). Ogólny zakres obsługi prezentuje [strona główna BAROWO](/)."
     }
   ],
   "faq": [
     {
-      "question": "Czy BAROWO działa w całym Trójmieście?",
-      "answer": "Tak. Obsługujemy Gdynię, Gdańsk, Sopot i okolice. Dalsze realizacje w województwie pomorskim ustalamy indywidualnie."
+      "question": "Gdzie znaleźć ofertę dla Gdańska, Gdyni lub Sopotu?",
+      "answer": "Skorzystaj z kart miast na tej stronie. Każda prowadzi bezpośrednio do odpowiedniej oferty lokalnej."
     },
     {
-      "question": "Czy dojazd jest w cenie?",
-      "answer": "Zakres dojazdu zależy od miasta i pakietu. Wycena zawsze pokazuje jasno, co jest wliczone."
+      "question": "Czy BAROWO obsługuje wydarzenia poza Trójmiastem?",
+      "answer": "Tak, pracujemy w województwie pomorskim. Podaj miejscowość i adres, aby potwierdzić warunki dojazdu i montażu."
     },
     {
-      "question": "Czy można zamówić mobilny bar na plener w Trójmieście?",
-      "answer": "Tak, jeśli miejsce pozwala na bezpieczne ustawienie baru i obsługę gości. Warunki plenerowe ustalamy przed rezerwacją."
+      "question": "Czy dojazd jest zawsze w cenie?",
+      "answer": "Warunki dojazdu ustalamy dla konkretnej lokalizacji i zapisujemy w ofercie. Do wyceny potrzebujemy adresu wydarzenia."
     },
     {
-      "question": "Czy obsługujecie też wesela i eventy firmowe poza centrum miast?",
-      "answer": "Tak. Kluczowe są warunki dojazdu, miejsce montażu i zakres obsługi. Jeśli je znamy, możemy przygotować konkretną propozycję."
+      "question": "Co przygotować, jeśli bar ma stać w plenerze?",
+      "answer": "Podaj lokalizację, planowane godziny i warunki miejsca. Przed rezerwacją ustalimy ustawienie, dostęp oraz osłonę stanowiska."
     },
     {
-      "question": "Jak szybko mogę sprawdzić dostępność terminu?",
-      "answer": "Wystarczy wysłać datę, miasto i typ wydarzenia. To zwykle wystarcza, żeby wrócić z informacją o dostępności i sensownym pakiecie."
+      "question": "Ile kosztuje obsługa baru w wybranym mieście?",
+      "answer": "Pełna obsługa zaczyna się od 3300 zł. Ostateczna cena zależy od terminu, miejsca, liczby gości i wybranego pakietu."
     }
   ],
   "related_links": [
@@ -89,11 +110,15 @@
     },
     {
       "href": "/oferta/mobilny-bar-na-event-firmowy/",
-      "label": "Mobilny bar na event firmowy"
+      "label": "Bar na firmówkę i event firmowy"
+    },
+    {
+      "href": "/oferta/mobilny-bar-pomorskie/",
+      "label": "Mobilny bar Pomorskie — dojazd"
     }
   ],
   "related_articles": [
-    "ile-kosztuje-mobilny-bar-trojmiasto",
+    "ile-kosztuje-barman-na-wesele",
     "garden-party-z-barem-mobilnym"
   ],
   "primary_cta_text": "Sprawdź dostępność terminu",
@@ -110,6 +135,7 @@
   "sidebar_title_html": "ZAPYTAJ O<br><span class=\"red\">TERMIN W TRÓJMIEŚCIE</span>",
   "sidebar_text": "Podaj datę, miasto i liczbę gości. Wrócimy z konkretną odpowiedzią, czy mobilny bar da się dobrze zaplanować w tej lokalizacji.",
   "sidebar_button_text": "Sprawdź dostępność terminu",
-  "card_title_html": "Mobilny bar <span class=\"red\">Trójmiasto</span>",
-  "card_excerpt": "Lokalna obsługa mobilnego baru w Gdańsku, Gdyni, Sopocie i okolicach."
+  "card_title_html": "Gdańsk, Gdynia, Sopot — <span class=\"red\">wybierz miasto</span>",
+  "card_excerpt": "Przejdź do oferty dla Gdańska, Gdyni lub Sopotu i sprawdź, co podać przy organizacji baru w Pomorskiem.",
+  "link_label": "Gdańsk, Gdynia i Sopot"
 }

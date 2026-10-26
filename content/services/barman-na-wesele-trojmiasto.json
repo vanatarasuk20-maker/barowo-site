@@ -2,14 +2,14 @@
   "slug": "barman-na-wesele-trojmiasto",
   "published": true,
   "priority": 2,
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-26",
   "title_plain": "Barman na wesele w Trójmieście",
   "title_html": "BARMAN<br><span class=\"red\">NA WESELE W TRÓJMIEŚCIE</span>",
-  "description": "Barman na wesele w Gdyni, Gdańsku i Sopocie razem z mobilnym barem, szkłem, lodem i kartą koktajli. Pełna obsługa od 3300 zł.",
-  "meta_title": "Barman na Wesele Gdynia, Gdańsk, Sopot — od 3300 zł | BAROWO",
-  "meta_description": "Barman na wesele w Trójmieście z mobilnym barem, szkłem i kartą koktajli (także 0%). 100+ obsłużonych imprez, 5 gwiazdek w Google. Pełna obsługa od 3300 zł.",
+  "description": "Barman na wesele od 3300 zł za pełną obsługę z barem. Trójmiasto i Pomorskie, pakiety do 6 lub 8 h. Sprawdź dostępność.",
+  "meta_title": "Barman na wesele — Trójmiasto i Pomorskie | BAROWO",
+  "meta_description": "Barman na wesele od 3300 zł za pełną obsługę z barem. Trójmiasto i Pomorskie, pakiety do 6 lub 8 h. Sprawdź dostępność.",
   "eyebrow": "Barman na wesele · Gdynia · Gdańsk · Sopot",
-  "intro": "Szukasz barmana na wesele? W BAROWO barman nie przyjeżdża sam. Przywozimy mobilny bar, szkło, lód, dodatki i kartę koktajli, a po weselu wszystko sprzątamy.",
+  "intro": "Barman na wesele w Trójmieście i Pomorskiem od 3300 zł za pełną obsługę z mobilnym barem. BAROWO przywozi szkło, lód, sprzęt i menu koktajli, a zespół zajmuje się serwisem podczas przyjęcia.",
   "direct_answer": "Barman na wesele w Trójmieście z BAROWO to pełna obsługa baru: od 1 barmana na mniejsze wesela do 2 i więcej barmanów na duże przyjęcia, 6–8 godzin pracy z możliwością przedłużenia. Cena zaczyna się od 3300 zł.",
   "service_type": "Barman na wesele",
   "offer_note": "Pełna obsługa z barmanem na wesele zaczyna się od 3300 zł: barmani, mobilny bar, szkło, lód, karta koktajli i obsługa gości.",
@@ -59,7 +59,7 @@
     },
     {
       "title": "Barman na wesele w Gdyni, Gdańsku i Sopocie",
-      "body": "Jesteśmy z Gdyni i obsługujemy całe Trójmiasto oraz Pomorskie do ok. 150 km. Zobacz też [mobilny bar na wesele](/oferta/mobilny-bar-na-wesele/), [mobilny bar Gdynia](/oferta/mobilny-bar-gdynia/), [mobilny bar Gdańsk](/oferta/mobilny-bar-gdansk/) i [mobilny bar Sopot](/oferta/mobilny-bar-sopot/)."
+      "body": "Jesteśmy z Gdyni i obsługujemy całe Trójmiasto oraz Pomorskie. Zobacz też [mobilny bar na wesele](/oferta/mobilny-bar-na-wesele/), [mobilny bar Gdynia](/oferta/mobilny-bar-gdynia/), [mobilny bar Gdańsk](/oferta/mobilny-bar-gdansk/) i [mobilny bar Sopot](/oferta/mobilny-bar-sopot/)."
     }
   ],
   "faq": [
@@ -100,11 +100,15 @@
     {
       "href": "/oferta/fontanna-czekoladowa/",
       "label": "Fontanna czekoladowa"
+    },
+    {
+      "href": "/oferta/barman-na-wesele-gdansk/",
+      "label": "Barman na wesele Gdańsk"
     }
   ],
   "related_articles": [
     "najlepsze-drinki-na-wesele",
-    "ile-kosztuje-mobilny-bar-trojmiasto"
+    "ile-kosztuje-barman-na-wesele"
   ],
   "primary_cta_text": "Sprawdź termin wesela",
   "primary_cta_href": "/?event_type=Wesele#contact",
@@ -125,5 +129,6 @@
   "sidebar_button_text": "Sprawdź termin",
   "sidebar_button_href": "/?event_type=Wesele#contact",
   "card_title_html": "Barman <span class=\"red\">na wesele</span>",
-  "card_excerpt": "Barman na wesele w Gdyni, Gdańsku i Sopocie z mobilnym barem i kartą koktajli — od 3300 zł."
+  "card_excerpt": "Barman na wesele w Gdyni, Gdańsku i Sopocie z mobilnym barem i kartą koktajli — od 3300 zł.",
+  "link_label": "Barman na wesele"
 }

@@ -2,12 +2,12 @@
   "slug": "fontanna-czekoladowa",
   "published": true,
   "priority": 4,
-  "updated_at": "2026-04-26",
+  "updated_at": "2026-10-26",
   "title_plain": "Fontanna czekoladowa na wesele i event w Trójmieście",
   "title_html": "FONTANNA CZEKOLADOWA<br><span class=\"red\">NA WESELE I EVENT W TRÓJMIEŚCIE</span>",
-  "description": "Fontanna czekoladowa z eleganckim stołem, dodatkami i przygotowaniem stanowiska w Gdańsku, Gdyni, Sopocie i całym Trójmieście.",
-  "meta_title": "Fontanna Czekoladowa Trójmiasto | Na Wesele, Urodziny i Event — BAROWO",
-  "meta_description": "Fontanna czekoladowa z eleganckim stołem, dodatkami i obsługą w Gdańsku, Gdyni, Sopocie i Trójmieście. Jako dodatek do baru lub osobna atrakcja na event.",
+  "description": "Fontanna czekoladowa w Trójmieście i Pomorskiem: przygotowana słodka strefa na wesele, urodziny lub event. Zapytaj o termin i wycenę.",
+  "meta_title": "Fontanna czekoladowa — Trójmiasto i Pomorskie | BAROWO",
+  "meta_description": "Fontanna czekoladowa w Trójmieście i Pomorskiem: przygotowana słodka strefa na wesele, urodziny lub event. Zapytaj o termin i wycenę.",
   "og_title": "Fontanna Czekoladowa Trójmiasto — BAROWO",
   "og_description": "Słodka strefa z fontanną czekoladową jako dodatek do mobilnego baru albo osobna atrakcja na wesele, urodziny i event.",
   "eyebrow": "Dodatki · Słodka strefa",
@@ -214,5 +214,6 @@
   "card_excerpt": "Słodka strefa z eleganckim stołem, dodatkami i przygotowaniem stanowiska na wesele, poprawiny lub event.",
   "chocolateFountainAddonPrice": "",
   "chocolateFountainSoloPrice": "",
-  "video": "/assets/media/fontanna-loop.mp4"
+  "video": "/assets/media/fontanna-loop.mp4",
+  "link_label": "Fontanna czekoladowa"
 }
