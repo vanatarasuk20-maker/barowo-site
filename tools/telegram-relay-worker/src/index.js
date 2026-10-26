@@ -1,3 +1,4 @@
+import { MAILING_PANEL_HTML } from "./mailing-panel.js";
 const LEAD_PREFIX = "/lead";
 
 function buildCorsHeaders(request) {
@@ -341,6 +342,29 @@ async function retryQueuedLeads(env) {
   return { retried: list.keys.length, added };
 }
 
+// ─── Mailing panel API: the CRM checks the token on every call ───────────────
+
+async function handleMailingApi(request, env) {
+  const json = (body, status) => new Response(JSON.stringify(body), { status: status || 200,
+    headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
+  let form;
+  try { form = await request.formData(); } catch (error) { return json({ ok: false, error: "bad_request" }, 400); }
+  const token = String(form.get("token") || "");
+  if (!/^[a-f0-9]{48}$/.test(token)) return json({ ok: false, error: "expired" });
+  const body = new URLSearchParams({ mailing_api: "1", token, op: String(form.get("op") || ""), payload: String(form.get("payload") || "{}").slice(0, 60000) });
+  try {
+    const upstream = await callAppsScriptText(getAppsScriptBaseUrl(env), {
+      method: "POST", headers: { "content-type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body: body.toString(), signal: AbortSignal.timeout(50000)
+    });
+    const payload = JSON.parse(upstream.text);
+    return json(payload);
+  } catch (error) {
+    console.error("mailing_api_failed", { message: error.message });
+    return json({ ok: false, error: "CRM nie odpowiada — spróbuj za chwilę." }, 502);
+  }
+}
+
 // ─── Unsubscribe page for CRM mailings: /wypisz?e=…&t=… ──────────────────────
 
 function unsubscribePage(title, text) {
@@ -382,6 +406,16 @@ export default {
 
     if (url.pathname === "/wypisz" && request.method === "GET") {
       return handleUnsubscribe(url, env);
+    }
+
+    if (url.pathname === "/mailing" && request.method === "GET") {
+      return new Response(MAILING_PANEL_HTML, { headers: {
+        "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex",
+        "referrer-policy": "no-referrer", "x-frame-options": "DENY" } });
+    }
+
+    if (url.pathname === "/mailing/api" && request.method === "POST") {
+      return handleMailingApi(request, env);
     }
 
     if (url.pathname === LEAD_PREFIX) {

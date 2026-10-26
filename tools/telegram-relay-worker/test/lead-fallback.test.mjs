@@ -69,3 +69,18 @@ test('/wypisz shows a confirmation page after the CRM records the unsubscribe', 
     assert.equal(asked.searchParams.get('action'), 'unsubscribe'); assert.equal(asked.searchParams.get('t'), 'tok');
   } finally { globalThis.fetch = original; }
 });
+
+test('/mailing serves the panel and /mailing/api forwards the token to the CRM', async () => {
+  const page = await worker.fetch(new Request('https://relay.example.invalid/mailing'), env(), { waitUntil() {} });
+  assert.equal(page.status, 200); assert.match(await page.text(), /Mailing BAROWO/);
+  let forwarded;
+  globalThis.fetch = async (url, init) => { forwarded = new URLSearchParams(init.body); return new Response(JSON.stringify({ ok: true, contacts: [] })); };
+  try {
+    const token = 'a'.repeat(48);
+    const r = await worker.fetch(new Request('https://relay.example.invalid/mailing/api', { method: 'POST', body: new URLSearchParams({ token, op: 'data', payload: '{}' }) }), env(), { waitUntil() {} });
+    assert.equal((await r.json()).ok, true);
+    assert.equal(forwarded.get('mailing_api'), '1'); assert.equal(forwarded.get('token'), token); assert.equal(forwarded.get('op'), 'data');
+    const bad = await worker.fetch(new Request('https://relay.example.invalid/mailing/api', { method: 'POST', body: new URLSearchParams({ token: 'x', op: 'data' }) }), env(), { waitUntil() {} });
+    assert.equal((await bad.json()).error, 'expired');
+  } finally { globalThis.fetch = original; }
+});
