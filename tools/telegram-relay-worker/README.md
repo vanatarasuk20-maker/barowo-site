@@ -12,11 +12,22 @@ Telegram retries aggressively when the direct Apps Script webhook responds with 
 - returning `200 OK` immediately
 - forwarding the update to Apps Script in the background
 
+## Lead safety net (v46, 2026-10-26)
+
+If the CRM does not confirm a website lead (timeout, HTTP error, broken reply), the Worker
+keeps it in KV (`LEAD_QUEUE`, 7 days), posts it to the CRM Telegram group and tells the
+visitor the enquiry was sent. A cron every 5 minutes retries with the same `submission_id`,
+so the CRM never creates a duplicate; the group gets a confirmation when it is added.
+`/wypisz` is the unsubscribe page for CRM mailings.
+
+Requires Node 22 for wrangler: `npx -p node@22 -p wrangler@4 wrangler deploy`.
+
 ## Required secrets
 
 - `APPS_SCRIPT_WEBHOOK_URL`
 - `APPS_SCRIPT_RELAY_SECRET`
 - `TELEGRAM_WEBHOOK_SECRET`
+- `TELEGRAM_BOT_TOKEN`, `TELEGRAM_GROUP_CHAT_ID` (fallback messages)
 
 ## Local commands
 

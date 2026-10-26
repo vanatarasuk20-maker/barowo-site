@@ -5,5 +5,16 @@
   "workers_dev": true,
   "observability": {
     "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "LEAD_QUEUE",
+      "id": "229387e4486242b9a3d1851828cf9ddd"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "*/5 * * * *"
+    ]
   }
 }
