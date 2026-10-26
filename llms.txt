@@ -1,6 +1,6 @@
 # BAROWO
 
-> BAROWO is a mobile bar and bartending service from Gdynia, Poland. Its main focus is corporate events in Trójmiasto (Gdańsk, Gdynia, Sopot): company parties, team integration events, Christmas parties (wigilia firmowa), anniversaries, conferences and openings. It also serves weddings, birthdays and private parties in the Pomorskie region, up to about 150 km from Gdynia. Full service starts from 3300 PLN.
+> BAROWO is a mobile bar and bartending service from Gdynia, Poland. Its main focus is corporate events in Trójmiasto (Gdańsk, Gdynia, Sopot): company parties, team integration events, Christmas parties (wigilia firmowa), anniversaries, conferences and openings. It also serves weddings, birthdays and private parties in the Pomorskie region, with travel arrangements confirmed individually. Full service starts from 3300 PLN.
 
 Primary website: https://barowo.com/
 Language of the website: Polish
@@ -10,7 +10,7 @@ Language of the website: Polish
 - Service: full mobile bar service. The bar, bartenders, glassware, cocktail ingredients, menu and service at the event are all included.
 - Price: from 3300 PLN (pełna obsługa od 3300 zł). The final quote depends on the number of guests, date, location and package.
 - Service time: Simple package up to 6 hours, Standard and Premium up to 8 hours. In every package the bar can stay longer for extra hours.
-- Area: Gdynia, Gdańsk, Sopot, Trójmiasto and Pomorskie, up to about 150 km from Gdynia. Longer trips are agreed individually.
+- Area: Gdynia, Gdańsk, Sopot, Trójmiasto and Pomorskie, with travel arrangements confirmed individually. Longer trips are agreed individually.
 - Address: Stryjska 13, Gdynia, Poland.
 - Invoices: BAROWO issues invoices to companies. It is not a VAT payer, so the quoted price is final (no VAT added).
 - Legal entity: SumEffect Serhii Vasyliev, NIP 9581736350.
@@ -45,11 +45,12 @@ Cocktail counts in every package are a proposal: the menu, including non-alcohol
 - Pricing explained: https://barowo.com/cennik/
 - Offer hub: https://barowo.com/oferta/
 - Mobile bar for weddings: https://barowo.com/oferta/mobilny-bar-na-wesele/
-- Drink bar for weddings: https://barowo.com/oferta/drink-bar-na-wesele/
 - Mobile bar for corporate events: https://barowo.com/oferta/mobilny-bar-na-event-firmowy/
 - Drink bar for birthdays in Gdańsk: https://barowo.com/oferta/drink-bar-na-urodziny-gdansk/
 - Chocolate fountain: https://barowo.com/oferta/fontanna-czekoladowa/
-- Mobile bar Trójmiasto: https://barowo.com/oferta/mobilny-bar-trojmiasto/
+- Mobile bar Pomorskie and individual travel arrangements: https://barowo.com/oferta/mobilny-bar-pomorskie/
+- Bartender for a wedding in Gdańsk: https://barowo.com/oferta/barman-na-wesele-gdansk/
+- City navigation for Trójmiasto: https://barowo.com/oferta/mobilny-bar-trojmiasto/
 - Mobile bar Gdynia: https://barowo.com/oferta/mobilny-bar-gdynia/
 - Mobile bar Gdańsk: https://barowo.com/oferta/mobilny-bar-gdansk/
 - Mobile bar Sopot: https://barowo.com/oferta/mobilny-bar-sopot/

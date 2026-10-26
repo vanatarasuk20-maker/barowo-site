@@ -2,16 +2,16 @@
   "slug": "mobilny-bar-na-event-firmowy",
   "published": true,
   "priority": 0,
-  "updated_at": "2026-10-18",
-  "title_plain": "Mobilny bar na event firmowy w Trójmieście",
-  "title_html": "MOBILNY BAR<br><span class=\"red\">NA EVENT FIRMOWY W TRÓJMIEŚCIE</span>",
-  "description": "Mobilny bar na event firmowy w Gdańsku, Gdyni i Sopocie: integracje, wigilie firmowe, jubileusze, konferencje i otwarcia. Bar, barmani, szkło i koktajle w jednej usłudze.",
-  "meta_title": "Mobilny Bar na Event Firmowy Trójmiasto | Gdańsk, Gdynia, Sopot — BAROWO",
-  "meta_description": "Bar na imprezę firmową, integrację, wigilię firmową lub konferencję w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i koktajle — od 3300 zł.",
+  "updated_at": "2026-10-26",
+  "title_plain": "Bar na firmówkę i event firmowy",
+  "title_html": "BAR NA FIRMÓWKĘ<br><span class=\"red\">I EVENT FIRMOWY</span>",
+  "description": "Bar na firmówkę i event firmowy od 3300 zł. Trójmiasto i Pomorskie: barmani, bar, szkło i koktajle. Zapytaj o termin.",
+  "meta_title": "Bar na firmówkę — Trójmiasto i Pomorskie | BAROWO",
+  "meta_description": "Bar na firmówkę i event firmowy od 3300 zł. Trójmiasto i Pomorskie: barmani, bar, szkło i koktajle. Zapytaj o termin.",
   "eyebrow": "Dla firm · Trójmiasto",
-  "intro": "Organizujesz imprezę firmową, integrację, wigilię albo konferencję w Trójmieście? BAROWO przyjeżdża z gotowym barem, barmanami, szkłem i menu koktajli. Twój zespół nie zajmuje się zakupami, lodem ani obsługą gości.",
-  "direct_answer": "BAROWO to mobilny bar z Gdyni dla firm z Gdańska, Gdyni, Sopotu i okolic (do ok. 150 km). Pełna obsługa zaczyna się od 3300 zł i obejmuje bar, barmanów, szkło i menu koktajli z opcjami bezalkoholowymi. Pakiety obejmują 6 lub 8 godzin pracy baru, z możliwością przedłużenia. Za nami ponad 100 obsłużonych wydarzeń.",
-  "service_type": "Mobilny bar na event firmowy",
+  "intro": "Bar na firmówkę i event firmowy w Trójmieście i Pomorskiem od 3300 zł za pełną obsługę. BAROWO zapewnia mobilny bar, barmanów, szkło i menu koktajli na integrację, wigilię, targi lub spotkanie z klientami.",
+  "direct_answer": "BAROWO to mobilny bar z Gdyni dla firm z Gdańska, Gdyni, Sopotu i całego województwa pomorskiego. Pełna obsługa zaczyna się od 3300 zł i obejmuje bar, barmanów, szkło i menu koktajli z opcjami bezalkoholowymi. Pakiety obejmują 6 lub 8 godzin pracy baru, z możliwością przedłużenia. Za nami ponad 100 obsłużonych wydarzeń.",
+  "service_type": "Bar na firmówkę i event firmowy",
   "offer_note": "Pełna obsługa mobilnego baru na event firmowy od 3300 zł. Końcowa wycena zależy od liczby gości, terminu, miejsca i pakietu.",
   "areas": [
     "Gdynia",
@@ -26,11 +26,11 @@
     "Bar, barmani, szkło i koktajle — faktura dla firmy",
     "Integracje, wigilie firmowe, jubileusze, konferencje",
     "Koktajle bezalkoholowe dla kierowców i nie pijących",
-    "Gdańsk, Gdynia, Sopot i do ok. 150 km od Gdyni"
+    "Gdańsk, Gdynia, Sopot i w województwie pomorskim"
   ],
   "sections": [
     {
-      "title": "Bar na imprezę firmową bez obciążania zespołu",
+      "title": "Bar na firmówkę bez obciążania zespołu",
       "body": "Przy evencie firmowym najwięcej czasu zabiera logistyka: lód, szkło, sprzęt, ktoś do obsługi baru i sprzątanie po wszystkim. BAROWO przejmuje ten cały obszar. Przyjeżdżamy z gotowym barem, ustawiamy stanowisko, obsługujemy gości przez cały event i zabieramy sprzęt po zakończeniu. Obsługiwaliśmy już eventy i imprezy firmowe m.in. dla firm IT, banku, biur architektonicznych i studiów projektowych."
     },
     {
@@ -43,6 +43,10 @@
         "konferencja — networking po części oficjalnej",
         "otwarcie biura, lokalu albo showroomu"
       ]
+    },
+    {
+      "title": "Barman na targi i konferencje",
+      "body": "Podczas targów i konferencji bar warto dopasować do programu wydarzenia: przerw, networkingu i wieczornego spotkania uczestników. Przed wyceną ustalamy godziny serwisu, liczbę osób, miejsce ustawienia oraz wymagania organizatora obiektu. Menu może obejmować koktajle bezalkoholowe; zakres zapisujemy w ofercie. Barman na targi to część pełnej obsługi BAROWO, z przygotowaniem stanowiska i zapleczem do pracy."
     },
     {
       "title": "Co obejmuje usługa?",
@@ -72,7 +76,7 @@
     },
     {
       "title": "Gdańsk, Gdynia, Sopot i okolice",
-      "body": "Bazujemy w Gdyni, dlatego eventy firmowe w Trójmieście obsługujemy bez dodatkowej logistyki. Dojeżdżamy też do hoteli, sal i obiektów w województwie pomorskim, do około 150 km od Gdyni. Zobacz też: [mobilny bar Gdańsk](/oferta/mobilny-bar-gdansk/), [mobilny bar Gdynia](/oferta/mobilny-bar-gdynia/), [mobilny bar Sopot](/oferta/mobilny-bar-sopot/)."
+      "body": "Bazujemy w Gdyni, dlatego eventy firmowe w Trójmieście obsługujemy bez dodatkowej logistyki. Dojeżdżamy też do hoteli, sal i obiektów w województwie pomorskim. Zobacz też: [mobilny bar Gdańsk](/oferta/mobilny-bar-gdansk/), [mobilny bar Gdynia](/oferta/mobilny-bar-gdynia/), [mobilny bar Sopot](/oferta/mobilny-bar-sopot/)."
     },
     {
       "type": "cards",
@@ -99,19 +103,15 @@
           "button_href": "/oferta/szkolenie-barmanskie-dla-firm/"
         }
       ]
-    },
-    {
-      "title": "Dlaczego BAROWO?",
-      "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
     }
   ],
   "faq": [
     {
-      "question": "Czy obsługujecie eventy firmowe w Gdańsku, Gdyni i Sopocie?",
-      "answer": "Tak. Trójmiasto to nasz podstawowy obszar pracy. Dojeżdżamy też do obiektów w województwie pomorskim, do około 150 km od Gdyni."
+      "question": "Czy obsługujecie firmówki w Trójmieście i Pomorskiem?",
+      "answer": "Tak. Trójmiasto to nasz podstawowy obszar pracy. Dojeżdżamy też do obiektów w województwie pomorskim."
     },
     {
-      "question": "Ile kosztuje mobilny bar na event firmowy?",
+      "question": "Ile kosztuje bar na firmówkę?",
       "answer": "Pełna obsługa zaczyna się od 3300 zł i obejmuje bar, barmanów, szkło i menu koktajli. Końcowa cena zależy od liczby gości, terminu, miejsca i wybranego pakietu."
     },
     {
@@ -163,11 +163,15 @@
     {
       "href": "/#contact",
       "label": "Formularz kontaktowy"
+    },
+    {
+      "href": "/aktualnosci/jak-zorganizowac-firmowke-z-barem/",
+      "label": "Jak zorganizować firmówkę — checklista dla HR"
     }
   ],
   "related_articles": [
-    "mobilny-bar-na-event-firmowy",
-    "ile-kosztuje-mobilny-bar-trojmiasto"
+    "jak-zorganizowac-firmowke-z-barem",
+    "ile-kosztuje-barman-na-wesele"
   ],
   "primary_cta_text": "Zapytaj o dostępność terminu",
   "secondary_cta_text": "Zobacz cennik",
@@ -183,6 +187,7 @@
   "sidebar_title_html": "ZAPYTAJ O<br><span class=\"red\">TERMIN EVENTU</span>",
   "sidebar_text": "Podaj datę, lokalizację i liczbę gości. Wrócimy z konkretnym zakresem baru i propozycją obsługi.",
   "sidebar_button_text": "Sprawdź dostępność terminu",
-  "card_title_html": "Mobilny bar <span class=\"red\">na event firmowy</span>",
-  "card_excerpt": "Bar na integrację, wigilię firmową, jubileusz lub konferencję w Gdańsku, Gdyni i Sopocie."
+  "card_title_html": "Bar na <span class=\"red\">firmówkę i event firmowy</span>",
+  "card_excerpt": "Barmani, bar, szkło i koktajle na imprezy firmowe, targi i konferencje w Trójmieście i Pomorskiem.",
+  "link_label": "Bar na firmówkę"
 }

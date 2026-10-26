@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import re
 from datetime import datetime
-from html import escape
+from html import escape, unescape
 from pathlib import Path
 from typing import Any
 
@@ -26,14 +26,21 @@ BUSINESS_SAME_AS = [
     "https://www.instagram.com/barowo_official",
     "https://www.tiktok.com/@barowo.official",
 ]
-BUSINESS_AREAS = ["Gdańsk", "Gdynia", "Sopot", "Trójmiasto", "Pomorskie"]
-BUSINESS_SERVICE_TYPES = [
-    "Mobilny bar",
-    "Drink bar na wesele",
-    "Bar na event firmowy",
-    "Obsługa barmańska",
-    "Fontanna czekoladowa",
-    "Słodka strefa na event",
+BUSINESS_AREAS = [
+    "Gdańsk",
+    "Gdynia",
+    "Sopot",
+    "Trójmiasto",
+    "Pomorskie",
+    "Rumia",
+    "Reda",
+    "Wejherowo",
+    "Puck",
+    "Kartuzy",
+    "Pruszcz Gdański",
+    "Tczew",
+    "Bytów",
+    "Gniew"
 ]
 PRIMARY_CTA_LABEL = "Sprawdź dostępność terminu"
 STATIC_PAGES = [
@@ -41,6 +48,19 @@ STATIC_PAGES = [
     (REALIZACJE_URL, ROOT / "realizacje" / "index.html"),
     (PLANNER_URL, ROOT / "planer-baru-weselnego" / "index.html"),
 ]
+
+
+def content_redirects() -> dict[str, str]:
+    """Keep editorial URL migrations in content, so every build preserves them."""
+    redirects = read_json(ROOT / "content" / "redirects.json")
+    for source, target in redirects.items():
+        if not re.fullmatch(r"/(oferta|aktualnosci)/[a-z0-9-]+/", source):
+            raise ValueError(f"Invalid redirect source: {source}")
+        if not re.fullmatch(r"/(oferta|aktualnosci)/[a-z0-9-]+/", target):
+            raise ValueError(f"Invalid redirect target: {target}")
+        if source == target or target in redirects:
+            raise ValueError(f"Redirect loop or chain: {source} -> {target}")
+    return redirects
 
 
 def og_image_path(path: str) -> str:
@@ -99,7 +119,7 @@ def business_graph() -> dict[str, Any]:
         "@id": HOME_URL + "#business",
         "name": "BAROWO",
         "url": HOME_URL,
-        "description": "Mobilny bar na wesele, urodziny i event firmowy w Trójmieście.",
+        "description": "Mobilny bar na wesela, urodziny i firmówki w Trójmieście i województwie pomorskim.",
         "logo": absolute_url("/assets/logo-main.png"),
         "image": [
             absolute_url("/assets/og/og-barowo.jpg"),
@@ -120,7 +140,6 @@ def business_graph() -> dict[str, Any]:
         },
         "sameAs": BUSINESS_SAME_AS,
         "areaServed": BUSINESS_AREAS,
-        "serviceType": BUSINESS_SERVICE_TYPES,
     }
 
 
@@ -490,7 +509,10 @@ def render_service_jsonld(service: dict[str, Any]) -> str:
                     {
                         "@type": "Question",
                         "name": item.get("question", ""),
-                        "acceptedAnswer": {"@type": "Answer", "text": item.get("answer", "")},
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": unescape(re.sub(r"<[^>]+>", "", format_inline(item.get("answer", "")))),
+                        },
                     }
                     for item in faqs
                 ],
@@ -614,7 +636,7 @@ def service_card_html(service: dict[str, Any]) -> str:
             <span>{escape(service.get('eyebrow', 'Oferta'))}</span>
             <h2>{service.get('card_title_html', service.get('title_html', escape(service.get('title_plain', ''))))}</h2>
             <p>{escape(service.get('card_excerpt', service.get('intro', '')))}</p>
-            <a class="btn btn-primary" href="/oferta/{service['slug']}/">Zobacz ofertę</a>
+            <a class="btn btn-primary" href="/oferta/{service['slug']}/">{escape(service.get('link_label', service.get('title_plain', 'Oferta BAROWO')))}</a>
           </div>
         </article>"""
 
@@ -699,17 +721,16 @@ def write_service_index(services: list[dict[str, Any]]) -> None:
 
 
 def write_sitemap(articles: list[dict[str, Any]], services: list[dict[str, Any]]) -> None:
+    # Dates describe editorial changes, not the day Netlify happened to rebuild.
+    page_updates = read_json(ROOT / "content" / "page-updates.json")
+    redirects = content_redirects()
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     urls = [
-        (HOME_URL, datetime.now().strftime("%Y-%m-%d")),
-        (OFFER_URL, datetime.now().strftime("%Y-%m-%d")),
-        (CENNIK_URL, datetime.now().strftime("%Y-%m-%d")),
-        (REALIZACJE_URL, datetime.now().strftime("%Y-%m-%d")),
-        (BLOG_URL, datetime.now().strftime("%Y-%m-%d")),
-        (PLANNER_URL, datetime.now().strftime("%Y-%m-%d")),
+        (url, page_updates[url.removeprefix(HOME_URL[:-1])])
+        for url in [HOME_URL, OFFER_URL, CENNIK_URL, REALIZACJE_URL, BLOG_URL, PLANNER_URL]
     ]
     urls.extend(
         (service_url(service["slug"]), service.get("updated_at", datetime.now().strftime("%Y-%m-%d")))
@@ -719,8 +740,12 @@ def write_sitemap(articles: list[dict[str, Any]], services: list[dict[str, Any]]
         (slug_url(article["slug"]), article.get("modified_at", article.get("updated_at", article.get("published_at", datetime.now().strftime("%Y-%m-%d")))))
         for article in articles
     )
-    urls.append((PRIVACY_URL, datetime.now().strftime("%Y-%m-%d")))
+    urls.append((PRIVACY_URL, page_updates["/polityka-prywatnosci/"]))
     for loc, lastmod in urls:
+        route = loc.removeprefix(HOME_URL[:-1])
+        html_path = ROOT / route.strip("/") / "index.html"
+        if route in redirects or re.search(r'<meta\s+name="robots"\s+content="[^"]*noindex', html_path.read_text(encoding="utf-8"), re.I):
+            continue
         lines.extend(["  <url>", f"    <loc>{loc}</loc>", f"    <lastmod>{lastmod}</lastmod>", "  </url>"])
     lines.append("</urlset>")
     write_file(ROOT / "sitemap.xml", "\n".join(lines) + "\n")
@@ -747,6 +772,9 @@ def write_redirects(articles: list[dict[str, Any]], services: list[dict[str, Any
         "/netlify.toml /404.html 404!",
         "/.gitignore /404.html 404!",
     ]
+    for source, target in content_redirects().items():
+        # All historical spellings go straight to the final destination.
+        lines.extend(f"{variant} {target} 301!" for variant in [source, source.rstrip("/"), source + "index.html"])
     for service in services:
         lines.append(f"/oferta/{service['slug']}/index.html /oferta/{service['slug']}/ 301!")
     for article in articles:
@@ -768,6 +796,15 @@ def write_redirects(articles: list[dict[str, Any]], services: list[dict[str, Any
     write_file(ROOT / "_redirects", "\n".join(lines) + "\n")
 
 
+def remove_redirected_pages() -> None:
+    for source, target in content_redirects().items():
+        if not (ROOT / target.strip("/") / "index.html").is_file():
+            raise ValueError(f"Redirect target does not exist: {target}")
+        old_page = ROOT / source.strip("/") / "index.html"
+        if old_page.exists():
+            old_page.unlink()
+
+
 def main() -> None:
     articles = load_articles()
     services = load_services()
@@ -775,6 +812,7 @@ def main() -> None:
     write_blog_index(articles)
     write_service_pages(services, articles)
     write_service_index(services)
+    remove_redirected_pages()
     write_sitemap(articles, services)
     write_redirects(articles, services)
     print(f"built {len(articles)} articles and {len(services)} service pages")

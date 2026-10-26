@@ -2,15 +2,15 @@
   "slug": "bar-na-integracje-firmowa",
   "published": true,
   "priority": 2,
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-26",
   "title_plain": "Bar na integrację firmową w Trójmieście",
   "title_html": "BAR NA<br><span class=\"red\">INTEGRACJĘ FIRMOWĄ</span>",
-  "description": "Mobilny bar na integrację firmową, team building i garden party w Gdańsku, Gdyni i Sopocie. Barmani, bar, szkło i menu koktajli w jednej usłudze.",
-  "meta_title": "Bar na Integrację Firmową Trójmiasto | Mobilny Bar — BAROWO",
-  "meta_description": "Mobilny bar na integrację firmową, team building lub garden party w Trójmieście. Barmani, bar, szkło i koktajle, także 0% — od 3300 zł.",
+  "description": "Bar na integrację firmową od 3300 zł. Trójmiasto i Pomorskie: pełna obsługa, szkło i koktajle. Sprawdź termin spotkania zespołu.",
+  "meta_title": "Bar na integrację firmową — Trójmiasto | BAROWO",
+  "meta_description": "Bar na integrację firmową od 3300 zł. Trójmiasto i Pomorskie: pełna obsługa, szkło i koktajle. Sprawdź termin spotkania zespołu.",
   "eyebrow": "Dla firm · Integracja",
   "intro": "Integracja ma zbliżyć ludzi, a bar to naturalne miejsce spotkań. BAROWO przyjeżdża z gotowym barem i obsługą, żeby zespół mógł skupić się na sobie, a nie na logistyce.",
-  "direct_answer": "BAROWO obsługuje integracje firmowe, team buildingi i firmowe garden party w Trójmieście i do około 150 km od Gdyni. Bar, barmani, szkło i menu koktajli są w jednej usłudze, a menu obejmuje koktajle bezalkoholowe. Ceny od 3300 zł.",
+  "direct_answer": "BAROWO obsługuje integracje firmowe, team buildingi i firmowe garden party w Trójmieście i w województwie pomorskim. Bar, barmani, szkło i menu koktajli są w jednej usłudze, a menu obejmuje koktajle bezalkoholowe. Ceny od 3300 zł.",
   "service_type": "Bar na integrację firmową",
   "offer_note": "Pełna obsługa baru na integrację firmową od 3300 zł. Końcowa wycena zależy od liczby gości, terminu i miejsca.",
   "areas": [
@@ -51,7 +51,7 @@
     },
     {
       "title": "Integracja w plenerze, hotelu albo ośrodku",
-      "body": "Obsługujemy integracje w Trójmieście i w ośrodkach do około 150 km od Gdyni — nad morzem, na Kaszubach czy w hotelu konferencyjnym. Przed eventem ustalamy dostęp do miejsca, przestrzeń na bar i godziny pracy.",
+      "body": "Obsługujemy integracje w Trójmieście i w ośrodkach w województwie pomorskim — nad morzem, na Kaszubach czy w hotelu konferencyjnym. Przed eventem ustalamy dostęp do miejsca, przestrzeń na bar i godziny pracy.",
       "bullets": [
         "integracja firmowa i wieczór dla zespołu",
         "team building z wieczorną częścią przy barze",
@@ -96,10 +96,6 @@
           "button_href": "/oferta/szkolenie-barmanskie-dla-firm/"
         }
       ]
-    },
-    {
-      "title": "Dlaczego BAROWO?",
-      "body": "Za BAROWO stoi 5 lat doświadczenia w branży eventowej i ponad 100 obsłużonych wydarzeń, a opinie klientów to 5,0 w skali 5 gwiazdek. Masz jeden kontakt od zapytania do końca wydarzenia i jasny zakres usługi przed rezerwacją."
     }
   ],
   "faq": [
@@ -109,7 +105,7 @@
     },
     {
       "question": "Czy dojeżdżacie poza Trójmiasto?",
-      "answer": "Tak, do około 150 km od Gdyni. Dalsze wyjazdy ustalamy indywidualnie."
+      "answer": "Tak. Dalsze wyjazdy ustalamy indywidualnie."
     },
     {
       "question": "Czy wystawiacie fakturę dla firmy?",
@@ -125,7 +121,7 @@
     },
     {
       "question": "Czy obsługujecie integracje w hotelach na Kaszubach?",
-      "answer": "Tak, dojeżdżamy do hoteli i ośrodków do około 150 km od Gdyni. Logistykę uwzględniamy w wycenie."
+      "answer": "Tak, dojeżdżamy do hoteli i ośrodków na terenie województwa pomorskiego. Logistykę uwzględniamy w wycenie."
     },
     {
       "question": "Czy przygotujecie koktajle bezalkoholowe?",
@@ -139,7 +135,7 @@
   "related_links": [
     {
       "href": "/oferta/mobilny-bar-na-event-firmowy/",
-      "label": "Mobilny bar na event firmowy"
+      "label": "Bar na firmówkę i event firmowy"
     },
     {
       "href": "/oferta/bar-na-wigilie-firmowa/",
@@ -167,6 +163,7 @@
     }
   ],
   "related_articles": [
-    "mobilny-bar-na-event-firmowy"
-  ]
+    "jak-zorganizowac-firmowke-z-barem"
+  ],
+  "link_label": "Bar na integrację"
 }
