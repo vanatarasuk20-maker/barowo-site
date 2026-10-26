@@ -89,12 +89,12 @@ iframe{width:100%;height:760px;border:0;background:#f1f2f6;display:block}
     <h2><span>02</span> Wiadomość</h2>
     <label class="f" for="tpl">Szablon</label>
     <select id="tpl"></select>
-    <label class="f" for="h1">Nagłówek — biała linia</label>
+    <label class="f" for="h1">Nagłówek — czerwona linia (gdy bez plakatu)</label>
     <input type="text" id="h1" maxlength="40" placeholder="np. Wolne terminy.">
-    <label class="f" for="h2">Nagłówek — czerwona linia</label>
+    <label class="f" for="h2">Nagłówek — czarna linia (gdy bez plakatu)</label>
     <input type="text" id="h2" maxlength="40" placeholder="np. Sezon 2027.">
-    <label class="f" for="img">Zdjęcie</label>
-    <select id="img"><option value="season">Koktajl (ciemne tło)</option><option value="bar">Barman Artem</option><option value="birthday">Koktajl z watą cukrową</option><option value="glass">Szkło i kieliszki</option><option value="">Bez zdjęcia</option></select>
+    <label class="f" for="img">Plakat na górze maila</label>
+    <select id="img"><option value="season">Plakat: Soboty 2027 znikają</option><option value="company">Plakat: Wigilia z barem</option><option value="birthday">Plakat: 18-tka z barem</option><option value="thanks">Plakat: Dziękujemy</option><option value="">Bez plakatu — nagłówek z pól wyżej</option></select>
     <label class="f" for="subject">Temat maila (widać w skrzynce)</label>
     <input type="text" id="subject" maxlength="150">
     <label class="f" for="body">Treść</label>
