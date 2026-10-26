@@ -473,7 +473,7 @@
     field.className = "planner-field";
     field.innerHTML =
       '<label for="plannerWeddingDate">Data wesela</label>' +
-      '<input type="text" id="plannerWeddingDate" name="weddingDate" inputmode="numeric" pattern="\\d{2}\\.\\d{2}\\.\\d{4}" placeholder="dd.mm.yyyy" value="' + escapeHtml(state.weddingDate) + '"' + (state.dateUnknown ? " disabled" : "") + ">";
+      '<input type="text" id="plannerWeddingDate" name="weddingDate" inputmode="numeric" maxlength="10" autocomplete="off" data-date-mask placeholder="dd.mm.rrrr" value="' + escapeHtml(state.weddingDate) + '"' + (state.dateUnknown ? " disabled" : "") + ">";
     wrapper.appendChild(field);
 
     var checkbox = document.createElement("label");
