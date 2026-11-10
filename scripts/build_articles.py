@@ -624,6 +624,8 @@ def render_service_page(template: str, service: dict[str, Any], articles: list[d
     output = template
     for key, value in replacements.items():
         output = output.replace(key, value)
+    # Service pages carry their own short lead form (#contact), so lead CTAs stay on the page.
+    output = output.replace('href="/#contact"', 'href="#contact"')
     return output
 
 
