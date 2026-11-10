@@ -29,6 +29,8 @@
   <script src="/assets/consent-init.js?v=20261023a"></script>
   <script src="/assets/subpage-nav.js?v=20260426c" defer></script>
   <script src="/assets/callback-popup.js?v=20261013a" defer></script>
+  <script src="/assets/date-mask.js?v=20261026a" defer></script>
+  <script src="/assets/service-lead-form.js?v=20261110a" defer></script>
   <script>
     if (window.location.protocol === 'file:') {
       document.write('<script src="/assets/local-preview.js"><' + '/script>');
@@ -214,7 +216,7 @@
   <link rel="preload" href="/assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/barowo.css?v=20261006g">
-  <link rel="stylesheet" href="/assets/sub.css?v=20261101a">
+  <link rel="stylesheet" href="/assets/sub.css?v=20261110a">
 </head>
 
 <body class="sub">
@@ -235,10 +237,10 @@
     <li><a href="/cennik/">Cennik</a></li>
     <li class="nav-home"><a href="/#opinie">Opinie</a></li>
     <li><a href="/#faq">FAQ</a></li>
-    <li class="nav-cta-item"><a href="/#contact" class="btn btn-r">Sprawdź dostępność terminu</a></li>
+    <li class="nav-cta-item"><a href="#contact" class="btn btn-r">Sprawdź dostępność terminu</a></li>
   </ul>
   <div class="nav-right">
-    <a class="btn btn-r" href="/#contact">Sprawdź termin</a>
+    <a class="btn btn-r" href="#contact">Sprawdź termin</a>
     <button class="hamburger" id="hamburger" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </div>
 </div></nav>
@@ -277,6 +279,60 @@
       </ul>
     </section>
 
+    <section class="svc-lead" id="contact" aria-labelledby="svcLeadTitle">
+      <div class="svc-lead-copy">
+        <div class="label">Zapytanie</div>
+        <h2 id="svcLeadTitle">Sprawdź <span class="red">wolny termin</span></h2>
+        <p>Zostaw kontakt i datę — wrócimy z dostępnością terminu i wyceną. Bez zobowiązań.</p>
+        <p class="svc-lead-tel">Wolisz zadzwonić? <a href="tel:+48880564984">+48 880 564 984</a></p>
+      </div>
+      <form action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST" class="form svc-lead-form" data-service-lead-form>
+        <div class="form-row">
+          <div class="fg">
+            <label for="svcLeadName">Imię *</label>
+            <input type="text" id="svcLeadName" name="name" placeholder="Jan Kowalski" autocomplete="name" required>
+          </div>
+          <div class="fg">
+            <label for="svcLeadPhone">Telefon</label>
+            <input type="tel" id="svcLeadPhone" name="phone" placeholder="+48 123 456 789" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label for="svcLeadEmail">E-mail *</label>
+            <input type="email" id="svcLeadEmail" name="email" placeholder="twoj@email.pl" autocomplete="email" required>
+          </div>
+          <div class="fg">
+            <label for="svcLeadEventDate">Data wydarzenia</label>
+            <input type="text" id="svcLeadEventDate" name="event_date" inputmode="numeric" maxlength="10" autocomplete="off" data-date-mask placeholder="dd.mm.rrrr">
+          </div>
+        </div>
+        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+          <label for="svcLeadCompany">Company</label>
+          <input type="text" id="svcLeadCompany" name="company" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="form-legal">
+          <label class="form-consent" for="svcLeadConsent">
+            <input type="checkbox" id="svcLeadConsent" name="privacy_consent" required>
+            <span>Wyrażam zgodę na przetwarzanie moich danych osobowych przez SumEffect Serhii Vasyliev w celu kontaktu i odpowiedzi na zapytanie zgodnie z <a href="/polityka-prywatnosci/">Polityką prywatności</a>.</span>
+          </label>
+          <div class="form-consent-error" aria-live="polite"></div>
+        </div>
+        <input type="hidden" name="source" value="website">
+        <input type="hidden" name="return_url" value="https://barowo.com/oferta/drink-bar-na-urodziny/#contact">
+        <input type="hidden" name="page_url" value="">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="utm_term" value="">
+        <button type="submit" class="btn btn-primary form-btn">Sprawdź dostępność terminu</button>
+        <div class="form-status" aria-live="polite"></div>
+        <p class="form-footnote">Zapytanie jest bezpłatne i&nbsp;do niczego nie zobowiązuje.</p>
+      </form>
+    </section>
+
     <div class="content-grid">
       <div>
         <section class="service-inline-cta">
@@ -306,7 +362,7 @@
           </section>
         <section class="service-block">
             <h2>Ile kosztuje barman<br><span class="red">na 18?</span></h2>
-            <p>Barman na 18 urodziny w BAROWO kosztuje od 3300 zł za pełną obsługę z mobilnym barem. To cena wyjściowa usługi z wyposażeniem i serwisem, a nie stawka za samą pracę jednej osoby. Simple obejmuje 1 barmana i do 6 godzin; Standard i Premium 2+ barmanów, zależnie od liczby gości, oraz do 8 godzin. Każdy pakiet można przedłużyć. Końcowa cena zależy od terminu, miejsca, liczby gości i menu. Sprawdź <a href="/cennik/">cennik mobilnego baru</a> i wyślij dane osiemnastki przez <a href="/#contact">formularz</a>.</p>
+            <p>Barman na 18 urodziny w BAROWO kosztuje od 3300 zł za pełną obsługę z mobilnym barem. To cena wyjściowa usługi z wyposażeniem i serwisem, a nie stawka za samą pracę jednej osoby. Simple obejmuje 1 barmana i do 6 godzin; Standard i Premium 2+ barmanów, zależnie od liczby gości, oraz do 8 godzin. Każdy pakiet można przedłużyć. Końcowa cena zależy od terminu, miejsca, liczby gości i menu. Sprawdź <a href="/cennik/">cennik mobilnego baru</a> i wyślij dane osiemnastki przez <a href="#contact">formularz</a>.</p>
             <ul><li>Simple — 1 barman, mobilny bar Modern, szkło (long, short, kieliszki do wina), menu na tablecie, propozycja 7 koktajli, do 6 godzin obsługi</li>
 <li>Standard — 2+ barmanów (zależnie od liczby gości), bar Modern lub Boho, szkło także z kieliszkami koktajlowymi, menu na tablecie, propozycja 8 koktajli i 3 bezalkoholowych, suszone owoce i syropy smakowe, do 8 godzin</li>
 <li>Premium — 2+ barmanów, bar Modern lub Boho, karta premium: propozycja 15 koktajli i 6 bezalkoholowych, welcome drink i wieża z kieliszków w cenie, dekoracje premium (jadalne kwiaty, owoce liofilizowane, wata cukrowa), do 8 godzin</li>
@@ -401,7 +457,7 @@
     <div class="ft-brand">
       <a href="/" aria-label="BAROWO — strona główna"><img src="/assets/barowo-wordmark.webp" alt="BAROWO" width="632" height="238" loading="lazy"></a>
       <p>Mobilny bar na eventy firmowe i wesela w Trójmieście. Bar, barmani, szkło i koktajle — od 3300 zł.</p>
-      <a class="btn btn-r ft-cta" href="/#contact">Sprawdź termin</a>
+      <a class="btn btn-r ft-cta" href="#contact">Sprawdź termin</a>
     </div>
     <div class="ft-col"><p class="fh">Oferta</p><a href="/oferta/mobilny-bar-na-event-firmowy/">Bar na firmówkę</a><a href="/oferta/bar-na-wigilie-firmowa/">Wigilia firmowa</a><a href="/oferta/bar-na-integracje-firmowa/">Integracja firmowa</a><a href="/oferta/szkolenie-barmanskie-dla-firm/">Szkolenie barmańskie</a><a href="/oferta/mobilny-bar-na-wesele/">Wesele</a><a href="/oferta/barman-na-wesele-trojmiasto/">Barman na wesele</a><a href="/oferta/drink-bar-na-urodziny/">Drink bar na 18-stkę</a><a href="/oferta/fontanna-czekoladowa/">Fontanna czekoladowa</a></div>
     <div class="ft-col"><p class="fh">BAROWO</p><a href="/">Strona główna</a><a href="/oferta/">Wszystkie usługi</a><a href="/cennik/">Cennik</a><a href="/realizacje/">Realizacje</a><a href="/planer-baru-weselnego/">Planer weselny</a><a href="/aktualnosci/">Aktualności</a></div>
@@ -418,7 +474,7 @@
   </div>
 </div></footer>
   <div class="mobile-cta is-visible" id="mobileCta" role="region" aria-label="Szybki kontakt">
-    <a href="/#contact" class="btn btn-r">Sprawdź termin</a>
+    <a href="#contact" class="btn btn-r">Sprawdź termin</a>
     <a href="tel:+48880564984" class="mobile-cta-call" aria-label="Zadzwoń: +48 880 564 984">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
     </a>

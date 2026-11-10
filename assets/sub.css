@@ -284,3 +284,14 @@ body.sub.planner-page{background:inherit}
   .sub .trust-strip li{padding:0 0 0 16px}
   .sub .trust-strip li:nth-child(odd){border-left:0;padding-left:0}
 }
+
+/* Short lead form on service pages */
+.sub .svc-lead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,72px);align-items:start;margin:0 0 var(--sec);padding:clamp(32px,4vw,64px);border:1px solid var(--line);border-top:2px solid var(--red);background:linear-gradient(135deg,rgba(26,26,92,.55),rgba(6,6,26,.2));scroll-margin-top:96px}
+.sub .svc-lead h2{margin:14px 0 18px;font-size:clamp(34px,3.6vw,56px)}
+.sub .svc-lead-copy p{max-width:420px;color:var(--muted)}
+.sub .svc-lead-tel{margin-top:18px}
+.sub .svc-lead-tel a{color:var(--ink);font-weight:700;white-space:nowrap}
+.sub .svc-lead-form .form-btn{width:100%}
+@media(max-width:900px){
+  .sub .svc-lead{grid-template-columns:1fr;gap:24px;padding:32px 24px}
+}
