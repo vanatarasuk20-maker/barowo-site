@@ -15,7 +15,7 @@
     '<div class="callback-kicker">Szybki kontakt</div>',
     '<div class="callback-title" id="callbackTitle">ZOSTAW NUMER.<br><span class="red">ODDZWONIMY.</span></div>',
     '<p class="callback-text">Jeśli planujesz wesele, urodziny albo event, zostaw telefon. Oddzwonimy możliwie szybko i powiemy, czy mamy wolny termin.</p>',
-    '<form class="callback-form" id="callbackForm" action="https://barowo-telegram-relay.vanatarasuk20.workers.dev/lead" method="POST">',
+    '<form class="callback-form" id="callbackForm" action="https://crm-production-85886771.up.railway.app/api/intake/4da707bf-0c67-419a-b0bf-15863d82047b" method="POST">',
     '<label for="callbackPhone"><span>Telefon *</span><input type="tel" id="callbackPhone" name="phone" placeholder="+48 123 456 789" autocomplete="tel" required></label>',
     '<label class="callback-consent" for="callbackConsent"><input type="checkbox" id="callbackConsent" name="privacy_consent" required><span>Wyrażam zgodę na kontakt telefoniczny i przetwarzanie danych zgodnie z <a href="/polityka-prywatnosci/">Polityką prywatności</a>.</span></label>',
     '<input type="hidden" name="name" value="Prośba o telefon ze strony">',
